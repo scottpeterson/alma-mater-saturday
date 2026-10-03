@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T16:08:13-05:00",
+ "fetched_at": "2026-10-03T17:30:34-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -161,8 +161,8 @@
        "provider": "Draft Kings",
        "details": "USC -7.5",
        "over_under": 58.5,
-       "home_ml": -360,
-       "away_ml": 285
+       "home_ml": -325,
+       "away_ml": 260
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -604,7 +604,7 @@
       "line": {
        "provider": "Draft Kings",
        "details": "IU -24.5",
-       "over_under": 56.5,
+       "over_under": 57.5,
        "home_ml": 1200,
        "away_ml": -2400
       },
@@ -891,9 +891,9 @@
    ]
   },
   "calvin": {
-   "record": "4-0",
+   "record": "5-0",
    "conf_record": null,
-   "standing": "39th in NCAA Division III",
+   "standing": "19th in NCAA Division III",
    "games": [
     {
      "id": "401908738",
@@ -1033,31 +1033,16 @@
      "broadcasts": [
       "YouTube"
      ],
-     "state": "pre",
-     "status": "10/3 - 3:00 PM EDT",
-     "pf": null,
-     "pa": null,
-     "result": null,
+     "state": "post",
+     "status": "Final",
+     "pf": 17,
+     "pa": 12,
+     "result": "W",
      "clock": "0:00",
-     "period": 0,
+     "period": 4,
      "group": "35",
      "live_stats": "https://adrianbulldogs.com/sidearmstats/football/summary",
-     "live_feed": {
-      "type": "sidearm",
-      "url": "https://sidearmstats.com/adri/football/game.json"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 48.2
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 27,
-       "opp": 28,
-       "total": 54.6
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401908741",
@@ -1120,7 +1105,8 @@
      "live_feed": {
       "type": "sidearm",
       "url": "https://sidearmstats.com/calvinu/football/game.json"
-     }
+     },
+     "odds": null
     },
     {
      "id": "401908742",
@@ -1217,11 +1203,11 @@
      }
     }
    ],
-   "played": 4,
-   "pf": 209,
-   "pa": 55,
-   "diff": 154,
-   "wins": 4,
+   "played": 5,
+   "pf": 226,
+   "pa": 67,
+   "diff": 159,
+   "wins": 5,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -1229,52 +1215,52 @@
      "label": "Passing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "90/121, 1258 yds, 19 TD, 2 INT, 210.22 rating",
+     "line": "113/158, 1469 yds, 21 TD, 2 INT, 190.95 rating",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
     },
     {
      "label": "Rushing",
-     "name": "Hayden Slegers",
-     "jersey": "2",
-     "line": "43 car, 219 yds, 0 TD, 5.1 avg",
-     "position": "RB",
+     "name": "Thomas Vaccaro",
+     "jersey": "13",
+     "line": "36 car, 251 yds, 2 TD, 7.0 avg",
+     "position": "QB",
      "year": "Junior",
-     "headshot": "https://calvinknights.com/images/2026/8/13/Slegers__Hayden.jpg?width=200&quality=90"
+     "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
      "name": "Hunter Hogan",
      "jersey": "7",
-     "line": "30 rec, 368 yds, 7 TD, 12.27 avg",
+     "line": "33 rec, 410 yds, 8 TD, 12.42 avg",
      "position": "RB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Hogan__Hunter.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
-     "name": "Nolan Bloomquist",
-     "jersey": "10",
-     "line": "25.0 tackles, 2.0 TFL, 0 sacks",
-     "position": "DB",
-     "year": "Freshman",
-     "headshot": "https://calvinknights.com/images/2026/8/13/Bloomquist__Nolan.jpg?width=200&quality=90"
+     "name": "Carson Schnurstein",
+     "jersey": "2",
+     "line": "32.0 tackles, 0.5 TFL, 0 sacks",
+     "position": "LB",
+     "year": "Junior",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Schnurstein__Carson.jpg?width=200&quality=90"
     },
     {
      "label": "Sacks",
-     "name": "Kaden McCullough",
-     "jersey": "30",
-     "line": "2.0 sacks, 3.0 TFL, 11.0 tackles",
-     "position": "DE",
-     "year": "Junior",
-     "headshot": "https://calvinknights.com/images/2026/8/13/McCullough__Kaden.jpg?width=200&quality=90"
+     "name": "Peter Markvluwer",
+     "jersey": "95",
+     "line": "3.0 sacks, 6.0 TFL, 11.0 tackles",
+     "position": "DL",
+     "year": "Redshirt Junior",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Markvluwer__Peter.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
      "name": "Caden Kolanowski",
      "jersey": "15",
-     "line": "3 INT, 0 PBU, 12.0 tackles",
+     "line": "4 INT, 0 PBU, 16.0 tackles",
      "position": "DB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Kolanowski__Caden.jpg?width=200&quality=90"
@@ -1284,7 +1270,7 @@
   "hope": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "17th in NCAA Division III",
+   "standing": "19th in NCAA Division III",
    "games": [
     {
      "id": "401908744",
@@ -1425,31 +1411,16 @@
      "broadcasts": [
       "MIAA Digital Network"
      ],
-     "state": "in",
-     "status": "15:00 - 3rd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "15:00",
-     "period": 3,
+     "state": "post",
+     "status": "Final",
+     "pf": 66,
+     "pa": 17,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
      "group": "35",
      "live_stats": "https://prestolivestats.com/9ezjs11trcc01fsg/fcl3nw8c63a4kl11",
-     "live_feed": {
-      "type": "presto",
-      "url": "https://data.prestolivestats.com/xml/9ezjs11trcc01fsg/events/fcl3nw8c63a4kl11.xml"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 99.5
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 59,
-       "opp": 15,
-       "total": 73.3
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401908654",
@@ -1512,7 +1483,8 @@
      "live_feed": {
       "type": "sidearm",
       "url": "https://sidearmstats.com/alma/football/game.json"
-     }
+     },
+     "odds": null
     },
     {
      "id": "401908746",
@@ -1605,11 +1577,11 @@
      }
     }
    ],
-   "played": 4,
-   "pf": 156,
-   "pa": 34,
-   "diff": 122,
-   "wins": 4,
+   "played": 5,
+   "pf": 222,
+   "pa": 51,
+   "diff": 171,
+   "wins": 5,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -1617,7 +1589,7 @@
      "label": "Passing",
      "name": "Alex Thole",
      "jersey": "4",
-     "line": "62/83, 752 yds, 2 TD, 2 INT, 153.94 rating",
+     "line": "78/104, 963 yds, 4 TD, 2 INT, 161.63 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
@@ -1626,25 +1598,25 @@
      "label": "Rushing",
      "name": "Brody Schuiteman",
      "jersey": "20",
-     "line": "50 car, 374 yds, 11 TD, 7.5 avg",
+     "line": "60 car, 429 yds, 12 TD, 7.2 avg",
      "position": "RB",
      "year": "Freshman",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Schuiteman_Brody.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
-     "name": "Kaden DeHorn",
-     "jersey": "15",
-     "line": "12 rec, 203 yds, 1 TD, 16.92 avg",
+     "name": "Jonny Rohen-Blanton",
+     "jersey": "6",
+     "line": "21 rec, 270 yds, 3 TD, 12.86 avg",
      "position": "WR",
      "year": "Senior",
-     "headshot": "https://athletics.hope.edu/images/2026/8/25/DeHorn_Kaden.jpg?width=200&quality=90"
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/RohenBlanton_Jonny.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
      "name": "Nolan Vis",
      "jersey": "5",
-     "line": "25.0 tackles, 1.0 TFL, 0 sacks",
+     "line": "26.0 tackles, 1.0 TFL, 0 sacks",
      "position": "LB",
      "year": "Sophomore",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
@@ -1653,7 +1625,7 @@
      "label": "Sacks",
      "name": "Joey Mahaney",
      "jersey": "23",
-     "line": "1.5 sacks, 2.5 TFL, 7.0 tackles",
+     "line": "2.5 sacks, 3.5 TFL, 10.0 tackles",
      "position": "LB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Mahaney_Joey.jpg?width=200&quality=90"
@@ -1672,7 +1644,7 @@
   "wheaton": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "3rd in NCAA Division III",
+   "standing": "5th in NCAA Division III",
    "games": [
     {
      "id": "401907850",
@@ -1814,31 +1786,16 @@
      "broadcasts": [
       "CCIW Network"
      ],
-     "state": "in",
-     "status": "12:07 - 4th",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "12:07",
+     "state": "post",
+     "status": "Final",
+     "pf": 33,
+     "pa": 6,
+     "result": "W",
+     "clock": "0:00",
      "period": 4,
      "group": "35",
      "live_stats": "http://www.sidearmstats.com/wheaton/football/",
-     "live_feed": {
-      "type": "sidearm",
-      "url": "https://sidearmstats.com/wheaton/football/game.json"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 99.8
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 57,
-       "opp": 6,
-       "total": 63.6
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401907846",
@@ -1904,7 +1861,8 @@
      "live_feed": {
       "type": "sidearm",
       "url": "https://sidearmstats.com/wheaton/football/game.json"
-     }
+     },
+     "odds": null
     },
     {
      "id": "401907786",
@@ -2000,11 +1958,11 @@
      }
     }
    ],
-   "played": 4,
-   "pf": 179,
-   "pa": 43,
-   "diff": 136,
-   "wins": 4,
+   "played": 5,
+   "pf": 212,
+   "pa": 49,
+   "diff": 163,
+   "wins": 5,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -2136,7 +2094,7 @@
   "refreshed": "2026-10-03T14:13:35-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-03T16:08:32-05:00",
+  "fetched": "2026-10-03T17:30:56-05:00",
   "teams": {
    "calvin": {
     "predictive": {
