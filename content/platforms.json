@@ -1,0 +1,126 @@
+[
+ {
+  "name": "BTN",
+  "also": [
+   "Big Ten Network"
+  ],
+  "kind": "Cable channel",
+  "teams": "Washington, Indiana",
+  "access": "Pay-TV subscription that carries Big Ten Network: cable or satellite, or a live-TV streaming service such as YouTube TV, Hulu + Live TV, Sling (Blue), Fubo, or DirecTV Stream. Fox One, Fox's own streaming service, also carries BTN.",
+  "free": false,
+  "url": "https://www.bigtennetwork.com/",
+  "note": "B1G+ is a separate subscription for events BTN does not televise. It does not carry BTN's football games."
+ },
+ {
+  "name": "FOX",
+  "also": [
+   "FS1"
+  ],
+  "kind": "Broadcast network",
+  "teams": "Washington, Indiana",
+  "access": "Free over the air with an antenna. Also on every pay-TV and live-TV streaming service, and on Fox One.",
+  "free": true,
+  "url": "https://www.foxsports.com/live",
+  "note": "FS1 games are cable only; FOX games are over the air. Big Noon Saturday is FOX's noon ET window."
+ },
+ {
+  "name": "NBC",
+  "also": [],
+  "kind": "Broadcast network",
+  "teams": "Washington, Indiana",
+  "access": "Free over the air with an antenna. Streams live on Peacock Premium and on the live-TV streaming services.",
+  "free": true,
+  "url": "https://www.nbcsports.com/college-football",
+  "note": "Big Ten Saturday Night is NBC's prime-time window. NBC games also stream on Peacock, but Peacock-only games do not air on NBC."
+ },
+ {
+  "name": "Peacock",
+  "also": [],
+  "kind": "Streaming service",
+  "teams": "Washington, Indiana",
+  "access": "Peacock subscription (Premium or Premium Plus). No pay-TV package includes it.",
+  "free": false,
+  "url": "https://www.peacocktv.com/sports/college-football",
+  "note": "A handful of Big Ten games each season stream only on Peacock."
+ },
+ {
+  "name": "CBS",
+  "also": [
+   "Paramount+"
+  ],
+  "kind": "Broadcast network",
+  "teams": "Washington, Indiana",
+  "access": "Free over the air with an antenna. Streams live with Paramount+ Premium (the tier that includes your local CBS station) and on the live-TV streaming services.",
+  "free": true,
+  "url": "https://www.cbssports.com/college-football/",
+  "note": "CBS has the Big Ten's 3:30 PM ET window on most Saturdays."
+ },
+ {
+  "name": "CCIW Network",
+  "also": [],
+  "kind": "Conference stream",
+  "teams": "Wheaton (IL)",
+  "access": "Free. No account or subscription. Watch at cciwnetwork.com on desktop or mobile.",
+  "free": true,
+  "url": "https://cciwnetwork.com/",
+  "note": "Launched in 2025 with Hudl as the platform. Covers CCIW home games, including non-conference home games, and CCIW championships."
+ },
+ {
+  "name": "MIAA Digital Network",
+  "also": [
+   "MIAA Sports Network"
+  ],
+  "kind": "Conference stream",
+  "teams": "Hope, Calvin",
+  "access": "The Michigan Intercollegiate Athletic Association's official stream, MIAA Sports Network, runs on Hudl TV at miaasportsnetwork.com and in the MIAA Sports Network app for Apple TV, Roku, Fire TV, Android TV, iOS, and Android. The app is free to install; the network had not published a viewing price when checked on October 3, 2026.",
+  "free": null,
+  "url": "https://miaasportsnetwork.com/",
+  "note": "This is the Michigan MIAA, a Division III conference, not the Mid-America Intercollegiate Athletics Association (Division II), whose MIAA Network charges $15 per broadcast or $140 per year."
+ },
+ {
+  "name": "YouTube",
+  "also": [
+   "Calvin Broadcast Network"
+  ],
+  "kind": "School stream",
+  "teams": "Calvin, Hope, Wheaton (IL)",
+  "access": "Free. Many Division III schools, including Calvin, stream home games on their own YouTube channel.",
+  "free": true,
+  "url": "https://www.youtube.com/",
+  "note": "Calvin Broadcast Network is Calvin's student-run broadcast. Find the game link on the school's schedule page a few hours before kickoff."
+ },
+ {
+  "name": "FloSports",
+  "also": [
+   "FloCollege"
+  ],
+  "kind": "Streaming service",
+  "teams": "Calvin (one road game)",
+  "access": "FloCollege subscription: $24.99 per month or $119.88 per year for 2026-27, with a discount for .edu addresses from partner-conference schools.",
+  "free": false,
+  "url": "https://www.flocollege.com/",
+  "note": "FloSports holds streaming rights for many Division II and III conferences. A game lands here when the host school's conference is a FloSports partner."
+ },
+ {
+  "name": "North Coast Network",
+  "also": [],
+  "kind": "Conference stream",
+  "teams": "Hope (one road game)",
+  "access": "Free. The North Coast Athletic Conference's stream, run with BlueFrame. Web, iOS, Apple TV, Roku, and Fire TV apps.",
+  "free": true,
+  "url": "https://www.northcoastnetwork.com/",
+  "note": ""
+ },
+ {
+  "name": "Team 1 Sports",
+  "also": [
+   "Hanover Sports Network"
+  ],
+  "kind": "School stream",
+  "teams": "Hope (one road game)",
+  "access": "Free. Hanover College's stream, on the web and through the Team1Sports app on Apple TV, Roku, Fire TV, and Android TV.",
+  "free": true,
+  "url": "https://athletics.hanover.edu/coverage",
+  "note": ""
+ }
+]

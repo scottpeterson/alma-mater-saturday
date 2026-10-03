@@ -214,6 +214,89 @@ def hansen():
     return out
 
 
+# ---------------------------------------------------------------- odds and win probability
+
+def espn_odds(game, school):
+    """DraftKings line and ESPN's matchup predictor for an FBS game, or None."""
+    gid = game["id"]
+    out = {}
+    try:
+        odds = get(f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/{gid}/competitions/{gid}/odds")
+        item = next((o for o in odds.get("items", []) if o.get("details")), None)
+        if item:
+            out["line"] = {
+                "provider": (item.get("provider") or {}).get("name"),
+                "details": item.get("details"),
+                "over_under": item.get("overUnder"),
+                "home_ml": (item.get("homeTeamOdds") or {}).get("moneyLine"),
+                "away_ml": (item.get("awayTeamOdds") or {}).get("moneyLine"),
+            }
+    except (urllib.error.URLError, ValueError, TimeoutError):
+        pass
+    try:
+        pred = get(f"https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/{gid}/competitions/{gid}/predictor")
+        side = pred.get("homeTeam" if game["home"] else "awayTeam") or {}
+        prob = next((st.get("value") for st in side.get("statistics", []) if st.get("name") == "gameProjection"), None)
+        if prob is not None:
+            out["win_prob"] = {"source": "ESPN matchup predictor", "pct": round(float(prob), 1)}
+    except (urllib.error.URLError, ValueError, TimeoutError):
+        pass
+    return out or None
+
+
+def hansen_projections():
+    """This week's Hansen game projections, keyed by (home, away) Hansen team names."""
+    page = get(f"{HANSEN}/projections/{SEASON}/", as_json=False)
+    m = re.search(r'url=(/projections/\d{4}/[^"]+)"', page)
+    week_path = m.group(1) if m else f"/projections/{SEASON}/"
+    page = get(f"{HANSEN}{week_path}", as_json=False)
+    cols = None
+    for mm in re.finditer(r'<script[^>]*type="application/json"[^>]*>(.*?)</script>', page, flags=re.S):
+        cols = _find_key(json.loads(mm.group(1)), "H Win%")
+        if cols:
+            break
+    if not cols:
+        return {}, week_path
+    out = {}
+    for i, home in enumerate(cols["Home"]):
+        out[(home, cols["Away"][i])] = {c: cols[c][i] for c in cols if c != ".rownames"}
+    return out, week_path
+
+
+def _find_key(obj, key):
+    if isinstance(obj, dict):
+        if key in obj and isinstance(obj[key], list):
+            return obj
+        for v in obj.values():
+            r = _find_key(v, key)
+            if r:
+                return r
+    elif isinstance(obj, list):
+        for v in obj:
+            r = _find_key(v, key)
+            if r:
+                return r
+    return None
+
+
+def hansen_odds(game, school, projections):
+    mine = school["hansen_key"]
+    for (home, away), row in projections.items():
+        if mine not in (home, away):
+            continue
+        opp_short = game["opponent"]["short"].lower().split()[0]
+        other = away if home == mine else home
+        if opp_short not in other.lower():
+            continue
+        i_am_home = home == mine
+        my_pct = row["H Win%"] if i_am_home else row["A Win%"]
+        my_score = row["H Score"] if i_am_home else row["A Score"]
+        opp_score = row["A Score"] if i_am_home else row["H Score"]
+        return {"win_prob": {"source": "Hansen Ratings", "pct": round(float(my_pct) * 100, 1)},
+                "projection": {"source": "Hansen Ratings", "mine": round(float(my_score)), "opp": round(float(opp_score)), "total": round(float(row["Total"]), 1)}}
+    return None
+
+
 # ---------------------------------------------------------------- top players
 
 def _stat_line(parts):
@@ -258,7 +341,7 @@ def espn_leaders(school):
             "name": ath.get("displayName"),
             "position": (ath.get("position") or {}).get("abbreviation"),
             "jersey": ath.get("jersey"),
-            "year": (ath.get("experience") or {}).get("displayValue"),
+            "year": class_year((ath.get("experience") or {}).get("displayValue")),
             "headshot": (ath.get("headshot") or {}).get("href"),
             "line": line,
         })
@@ -280,6 +363,20 @@ def _sidearm_rows(page, section_id):
         if len(cells) >= len(heads) - 1:
             rows.append(dict(zip(heads, cells)))
     return heads, rows
+
+
+YEARS = {"fr": "Freshman", "so": "Sophomore", "jr": "Junior", "sr": "Senior", "gr": "Graduate", "gs": "Graduate",
+         "r-fr": "Redshirt Freshman", "r-so": "Redshirt Sophomore", "r-jr": "Redshirt Junior", "r-sr": "Redshirt Senior",
+         "rs-fr": "Redshirt Freshman", "rs-so": "Redshirt Sophomore", "rs-jr": "Redshirt Junior", "rs-sr": "Redshirt Senior",
+         "5th": "Fifth Year", "6th": "Sixth Year", "freshman": "Freshman", "sophomore": "Sophomore", "junior": "Junior", "senior": "Senior",
+         "redshirt freshman": "Redshirt Freshman", "redshirt sophomore": "Redshirt Sophomore", "redshirt junior": "Redshirt Junior", "redshirt senior": "Redshirt Senior"}
+
+
+def class_year(raw):
+    if not raw:
+        return None
+    key = raw.strip().rstrip(".").lower().replace("r.-", "r-").replace("rs.-", "r-")
+    return YEARS.get(key, raw.strip())
 
 
 def _player_name(raw):
@@ -315,7 +412,7 @@ def sidearm_roster(url):
         info = {
             "name": text(name.group(1)),
             "position": pos.group(1).strip() if pos else None,
-            "year": year.group(1).strip() if year else None,
+            "year": class_year(year.group(1)) if year else None,
             "headshot": re.sub(r"width=\d+", "width=200", urllib.parse.urljoin(url, img.group(1))) if img and "no-photo" not in img.group(1) else None,
         }
         if number and number.group(1).strip():
@@ -409,10 +506,26 @@ def main():
             "ties": sum(1 for g in played if g["result"] == "T"),
             "players": [],
         }
+        upcoming = [g for g in games if g["state"] != "post"][:2]
+        for g in upcoming:
+            try:
+                g["odds"] = espn_odds(g, school) if school["division"] == "FBS" else None
+            except (urllib.error.URLError, ValueError, TimeoutError):
+                g["odds"] = None
         try:
             out["teams"][slug]["players"] = top_players(school)
         except (urllib.error.URLError, KeyError, ValueError, TimeoutError, IndexError) as exc:
             out["errors"].append(f"{school['name']} players: {exc}")
+    try:
+        projections, week_path = hansen_projections()
+        out["hansen_week"] = week_path
+        for school in SCHOOLS:
+            if not school.get("hansen_key") or school["slug"] not in out["teams"]:
+                continue
+            for g in [g for g in out["teams"][school["slug"]]["games"] if g["state"] != "post"][:2]:
+                g["odds"] = hansen_odds(g, school, projections)
+    except (urllib.error.URLError, ValueError, TimeoutError) as exc:
+        out["errors"].append(f"hansen projections: {exc}")
     for name, fn in (("polls", polls), ("d3football", d3football_top25), ("hansen", hansen)):
         try:
             out[name] = fn()

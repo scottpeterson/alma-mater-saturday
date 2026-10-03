@@ -180,8 +180,49 @@ def game_card(school, g):
 <dt>Kickoff</dt><dd>{time_tag(g)} {countdown}</dd>
 <dt>Watch</dt><dd>{tv_chips(g)}</dd>
 <dt>Where</dt><dd>{esc(where)}{" · " + esc(venue) if venue else ""}</dd>
+{odds_rows(school, g)}
 </dl>
 </div></article>'''
+
+
+def odds_rows(school, g):
+    odds = g.get("odds") or {}
+    if g["state"] == "post" or not odds:
+        return ""
+    rows = []
+    line = odds.get("line")
+    if line:
+        ml = ""
+        if line.get("home_ml") is not None and line.get("away_ml") is not None:
+            mine = line["home_ml"] if g["home"] else line["away_ml"]
+            ml = f', {esc(school["name"])} {"+" if mine > 0 else ""}{mine} moneyline'
+        rows.append(f'<dt>Line</dt><dd>{esc(line["details"])}, over/under {esc(line["over_under"])}{ml} <span class="src">{esc(line["provider"])}</span></dd>')
+    prob = odds.get("win_prob")
+    proj = odds.get("projection")
+    if prob:
+        extra = f', projected {proj["mine"]}-{proj["opp"]}' if proj else ""
+        rows.append(f'<dt>Win odds</dt><dd>{esc(school["name"])} {prob["pct"]:g}%{extra} <span class="src">{esc(prob["source"])}</span></dd>')
+    return "".join(rows)
+
+
+def platforms_section():
+    path = BASE / "content" / "platforms.json"
+    if not path.exists():
+        return ""
+    used = set()
+    for team in SEASON["teams"].values():
+        for g in team["games"]:
+            used.update(g.get("broadcasts") or [])
+    cards = []
+    for p in json.loads(path.read_text()):
+        names = [p["name"]] + p.get("also", [])
+        on_schedule = any(n in used for n in names)
+        tag = '<span class="chip free">Free</span>' if p["free"] else ('<span class="chip paid">Subscription</span>' if p["free"] is False else '<span class="chip">Price not published</span>')
+        sched = '<span class="chip">On a schedule now</span>' if on_schedule else ""
+        also = f' <span class="muted">({esc(", ".join(p["also"]))})</span>' if p.get("also") else ""
+        note = f'<p class="small">{esc(p["note"])}</p>' if p.get("note") else ""
+        cards.append(f'<article class="platform"><h3><a href="{esc(p["url"])}">{esc(p["name"])}</a>{also}</h3><div class="chips">{tag}<span class="chip">{esc(p["kind"])}</span>{sched}</div><p><b>Teams:</b> {esc(p["teams"])}</p><p>{esc(p["access"])}</p>{note}</article>')
+    return '<div class="platforms">' + "".join(cards) + "</div>"
 
 
 def this_week():
@@ -231,7 +272,8 @@ def ratings_table():
     head = ("<tr><th>Team</th><th>Record</th><th>Poll</th><th>Massey rating</th><th>Massey rank in division</th><th>Massey rank all divisions</th>"
             "<th>Massey power</th><th>Massey offense</th><th>Massey defense</th><th>Massey SOS</th><th>Massey expected W-L</th><th>Points for</th><th>Points against</th><th>Margin</th></tr>")
     rows = []
-    for s in SCHOOLS:
+    ordered = sorted(SCHOOLS, key=lambda x: MASSEY["teams"].get(x["slug"], {}).get("overall_rank", 9999))
+    for s in ordered:
         team = SEASON["teams"].get(s["slug"], {})
         m = MASSEY["teams"].get(s["slug"], {})
         if s["division"] == "FBS":
@@ -259,7 +301,8 @@ def hansen_table():
     head = ("<tr><th>Team</th><th>Predictive rank</th><th>Rating</th><th>Adj. offense</th><th>Adj. defense</th><th>Elo</th><th>Résumé rank</th><th>SOS rank</th>"
             "<th>Projected record</th><th>Projected NPI</th><th>Playoff odds</th><th>Pool A (auto bid)</th><th>Pool C (at large)</th></tr>")
     rows = []
-    for s in SCHOOLS:
+    ordered = sorted(SCHOOLS, key=lambda x: (teams.get(x["slug"], {}).get("predictive") or {}).get("Rank", 9999))
+    for s in ordered:
         h = teams.get(s["slug"])
         if not h:
             continue
@@ -413,6 +456,8 @@ tr.w td.res{color:var(--pos);font-weight:600}tr.l td.res{color:var(--neg);font-w
 .player>div{min-width:0}.pname{font-weight:700;line-height:1.2}.psub{font-size:.82rem;color:var(--muted)}.pline{font-size:.9rem;margin-top:2px}
 .chart{width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px}.chart .grid{stroke:var(--line);stroke-width:1}.chart .grid.zero{stroke:var(--faint);stroke-width:1.5}.chart .lab{fill:var(--muted);font-size:11px}.chart .line{fill:none;stroke-width:2.5;stroke-linejoin:round}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;font-size:.9rem}.lg i{display:inline-block;width:14px;height:4px;background:var(--team);margin-right:6px;vertical-align:middle;border-radius:2px}
+.src{font-size:.78rem;color:var(--muted);margin-left:4px}.chip.free{background:var(--pos);color:#fff}.chip.paid{background:var(--neg);color:#fff}
+.platforms{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.platform{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}.platform h3{margin:0 0 6px;font-size:1.2rem}.platform p{margin:.4em 0;font-size:.93rem}.platform .chips{margin-bottom:6px}
 .more{margin-top:3em;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.more h2{margin:0 0 .4em;border:0;padding:0;font-size:1.2rem}.more p{margin:0}
 footer{margin-top:28px;font-size:.85rem;color:var(--muted);line-height:1.6}
 @media (max-width:640px){h1{font-size:2.1rem}.score{font-size:1.7rem}.big{font-size:2rem}main{padding-top:14px}}
@@ -536,16 +581,20 @@ def main():
 </div>
 
 <h2 id="ratings">Rankings and ratings</h2>
-<p class="small">Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey ratings are shown two ways: rank inside the team's own division and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates, through games of {esc(massey_through)}.</p>
+<p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey ratings are shown two ways: rank inside the team's own division and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates, through games of {esc(massey_through)}.</p>
 {ratings_table()}
 
 <h3 style="margin-top:1.6em">Hansen Ratings (Division III)</h3>
-<p class="small"><a href="https://hansenratings.com/">Hansen Ratings</a> covers Division III only. Predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the automatic bid, Pool C the at-large bid.</p>
+<p class="small"><a href="https://hansenratings.com/">Hansen Ratings</a> covers Division III only. Predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the automatic bid, Pool C the at-large bid. Sorted by predictive rank.</p>
 {hansen_table()}
 
 <h2 id="margins">Point margin through the season</h2>
 <p class="small">Cumulative points for minus points against after each game played.</p>
 {margin_chart()}
+
+<h2 id="watch">Where to watch</h2>
+<p class="small">Every network or stream that appears on one of the five schedules this season, what it is, and whether it costs anything. Subscription prices are the ones published for 2026-27 and can change.</p>
+{platforms_section()}
 
 <h2 id="players">Top players</h2>
 <p class="small">Season leaders in passing, rushing, receiving, tackles, sacks, and interceptions. Division I numbers come from ESPN; Division III numbers come from each school's official statistics page.</p>

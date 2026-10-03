@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T11:52:07-05:00",
+ "fetched_at": "2026-10-03T11:54:28-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -145,7 +145,20 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "USC -7.5",
+       "over_under": 58.5,
+       "home_ml": -360,
+       "away_ml": 285
+      },
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 16.2
+      }
+     }
     },
     {
      "id": "401858487",
@@ -171,7 +184,20 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "WASH -1.5",
+       "over_under": 41.5,
+       "home_ml": -112,
+       "away_ml": -108
+      },
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 35.3
+      }
+     }
     },
     {
      "id": "401858493",
@@ -539,7 +565,20 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "IU -24.5",
+       "over_under": 56.5,
+       "home_ml": 1200,
+       "away_ml": -2400
+      },
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 95.9
+      }
+     }
     },
     {
      "id": "401858481",
@@ -567,7 +606,20 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "IU -8.5",
+       "over_under": 50.5,
+       "home_ml": 285,
+       "away_ml": -360
+      },
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 67.9
+      }
+     }
     },
     {
      "id": "401858488",
@@ -932,7 +984,19 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "odds": {
+      "win_prob": {
+       "source": "Hansen Ratings",
+       "pct": 48.2
+      },
+      "projection": {
+       "source": "Hansen Ratings",
+       "mine": 27,
+       "opp": 28,
+       "total": 54.6
+      }
+     }
     },
     {
      "id": "401908741",
@@ -958,7 +1022,8 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "odds": null
     },
     {
      "id": "401908709",
@@ -1079,7 +1144,7 @@
      "jersey": "13",
      "line": "90/121, 1258 yds, 19 TD, 2 INT, 210.22 rating",
      "position": "QB",
-     "year": "Jr.",
+     "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
     },
     {
@@ -1088,7 +1153,7 @@
      "jersey": "2",
      "line": "43 car, 219 yds, 0 TD, 5.1 avg",
      "position": "RB",
-     "year": "Jr.",
+     "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Slegers__Hayden.jpg?width=200&quality=90"
     },
     {
@@ -1097,7 +1162,7 @@
      "jersey": "7",
      "line": "30 rec, 368 yds, 7 TD, 12.27 avg",
      "position": "RB",
-     "year": "R-Jr.",
+     "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Hogan__Hunter.jpg?width=200&quality=90"
     },
     {
@@ -1106,7 +1171,7 @@
      "jersey": "10",
      "line": "25.0 tackles, 2.0 TFL, 0 sacks",
      "position": "DB",
-     "year": "Fr.",
+     "year": "Freshman",
      "headshot": "https://calvinknights.com/images/2026/8/13/Bloomquist__Nolan.jpg?width=200&quality=90"
     },
     {
@@ -1115,7 +1180,7 @@
      "jersey": "30",
      "line": "2.0 sacks, 3.0 TFL, 11.0 tackles",
      "position": "DE",
-     "year": "Jr.",
+     "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/McCullough__Kaden.jpg?width=200&quality=90"
     },
     {
@@ -1124,7 +1189,7 @@
      "jersey": "15",
      "line": "3 INT, 0 PBU, 12.0 tackles",
      "position": "DB",
-     "year": "R-Jr.",
+     "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Kolanowski__Caden.jpg?width=200&quality=90"
     }
    ]
@@ -1272,7 +1337,19 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "odds": {
+      "win_prob": {
+       "source": "Hansen Ratings",
+       "pct": 99.5
+      },
+      "projection": {
+       "source": "Hansen Ratings",
+       "mine": 59,
+       "opp": 15,
+       "total": 73.3
+      }
+     }
     },
     {
      "id": "401908654",
@@ -1298,7 +1375,8 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "odds": null
     },
     {
      "id": "401908735",
@@ -1419,7 +1497,7 @@
      "jersey": "4",
      "line": "62/83, 752 yds, 2 TD, 2 INT, 153.94 rating",
      "position": "QB",
-     "year": "Sr.",
+     "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
     },
     {
@@ -1428,7 +1506,7 @@
      "jersey": "20",
      "line": "50 car, 374 yds, 11 TD, 7.5 avg",
      "position": "RB",
-     "year": "Fr.",
+     "year": "Freshman",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Schuiteman_Brody.jpg?width=200&quality=90"
     },
     {
@@ -1437,7 +1515,7 @@
      "jersey": "15",
      "line": "12 rec, 203 yds, 1 TD, 16.92 avg",
      "position": "WR",
-     "year": "Sr.",
+     "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/DeHorn_Kaden.jpg?width=200&quality=90"
     },
     {
@@ -1446,7 +1524,7 @@
      "jersey": "5",
      "line": "25.0 tackles, 1.0 TFL, 0 sacks",
      "position": "LB",
-     "year": "So.",
+     "year": "Sophomore",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
     },
     {
@@ -1455,7 +1533,7 @@
      "jersey": "23",
      "line": "1.5 sacks, 2.5 TFL, 7.0 tackles",
      "position": "LB",
-     "year": "Sr.",
+     "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Mahaney_Joey.jpg?width=200&quality=90"
     },
     {
@@ -1464,7 +1542,7 @@
      "jersey": "25",
      "line": "1 INT, 1 PBU, 10.0 tackles",
      "position": "S",
-     "year": "Jr.",
+     "year": "Junior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Bollhouse_Trenton.jpg?width=200&quality=90"
     }
    ]
@@ -1612,7 +1690,19 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "odds": {
+      "win_prob": {
+       "source": "Hansen Ratings",
+       "pct": 99.8
+      },
+      "projection": {
+       "source": "Hansen Ratings",
+       "mine": 57,
+       "opp": 6,
+       "total": 63.6
+      }
+     }
     },
     {
      "id": "401907846",
@@ -1640,7 +1730,19 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "odds": {
+      "win_prob": {
+       "source": "Hansen Ratings",
+       "pct": 99.8
+      },
+      "projection": {
+       "source": "Hansen Ratings",
+       "mine": 57,
+       "opp": 6,
+       "total": 63.6
+      }
+     }
     },
     {
      "id": "401907815",
@@ -1761,7 +1863,7 @@
      "jersey": "5",
      "line": "84/132, 1038 yds, 11 TD, 3 INT, 152.65 rating",
      "position": "QB",
-     "year": "Sr.",
+     "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Forcucci_Mark.jpg?width=200&quality=90"
     },
     {
@@ -1770,7 +1872,7 @@
      "jersey": "32",
      "line": "67 car, 298 yds, 4 TD, 4.4 avg",
      "position": "RB",
-     "year": "Jr.",
+     "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Crider_Matt.jpg?width=200&quality=90"
     },
     {
@@ -1779,7 +1881,7 @@
      "jersey": "4",
      "line": "23 rec, 309 yds, 4 TD, 13.43 avg",
      "position": "WR",
-     "year": "Sr.",
+     "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Kortenhoeven_Seth.jpg?width=200&quality=90"
     },
     {
@@ -1788,7 +1890,7 @@
      "jersey": "8",
      "line": "34.0 tackles, 3.0 TFL, 1.0 sacks",
      "position": "LB",
-     "year": "Jr.",
+     "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Harris_Zeke.jpg?width=200&quality=90"
     },
     {
@@ -1797,7 +1899,7 @@
      "jersey": "44",
      "line": "2.0 sacks, 2.0 TFL, 4.0 tackles",
      "position": "DL",
-     "year": "So.",
+     "year": "Sophomore",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Bryant_Chandler.jpg?width=200&quality=90"
     },
     {
@@ -1806,7 +1908,7 @@
      "jersey": "15",
      "line": "2 INT, 1 PBU, 18.0 tackles",
      "position": "DB",
-     "year": "Jr.",
+     "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Reeves_Eli.jpg?width=200&quality=90"
     }
    ]
@@ -1882,7 +1984,7 @@
   }
  },
  "hansen": {
-  "fetched": "2026-10-03T11:52:28-05:00",
+  "fetched": "2026-10-03T11:54:39-05:00",
   "teams": {
    "calvin": {
     "predictive": {
@@ -2142,5 +2244,6 @@
   "sos_count": 244,
   "simulation_count": 244
  },
- "errors": []
+ "errors": [],
+ "hansen_week": "/projections/2026/week-5/"
 }
