@@ -126,7 +126,8 @@ def hansen_badge(slug):
     pred = h.get("predictive")
     if not pred:
         return ""
-    return f'<span class="badge hansen"><b>#{pred["Rank"]}</b> Hansen</span>'
+    return (f'<a class="badge hansen" href="https://hansenratings.com/ratings/predictive/2026/" title="Hansen Ratings predictive rank">'
+            f'<b>#{pred["Rank"]}</b> Hansen</a>')
 
 
 # ---------------------------------------------------------------- sections
@@ -201,7 +202,12 @@ def odds_rows(school, g):
     proj = odds.get("projection")
     if prob:
         extra = f', projected {proj["mine"]}-{proj["opp"]}' if proj else ""
-        rows.append(f'<dt>Win odds</dt><dd>{esc(school["name"])} {prob["pct"]:g}%{extra} <span class="src">{esc(prob["source"])}</span></dd>')
+        src = esc(prob["source"])
+        if "Hansen" in prob["source"]:
+            week = SEASON.get("hansen_week") or "/projections/2026/"
+            href = "https://hansenratings.com" + week if week.startswith("/") else week
+            src = f'<a href="{href}">{src}</a>'
+        rows.append(f'<dt>Win odds</dt><dd>{esc(school["name"])} {prob["pct"]:g}%{extra} <span class="src">{src}</span></dd>')
     return "".join(rows)
 
 
@@ -442,7 +448,7 @@ dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0;font
 .count{color:var(--muted);font-size:.9rem}
 .teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .record{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}.big{font-size:2.4rem;font-weight:700;line-height:1;color:var(--team)}.standing{color:var(--muted)}
-.badges{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.badge{font-size:.8rem;border:1px solid var(--line);border-radius:6px;padding:2px 7px;background:var(--surface2)}.badge b{color:var(--team)}.badge.rv,.badge.nr{color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.badge{font-size:.8rem;border:1px solid var(--line);border-radius:6px;padding:2px 7px;background:var(--surface2)}.badge b{color:var(--team)}a.badge{color:inherit;text-decoration:none}a.badge:hover{border-color:var(--team)}.sitelink{font-size:.8rem;font-weight:600;border:1px solid var(--team);border-radius:999px;padding:3px 10px;text-decoration:none;color:var(--team);white-space:nowrap;margin-left:auto}.sitelink:hover{background:var(--team);color:var(--on-team)}.badge.rv,.badge.nr{color:var(--muted)}
 .rk{font-size:.8em;color:var(--muted);font-weight:600}
 .meta{font-size:.9rem;color:var(--muted);margin:10px 0 0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
@@ -584,8 +590,8 @@ def main():
 <p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey ratings are shown two ways: rank inside the team's own division and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates, through games of {esc(massey_through)}.</p>
 {ratings_table()}
 
-<h3 style="margin-top:1.6em">Hansen Ratings (Division III)</h3>
-<p class="small"><a href="https://hansenratings.com/">Hansen Ratings</a> covers Division III only. Predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the automatic bid, Pool C the at-large bid. Sorted by predictive rank.</p>
+<h3 style="margin-top:1.6em" id="hansen"><a href="https://hansenratings.com/">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/">hansenratings.com &rarr;</a></h3>
+<p class="small">Ratings, projections, and simulation results from <a href="https://hansenratings.com/">hansenratings.com</a>, which covers Division III only. Predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the automatic bid, Pool C the at-large bid. Sorted by predictive rank.</p>
 {hansen_table()}
 
 <h2 id="margins">Point margin through the season</h2>
