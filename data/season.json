@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T12:02:41-05:00",
+ "fetched_at": "2026-10-03T12:16:37-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -1962,9 +1962,30 @@
    }
   }
  },
- "d3football": {},
+ "d3football": {
+  "label": "2026 Week 4",
+  "through": "Sept. 26, 2026",
+  "ranks": {
+   "hope": {
+    "rank": 15,
+    "record": "4-0",
+    "points": 269,
+    "prev": "16"
+   },
+   "wheaton": {
+    "rank": 3,
+    "record": "4-0",
+    "points": 558,
+    "prev": "3"
+   }
+  },
+  "receiving_votes": {
+   "calvin": 3
+  },
+  "refreshed": "2026-10-03T12:16:05-05:00"
+ },
  "hansen": {
-  "fetched": "2026-10-03T12:02:52-05:00",
+  "fetched": "2026-10-03T12:16:50-05:00",
   "teams": {
    "calvin": {
     "predictive": {
@@ -2224,8 +2245,7 @@
   "sos_count": 244,
   "simulation_count": 244
  },
- "errors": [
-  "d3football: HTTP Error 405: Not Allowed"
- ],
+ "errors": [],
+ "stale": {},
  "hansen_week": "/projections/2026/week-5/"
 }

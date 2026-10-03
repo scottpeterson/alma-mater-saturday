@@ -91,7 +91,9 @@ def poll_badges(slug):
     polls = SEASON.get("polls", {})
     badges = []
 
-    def badge(label, rank, rv):
+    def badge(label, rank, rv, have_poll=True):
+        if not have_poll:
+            return  # the poll itself is missing this run; say nothing rather than "NR"
         if rank:
             badges.append(f'<span class="badge"><b>#{rank}</b> {esc(label)}</span>')
         elif rv:
@@ -102,16 +104,16 @@ def poll_badges(slug):
     if school["division"] == "FBS":
         for key, label in (("AP Poll", "AP"), ("AFCA Coaches Poll", "Coaches")):
             p = polls.get(key, {})
-            badge(label, p.get("ranks", {}).get(slug), p.get("receiving_votes", {}).get(slug))
+            badge(label, p.get("ranks", {}).get(slug), p.get("receiving_votes", {}).get(slug), bool(p.get("ranks")))
         cfp = next((p for k, p in polls.items() if "CFP" in k or "Playoff" in (p.get("name") or "")), None)
         if cfp:
             badge("CFP", cfp.get("ranks", {}).get(slug), None)
     else:
         d3 = SEASON.get("d3football", {})
         r = d3.get("ranks", {}).get(slug)
-        badge("D3football.com", r["rank"] if r else None, d3.get("receiving_votes", {}).get(slug))
+        badge("D3football.com", r["rank"] if r else None, d3.get("receiving_votes", {}).get(slug), bool(d3.get("label")))
         p = polls.get("AFCA Div III", {})
-        badge("AFCA D3", p.get("ranks", {}).get(slug), p.get("receiving_votes", {}).get(slug))
+        badge("AFCA D3", p.get("ranks", {}).get(slug), p.get("receiving_votes", {}).get(slug), bool(p.get("ranks")))
     return "".join(badges)
 
 

@@ -1,0 +1,178 @@
+{
+ "source": "https://d3football.com/top25/2026/week4",
+ "refreshed": "2026-10-03T12:16:05-05:00",
+ "label": "2026 Week 4",
+ "through": "Sept. 26, 2026",
+ "ranked": {
+  "North Central (Ill.)": {
+   "rank": 1,
+   "record": "3-0",
+   "points": 620,
+   "prev": "1"
+  },
+  "UW-River Falls": {
+   "rank": 2,
+   "record": "3-0",
+   "points": 596,
+   "prev": "2"
+  },
+  "Wheaton (Ill.)": {
+   "rank": 3,
+   "record": "4-0",
+   "points": 558,
+   "prev": "3"
+  },
+  "UW-Platteville": {
+   "rank": 4,
+   "record": "3-0",
+   "points": 549,
+   "prev": "4"
+  },
+  "St. John's": {
+   "rank": 5,
+   "record": "3-0",
+   "points": 509,
+   "prev": "5"
+  },
+  "UW-Whitewater": {
+   "rank": 6,
+   "record": "3-0",
+   "points": 464,
+   "prev": "6"
+  },
+  "Bethel": {
+   "rank": 7,
+   "record": "2-1",
+   "points": 449,
+   "prev": "9"
+  },
+  "John Carroll": {
+   "rank": 8,
+   "record": "4-0",
+   "points": 444,
+   "prev": "7"
+  },
+  "Hardin-Simmons": {
+   "rank": 9,
+   "record": "2-0",
+   "points": 441,
+   "prev": "8"
+  },
+  "Trinity (Texas)": {
+   "rank": 10,
+   "record": "3-0",
+   "points": 376,
+   "prev": "10"
+  },
+  "Endicott": {
+   "rank": 11,
+   "record": "4-0",
+   "points": 334,
+   "prev": "12"
+  },
+  "Wartburg": {
+   "rank": 12,
+   "record": "1-2",
+   "points": 332,
+   "prev": "11"
+  },
+  "Salisbury": {
+   "rank": 13,
+   "record": "3-0",
+   "points": 322,
+   "prev": "13"
+  },
+  "Christopher Newport": {
+   "rank": 14,
+   "record": "3-0",
+   "points": 285,
+   "prev": "17"
+  },
+  "Hope": {
+   "rank": 15,
+   "record": "4-0",
+   "points": 269,
+   "prev": "16"
+  },
+  "Berry": {
+   "rank": 16,
+   "record": "3-0",
+   "points": 250,
+   "prev": "15"
+  },
+  "Cortland": {
+   "rank": 17,
+   "record": "4-0",
+   "points": 201,
+   "prev": "18"
+  },
+  "Washington U.": {
+   "rank": 18,
+   "record": "4-0",
+   "points": 193,
+   "prev": "20"
+  },
+  "UW-La Crosse": {
+   "rank": 19,
+   "record": "1-2",
+   "points": 188,
+   "prev": "19"
+  },
+  "Mary Hardin-Baylor": {
+   "rank": 20,
+   "record": "2-1",
+   "points": 133,
+   "prev": "21"
+  },
+  "Heidelberg": {
+   "rank": 21,
+   "record": "4-0",
+   "points": 128,
+   "prev": "22"
+  },
+  "Utica": {
+   "rank": 22,
+   "record": "4-0",
+   "points": 113,
+   "prev": "23"
+  },
+  "Susquehanna": {
+   "rank": 23,
+   "record": "3-1",
+   "points": 71,
+   "prev": "14"
+  },
+  "Mount Union": {
+   "rank": 24,
+   "record": "1-2",
+   "points": 60,
+   "prev": "24"
+  },
+  "Randolph-Macon": {
+   "rank": 25,
+   "record": "2-1",
+   "points": 54,
+   "prev": "25"
+  }
+ },
+ "receiving_votes": {
+  "Franklin & Marshall": 53,
+  "Wabash": 24,
+  "Linfield": 23,
+  "Baldwin Wallace": 17,
+  "Wesleyan": 13,
+  "Chapman": 12,
+  "DePauw": 9,
+  "Johns Hopkins": 8,
+  "Dickinson": 6,
+  "Eastern": 5,
+  "Grove City": 4,
+  "Lake Forest": 4,
+  "Calvin": 3,
+  "Ithaca": 2,
+  "Rowan": 2,
+  "Washington & Jefferson": 2,
+  "Springfield": 1,
+  "Trinity (Conn.)": 1
+ }
+}

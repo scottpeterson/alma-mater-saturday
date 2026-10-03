@@ -20,7 +20,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -32,7 +32,8 @@ CORE = "https://sports.core.api.espn.com/v2/sports/football/leagues/college-foot
 HANSEN = "https://hansenratings.com"
 SEASON = 2026
 CENTRAL = ZoneInfo("America/Chicago")
-UA = {"User-Agent": "Mozilla/5.0 (almamatersaturday.com schedule page)"}
+UA = {"User-Agent": "Mozilla/5.0 (almamatersaturday.com schedule page)",
+      "Accept": "text/html,application/json;q=0.9,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.9"}
 TAG = re.compile(r"<[^>]+>")
 
 
@@ -137,10 +138,60 @@ def polls():
     return out
 
 
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+def d3football_week_urls():
+    """Candidate poll pages, best guess first: the index redirect target, then weeks around the calendar estimate."""
+    urls = []
+    try:
+        opener = urllib.request.build_opener(NoRedirect)
+        opener.open(urllib.request.Request("https://d3football.com/top25/index", headers=UA), timeout=40)
+    except urllib.error.HTTPError as exc:
+        loc = exc.headers.get("Location") if exc.code in (301, 302, 303, 307, 308) else None
+        if loc:
+            urls.append(loc if loc.startswith("http") else "https://d3football.com" + loc)
+    except (urllib.error.URLError, TimeoutError):
+        pass
+    today = now().date()
+    # Week 1 poll follows the first Saturday of September; one poll per week after that.
+    first_poll = date(today.year, 9, 7)
+    est = max(1, (today - first_poll).days // 7 + 1)
+    for n in (est + 1, est, est - 1, est - 2):
+        if n >= 1:
+            urls.append(f"https://d3football.com/top25/{today.year}/week{n}")
+    seen, ordered = set(), []
+    for u in urls:
+        if u not in seen:
+            seen.add(u)
+            ordered.append(u)
+    return ordered
+
+
 def d3football_top25():
-    page = get("https://d3football.com/top25/index", as_json=False)
+    page, last = None, None
+    for url in d3football_week_urls():
+        try:
+            candidate = get(url, as_json=False)
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last = exc
+            continue
+        flat = html.unescape(re.sub(r"\s+", " ", TAG.sub(" ", candidate)))
+        if "Rank School" in flat and "receiving votes" in flat:
+            page = candidate
+            break
+    if page is None:
+        raise ValueError(f"no poll page parsed ({last})")
     page = re.sub(r"<script.*?</script>|<style.*?</style>", "", page, flags=re.S)
     body_text = html.unescape(re.sub(r"\s+", " ", TAG.sub(" ", page)))
+    parsed = d3football_parse(body_text)
+    (DATA / "d3football.json").write_text(json.dumps({"source": "https://d3football.com/top25/index", "refreshed": now().isoformat(timespec="seconds"), **parsed}, indent=1))
+    return d3football_map(parsed)
+
+
+def d3football_parse(body_text):
     title = re.search(r"D3football\.com Top 25, (\d{4} Week \d+|\d{4} preseason|\d{4} final)", body_text)
     through = re.search(r"Through games of ([A-Z][a-z]+\.? \d+, \d{4})", body_text)
     body = body_text[body_text.find("Rank School"):]
@@ -157,13 +208,29 @@ def d3football_top25():
             mm = re.match(r"(.+?) (\d+)$", item.strip())
             if mm:
                 rv[mm.group(1).strip()] = int(mm.group(2))
-    out = {"label": title.group(1) if title else None, "through": through.group(1) if through else None, "ranks": {}, "receiving_votes": {}}
+    return {"label": title.group(1) if title else None, "through": through.group(1) if through else None, "ranked": ranked, "receiving_votes": rv}
+
+
+def d3football_map(parsed):
+    """Pick the five schools out of a full poll table."""
+    out = {"label": parsed.get("label"), "through": parsed.get("through"), "ranks": {}, "receiving_votes": {}}
     for s in SCHOOLS:
         key = s.get("d3football_key")
-        if key and key in ranked:
-            out["ranks"][s["slug"]] = ranked[key]
-        elif key and key in rv:
-            out["receiving_votes"][s["slug"]] = rv[key]
+        if key and key in parsed.get("ranked", {}):
+            out["ranks"][s["slug"]] = parsed["ranked"][key]
+        elif key and key in parsed.get("receiving_votes", {}):
+            out["receiving_votes"][s["slug"]] = parsed["receiving_votes"][key]
+    return out
+
+
+def d3football_file():
+    """The hand-refreshed copy (tools/d3football_extract.js), used when the live site serves its browser challenge."""
+    path = DATA / "d3football.json"
+    if not path.exists():
+        raise ValueError("no data/d3football.json")
+    parsed = json.loads(path.read_text())
+    out = d3football_map(parsed)
+    out["refreshed"] = parsed.get("refreshed")
     return out
 
 
@@ -487,7 +554,22 @@ def top_players(school):
 
 def main():
     DATA.mkdir(exist_ok=True)
-    out = {"fetched_at": now().isoformat(timespec="seconds"), "season": SEASON, "teams": {}, "polls": {}, "d3football": {}, "hansen": {}, "errors": []}
+    out = {"fetched_at": now().isoformat(timespec="seconds"), "season": SEASON, "teams": {}, "polls": {}, "d3football": {}, "hansen": {}, "errors": [], "stale": {}}
+    previous = {}
+    if (DATA / "season.json").exists():
+        try:
+            previous = json.loads((DATA / "season.json").read_text())
+        except ValueError:
+            previous = {}
+
+    def carry(key, value):
+        """Keep the last good copy of a source that failed this run, and say so."""
+        old = previous.get(key)
+        if old:
+            out[key] = old
+            out["stale"][key] = previous.get("stale", {}).get(key) or previous.get("fetched_at")
+        else:
+            out[key] = value
     for school in SCHOOLS:
         slug = school["slug"]
         try:
@@ -495,6 +577,9 @@ def main():
             summary = team_summary(school)
         except (urllib.error.URLError, KeyError, ValueError, TimeoutError) as exc:
             out["errors"].append(f"{school['name']} schedule: {exc}")
+            if previous.get("teams", {}).get(slug):
+                out["teams"][slug] = previous["teams"][slug]
+                out["stale"][slug] = previous.get("stale", {}).get(slug) or previous.get("fetched_at")
             continue
         played = [g for g in games if g["result"]]
         pf = sum(g["pf"] for g in played)
@@ -516,6 +601,7 @@ def main():
             out["teams"][slug]["players"] = top_players(school)
         except (urllib.error.URLError, KeyError, ValueError, TimeoutError, IndexError) as exc:
             out["errors"].append(f"{school['name']} players: {exc}")
+            out["teams"][slug]["players"] = previous.get("teams", {}).get(slug, {}).get("players", [])
     try:
         projections, week_path = hansen_projections()
         out["hansen_week"] = week_path
@@ -530,7 +616,16 @@ def main():
         try:
             out[name] = fn()
         except (urllib.error.URLError, KeyError, ValueError, TimeoutError) as exc:
+            if name == "d3football":
+                try:
+                    out[name] = d3football_file()
+                    continue
+                except (ValueError, KeyError):
+                    pass
             out["errors"].append(f"{name}: {exc}")
+            carry(name, {})
+    if previous.get("hansen_week") and not out.get("hansen_week"):
+        out["hansen_week"] = previous["hansen_week"]
     (DATA / "season.json").write_text(json.dumps(out, indent=1))
     teams = ", ".join(f"{k} {v['record']} ({len(v['players'])} players)" for k, v in out["teams"].items())
     print(f"[{now():%Y-%m-%d %H:%M}] wrote data/season.json: {teams}")

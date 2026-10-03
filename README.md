@@ -47,6 +47,19 @@ Washington and Indiana (Division I FBS), and Calvin, Hope, and Wheaton (IL)
   Massey serves a browser challenge to scripted requests, so you refresh the
   data by hand.
 
+## Refreshing the D3football.com poll (Mondays, if the fetch fails)
+
+d3football.com serves a browser challenge to scripted requests, so the live
+fetch often fails. When it does, `fetch_data.py` reads `data/d3football.json`
+instead and never blanks the poll. To refresh that file:
+
+1. Open https://d3football.com/top25/index in a browser.
+2. Run `tools/d3football_extract.js` in the console. It copies the JSON to the
+   clipboard.
+3. Paste it over `data/d3football.json`, then commit and push.
+
+When the live fetch does succeed, it rewrites `data/d3football.json` itself.
+
 ## Refreshing Massey (weekly, after the Sunday update)
 
 1. Open https://masseyratings.com/cf/ratings in Chrome.
