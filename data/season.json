@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T14:13:17-05:00",
+ "fetched_at": "2026-10-03T14:52:03-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -449,7 +449,7 @@
   "indiana": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "2nd in Big Ten",
+   "standing": "4th in Big Ten",
    "games": [
     {
      "id": "401858425",
@@ -893,7 +893,7 @@
   "calvin": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "34th in NCAA Division III",
+   "standing": "36th in NCAA Division III",
    "games": [
     {
      "id": "401908738",
@@ -1033,13 +1033,13 @@
      "broadcasts": [
       "YouTube"
      ],
-     "state": "pre",
-     "status": "10/3 - 3:00 PM EDT",
+     "state": "in",
+     "status": "1:55 - 1st",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "1:55",
+     "period": 1,
      "group": "35",
      "live_stats": "https://adrianbulldogs.com/sidearmstats/football/summary",
      "live_feed": {
@@ -1284,7 +1284,7 @@
   "hope": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "34th in NCAA Division III",
+   "standing": "36th in NCAA Division III",
    "games": [
     {
      "id": "401908744",
@@ -1426,11 +1426,11 @@
       "MIAA Digital Network"
      ],
      "state": "in",
-     "status": "4:14 - 2nd",
-     "pf": null,
-     "pa": null,
+     "status": "Halftime",
+     "pf": 24,
+     "pa": 17,
      "result": null,
-     "clock": "4:14",
+     "clock": "0:00",
      "period": 2,
      "group": "35",
      "live_stats": "https://prestolivestats.com/9ezjs11trcc01fsg/fcl3nw8c63a4kl11",
@@ -1672,7 +1672,7 @@
   "wheaton": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "10th in NCAA Division III",
+   "standing": "9th in NCAA Division III",
    "games": [
     {
      "id": "401907850",
@@ -1815,12 +1815,12 @@
       "CCIW Network"
      ],
      "state": "in",
-     "status": "End of 2nd",
+     "status": "10:44 - 3rd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 2,
+     "clock": "10:44",
+     "period": 3,
      "group": "35",
      "live_stats": "http://www.sidearmstats.com/wheaton/football/",
      "live_feed": {
@@ -2132,10 +2132,11 @@
   },
   "receiving_votes": {
    "calvin": 3
-  }
+  },
+  "refreshed": "2026-10-03T14:13:35-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-03T14:13:35-05:00",
+  "fetched": "2026-10-03T14:52:21-05:00",
   "teams": {
    "calvin": {
     "predictive": {
