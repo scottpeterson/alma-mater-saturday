@@ -440,11 +440,11 @@ def margin_chart():
 # ---------------------------------------------------------------- page
 
 CSS = r"""
-:root{--bg:#f4f3ef;--surface:#ffffff;--surface2:#ecebe5;--line:#d8d5cb;--ink:#1e2229;--muted:#616873;--faint:#8c939d;--link:#1f4e79;--pos:#2e8b57;--neg:#c0504d;--live:#d6323c;--chip:#e9e7df;--on-team:#ffffff;
+:root{--bg:#f4f3ef;--surface:#ffffff;--surface2:#ecebe5;--line:#d8d5cb;--ink:#1e2229;--muted:#616873;--faint:#8c939d;--link:#1f4e79;--pos:#2e8b57;--neg:#c0504d;--live:#d6323c;--accent:#1f5fbf;--chip:#e9e7df;--on-team:#ffffff;
 --c-washington:#4b2e83;--c-indiana:#990000;--c-calvin:#8c2131;--c-hope:#c45114;--c-wheaton:#00407e}
-:root[data-theme="dark"]{--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--chip:#2e343d;--on-team:#15181d;
+:root[data-theme="dark"]{--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--accent:#7fb0ff;--chip:#2e343d;--on-team:#15181d;
 --c-washington:#b7a0e6;--c-indiana:#ff8a8a;--c-calvin:#f0a3ad;--c-hope:#ffa26b;--c-wheaton:#8fbdf2}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--chip:#2e343d;--on-team:#15181d;
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--accent:#7fb0ff;--chip:#2e343d;--on-team:#15181d;
 --c-washington:#b7a0e6;--c-indiana:#ff8a8a;--c-calvin:#f0a3ad;--c-hope:#ffa26b;--c-wheaton:#8fbdf2}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Barlow",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
@@ -455,7 +455,7 @@ h1{font-size:2.6rem;line-height:1;margin:.1em 0 .1em;letter-spacing:.01em}h2{fon
 .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.sub{color:var(--muted);margin:0 0 .4em;max-width:760px}
 .muted{color:var(--muted)}.small{font-size:.9rem;color:var(--muted)}.pos{color:var(--pos)}.neg{color:var(--neg)}
 button{font:inherit;cursor:pointer}
-.toggle{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:.9rem}.controls{display:flex;flex-direction:column;align-items:flex-end;gap:8px}.tzs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}.tz{border:0;background:transparent;color:var(--ink);padding:6px 12px;font-size:.9rem;cursor:pointer}.tz+.tz{border-left:1px solid var(--line)}.tz.active{background:var(--ink);color:var(--bg)}.alum{margin-left:auto;align-self:flex-start;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:1px solid currentColor;border-radius:999px;padding:2px 8px;opacity:.9;white-space:nowrap}
+.controls{display:flex;flex-direction:column;align-items:flex-end;gap:8px}.seg{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}.seglabel{display:flex;align-items:center;padding:0 10px 0 14px;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--line)}.tz,.th{border:0;background:transparent;color:var(--muted);padding:9px 14px;font:inherit;font-size:.95rem;cursor:pointer;min-width:44px}.tz+.tz,.th+.th{border-left:1px solid var(--line)}.tz.active,.th.active{background:var(--accent);color:#fff;font-weight:700}.tz.active::before,.th.active::before{content:"\2713\00a0"}:root[data-theme="dark"] .tz.active,:root[data-theme="dark"] .th.active{color:#15181d}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tz.active,:root:not([data-theme="light"]) .th.active{color:#15181d}}@media (max-width:640px){.controls{width:100%;flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:8px}}.alum{margin-left:auto;align-self:flex-start;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:1px solid currentColor;border-radius:999px;padding:2px 8px;opacity:.9;white-space:nowrap}
 .livepill{display:none;align-items:center;gap:6px;font-size:.85rem;font-weight:600;color:var(--live)}.livepill i{width:8px;height:8px;border-radius:50%;background:var(--live);animation:pulse 1.4s infinite}body.has-live .livepill{display:inline-flex}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
@@ -498,10 +498,11 @@ JS = r"""
 const root=document.documentElement;
 const saved=(()=>{try{return localStorage.getItem('ams-theme')}catch(e){return null}})();
 if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved);
-const btn=document.getElementById('theme');
-function label(){const dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);btn.textContent=dark?'Light mode':'Dark mode';}
-btn.addEventListener('click',()=>{const dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);const next=dark?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('ams-theme',next)}catch(e){}label();});
-label();
+function isDark(){const t=root.getAttribute('data-theme');return t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches)}
+function paintTheme(){const dark=isDark();document.querySelectorAll('.th').forEach(b=>b.classList.toggle('active',(b.dataset.theme==='dark')===dark));}
+document.querySelectorAll('.th').forEach(b=>b.addEventListener('click',()=>{root.setAttribute('data-theme',b.dataset.theme);try{localStorage.setItem('ams-theme',b.dataset.theme)}catch(e){}paintTheme();}));
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change',paintTheme);
+paintTheme();
 
 // Kickoff times in the chosen time zone: Eastern, Central, or the device's own.
 const deviceTz=Intl.DateTimeFormat().resolvedOptions().timeZone||'America/New_York';
@@ -608,7 +609,7 @@ def main():
 <style>{CSS}</style></head><body><main>
 <div class="top"><div><h1>Alma Mater Saturday</h1>
 <p class="sub">Three brothers went to five schools. Chris went to Calvin. Scott went to Hope and Washington. Matt went to Wheaton and Indiana. This page follows all five football teams: records, rankings, ratings, kickoff times, where to watch, top players, and live scores on game days.</p>
-<span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="tzs" role="group" aria-label="Time zone"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div><button id="theme" class="toggle" type="button">Dark mode</button></div></div>
+<span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="seg" role="group" aria-label="Time zone"><span class="seglabel">Times</span><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div><div class="seg" role="group" aria-label="Theme"><span class="seglabel">Theme</span><button type="button" class="th" data-theme="light">Light</button><button type="button" class="th" data-theme="dark">Dark</button></div></div></div>
 
 <h2 id="week">This week</h2>
 <p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch. Scores refresh every minute while a game is in progress. <span id="livestamp"></span></p>
