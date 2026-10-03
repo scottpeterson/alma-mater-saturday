@@ -555,6 +555,11 @@ function inWindow(c,now){const t=new Date(c.dataset.date).getTime();return c.cla
 function windowOpen(){const now=Date.now();return cards.some(c=>inWindow(c,now));}
 function escHtml(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function ordinal(n){return ['','1st','2nd','3rd','4th'][n]||(n>4?'OT'+(n>5?n-4:''):'');}
+// Sidearm writes players as "Last,First" and tacklers as "(A,B;C,D)"; readers want "First Last".
+function fixNames(t){return String(t||'').replace(/((?:(?:de|van|von|der|den|la|le|del|da|di|du) )*[A-Z][\w'\-]*(?:, ?(?:Jr|Sr|II|III|IV)\.?)?),([A-Z][\w'\-.]*)/g,'$2 $1').replace(/;(?=\S)/g,'; ');}
+// Feeds mark the side of the field as H/V (home/visitor) or by the crew's team id; show the team's name instead.
+function sideName(prefix,home,away){const p=String(prefix||'');const u=p.toUpperCase();if(u===String(home.id||'').toUpperCase()||/^(H|HOME)$/.test(u))return home.name;if(u===String(away.id||'').toUpperCase()||/^(V|VIS|VISITOR|A|AWAY)$/.test(u))return away.name;return p;}
+function fixSpots(t,home,away){return String(t||'').replace(/\b(H|V|HOME|VIS|VISITOR)(\d{1,2})\b/g,(m,a,b)=>sideName(a,home,away)+' '+(+b));}
 function fmtClock(sec){sec=Math.max(0,+sec||0);return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');}
 function setScore(el,mine,other,statusText){
   el.querySelector('.score').innerHTML=mine+'<span class="dash">-</span>'+other;
@@ -592,22 +597,23 @@ async function feedState(el){
     // The feed names the team that ran the last play; a punt, kickoff, or turnover hands the ball over.
     if(last&&(last.Turnover||/punt|kickoff/i.test((last.Type||'')+' '+(last.Narrative||''))))side=side==='HomeTeam'?'VisitingTeam':'HomeTeam';
     const m=/^(\d+)(?:st|nd|rd|th) and (\d+|goal) on the ([A-Za-z]+)(\d+)/i.exec(g.Context||'');
+    const H={id:g.HomeTeam.Id,name:g.HomeTeam.Name},V={id:g.VisitingTeam.Id,name:g.VisitingTeam.Name};
     return {complete:!!g.IsComplete,home:+g.HomeTeam.Score||0,away:+g.VisitingTeam.Score||0,period:+g.Period||0,clock:fmtClock(g.ClockSeconds),
-      poss:side==='HomeTeam'?g.HomeTeam.Name:side==='VisitingTeam'?g.VisitingTeam.Name:null,
-      dd:m?ordinal(+m[1])+' & '+(/goal/i.test(m[2])?'Goal':m[2]):(g.Context||''),spot:m?m[3]+' '+(+m[4]):'',last:last?last.Narrative:''};
+      poss:side==='HomeTeam'?H.name:side==='VisitingTeam'?V.name:null,
+      dd:m?ordinal(+m[1])+' & '+(/goal/i.test(m[2])?'Goal':m[2]):fixSpots(g.Context||'',H,V),spot:m?sideName(m[3],H,V)+' '+(+m[4]):'',last:last?fixSpots(fixNames(last.Narrative),H,V):''};
   }
   if(type==='presto'){
     const x=new DOMParser().parseFromString(await r.text(),'application/xml');
     const venue=x.querySelector('venue'),st=x.querySelector('status'),dt=x.querySelector('downtogo');
     if(!venue||!st||venue.getAttribute('date')!==day||!x.querySelector('play'))return null;
-    const teams={};x.querySelectorAll('team').forEach(t=>{const ls=t.querySelector('linescore');teams[t.getAttribute('vh')]={name:t.getAttribute('name'),abb:t.getAttribute('abb'),score:+(ls&&ls.getAttribute('score'))||0};});
+    const teams={};x.querySelectorAll('team').forEach(t=>{const ls=t.querySelector('linescore');teams[t.getAttribute('vh')]={name:t.getAttribute('name'),id:t.getAttribute('id'),score:+(ls&&ls.getAttribute('score'))||0};});
     const hb=dt?dt.getAttribute('hasball'):null;
     const spotRaw=dt?dt.getAttribute('spot')||'':'';const sm=/^([A-Za-z]+)(\d+)$/.exec(spotRaw);
-    const owner=sm?Object.values(teams).find(t=>t.abb===sm[1]):null;
+    const H={id:teams.H&&teams.H.id,name:teams.H?teams.H.name:'Home'},V={id:teams.V&&teams.V.id,name:teams.V?teams.V.name:'Visitor'};
     const down=dt?+dt.getAttribute('down')||0:0,togo=dt?dt.getAttribute('togo'):'';
     return {complete:st.getAttribute('complete')==='Y',home:teams.H?teams.H.score:0,away:teams.V?teams.V.score:0,period:+st.getAttribute('period')||0,clock:(dt&&dt.getAttribute('clock'))||st.getAttribute('clock')||'',
-      poss:hb&&teams[hb]?teams[hb].name:null,dd:down?ordinal(down)+' & '+(togo==='0'?'Goal':togo):'',spot:sm?(owner?owner.name:sm[1])+' '+(+sm[2]):spotRaw,
-      last:(dt&&dt.getAttribute('lastplay')||'').replace(/,?\s*clock \d+:\d+\.?$/,'')};
+      poss:hb&&teams[hb]?teams[hb].name:null,dd:down?ordinal(down)+' & '+(togo==='0'?'Goal':togo):'',spot:sm?sideName(sm[1],H,V)+' '+(+sm[2]):spotRaw,
+      last:fixSpots(fixNames((dt&&dt.getAttribute('lastplay')||'').replace(/,?\s*clock \d+:\d+\.?$/,'')),H,V)};
   }
   return null;
 }
