@@ -1,0 +1,386 @@
+#!/usr/bin/env python3
+"""Pull everything the site needs except Massey into data/season.json.
+
+Sources, all public and unauthenticated:
+  ESPN team schedule     site.api.espn.com/.../teams/<id>/schedule   (games, scores, TV)
+  ESPN team summary      site.api.espn.com/.../teams/<id>            (record, standing)
+  ESPN rankings          site.api.espn.com/.../rankings              (AP, Coaches, CFP, AFCA D3)
+  ESPN season leaders    sports.core.api.espn.com/.../teams/<id>/leaders  (FBS top players)
+  School stats pages     <school>/sports/football/stats              (D3 top players, Sidearm)
+  D3football.com         d3football.com/top25/index                  (D3football.com Top 25)
+  Hansen Ratings         hansenratings.com/ratings/... and /simulation (D3 ratings, odds)
+
+Massey ratings are refreshed by hand into data/massey.json (see README) because
+masseyratings.com sits behind a browser challenge.
+"""
+import html
+import json
+import re
+import sys
+import urllib.error
+import urllib.request
+from datetime import datetime
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+BASE = Path(__file__).resolve().parent
+DATA = BASE / "data"
+SCHOOLS = json.loads((BASE / "schools.json").read_text())
+ESPN = "https://site.api.espn.com/apis/site/v2/sports/football/college-football"
+CORE = "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/types/2"
+HANSEN = "https://hansenratings.com"
+SEASON = 2026
+CENTRAL = ZoneInfo("America/Chicago")
+UA = {"User-Agent": "Mozilla/5.0 (almamatersaturday.com schedule page)"}
+TAG = re.compile(r"<[^>]+>")
+
+
+def now():
+    return datetime.now(CENTRAL)
+
+
+def get(url, as_json=True, timeout=40):
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        body = resp.read()
+    return json.loads(body) if as_json else body.decode("utf-8", "replace")
+
+
+def text(fragment):
+    return html.unescape(TAG.sub(" ", fragment)).strip()
+
+
+def score_of(competitor):
+    score = competitor.get("score")
+    if isinstance(score, dict):
+        score = score.get("value", score.get("displayValue"))
+    if score in (None, ""):
+        return None
+    try:
+        return int(float(score))
+    except (TypeError, ValueError):
+        return None
+
+
+# ---------------------------------------------------------------- ESPN games
+
+def team_games(school):
+    sched = get(f"{ESPN}/teams/{school['espn_id']}/schedule")
+    games = []
+    for event in sched.get("events", []):
+        comp = event["competitions"][0]
+        me = next(c for c in comp["competitors"] if c["team"]["id"] == school["espn_id"])
+        opp = next(c for c in comp["competitors"] if c["team"]["id"] != school["espn_id"])
+        status = comp["status"]["type"]
+        pf, pa = score_of(me), score_of(opp)
+        result = None
+        if status["state"] == "post" and pf is not None and pa is not None:
+            result = "W" if pf > pa else "L" if pf < pa else "T"
+        rank = opp.get("curatedRank", {}).get("current")
+        venue = comp.get("venue", {}) or {}
+        addr = venue.get("address", {}) or {}
+        logos = opp["team"].get("logos") or []
+        games.append({
+            "id": event["id"],
+            "week": event.get("week", {}).get("number"),
+            "date": event["date"],
+            "time_tbd": comp.get("timeValid") is False,
+            "home": me["homeAway"] == "home",
+            "neutral": bool(comp.get("neutralSite")),
+            "opponent": {
+                "name": opp["team"].get("displayName"),
+                "short": opp["team"].get("shortDisplayName") or opp["team"].get("location"),
+                "espn_id": opp["team"]["id"],
+                "logo": logos[0]["href"] if logos else None,
+                "rank": rank if isinstance(rank, int) and rank <= 25 else None,
+            },
+            "venue": venue.get("fullName"),
+            "city": ", ".join(x for x in (addr.get("city"), addr.get("state")) if x),
+            "broadcasts": [b.get("media", {}).get("shortName") for b in comp.get("broadcasts", []) if b.get("media", {}).get("shortName")],
+            "state": status["state"],
+            "status": status.get("shortDetail"),
+            "pf": pf,
+            "pa": pa,
+            "result": result,
+            "clock": comp["status"].get("displayClock"),
+            "period": comp["status"].get("period"),
+            "group": school["espn_group"],
+        })
+    games.sort(key=lambda g: g["date"])
+    return games
+
+
+def team_summary(school):
+    team = get(f"{ESPN}/teams/{school['espn_id']}")["team"]
+    items = team.get("record", {}).get("items", [])
+    overall = next((i.get("summary") for i in items if i.get("type") == "total"), items[0].get("summary") if items else None)
+    conf = next((i.get("summary") for i in items if i.get("type") in ("vsconf", "conference")), None)
+    return {"record": overall, "conf_record": conf, "standing": team.get("standingSummary")}
+
+
+# ---------------------------------------------------------------- polls
+
+def polls():
+    data = get(f"{ESPN}/rankings")
+    ids = {s["espn_id"]: s["slug"] for s in SCHOOLS}
+    out = {}
+    for poll in data.get("rankings", []):
+        name = poll.get("shortName") or poll.get("name")
+        out[name] = {
+            "name": poll.get("name"),
+            "week": poll.get("occurrence", {}).get("number"),
+            "date": poll.get("date"),
+            "ranks": {ids[r["team"]["id"]]: r["current"] for r in poll.get("ranks", []) if r["team"]["id"] in ids},
+            "receiving_votes": {ids[r["team"]["id"]]: r.get("points") for r in poll.get("others", []) if r["team"]["id"] in ids},
+        }
+    return out
+
+
+def d3football_top25():
+    page = get("https://d3football.com/top25/index", as_json=False)
+    page = re.sub(r"<script.*?</script>|<style.*?</style>", "", page, flags=re.S)
+    body_text = html.unescape(re.sub(r"\s+", " ", TAG.sub(" ", page)))
+    title = re.search(r"D3football\.com Top 25, (\d{4} Week \d+|\d{4} preseason|\d{4} final)", body_text)
+    through = re.search(r"Through games of ([A-Z][a-z]+\.? \d+, \d{4})", body_text)
+    body = body_text[body_text.find("Rank School"):]
+    end = body.find("The D3football.com Top 25 is voted")
+    body = body[:end] if end > 0 else body
+    ranked = {}
+    pattern = re.compile(r"(\d{1,2}) ([A-Z][^()]*?(?: \([A-Z][a-z.]+\))?)(?: \((\d+)\))? (\d+-\d+(?:-\d+)?) (\d+) (\d+|NR|RV)")
+    for m in pattern.finditer(body):
+        ranked[m.group(2).strip()] = {"rank": int(m.group(1)), "record": m.group(4), "points": int(m.group(5)), "prev": m.group(6)}
+    rv = {}
+    m = re.search(r"Others receiving votes: (.*?)\.(?: |$)", body)
+    if m:
+        for item in m.group(1).split(";"):
+            mm = re.match(r"(.+?) (\d+)$", item.strip())
+            if mm:
+                rv[mm.group(1).strip()] = int(mm.group(2))
+    out = {"label": title.group(1) if title else None, "through": through.group(1) if through else None, "ranks": {}, "receiving_votes": {}}
+    for s in SCHOOLS:
+        key = s.get("d3football_key")
+        if key and key in ranked:
+            out["ranks"][s["slug"]] = ranked[key]
+        elif key and key in rv:
+            out["receiving_votes"][s["slug"]] = rv[key]
+    return out
+
+
+# ---------------------------------------------------------------- Hansen Ratings (D3)
+
+def hansen_table(path):
+    page = get(f"{HANSEN}{path}", as_json=False)
+    for m in re.finditer(r'<script[^>]*type="application/json"[^>]*>(.*?)</script>', page, flags=re.S):
+        blob = json.loads(m.group(1))
+        found = _find_columns(blob)
+        if found:
+            return found
+    raise ValueError(f"no data table on {path}")
+
+
+def _find_columns(obj):
+    if isinstance(obj, dict):
+        if "Team" in obj and isinstance(obj["Team"], list):
+            return obj
+        for v in obj.values():
+            r = _find_columns(v)
+            if r:
+                return r
+    elif isinstance(obj, list):
+        for v in obj:
+            r = _find_columns(v)
+            if r:
+                return r
+    return None
+
+
+def hansen():
+    keys = {s["hansen_key"]: s["slug"] for s in SCHOOLS if s.get("hansen_key")}
+    pages = {
+        "predictive": f"/ratings/predictive/{SEASON}/",
+        "resume": f"/ratings/resume/{SEASON}/",
+        "sos": f"/ratings/schedule-strength/{SEASON}/",
+        "simulation": f"/simulation/{SEASON}/",
+    }
+    out = {"fetched": now().isoformat(timespec="seconds"), "teams": {slug: {} for slug in keys.values()}}
+    for name, path in pages.items():
+        cols = hansen_table(path)
+        n = len(cols["Team"])
+        out[f"{name}_count"] = n
+        for i, team in enumerate(cols["Team"]):
+            if team in keys:
+                out["teams"][keys[team]][name] = {c: cols[c][i] for c in cols if c not in (".rownames", "Team")}
+    return out
+
+
+# ---------------------------------------------------------------- top players
+
+def _stat_line(parts):
+    return ", ".join(p for p in parts if p)
+
+
+def espn_leaders(school):
+    data = get(f"{CORE}/teams/{school['espn_id']}/leaders")
+    cats = {c["name"]: c for c in data.get("categories", [])}
+    wanted = [
+        ("passingYards", "Passing", "passingLeader"),
+        ("rushingYards", "Rushing", "rushingLeader"),
+        ("receivingYards", "Receiving", "receivingLeader"),
+        ("totalTackles", "Tackles", None),
+        ("sacks", "Sacks", None),
+        ("interceptions", "Interceptions", None),
+    ]
+    players = []
+    cache = {}
+    for cat, label, summary_cat in wanted:
+        leaders = cats.get(cat, {}).get("leaders") or []
+        if not leaders:
+            continue
+        top = leaders[0]
+        ref = top["athlete"]["$ref"]
+        if ref not in cache:
+            cache[ref] = get(ref)
+        ath = cache[ref]
+        line = top.get("displayValue", "")
+        if summary_cat and cats.get(summary_cat, {}).get("leaders"):
+            match = next((l for l in cats[summary_cat]["leaders"] if l["athlete"]["$ref"] == ref), None)
+            if match:
+                line = match.get("displayValue", line)
+        if cat == "totalTackles":
+            line = f"{line} tackles"
+        elif cat == "sacks":
+            line = f"{line} sacks"
+        elif cat == "interceptions":
+            line = f"{line} INT"
+        players.append({
+            "label": label,
+            "name": ath.get("displayName"),
+            "position": (ath.get("position") or {}).get("abbreviation"),
+            "jersey": ath.get("jersey"),
+            "year": (ath.get("experience") or {}).get("displayValue"),
+            "headshot": (ath.get("headshot") or {}).get("href"),
+            "line": line,
+        })
+    return players
+
+
+def _sidearm_rows(page, section_id):
+    m = re.search(r'<section[^>]*id="' + section_id + r'".*?</section>', page, flags=re.S)
+    if not m:
+        return [], []
+    table = re.search(r"<table.*?</table>", m.group(0), flags=re.S)
+    if not table:
+        return [], []
+    heads = [text(h) for h in re.findall(r"<thead.*?</thead>", table.group(0), flags=re.S)[0:1] and re.findall(r"<th[^>]*>(.*?)</th>", re.findall(r"<thead.*?</thead>", table.group(0), flags=re.S)[0], flags=re.S)]
+    body = re.findall(r"<tbody.*?</tbody>", table.group(0), flags=re.S)
+    rows = []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", body[0] if body else "", flags=re.S):
+        cells = [text(c) for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, flags=re.S)]
+        if len(cells) >= len(heads) - 1:
+            rows.append(dict(zip(heads, cells)))
+    return heads, rows
+
+
+def _player_name(raw):
+    first_line = raw.split("\n")[0].strip()
+    first_line = re.sub(r"^\d+\s+", "", first_line)
+    if "," in first_line:
+        last, first = [p.strip() for p in first_line.split(",", 1)]
+        return f"{first} {last}"
+    return first_line
+
+
+def _num(value):
+    try:
+        return float(str(value).split("-")[0].replace(",", "").replace("%", ""))
+    except ValueError:
+        return 0.0
+
+
+def sidearm_leaders(school):
+    page = get(school["stats_url"], as_json=False)
+    players = []
+    _, passing = _sidearm_rows(page, "individual-offense-passing")
+    passing = [r for r in passing if r.get("Player") and r["Player"] not in ("Total", "Opponents", "Team")]
+    if passing:
+        p = max(passing, key=lambda r: _num(r.get("YDS")))
+        players.append({"label": "Passing", "name": _player_name(p["Player"]), "jersey": p.get("#"),
+                        "line": _stat_line([f"{p.get('COMP')}/{p.get('ATT')}", f"{p.get('YDS')} yds", f"{p.get('TD')} TD", f"{p.get('INT')} INT", f"{p.get('Rating')} rating"])})
+    _, rushing = _sidearm_rows(page, "individual-offense-rushing")
+    rushing = [r for r in rushing if r.get("Player") and r["Player"] not in ("Total", "Opponents", "Team")]
+    if rushing:
+        p = max(rushing, key=lambda r: _num(r.get("Net")))
+        players.append({"label": "Rushing", "name": _player_name(p["Player"]), "jersey": p.get("#"),
+                        "line": _stat_line([f"{p.get('ATT')} car", f"{p.get('Net')} yds", f"{p.get('TD')} TD", f"{p.get('AVG')} avg"])})
+    _, receiving = _sidearm_rows(page, "individual-offense-receiving")
+    receiving = [r for r in receiving if r.get("Player") and r["Player"] not in ("Total", "Opponents", "Team")]
+    if receiving:
+        p = max(receiving, key=lambda r: _num(r.get("YDS")))
+        players.append({"label": "Receiving", "name": _player_name(p["Player"]), "jersey": p.get("#"),
+                        "line": _stat_line([f"{p.get('NO')} rec", f"{p.get('YDS')} yds", f"{p.get('TD')} TD", f"{p.get('AVG')} avg"])})
+    _, defense = _sidearm_rows(page, "individual-defense")
+    defense = [r for r in defense if r.get("Player") and r["Player"] not in ("Total", "Opponents", "Team")]
+    if defense:
+        p = max(defense, key=lambda r: _num(r.get("TOT")))
+        players.append({"label": "Tackles", "name": _player_name(p["Player"]), "jersey": p.get("#"),
+                        "line": _stat_line([f"{p.get('TOT')} tackles", f"{p.get('TFL-YDS', '').split('-')[0]} TFL" if p.get("TFL-YDS") else None, f"{p.get('Sacks-YDS', '').split('-')[0]} sacks" if p.get("Sacks-YDS") else None])})
+        s = max(defense, key=lambda r: _num(r.get("Sacks-YDS")))
+        if _num(s.get("Sacks-YDS")) > 0:
+            players.append({"label": "Sacks", "name": _player_name(s["Player"]), "jersey": s.get("#"),
+                            "line": _stat_line([f"{s.get('Sacks-YDS').split('-')[0]} sacks", f"{s.get('TFL-YDS', '').split('-')[0]} TFL" if s.get("TFL-YDS") else None, f"{s.get('TOT')} tackles"])})
+        i = max(defense, key=lambda r: _num(r.get("INT")))
+        if _num(i.get("INT")) > 0:
+            players.append({"label": "Interceptions", "name": _player_name(i["Player"]), "jersey": i.get("#"),
+                            "line": _stat_line([f"{i.get('INT')} INT", f"{i.get('BU')} PBU" if i.get("BU") else None, f"{i.get('TOT')} tackles"])})
+    return players
+
+
+def top_players(school):
+    if school["division"] == "FBS":
+        return espn_leaders(school)
+    return sidearm_leaders(school)
+
+
+# ---------------------------------------------------------------- main
+
+def main():
+    DATA.mkdir(exist_ok=True)
+    out = {"fetched_at": now().isoformat(timespec="seconds"), "season": SEASON, "teams": {}, "polls": {}, "d3football": {}, "hansen": {}, "errors": []}
+    for school in SCHOOLS:
+        slug = school["slug"]
+        try:
+            games = team_games(school)
+            summary = team_summary(school)
+        except (urllib.error.URLError, KeyError, ValueError, TimeoutError) as exc:
+            out["errors"].append(f"{school['name']} schedule: {exc}")
+            continue
+        played = [g for g in games if g["result"]]
+        pf = sum(g["pf"] for g in played)
+        pa = sum(g["pa"] for g in played)
+        out["teams"][slug] = {
+            **summary, "games": games, "played": len(played), "pf": pf, "pa": pa, "diff": pf - pa,
+            "wins": sum(1 for g in played if g["result"] == "W"),
+            "losses": sum(1 for g in played if g["result"] == "L"),
+            "ties": sum(1 for g in played if g["result"] == "T"),
+            "players": [],
+        }
+        try:
+            out["teams"][slug]["players"] = top_players(school)
+        except (urllib.error.URLError, KeyError, ValueError, TimeoutError, IndexError) as exc:
+            out["errors"].append(f"{school['name']} players: {exc}")
+    for name, fn in (("polls", polls), ("d3football", d3football_top25), ("hansen", hansen)):
+        try:
+            out[name] = fn()
+        except (urllib.error.URLError, KeyError, ValueError, TimeoutError) as exc:
+            out["errors"].append(f"{name}: {exc}")
+    (DATA / "season.json").write_text(json.dumps(out, indent=1))
+    teams = ", ".join(f"{k} {v['record']} ({len(v['players'])} players)" for k, v in out["teams"].items())
+    print(f"[{now():%Y-%m-%d %H:%M}] wrote data/season.json: {teams}")
+    if out["errors"]:
+        print("errors:", *out["errors"], sep="\n  ", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

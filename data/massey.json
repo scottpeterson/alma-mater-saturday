@@ -1,0 +1,14 @@
+{
+  "source": "https://masseyratings.com/cf/ratings",
+  "through": "Fri, Oct 02, 2026",
+  "refreshed": "2026-10-03T11:45:00-05:00",
+  "note": "Division ranks are the team's position among teams of its division in the all-division table, which orders teams by the same rating Massey uses on the per-division pages.",
+  "teams": {
+    "indiana":    {"division": "FBS",     "div_rank": 4,  "div_pwr_rank": 3,  "overall_rank": 4,   "rating": 8.99, "pwr_rank": 4,   "pwr": 82.64,  "off_rank": 6,   "off": 67.97, "def_rank": 4,   "def": 42.56, "sos_rank": 85,  "sos": 51.48,  "exp_w": 6.56, "exp_l": 1.44},
+    "washington": {"division": "FBS",     "div_rank": 43, "div_pwr_rank": 25, "overall_rank": 45,  "rating": 7.92, "pwr_rank": 27,  "pwr": 69.19,  "off_rank": 45,  "off": 59.89, "def_rank": 18,  "def": 37.19, "sos_rank": 100, "sos": 48.78,  "exp_w": 3.28, "exp_l": 4.72},
+    "wheaton":    {"division": "NCAA D3", "div_rank": 7,  "div_pwr_rank": 10, "overall_rank": 332, "rating": 4.51, "pwr_rank": 363, "pwr": 7.59,   "off_rank": 326, "off": 33.19, "def_rank": 409, "def": 2.29,  "sos_rank": 546, "sos": -11.83, "exp_w": 5.10, "exp_l": 0.90},
+    "hope":       {"division": "NCAA D3", "div_rank": 12, "div_pwr_rank": 14, "overall_rank": 375, "rating": 4.24, "pwr_rank": 390, "pwr": 4.80,   "off_rank": 417, "off": 28.51, "def_rank": 375, "def": 4.18,  "sos_rank": 674, "sos": -20.46, "exp_w": 5.35, "exp_l": 0.65},
+    "calvin":     {"division": "NCAA D3", "div_rank": 58, "div_pwr_rank": 60, "overall_rank": 552, "rating": 3.20, "pwr_rank": 557, "pwr": -11.32, "off_rank": 501, "off": 24.27, "def_rank": 612, "def": -7.70, "sos_rank": 808, "sos": -33.44, "exp_w": 3.26, "exp_l": 2.74}
+  },
+  "division_sizes": {"FBS": 132, "FCS": 124, "NCAA D3": 240, "all": 917}
+}

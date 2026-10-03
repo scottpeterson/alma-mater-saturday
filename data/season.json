@@ -1,0 +1,2092 @@
+{
+ "fetched_at": "2026-10-03T11:43:42-05:00",
+ "season": 2026,
+ "teams": {
+  "washington": {
+   "record": "3-1",
+   "conf_record": null,
+   "standing": "11th in Big Ten",
+   "games": [
+    {
+     "id": "401858437",
+     "week": 1,
+     "date": "2026-09-06T20:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Washington State Cougars",
+      "short": "Washington St",
+      "espn_id": "265",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/265.png",
+      "rank": null
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [
+      "NBC"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 24,
+     "pa": 10,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858446",
+     "week": 2,
+     "date": "2026-09-12T19:30Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Utah State Aggies",
+      "short": "Utah State",
+      "espn_id": "328",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+      "rank": null
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [
+      "BTN"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 16,
+     "pa": 14,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858459",
+     "week": 3,
+     "date": "2026-09-19T23:15Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Eastern Washington Eagles",
+      "short": "E Washington",
+      "espn_id": "331",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/331.png",
+      "rank": null
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [
+      "BTN"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 48,
+     "pa": 16,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858470",
+     "week": 4,
+     "date": "2026-09-27T03:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Minnesota Golden Gophers",
+      "short": "Minnesota",
+      "espn_id": "135",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
+      "rank": null
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [
+      "FOX"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 24,
+     "pa": 27,
+     "result": "L",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858478",
+     "week": 5,
+     "date": "2026-10-03T23:30Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "USC Trojans",
+      "short": "USC",
+      "espn_id": "30",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "rank": 18
+     },
+     "venue": "Los Angeles Memorial Coliseum",
+     "city": "Los Angeles, CA",
+     "broadcasts": [
+      "NBC"
+     ],
+     "state": "pre",
+     "status": "10/3 - 7:30 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858487",
+     "week": 6,
+     "date": "2026-10-10T01:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Iowa Hawkeyes",
+      "short": "Iowa",
+      "espn_id": "2294",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
+      "rank": 14
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/9 - 9:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858493",
+     "week": 7,
+     "date": "2026-10-17T00:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Purdue Boilermakers",
+      "short": "Purdue",
+      "espn_id": "2509",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+      "rank": null
+     },
+     "venue": "Ross-Ade Stadium",
+     "city": "West Lafayette, IN",
+     "broadcasts": [
+      "FOX"
+     ],
+     "state": "pre",
+     "status": "10/16 - 8:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858504",
+     "week": 9,
+     "date": "2026-10-31T04:00Z",
+     "time_tbd": true,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Nebraska Cornhuskers",
+      "short": "Nebraska",
+      "espn_id": "158",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Lincoln, NE)",
+     "city": "Lincoln, NE",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858516",
+     "week": 10,
+     "date": "2026-11-07T05:00Z",
+     "time_tbd": true,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Penn State Nittany Lions",
+      "short": "Penn State",
+      "espn_id": "213",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png",
+      "rank": null
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858521",
+     "week": 11,
+     "date": "2026-11-14T05:00Z",
+     "time_tbd": true,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Michigan State Spartans",
+      "short": "Michigan St",
+      "espn_id": "127",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+      "rank": null
+     },
+     "venue": "Spartan Stadium",
+     "city": "East Lansing, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858535",
+     "week": 12,
+     "date": "2026-11-21T05:00Z",
+     "time_tbd": true,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Indiana Hoosiers",
+      "short": "Indiana",
+      "espn_id": "84",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+      "rank": 6
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858541",
+     "week": 13,
+     "date": "2026-11-28T05:00Z",
+     "time_tbd": true,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Oregon Ducks",
+      "short": "Oregon",
+      "espn_id": "2483",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "rank": 15
+     },
+     "venue": "Autzen Stadium",
+     "city": "Eugene, OR",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    }
+   ],
+   "played": 4,
+   "pf": 112,
+   "pa": 67,
+   "diff": 45,
+   "wins": 3,
+   "losses": 1,
+   "ties": 0,
+   "players": [
+    {
+     "label": "Passing",
+     "name": "Demond Williams Jr.",
+     "position": "QB",
+     "jersey": "1",
+     "year": "Junior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
+     "line": "95/137, 1129 YDS, 7 TD, 3 INT"
+    },
+    {
+     "label": "Rushing",
+     "name": "Demond Williams Jr.",
+     "position": "QB",
+     "jersey": "1",
+     "year": "Junior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
+     "line": "40 CAR, 165 YDS, 2 TD"
+    },
+    {
+     "label": "Receiving",
+     "name": "Dezmen Roebuck",
+     "position": "WR",
+     "jersey": "2",
+     "year": "Sophomore",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5166797.png",
+     "line": "30 REC, 308 YDS, 1 TD"
+    },
+    {
+     "label": "Tackles",
+     "name": "Jacob Manu",
+     "position": "LB",
+     "jersey": "9",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4896317.png",
+     "line": "24 tackles"
+    },
+    {
+     "label": "Sacks",
+     "name": "Jacob Manu",
+     "position": "LB",
+     "jersey": "9",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4896317.png",
+     "line": "2 sacks"
+    },
+    {
+     "label": "Interceptions",
+     "name": "Alex McLaughlin",
+     "position": "S",
+     "jersey": "7",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
+     "line": "2 INT"
+    }
+   ]
+  },
+  "indiana": {
+   "record": "4-0",
+   "conf_record": null,
+   "standing": "2nd in Big Ten",
+   "games": [
+    {
+     "id": "401858425",
+     "week": 1,
+     "date": "2026-09-05T16:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "North Texas Mean Green",
+      "short": "North Texas",
+      "espn_id": "249",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/249.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [
+      "FOX"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 52,
+     "pa": 16,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858439",
+     "week": 2,
+     "date": "2026-09-12T16:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Howard Bison",
+      "short": "Howard",
+      "espn_id": "47",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/47.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [
+      "BTN"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 55,
+     "pa": 0,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858449",
+     "week": 3,
+     "date": "2026-09-19T20:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Western Kentucky Hilltoppers",
+      "short": "Western KY",
+      "espn_id": "98",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/98.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [
+      "Peacock"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 38,
+     "pa": 0,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858461",
+     "week": 4,
+     "date": "2026-09-26T00:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Northwestern Wildcats",
+      "short": "Northwestern",
+      "espn_id": "77",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/77.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [
+      "FOX"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 29,
+     "pa": 23,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "80"
+    },
+    {
+     "id": "401858477",
+     "week": 5,
+     "date": "2026-10-04T00:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Rutgers Scarlet Knights",
+      "short": "Rutgers",
+      "espn_id": "164",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/164.png",
+      "rank": null
+     },
+     "venue": "SHI Stadium",
+     "city": "Piscataway, NJ",
+     "broadcasts": [
+      "BTN"
+     ],
+     "state": "pre",
+     "status": "10/3 - 8:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858481",
+     "week": 6,
+     "date": "2026-10-10T16:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Nebraska Cornhuskers",
+      "short": "Nebraska",
+      "espn_id": "158",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Lincoln, NE)",
+     "city": "Lincoln, NE",
+     "broadcasts": [
+      "FOX"
+     ],
+     "state": "pre",
+     "status": "10/10 - 12:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858488",
+     "week": 7,
+     "date": "2026-10-17T04:00Z",
+     "time_tbd": true,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Ohio State Buckeyes",
+      "short": "Ohio State",
+      "espn_id": "194",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+      "rank": 5
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858496",
+     "week": 8,
+     "date": "2026-10-24T04:00Z",
+     "time_tbd": true,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Michigan Wolverines",
+      "short": "Michigan",
+      "espn_id": "130",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "rank": null
+     },
+     "venue": "Michigan Stadium",
+     "city": "Ann Arbor, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858501",
+     "week": 9,
+     "date": "2026-10-31T04:00Z",
+     "time_tbd": true,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Minnesota Golden Gophers",
+      "short": "Minnesota",
+      "espn_id": "135",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858518",
+     "week": 11,
+     "date": "2026-11-14T05:00Z",
+     "time_tbd": true,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "USC Trojans",
+      "short": "USC",
+      "espn_id": "30",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "rank": 18
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858535",
+     "week": 12,
+     "date": "2026-11-21T05:00Z",
+     "time_tbd": true,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Washington Huskies",
+      "short": "Washington",
+      "espn_id": "264",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/264.png",
+      "rank": null
+     },
+     "venue": "Husky Stadium",
+     "city": "Seattle, WA",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    },
+    {
+     "id": "401858538",
+     "week": 13,
+     "date": "2026-11-28T05:00Z",
+     "time_tbd": true,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Purdue Boilermakers",
+      "short": "Purdue",
+      "espn_id": "2509",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Bloomington, IN)",
+     "city": "Bloomington, IN",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "TBD",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "80"
+    }
+   ],
+   "played": 4,
+   "pf": 174,
+   "pa": 39,
+   "diff": 135,
+   "wins": 4,
+   "losses": 0,
+   "ties": 0,
+   "players": [
+    {
+     "label": "Passing",
+     "name": "Josh Hoover",
+     "position": "QB",
+     "jersey": "10",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685401.png",
+     "line": "56/80, 850 YDS, 11 TD"
+    },
+    {
+     "label": "Rushing",
+     "name": "Lee Beebe Jr.",
+     "position": "RB",
+     "jersey": "29",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5091725.png",
+     "line": "71 CAR, 398 YDS, 3 TD"
+    },
+    {
+     "label": "Receiving",
+     "name": "Charlie Becker",
+     "position": "WR",
+     "jersey": "80",
+     "year": "Junior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
+     "line": "19 REC, 370 YDS, 6 TD"
+    },
+    {
+     "label": "Tackles",
+     "name": "Isaiah Jones",
+     "position": "LB",
+     "jersey": "46",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
+     "line": "30 tackles"
+    },
+    {
+     "label": "Sacks",
+     "name": "Tobi Osunsanmi",
+     "position": "DL",
+     "jersey": "12",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4857878.png",
+     "line": "3 sacks"
+    },
+    {
+     "label": "Interceptions",
+     "name": "Isaiah Jones",
+     "position": "LB",
+     "jersey": "46",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
+     "line": "1 INT"
+    }
+   ]
+  },
+  "calvin": {
+   "record": "4-0",
+   "conf_record": null,
+   "standing": "28th in NCAA Division III",
+   "games": [
+    {
+     "id": "401908738",
+     "week": 1,
+     "date": "2026-09-05T16:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Otterbein Cardinals",
+      "short": "Otterbein",
+      "espn_id": "359",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/359.png",
+      "rank": null
+     },
+     "venue": "Memorial Stadium (Westerville, OH)",
+     "city": "Westerville, OH",
+     "broadcasts": [
+      "FloSports"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 53,
+     "pa": 21,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401908739",
+     "week": 2,
+     "date": "2026-09-12T17:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "St. Norbert Green Knights",
+      "short": "St Norbert",
+      "espn_id": "2832",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2832.png",
+      "rank": null
+     },
+     "venue": "Grand Rapids Christian High School",
+     "city": "Grand Rapids, MI",
+     "broadcasts": [
+      "YouTube"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 49,
+     "pa": 7,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401908225",
+     "week": 3,
+     "date": "2026-09-19T17:30Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Franklin Grizzlies",
+      "short": "Franklin",
+      "espn_id": "2233",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2233.png",
+      "rank": null
+     },
+     "venue": "Faught Stadium",
+     "city": "Franklin, IN",
+     "broadcasts": [],
+     "state": "post",
+     "status": "Final",
+     "pf": 41,
+     "pa": 7,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401908740",
+     "week": 4,
+     "date": "2026-09-26T20:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Olivet College Comets",
+      "short": "Olivet",
+      "espn_id": "354",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/354.png",
+      "rank": null
+     },
+     "venue": "Grand Rapids Christian High School",
+     "city": "Grand Rapids, MI",
+     "broadcasts": [
+      "Calvin Broadcast Network",
+      "YouTube"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 66,
+     "pa": 20,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401908653",
+     "week": 5,
+     "date": "2026-10-03T19:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Adrian Bulldogs",
+      "short": "Adrian",
+      "espn_id": "2003",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2003.png",
+      "rank": null
+     },
+     "venue": "Docking Stadium",
+     "city": "Adrian, MI",
+     "broadcasts": [
+      "YouTube"
+     ],
+     "state": "pre",
+     "status": "10/3 - 3:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908741",
+     "week": 7,
+     "date": "2026-10-17T16:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Kalamazoo Hornets",
+      "short": "Kalamazoo",
+      "espn_id": "126",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/126.png",
+      "rank": null
+     },
+     "venue": "Grand Rapids Christian High School",
+     "city": "Grand Rapids, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/17 - 12:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908709",
+     "week": 8,
+     "date": "2026-10-24T17:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Albion Britons",
+      "short": "Albion",
+      "espn_id": "2790",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2790.png",
+      "rank": null
+     },
+     "venue": "Grand Rapids Christian High School",
+     "city": "Grand Rapids, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/24 - 1:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908742",
+     "week": 9,
+     "date": "2026-10-31T17:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Trine University Thunder",
+      "short": "Trine",
+      "espn_id": "2651",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2651.png",
+      "rank": null
+     },
+     "venue": "Fred Zollner Athletic Stadium",
+     "city": "Angola, IN",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/31 - 1:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908743",
+     "week": 10,
+     "date": "2026-11-07T18:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Hope Flying Dutchmen",
+      "short": "Hope",
+      "espn_id": "2812",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2812.png",
+      "rank": null
+     },
+     "venue": "Grand Rapids Christian High School",
+     "city": "Grand Rapids, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "11/7 - 1:00 PM EST",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908737",
+     "week": 11,
+     "date": "2026-11-14T18:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Alma College Scots",
+      "short": "Alma",
+      "espn_id": "2800",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2800.png",
+      "rank": null
+     },
+     "venue": "Bahlke Field",
+     "city": "Alma, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "11/14 - 1:00 PM EST",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    }
+   ],
+   "played": 4,
+   "pf": 209,
+   "pa": 55,
+   "diff": 154,
+   "wins": 4,
+   "losses": 0,
+   "ties": 0,
+   "players": [
+    {
+     "label": "Passing",
+     "name": "Thomas Vaccaro",
+     "jersey": "13",
+     "line": "90/121, 1258 yds, 19 TD, 2 INT, 210.22 rating"
+    },
+    {
+     "label": "Rushing",
+     "name": "Hayden Slegers",
+     "jersey": "2",
+     "line": "43 car, 219 yds, 0 TD, 5.1 avg"
+    },
+    {
+     "label": "Receiving",
+     "name": "Hunter Hogan",
+     "jersey": "7",
+     "line": "30 rec, 368 yds, 7 TD, 12.27 avg"
+    },
+    {
+     "label": "Tackles",
+     "name": "Nolan Bloomquist",
+     "jersey": "10",
+     "line": "25.0 tackles, 2.0 TFL, 0 sacks"
+    },
+    {
+     "label": "Sacks",
+     "name": "Kaden McCullough",
+     "jersey": "30",
+     "line": "2.0 sacks, 3.0 TFL, 11.0 tackles"
+    },
+    {
+     "label": "Interceptions",
+     "name": "Caden Kolanowski",
+     "jersey": "15",
+     "line": "3 INT, 0 PBU, 12.0 tackles"
+    }
+   ]
+  },
+  "hope": {
+   "record": "4-0",
+   "conf_record": null,
+   "standing": "28th in NCAA Division III",
+   "games": [
+    {
+     "id": "401908744",
+     "week": 1,
+     "date": "2026-09-05T17:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Denison Big Red",
+      "short": "Denison",
+      "espn_id": "2171",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2171.png",
+      "rank": null
+     },
+     "venue": "Deeds Field-Piper Stadium",
+     "city": "Granville, OH",
+     "broadcasts": [
+      "North Coast Network"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 28,
+     "pa": 14,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401907978",
+     "week": 2,
+     "date": "2026-09-12T17:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Wisconsin-Stevens Pt Pointers",
+      "short": "UW-Stevens Pt",
+      "espn_id": "2743",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2743.png",
+      "rank": null
+     },
+     "venue": "Ray and Sue Smith Stadium",
+     "city": "Holland, MI",
+     "broadcasts": [
+      "YouTube"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 38,
+     "pa": 10,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401908232",
+     "week": 3,
+     "date": "2026-09-19T17:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Hanover Panthers",
+      "short": "Hanover",
+      "espn_id": "2262",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2262.png",
+      "rank": null
+     },
+     "venue": "Alumni Stadium (IN)",
+     "city": "Hanover, IN",
+     "broadcasts": [
+      "Team 1 Sports"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 27,
+     "pa": 10,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401908706",
+     "week": 4,
+     "date": "2026-09-26T17:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Albion Britons",
+      "short": "Albion",
+      "espn_id": "2790",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2790.png",
+      "rank": null
+     },
+     "venue": "Ray and Sue Smith Stadium",
+     "city": "Holland, MI",
+     "broadcasts": [
+      "YouTube"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 63,
+     "pa": 0,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401908745",
+     "week": 5,
+     "date": "2026-10-03T18:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Olivet College Comets",
+      "short": "Olivet",
+      "espn_id": "354",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/354.png",
+      "rank": null
+     },
+     "venue": "Cutler Field",
+     "city": "Olivet, MI",
+     "broadcasts": [
+      "MIAA Digital Network"
+     ],
+     "state": "pre",
+     "status": "10/3 - 2:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908654",
+     "week": 7,
+     "date": "2026-10-17T18:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Adrian Bulldogs",
+      "short": "Adrian",
+      "espn_id": "2003",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2003.png",
+      "rank": null
+     },
+     "venue": "Ray and Sue Smith Stadium",
+     "city": "Holland, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/17 - 2:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908735",
+     "week": 8,
+     "date": "2026-10-24T17:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Alma College Scots",
+      "short": "Alma",
+      "espn_id": "2800",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2800.png",
+      "rank": null
+     },
+     "venue": "Bahlke Field",
+     "city": "Alma, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/24 - 1:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908746",
+     "week": 9,
+     "date": "2026-10-31T17:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Kalamazoo Hornets",
+      "short": "Kalamazoo",
+      "espn_id": "126",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/126.png",
+      "rank": null
+     },
+     "venue": "Ray and Sue Smith Stadium",
+     "city": "Holland, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/31 - 1:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908743",
+     "week": 10,
+     "date": "2026-11-07T18:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Calvin University Knights",
+      "short": "Calvin",
+      "espn_id": "129738",
+      "logo": null,
+      "rank": null
+     },
+     "venue": "Grand Rapids Christian High School",
+     "city": "Grand Rapids, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "11/7 - 1:00 PM EST",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401908747",
+     "week": 11,
+     "date": "2026-11-14T18:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Trine University Thunder",
+      "short": "Trine",
+      "espn_id": "2651",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2651.png",
+      "rank": null
+     },
+     "venue": "Ray and Sue Smith Stadium",
+     "city": "Holland, MI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "11/14 - 1:00 PM EST",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    }
+   ],
+   "played": 4,
+   "pf": 156,
+   "pa": 34,
+   "diff": 122,
+   "wins": 4,
+   "losses": 0,
+   "ties": 0,
+   "players": [
+    {
+     "label": "Passing",
+     "name": "Alex Thole",
+     "jersey": "4",
+     "line": "62/83, 752 yds, 2 TD, 2 INT, 153.94 rating"
+    },
+    {
+     "label": "Rushing",
+     "name": "Brody Schuiteman",
+     "jersey": "20",
+     "line": "50 car, 374 yds, 11 TD, 7.5 avg"
+    },
+    {
+     "label": "Receiving",
+     "name": "Kaden DeHorn",
+     "jersey": "15",
+     "line": "12 rec, 203 yds, 1 TD, 16.92 avg"
+    },
+    {
+     "label": "Tackles",
+     "name": "Nolan Vis",
+     "jersey": "5",
+     "line": "25.0 tackles, 1.0 TFL, 0 sacks"
+    },
+    {
+     "label": "Sacks",
+     "name": "Joey Mahaney",
+     "jersey": "23",
+     "line": "1.5 sacks, 2.5 TFL, 7.0 tackles"
+    },
+    {
+     "label": "Interceptions",
+     "name": "Trenten Bolhouse",
+     "jersey": "25",
+     "line": "1 INT, 1 PBU, 10.0 tackles"
+    }
+   ]
+  },
+  "wheaton": {
+   "record": "4-0",
+   "conf_record": null,
+   "standing": "10th in NCAA Division III",
+   "games": [
+    {
+     "id": "401907850",
+     "week": 1,
+     "date": "2026-09-05T17:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Mount Union Purple Raiders",
+      "short": "Mt Union",
+      "espn_id": "426",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/426.png",
+      "rank": null
+     },
+     "venue": "McCully Stadium",
+     "city": "Wheaton, IL",
+     "broadcasts": [
+      "YouTube"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 24,
+     "pa": 23,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401907851",
+     "week": 2,
+     "date": "2026-09-12T16:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Albion Britons",
+      "short": "Albion",
+      "espn_id": "2790",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2790.png",
+      "rank": null
+     },
+     "venue": "Sprankle-Sprandel Stadium",
+     "city": "Albion, MI",
+     "broadcasts": [
+      "MIAA Digital Network"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 45,
+     "pa": 3,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401907840",
+     "week": 3,
+     "date": "2026-09-19T23:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Millikin Big Blue",
+      "short": "Millikin",
+      "espn_id": "74",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/74.png",
+      "rank": null
+     },
+     "venue": "McCully Stadium",
+     "city": "Wheaton, IL",
+     "broadcasts": [
+      "CCIW Network"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 82,
+     "pa": 10,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401907834",
+     "week": 4,
+     "date": "2026-09-26T18:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Illinois Wesleyan Titans",
+      "short": "IL Wesleyan",
+      "espn_id": "306",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/306.png",
+      "rank": null
+     },
+     "venue": "Tucci Stadium",
+     "city": "Bloomington, IL",
+     "broadcasts": [
+      "CCIW Network"
+     ],
+     "state": "post",
+     "status": "Final",
+     "pf": 28,
+     "pa": 7,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
+     "group": "35"
+    },
+    {
+     "id": "401907849",
+     "week": 5,
+     "date": "2026-10-03T18:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "North Park Vikings",
+      "short": "North Park",
+      "espn_id": "75",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/75.png",
+      "rank": null
+     },
+     "venue": "McCully Stadium",
+     "city": "Wheaton, IL",
+     "broadcasts": [
+      "CCIW Network"
+     ],
+     "state": "pre",
+     "status": "10/3 - 2:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401907846",
+     "week": 6,
+     "date": "2026-10-10T23:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "North Central College Cardinals",
+      "short": "N Central (IL)",
+      "espn_id": "3071",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/3071.png",
+      "rank": null
+     },
+     "venue": "Benedetti-Wehrli Stadium",
+     "city": "Naperville, IL",
+     "broadcasts": [
+      "CCIW Network"
+     ],
+     "state": "pre",
+     "status": "10/10 - 7:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401907815",
+     "week": 7,
+     "date": "2026-10-17T18:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Carroll (WI) Pioneers",
+      "short": "Carroll (WI)",
+      "espn_id": "32",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/32.png",
+      "rank": null
+     },
+     "venue": "McCully Stadium",
+     "city": "Wheaton, IL",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/17 - 2:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401907786",
+     "week": 9,
+     "date": "2026-10-31T18:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Augustana (IL) Vikings",
+      "short": "Augustana (IL)",
+      "espn_id": "2042",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2042.png",
+      "rank": null
+     },
+     "venue": "Charles D. Lindberg Stadium",
+     "city": "Rock Island, IL",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "10/31 - 2:00 PM EDT",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401907830",
+     "week": 10,
+     "date": "2026-11-07T18:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Elmhurst Bluejays",
+      "short": "Elmhurst",
+      "espn_id": "72",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/72.png",
+      "rank": null
+     },
+     "venue": "McCully Stadium",
+     "city": "Wheaton, IL",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "11/7 - 1:00 PM EST",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    },
+    {
+     "id": "401907825",
+     "week": 11,
+     "date": "2026-11-14T18:00Z",
+     "time_tbd": false,
+     "home": false,
+     "neutral": false,
+     "opponent": {
+      "name": "Carthage Firebirds",
+      "short": "Carthage",
+      "espn_id": "2106",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2106.png",
+      "rank": null
+     },
+     "venue": "Art Keller Field",
+     "city": "Kenosha, WI",
+     "broadcasts": [],
+     "state": "pre",
+     "status": "11/14 - 1:00 PM EST",
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": "0:00",
+     "period": 0,
+     "group": "35"
+    }
+   ],
+   "played": 4,
+   "pf": 179,
+   "pa": 43,
+   "diff": 136,
+   "wins": 4,
+   "losses": 0,
+   "ties": 0,
+   "players": [
+    {
+     "label": "Passing",
+     "name": "Mark Forcucci",
+     "jersey": "5",
+     "line": "84/132, 1038 yds, 11 TD, 3 INT, 152.65 rating"
+    },
+    {
+     "label": "Rushing",
+     "name": "Matt Crider",
+     "jersey": "32",
+     "line": "67 car, 298 yds, 4 TD, 4.4 avg"
+    },
+    {
+     "label": "Receiving",
+     "name": "Seth Kortenhoeven",
+     "jersey": "4",
+     "line": "23 rec, 309 yds, 4 TD, 13.43 avg"
+    },
+    {
+     "label": "Tackles",
+     "name": "Zeke Harris",
+     "jersey": "8",
+     "line": "34.0 tackles, 3.0 TFL, 1.0 sacks"
+    },
+    {
+     "label": "Sacks",
+     "name": "Chandler Bryant",
+     "jersey": "44",
+     "line": "2.0 sacks, 2.0 TFL, 4.0 tackles"
+    },
+    {
+     "label": "Interceptions",
+     "name": "Eli Reeves",
+     "jersey": "15",
+     "line": "2 INT, 1 PBU, 18.0 tackles"
+    }
+   ]
+  }
+ },
+ "polls": {
+  "AP Poll": {
+   "name": "AP Top 25",
+   "week": 5,
+   "date": "2026-09-27T07:00Z",
+   "ranks": {
+    "indiana": 6
+   },
+   "receiving_votes": {}
+  },
+  "AFCA Coaches Poll": {
+   "name": "AFCA Coaches Poll",
+   "week": 5,
+   "date": "2026-09-27T07:00Z",
+   "ranks": {
+    "indiana": 5
+   },
+   "receiving_votes": {
+    "washington": 20.0
+   }
+  },
+  "FCS Coaches Poll": {
+   "name": "FCS Coaches Poll",
+   "week": 5,
+   "date": "2026-09-28T07:00Z",
+   "ranks": {},
+   "receiving_votes": {}
+  },
+  "AFCA Div II": {
+   "name": "AFCA Division II Coaches Poll",
+   "week": 5,
+   "date": "2026-09-28T07:00Z",
+   "ranks": {},
+   "receiving_votes": {}
+  },
+  "AFCA Div III": {
+   "name": "AFCA Division III Coaches Poll",
+   "week": 5,
+   "date": "2026-09-28T07:00Z",
+   "ranks": {
+    "wheaton": 3,
+    "hope": 14
+   },
+   "receiving_votes": {
+    "calvin": 50.0
+   }
+  }
+ },
+ "d3football": {
+  "label": "2026 Week 4",
+  "through": "Sept. 26, 2026",
+  "ranks": {
+   "hope": {
+    "rank": 15,
+    "record": "4-0",
+    "points": 269,
+    "prev": "16"
+   },
+   "wheaton": {
+    "rank": 3,
+    "record": "4-0",
+    "points": 558,
+    "prev": "3"
+   }
+  },
+  "receiving_votes": {
+   "calvin": 3
+  }
+ },
+ "hansen": {
+  "fetched": "2026-10-03T11:43:49-05:00",
+  "teams": {
+   "calvin": {
+    "predictive": {
+     "Rank": 48,
+     "Prev": 60,
+     "Conf": "MIAA",
+     "Region": 4,
+     "Rating": 18.9925793401678,
+     "AdjEff": 18.7428418669551,
+     "AdjO": 39.3098046935943,
+     "AdjD": 20.5669628266392,
+     "AdjHFA": 1.21058515417022,
+     "Elo": 1682.49684843324,
+     "Elo+": 1681.8085020814
+    },
+    "resume": {
+     "Rank": 36,
+     "Prev": "36",
+     "Conf": "MIAA",
+     "Region": 4,
+     "MOV+": -9.11154938758084,
+     "SOR": 0.994514785730896,
+     "E+": 0,
+     "G+": 1,
+     "A+": 1,
+     "BA": 0,
+     "EAW": 0.00734790944249575,
+     "GAW": 0.152148809398235,
+     "AAW": 1.04184429142973,
+     "Wins": 4,
+     "Losses": 0,
+     "Ties": 0,
+     "DIII W": 4,
+     "DIII L": 0,
+     "DIII T": 0,
+     "Conf W": 1,
+     "Conf L": 0,
+     "Conf T": 0
+    },
+    "sos": {
+     "Rank": 141,
+     "Conf": "MIAA",
+     "Region": 4,
+     "To-Date SOS": 0.262301023129641,
+     "To-Date SOS+": 0.0107848234322507,
+     "To-Date NCSOS": 0.226270202687274,
+     "SOS": 0.491356983848436,
+     "SOS+": 0.141165650717887,
+     "NCSOS": 0.226270202687274,
+     "Future SOS": 0.644060957660966,
+     "Future SOS+": 0.228086202241644,
+     "Future NCSOS": "NA"
+    },
+    "simulation": {
+     "Conf": "MIAA",
+     "W": 7.6838,
+     "L": 2.3162,
+     "DIII W": 7.6838,
+     "DIII L": 2.3162,
+     "ConfW": 4.6838,
+     "ConfL": 2.3162,
+     "NPI": 61.472779101044,
+     "Rank": 51.7844,
+     "SOS": 52.0976826443534,
+     "QWB": 0.210500175493147,
+     "Pool A": 0.0982,
+     "Pool C": 0.1242,
+     "Playoff": 0.2224,
+     "Top 8%": 0.0324,
+     "Bowl": 0,
+     "R40W%": 0.1955,
+     "R32W%": 0.0655,
+     "R16W%": 0.0185,
+     "R8W%": 0.0031,
+     "R4W%": 0.0007,
+     "R2W%": 0.0001,
+     "Wk5_Lev": 0.348170166638114,
+     "Wk6_Lev": 0,
+     "Wk7_Lev": 0.186876663940884,
+     "Wk8_Lev": 0.219362439935331,
+     "Wk9_Lev": 0.305814220547086,
+     "Wk10_Lev": 0.481449280149811,
+     "Wk11_Lev": 0.371979642313546
+    }
+   },
+   "hope": {
+    "predictive": {
+     "Rank": 11,
+     "Prev": 14,
+     "Conf": "MIAA",
+     "Region": 4,
+     "Rating": 37.4916565496537,
+     "AdjEff": 37.1188740643788,
+     "AdjO": 43.6835405795915,
+     "AdjD": 6.5646665152127,
+     "AdjHFA": 1.06098219210217,
+     "Elo": 2172.87081720056,
+     "Elo+": 2203.51793402168
+    },
+    "resume": {
+     "Rank": 11,
+     "Prev": "11",
+     "Conf": "MIAA",
+     "Region": 4,
+     "MOV+": 2.11294148075787,
+     "SOR": 0.68178505970639,
+     "E+": 0.5,
+     "G+": 1,
+     "A+": 1,
+     "BA": 0,
+     "EAW": 0.391997321218608,
+     "GAW": 1.37130008257816,
+     "AAW": 2.65915576466853,
+     "Wins": 4,
+     "Losses": 0,
+     "Ties": 0,
+     "DIII W": 4,
+     "DIII L": 0,
+     "DIII T": 0,
+     "Conf W": 1,
+     "Conf L": 0,
+     "Conf T": 0
+    },
+    "sos": {
+     "Rank": 39,
+     "Conf": "MIAA",
+     "Region": 4,
+     "To-Date SOS": 0.654322130139252,
+     "To-Date SOS+": 0.162589676353912,
+     "To-Date NCSOS": 0.752360432724176,
+     "SOS": 0.637683183398819,
+     "SOS+": 0.161283640949359,
+     "NCSOS": 0.752360432724176,
+     "Future SOS": 0.62659055223853,
+     "Future SOS+": 0.160412950679657,
+     "Future NCSOS": "NA"
+    },
+    "simulation": {
+     "Conf": "MIAA",
+     "W": 9.4949,
+     "L": 0.5051,
+     "DIII W": 9.4949,
+     "DIII L": 0.5051,
+     "ConfW": 6.4949,
+     "ConfL": 0.5051,
+     "NPI": 73.1823144509113,
+     "Rank": 11.4844,
+     "SOS": 58.0482818767155,
+     "QWB": 1.07425977780837,
+     "Pool A": 0.7207,
+     "Pool C": 0.2008,
+     "Playoff": 0.9215,
+     "Top 8%": 0.5964,
+     "Bowl": 0,
+     "R40W%": 0.9165,
+     "R32W%": 0.6444,
+     "R16W%": 0.3574,
+     "R8W%": 0.1697,
+     "R4W%": 0.062,
+     "R2W%": 0.0211,
+     "Wk5_Lev": 0.255600133734537,
+     "Wk6_Lev": 0,
+     "Wk7_Lev": 0.334550917829636,
+     "Wk8_Lev": 0.290542593267712,
+     "Wk9_Lev": 0.779188288945119,
+     "Wk10_Lev": 0.275197058160148,
+     "Wk11_Lev": 0.364305408048576
+    }
+   },
+   "wheaton": {
+    "predictive": {
+     "Rank": 7,
+     "Prev": 6,
+     "Conf": "CCIW",
+     "Region": 5,
+     "Rating": 42.6257640437857,
+     "AdjEff": 41.7738937469696,
+     "AdjO": 51.5912009818532,
+     "AdjD": 9.81730723488361,
+     "AdjHFA": 0.684925794357285,
+     "Elo": 2487.64120233784,
+     "Elo+": 2432.83509646673
+    },
+    "resume": {
+     "Rank": 6,
+     "Prev": "10",
+     "Conf": "CCIW",
+     "Region": 5,
+     "MOV+": 3.78204164959066,
+     "SOR": 0.602212548094418,
+     "E+": 0.75,
+     "G+": 1,
+     "A+": 1,
+     "BA": 0,
+     "EAW": 0.49462168406512,
+     "GAW": 1.40603660167854,
+     "AAW": 2.40021939275547,
+     "Wins": 4,
+     "Losses": 0,
+     "Ties": 0,
+     "DIII W": 4,
+     "DIII L": 0,
+     "DIII T": 0,
+     "Conf W": 2,
+     "Conf L": 0,
+     "Conf T": 0
+    },
+    "sos": {
+     "Rank": 91,
+     "Conf": "CCIW",
+     "Region": 5,
+     "To-Date SOS": 0.587034901053835,
+     "To-Date SOS+": 0.252186548449434,
+     "To-Date NCSOS": 0.65958523836011,
+     "SOS": 0.561384014029153,
+     "SOS+": 0.229134598608906,
+     "NCSOS": 0.65958523836011,
+     "Future SOS": 0.544283422679364,
+     "Future SOS+": 0.213766632048553,
+     "Future NCSOS": "NA"
+    },
+    "simulation": {
+     "Conf": "CCIW",
+     "W": 9.1187,
+     "L": 0.8813,
+     "DIII W": 9.1187,
+     "DIII L": 0.8813,
+     "ConfW": 7.1187,
+     "ConfL": 0.8813,
+     "NPI": 71.146652908009,
+     "Rank": 13.6622,
+     "SOS": 59.0022013262237,
+     "QWB": 0.924326079389392,
+     "Pool A": 0.2202,
+     "Pool C": 0.7197,
+     "Playoff": 0.9399,
+     "Top 8%": 0.2126,
+     "Bowl": 0.0273,
+     "R40W%": 0.9346,
+     "R32W%": 0.7284,
+     "R16W%": 0.4167,
+     "R8W%": 0.23,
+     "R4W%": 0.1082,
+     "R2W%": 0.0477,
+     "Wk5_Lev": 0.840740740740741,
+     "Wk6_Lev": 0.0751465160439278,
+     "Wk7_Lev": 0.748436511946652,
+     "Wk8_Lev": 0,
+     "Wk9_Lev": 0.591516543747229,
+     "Wk10_Lev": 0.9399,
+     "Wk11_Lev": 0.555982687461193
+    }
+   }
+  },
+  "predictive_count": 244,
+  "resume_count": 244,
+  "sos_count": 244,
+  "simulation_count": 244
+ },
+ "errors": []
+}
