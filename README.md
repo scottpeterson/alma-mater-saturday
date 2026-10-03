@@ -8,7 +8,9 @@ Washington and Indiana (Division I FBS), and Calvin, Hope, and Wheaton (IL)
 
 - This week: each team's next game with kickoff in Eastern, Central, or the
   device's time zone (switch at the top of the page),
-  TV or stream, venue, a countdown, and live score while the game is on.
+  TV or stream, venue, a countdown, links to the school's live stats page and
+  the ESPN game page, and, while the game is on, the live score, who has the
+  ball, down and distance, and the last play.
 - Team cards: record, conference standing, poll positions, Massey rank inside
   the division and across all divisions, Hansen rank (D3), points for and
   against, margin, last result, next game.
@@ -40,6 +42,10 @@ Washington and Indiana (Division I FBS), and Calvin, Hope, and Wheaton (IL)
   Division III teams' schedules and scores but not their player statistics.
 - School Sidearm statistics pages for the Division III leaders
   (`/sports/football/stats`, the Individual tables).
+- School schedule pages (`/sports/football/schedule`) for each game's live
+  stats link. Both Sidearm page generations label the link
+  "Live stats for Football vs X on <date>", which the fetcher matches to the
+  ESPN game by date.
 - D3football.com Top 25 at `https://d3football.com/top25/index`.
 - Hansen Ratings: predictive, résumé, schedule strength, and simulation pages
   for the current season. The data is embedded in each page as JSON.
@@ -75,11 +81,38 @@ rating.
 
 ## Live scores
 
-The page itself calls ESPN's scoreboard endpoint from the browser once a
-minute while any of the five games is within 30 minutes of kickoff or in
-progress, so scores do not wait for a rebuild. The scheduled workflow runs
-every 20 minutes on Saturdays and four times a day otherwise to refresh
-records, polls, and ratings.
+The page itself polls from the browser once a minute while any of the five
+games is within 30 minutes of kickoff or in progress, so scores do not wait
+for a rebuild. The scheduled workflow runs every 20 minutes on Saturdays and
+four times a day otherwise to refresh records, polls, and ratings.
+
+Two kinds of source feed the in-game card:
+
+- ESPN's scoreboard endpoint gives the score and clock for every game, and
+  for FBS games also the `situation` block: possession, down and distance,
+  field position, and the last play. ESPN publishes no `situation` for
+  Division III games.
+- The stat crew's own live stats feed covers the Division III games.
+  `fetch_data.py` reads each school's schedule page, takes the live stats
+  link for each game, and works out the feed behind it:
+  - Sidearm live stats (`<host>/sidearmstats/football/summary`, or the older
+    `sidearmstats.com/<client>/football/`) read
+    `https://sidearmstats.com/<client>/football/game.json`. The client name
+    comes from `window.client_shortname` on the live stats page.
+  - PrestoSports StatView (`prestolivestats.com/<site>/<event>`) reads
+    `https://data.prestolivestats.com/xml/<site>/events/<event>.xml`.
+  - StatBroadcast (Washington and Indiana) has no readable feed, so those
+    games show the link only and ESPN supplies the situation.
+
+  Both feeds allow cross-origin requests. The page uses a feed only when its
+  game date matches the card, ignores it until the crew starts the game, and
+  hands back to ESPN once the feed marks the game complete. Sidearm does not
+  name the team in possession, so the page infers it from the last play and
+  flips it after a punt, kickoff, or turnover.
+
+Each game in `data/season.json` carries `live_stats` (the link) and
+`live_feed` (`{"type": "sidearm" | "presto", "url": ...}` or null). If a
+schedule page fails to load, the games keep the previous run's values.
 
 ## Running locally
 

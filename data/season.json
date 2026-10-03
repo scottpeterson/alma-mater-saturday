@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T12:16:37-05:00",
+ "fetched_at": "2026-10-03T13:47:23-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -33,7 +33,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675072",
+     "live_feed": null
     },
     {
      "id": "401858446",
@@ -61,7 +63,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675073",
+     "live_feed": null
     },
     {
      "id": "401858459",
@@ -89,7 +93,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673452",
+     "live_feed": null
     },
     {
      "id": "401858470",
@@ -117,7 +123,9 @@
      "result": "L",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673448",
+     "live_feed": null
     },
     {
      "id": "401858478",
@@ -146,6 +154,8 @@
      "clock": "0:00",
      "period": 0,
      "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675077&vislive=wash",
+     "live_feed": null,
      "odds": {
       "line": {
        "provider": "DraftKings",
@@ -185,6 +195,8 @@
      "clock": "0:00",
      "period": 0,
      "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673450",
+     "live_feed": null,
      "odds": {
       "line": {
        "provider": "DraftKings",
@@ -225,7 +237,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=674929&vislive=wash",
+     "live_feed": null
     },
     {
      "id": "401858504",
@@ -251,7 +265,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675075&vislive=wash",
+     "live_feed": null
     },
     {
      "id": "401858516",
@@ -277,7 +293,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673449",
+     "live_feed": null
     },
     {
      "id": "401858521",
@@ -303,7 +321,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675074",
+     "live_feed": null
     },
     {
      "id": "401858535",
@@ -329,7 +349,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451",
+     "live_feed": null
     },
     {
      "id": "401858541",
@@ -355,7 +377,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675076&vislive=wash",
+     "live_feed": null
     }
    ],
    "played": 4,
@@ -453,7 +477,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672663",
+     "live_feed": null
     },
     {
      "id": "401858439",
@@ -481,7 +507,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672662",
+     "live_feed": null
     },
     {
      "id": "401858449",
@@ -509,7 +537,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672664",
+     "live_feed": null
     },
     {
      "id": "401858461",
@@ -537,7 +567,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672665",
+     "live_feed": null
     },
     {
      "id": "401858477",
@@ -566,6 +598,8 @@
      "clock": "0:00",
      "period": 0,
      "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673096&vislive=ind",
+     "live_feed": null,
      "odds": {
       "line": {
        "provider": "DraftKings",
@@ -607,6 +641,8 @@
      "clock": "0:00",
      "period": 0,
      "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672936&vislive=ind",
+     "live_feed": null,
      "odds": {
       "line": {
        "provider": "DraftKings",
@@ -645,7 +681,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672666",
+     "live_feed": null
     },
     {
      "id": "401858496",
@@ -671,7 +709,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672806&vislive=ind",
+     "live_feed": null
     },
     {
      "id": "401858501",
@@ -697,7 +737,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672661",
+     "live_feed": null
     },
     {
      "id": "401858518",
@@ -723,7 +765,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672667",
+     "live_feed": null
     },
     {
      "id": "401858535",
@@ -749,7 +793,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451&vislive=ind",
+     "live_feed": null
     },
     {
      "id": "401858538",
@@ -775,7 +821,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "80"
+     "group": "80",
+     "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672668",
+     "live_feed": null
     }
    ],
    "played": 4,
@@ -873,7 +921,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908739",
@@ -901,7 +951,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908225",
@@ -927,7 +979,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908740",
@@ -956,7 +1010,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908653",
@@ -985,6 +1041,11 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
+     "live_stats": "https://adrianbulldogs.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/adri/football/game.json"
+     },
      "odds": {
       "win_prob": {
        "source": "Hansen Ratings",
@@ -1023,6 +1084,11 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
+     "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/calvinu/football/game.json"
+     },
      "odds": null
     },
     {
@@ -1049,7 +1115,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/calvinu/football/game.json"
+     }
     },
     {
      "id": "401908742",
@@ -1075,7 +1146,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "https://trinethunder.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/trine/football/game.json"
+     }
     },
     {
      "id": "401908743",
@@ -1102,7 +1178,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/calvinu/football/game.json"
+     }
     },
     {
      "id": "401908737",
@@ -1128,7 +1209,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "https://almascots.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/alma/football/game.json"
+     }
     }
    ],
    "played": 4,
@@ -1226,7 +1312,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401907978",
@@ -1254,7 +1342,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908232",
@@ -1282,7 +1372,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908706",
@@ -1310,7 +1402,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908745",
@@ -1331,14 +1425,19 @@
      "broadcasts": [
       "MIAA Digital Network"
      ],
-     "state": "pre",
-     "status": "10/3 - 2:00 PM EDT",
-     "pf": null,
-     "pa": null,
+     "state": "in",
+     "status": "End of 1st",
+     "pf": 10,
+     "pa": 0,
      "result": null,
      "clock": "0:00",
-     "period": 0,
+     "period": 1,
      "group": "35",
+     "live_stats": "https://prestolivestats.com/9ezjs11trcc01fsg/fcl3nw8c63a4kl11",
+     "live_feed": {
+      "type": "presto",
+      "url": "https://data.prestolivestats.com/xml/9ezjs11trcc01fsg/events/fcl3nw8c63a4kl11.xml"
+     },
      "odds": {
       "win_prob": {
        "source": "Hansen Ratings",
@@ -1377,6 +1476,11 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
+     "live_stats": "https://athletics.hope.edu/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/hopecollege/football/game.json"
+     },
      "odds": null
     },
     {
@@ -1403,7 +1507,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "https://almascots.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/alma/football/game.json"
+     }
     },
     {
      "id": "401908746",
@@ -1429,7 +1538,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "https://athletics.hope.edu/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/hopecollege/football/game.json"
+     }
     },
     {
      "id": "401908743",
@@ -1455,7 +1569,9 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401908747",
@@ -1481,7 +1597,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "https://athletics.hope.edu/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/hopecollege/football/game.json"
+     }
     }
    ],
    "played": 4,
@@ -1580,7 +1701,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401907851",
@@ -1608,7 +1731,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401907840",
@@ -1636,7 +1761,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401907834",
@@ -1664,7 +1791,9 @@
      "result": "W",
      "clock": "0:00",
      "period": 4,
-     "group": "35"
+     "group": "35",
+     "live_stats": null,
+     "live_feed": null
     },
     {
      "id": "401907849",
@@ -1685,14 +1814,19 @@
      "broadcasts": [
       "CCIW Network"
      ],
-     "state": "pre",
-     "status": "10/3 - 2:00 PM EDT",
+     "state": "in",
+     "status": "7:01 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "7:01",
+     "period": 2,
      "group": "35",
+     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/wheaton/football/game.json"
+     },
      "odds": {
       "win_prob": {
        "source": "Hansen Ratings",
@@ -1734,6 +1868,11 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
+     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/wheaton/football/game.json"
+     },
      "odds": {
       "win_prob": {
        "source": "Hansen Ratings",
@@ -1771,7 +1910,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/wheaton/football/game.json"
+     }
     },
     {
      "id": "401907786",
@@ -1797,7 +1941,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/wheaton/football/game.json"
+     }
     },
     {
      "id": "401907830",
@@ -1823,7 +1972,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/wheaton/football/game.json"
+     }
     },
     {
      "id": "401907825",
@@ -1849,7 +2003,12 @@
      "result": null,
      "clock": "0:00",
      "period": 0,
-     "group": "35"
+     "group": "35",
+     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/wheaton/football/game.json"
+     }
     }
    ],
    "played": 4,
@@ -1984,11 +2143,10 @@
   },
   "receiving_votes": {
    "calvin": 3
-  },
-  "refreshed": "2026-10-03T12:16:05-05:00"
+  }
  },
  "hansen": {
-  "fetched": "2026-10-03T12:16:50-05:00",
+  "fetched": "2026-10-03T13:47:40-05:00",
   "teams": {
    "calvin": {
     "predictive": {

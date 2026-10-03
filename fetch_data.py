@@ -7,6 +7,7 @@ Sources, all public and unauthenticated:
   ESPN rankings          site.api.espn.com/.../rankings              (AP, Coaches, CFP, AFCA D3)
   ESPN season leaders    sports.core.api.espn.com/.../teams/<id>/leaders  (FBS top players)
   School stats pages     <school>/sports/football/stats              (D3 top players, Sidearm)
+  School schedule pages  <school>/sports/football/schedule           (live stats links and feeds)
   D3football.com         d3football.com/top25/index                  (D3football.com Top 25)
   Hansen Ratings         hansenratings.com/ratings/... and /simulation (D3 ratings, odds)
 
@@ -32,6 +33,7 @@ CORE = "https://sports.core.api.espn.com/v2/sports/football/leagues/college-foot
 HANSEN = "https://hansenratings.com"
 SEASON = 2026
 CENTRAL = ZoneInfo("America/Chicago")
+EASTERN = ZoneInfo("America/New_York")
 UA = {"User-Agent": "Mozilla/5.0 (almamatersaturday.com schedule page)",
       "Accept": "text/html,application/json;q=0.9,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.9"}
 TAG = re.compile(r"<[^>]+>")
@@ -121,6 +123,94 @@ def team_summary(school):
 
 
 # ---------------------------------------------------------------- polls
+
+# ------------------------------------------------------ school live stats
+
+LIVE_LABEL = re.compile(r"Live stats for Football (?:vs|at) .+? on ([A-Z][a-z]+ \d{1,2}, \d{4})")
+_feed_cache = {}
+
+
+def live_stats_links(school):
+    """Local game date -> live stats URL, read from the school's schedule page.
+
+    Classic Sidearm pages label the link in the anchor's aria-label. The newer Sidearm
+    (Nuxt) pages carry the URL and the same label side by side in the page payload.
+    """
+    page = get(school["schedule_url"], as_json=False)
+    links = {}
+    for tag in re.findall(r"<a\b[^>]*>", page):
+        label = re.search(r'aria-label="([^"]*)"', tag)
+        href = re.search(r'href="([^"]+)"', tag)
+        if label and href:
+            _add_link(links, html.unescape(label.group(1)), html.unescape(href.group(1)))
+    for href, label in re.findall(r'"(https?:(?://|\\u002F\\u002F)[^"]+)","(Live stats for Football[^"]*)"', page):
+        _add_link(links, label, href.replace("\\u002F", "/"))
+    return links
+
+
+def _add_link(links, label, href):
+    m = LIVE_LABEL.match(label)
+    if not m:
+        return
+    try:
+        day = datetime.strptime(m.group(1), "%B %d, %Y").date()
+    except ValueError:
+        return
+    links.setdefault(day, href)
+
+
+def live_feed(url):
+    """The browser-readable feed behind a live stats link, or None when the vendor has none we can read.
+
+    Sidearm live stats read https://sidearmstats.com/<client>/football/game.json and PrestoSports
+    reads https://data.prestolivestats.com/xml/<site>/events/<event>.xml. Both allow cross-origin
+    requests, so the page polls them directly. StatBroadcast (the FBS schools) has no such feed;
+    ESPN covers those games.
+    """
+    if url in _feed_cache:
+        return _feed_cache[url]
+    feed = None
+    sidearm = re.match(r"https?://(?:www\.)?sidearmstats\.com/([^/?#]+)/football", url)
+    presto = re.match(r"https?://(?:www\.)?prestolivestats\.com/([^/?#]+)/([^/?#]+)", url)
+    if sidearm:
+        feed = {"type": "sidearm", "url": f"https://sidearmstats.com/{sidearm.group(1)}/football/game.json"}
+    elif presto:
+        feed = {"type": "presto", "url": f"https://data.prestolivestats.com/xml/{presto.group(1)}/events/{presto.group(2)}.xml"}
+    elif "/sidearmstats/football" in url:
+        try:
+            page = get(url, as_json=False)
+        except (urllib.error.URLError, TimeoutError, UnicodeDecodeError):
+            page = ""
+        short = re.search(r'window\.client_shortname\s*=\s*"([^"]+)"', page)
+        if short:
+            feed = {"type": "sidearm", "url": f"https://sidearmstats.com/{short.group(1)}/football/game.json"}
+    _feed_cache[url] = feed
+    return feed
+
+
+def attach_live_stats(school, games, previous_games):
+    """Add live_stats (the link) and live_feed (the readable feed) to each game.
+
+    Returns an error message when the schedule page could not be read; the games then keep
+    the values from the previous run.
+    """
+    old = {g["id"]: g for g in previous_games}
+    try:
+        links = live_stats_links(school)
+        error = None
+    except (urllib.error.URLError, TimeoutError, UnicodeDecodeError) as exc:
+        links, error = {}, str(exc)
+    for g in games:
+        day = datetime.fromisoformat(g["date"].replace("Z", "+00:00")).astimezone(EASTERN).date()
+        g["live_stats"] = links.get(day) or old.get(g["id"], {}).get("live_stats")
+        if g["state"] == "post" or not g["live_stats"]:
+            g["live_feed"] = None
+        elif links:
+            g["live_feed"] = live_feed(g["live_stats"])
+        else:
+            g["live_feed"] = old.get(g["id"], {}).get("live_feed")
+    return error
+
 
 def polls():
     data = get(f"{ESPN}/rankings")
@@ -637,6 +727,9 @@ def main():
                 out["teams"][slug] = previous["teams"][slug]
                 out["stale"][slug] = previous.get("stale", {}).get(slug) or previous.get("fetched_at")
             continue
+        error = attach_live_stats(school, games, previous.get("teams", {}).get(slug, {}).get("games", []))
+        if error:
+            out["errors"].append(f"{school['name']} live stats links: {error}")
         played = [g for g in games if g["result"]]
         pf = sum(g["pf"] for g in played)
         pa = sum(g["pa"] for g in played)
