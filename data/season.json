@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-03T17:30:34-05:00",
+ "fetched_at": "2026-10-03T18:57:42-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "3-1",
    "conf_record": null,
-   "standing": "11th in Big Ten",
+   "standing": "12th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -146,23 +146,23 @@
      "broadcasts": [
       "NBC"
      ],
-     "state": "pre",
-     "status": "10/3 - 7:30 PM EDT",
+     "state": "in",
+     "status": "7:00 - 1st",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "7:00",
+     "period": 1,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675077&vislive=wash",
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "USC -7.5",
        "over_under": 58.5,
-       "home_ml": -325,
-       "away_ml": 260
+       "home_ml": -305,
+       "away_ml": 245
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -199,7 +199,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "WASH -1.5",
        "over_under": 41.5,
        "home_ml": -112,
@@ -397,7 +397,7 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
-     "line": "95/137, 1129 YDS, 7 TD, 3 INT"
+     "line": "95/137, 1129 YDS, 8.2 YPA, 7 TD, 3 INT"
     },
     {
      "label": "Rushing",
@@ -449,7 +449,7 @@
   "indiana": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "4th in Big Ten",
+   "standing": "5th in Big Ten",
    "games": [
     {
      "id": "401858425",
@@ -602,9 +602,9 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "IU -24.5",
-       "over_under": 57.5,
+       "over_under": 56.5,
        "home_ml": 1200,
        "away_ml": -2400
       },
@@ -645,7 +645,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "IU -8.5",
        "over_under": 50.5,
        "home_ml": 285,
@@ -841,7 +841,7 @@
      "jersey": "10",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685401.png",
-     "line": "56/80, 850 YDS, 11 TD"
+     "line": "56/80, 850 YDS, 10.6 YPA, 11 TD"
     },
     {
      "label": "Rushing",
@@ -1215,7 +1215,7 @@
      "label": "Passing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "113/158, 1469 yds, 21 TD, 2 INT, 190.95 rating",
+     "line": "113/158, 1469 yds, 9.3 YPA, 21 TD, 2 INT, 190.95 rating",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1589,7 +1589,7 @@
      "label": "Passing",
      "name": "Alex Thole",
      "jersey": "4",
-     "line": "78/104, 963 yds, 4 TD, 2 INT, 161.63 rating",
+     "line": "78/104, 963 yds, 9.3 YPA, 4 TD, 2 INT, 161.63 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
@@ -1970,7 +1970,7 @@
      "label": "Passing",
      "name": "Mark Forcucci",
      "jersey": "5",
-     "line": "103/158, 1220 yds, 11 TD, 3 INT, 149.23 rating",
+     "line": "103/158, 1220 yds, 7.7 YPA, 11 TD, 3 INT, 149.23 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Forcucci_Mark.jpg?width=200&quality=90"
@@ -2090,11 +2090,10 @@
   },
   "receiving_votes": {
    "calvin": 3
-  },
-  "refreshed": "2026-10-03T14:13:35-05:00"
+  }
  },
  "hansen": {
-  "fetched": "2026-10-03T17:30:56-05:00",
+  "fetched": "2026-10-03T18:58:00-05:00",
   "teams": {
    "calvin": {
     "predictive": {

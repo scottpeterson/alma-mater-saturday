@@ -531,6 +531,33 @@ def _stat_line(parts):
     return ", ".join(p for p in parts if p)
 
 
+def ypa(yards, attempts):
+    """Yards per pass attempt to one decimal, or None when there are no attempts."""
+    return f"{yards / attempts:.1f}" if attempts else None
+
+
+def with_ypa(line, stats_ref):
+    """Insert yards per attempt after the yardage in an ESPN passing line such as "95/137, 1129 YDS, 7 TD, 3 INT"."""
+    value = None
+    if stats_ref:
+        try:
+            stats = get(stats_ref)
+            for cat in stats.get("splits", {}).get("categories", []):
+                if cat.get("name") == "passing":
+                    value = next((s.get("displayValue") for s in cat.get("stats", []) if s.get("name") == "yardsPerPassAttempt"), None)
+        except (urllib.error.URLError, TimeoutError, ValueError):
+            value = None
+    if value is None:
+        m = re.match(r"(\d+)/(\d+), ([\d,]+) YDS", line)
+        if m:
+            value = ypa(int(m.group(3).replace(",", "")), int(m.group(2)))
+    if value is None:
+        return line
+    if " YDS, " in line:
+        return line.replace(" YDS, ", f" YDS, {value} YPA, ", 1)
+    return f"{line}, {value} YPA"
+
+
 def espn_leaders(school):
     data = get(f"{CORE}/teams/{school['espn_id']}/leaders")
     cats = {c["name"]: c for c in data.get("categories", [])}
@@ -558,6 +585,8 @@ def espn_leaders(school):
             match = next((l for l in cats[summary_cat]["leaders"] if l["athlete"]["$ref"] == ref), None)
             if match:
                 line = match.get("displayValue", line)
+        if cat == "passingYards":
+            line = with_ypa(line, top.get("statistics", {}).get("$ref"))
         if cat == "totalTackles":
             line = f"{line} tackles"
         elif cat == "sacks":
@@ -670,7 +699,7 @@ def sidearm_leaders(school):
     if passing:
         p = max(passing, key=lambda r: _num(r.get("YDS")))
         players.append({"label": "Passing", "name": _player_name(p["Player"]), "jersey": p.get("#"),
-                        "line": _stat_line([f"{p.get('COMP')}/{p.get('ATT')}", f"{p.get('YDS')} yds", f"{p.get('TD')} TD", f"{p.get('INT')} INT", f"{p.get('Rating')} rating"])})
+                        "line": _stat_line([f"{p.get('COMP')}/{p.get('ATT')}", f"{p.get('YDS')} yds", f"{ypa(_num(p.get('YDS')), _num(p.get('ATT')))} YPA" if _num(p.get("ATT")) else None, f"{p.get('TD')} TD", f"{p.get('INT')} INT", f"{p.get('Rating')} rating"])})
     _, rushing = _sidearm_rows(page, "individual-offense-rushing")
     rushing = [r for r in rushing if r.get("Player") and r["Player"] not in ("Total", "Opponents", "Team")]
     if rushing:
