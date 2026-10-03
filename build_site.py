@@ -14,6 +14,9 @@ OUT = BASE / "docs" / "index.html"
 EASTERN = ZoneInfo("America/New_York")
 CENTRAL = ZoneInfo("America/Chicago")
 BY_SLUG = {s["slug"]: s for s in SCHOOLS}
+BROTHERS = json.loads((BASE / "content" / "brothers.json").read_text())
+# One order for the whole page: Massey rank across all divisions, best first.
+ORDERED = sorted(SCHOOLS, key=lambda x: MASSEY["teams"].get(x["slug"], {}).get("overall_rank", 9999))
 NOW = datetime.now(timezone.utc)
 
 
@@ -135,7 +138,7 @@ def hansen_badge(slug):
 def featured_games():
     """Games to show in This week: live, upcoming within 8 days, or final within 36 hours."""
     rows = []
-    for school in SCHOOLS:
+    for school in ORDERED:
         team = SEASON["teams"].get(school["slug"])
         if not team:
             continue
@@ -227,6 +230,9 @@ def platforms_section():
         sched = '<span class="chip">On a schedule now</span>' if on_schedule else ""
         also = f' <span class="muted">({esc(", ".join(p["also"]))})</span>' if p.get("also") else ""
         note = f'<p class="small">{esc(p["note"])}</p>' if p.get("note") else ""
+        if p.get("local"):
+            stations = "; ".join(f"{esc(m)} area {esc(st)}" for m, st in p["local"].items())
+            note += f'<p class="small"><b>Local stations:</b> {stations}.</p>'
         cards.append(f'<article class="platform"><h3><a href="{esc(p["url"])}">{esc(p["name"])}</a>{also}</h3><div class="chips">{tag}<span class="chip">{esc(p["kind"])}</span>{sched}</div><p><b>Teams:</b> {esc(p["teams"])}</p><p>{esc(p["access"])}</p>{note}</article>')
     return '<div class="platforms">' + "".join(cards) + "</div>"
 
@@ -251,6 +257,22 @@ def last_and_next(team):
     return "".join(parts)
 
 
+def conference_line(school, team):
+    """ESPN's standing text for Division I; a conference record computed from results for Division III."""
+    members = school.get("conference_members")
+    if not members:
+        return team.get("standing") or ""
+    w = l = t = 0
+    for g in team.get("games", []):
+        if g.get("state") != "post" or g["opponent"].get("short") not in members:
+            continue
+        w += g.get("result") == "W"
+        l += g.get("result") == "L"
+        t += g.get("result") == "T"
+    rec = f"{w}-{l}" + (f"-{t}" if t else "")
+    return f'{rec} {school["conference"]}'
+
+
 def team_card(school):
     team = SEASON["teams"].get(school["slug"])
     if not team:
@@ -258,9 +280,9 @@ def team_card(school):
     avg = team["diff"] / team["played"] if team["played"] else 0
     record = team["record"] or f'{team["wins"]}-{team["losses"]}' + (f'-{team["ties"]}' if team["ties"] else "")
     return f'''<article class="team" id="team-{school["slug"]}" style="--team:var(--c-{school["slug"]})">
-<header style="background:{esc(school["color"])};color:{esc(school["text"])}"><img src="{esc(school["logo"])}" alt="{esc(school["name"])} logo"><div><div class="who">{esc(school["name"])} {esc(school["mascot"])}</div><div class="what">{esc(school["division_label"])} · {esc(school["conference"])} · {esc(school["city"])}</div></div></header>
+<header style="background:{esc(school["color"])};color:{esc(school["text"])}"><img src="{esc(school["logo"])}" alt="{esc(school["name"])} logo"><div><div class="who">{esc(school["name"])} {esc(school["mascot"])}</div><div class="what">{esc(school["division_label"])} · {esc(school["conference"])} · {esc(school["city"])}</div></div><span class="alum">{esc(" and ".join(school.get("alumni", [])))}</span></header>
 <div class="body">
-<div class="record"><span class="big">{esc(record)}</span><span class="standing">{esc(team.get("standing") or "")}</span></div>
+<div class="record"><span class="big">{esc(record)}</span><span class="standing">{esc(conference_line(school, team))}</span></div>
 <div class="badges">{poll_badges(school["slug"])}{massey_line(school["slug"])}{hansen_badge(school["slug"])}</div>
 <dl>
 <dt>Points</dt><dd>{team["pf"]} for, {team["pa"]} against</dd>
@@ -278,7 +300,7 @@ def ratings_table():
     head = ("<tr><th>Team</th><th>Record</th><th>Poll</th><th>Massey rating</th><th>Massey rank in division</th><th>Massey rank all divisions</th>"
             "<th>Massey power</th><th>Massey offense</th><th>Massey defense</th><th>Massey SOS</th><th>Massey expected W-L</th><th>Points for</th><th>Points against</th><th>Margin</th></tr>")
     rows = []
-    ordered = sorted(SCHOOLS, key=lambda x: MASSEY["teams"].get(x["slug"], {}).get("overall_rank", 9999))
+    ordered = ORDERED
     for s in ordered:
         team = SEASON["teams"].get(s["slug"], {})
         m = MASSEY["teams"].get(s["slug"], {})
@@ -323,7 +345,7 @@ def hansen_table():
 
 def players_section():
     blocks = []
-    for s in SCHOOLS:
+    for s in ORDERED:
         team = SEASON["teams"].get(s["slug"], {})
         players = team.get("players") or []
         if not players:
@@ -353,10 +375,10 @@ def schedule_table(school, team):
 
 
 def schedules():
-    tabs = ['<button class="tab active" data-tab="all">All five</button>'] + [f'<button class="tab" data-tab="{s["slug"]}" style="--team:var(--c-{s["slug"]})">{esc(s["name"])}</button>' for s in SCHOOLS]
+    tabs = ['<button class="tab active" data-tab="all">All five</button>'] + [f'<button class="tab" data-tab="{s["slug"]}" style="--team:var(--c-{s["slug"]})">{esc(s["name"])}</button>' for s in ORDERED]
     panes = []
     all_rows = []
-    for s in SCHOOLS:
+    for s in ORDERED:
         team = SEASON["teams"].get(s["slug"])
         if not team:
             continue
@@ -431,7 +453,7 @@ h1{font-size:2.6rem;line-height:1;margin:.1em 0 .1em;letter-spacing:.01em}h2{fon
 .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.sub{color:var(--muted);margin:0 0 .4em;max-width:760px}
 .muted{color:var(--muted)}.small{font-size:.9rem;color:var(--muted)}.pos{color:var(--pos)}.neg{color:var(--neg)}
 button{font:inherit;cursor:pointer}
-.toggle{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:.9rem}
+.toggle{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:.9rem}.controls{display:flex;flex-direction:column;align-items:flex-end;gap:8px}.tzs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}.tz{border:0;background:transparent;color:var(--ink);padding:6px 12px;font-size:.9rem;cursor:pointer}.tz+.tz{border-left:1px solid var(--line)}.tz.active{background:var(--ink);color:var(--bg)}.alum{margin-left:auto;align-self:flex-start;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:1px solid currentColor;border-radius:999px;padding:2px 8px;opacity:.9;white-space:nowrap}
 .livepill{display:none;align-items:center;gap:6px;font-size:.85rem;font-weight:600;color:var(--live)}.livepill i{width:8px;height:8px;border-radius:50%;background:var(--live);animation:pulse 1.4s infinite}body.has-live .livepill{display:inline-flex}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
@@ -479,16 +501,25 @@ function label(){const dark=root.getAttribute('data-theme')==='dark'||(!root.get
 btn.addEventListener('click',()=>{const dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);const next=dark?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('ams-theme',next)}catch(e){}label();});
 label();
 
-// Show kickoff times in the viewer's time zone.
-const tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
-if(tz&&tz!=='America/New_York'){
+// Kickoff times in the chosen time zone: Eastern, Central, or the device's own.
+const deviceTz=Intl.DateTimeFormat().resolvedOptions().timeZone||'America/New_York';
+const tzNames={'America/New_York':'Eastern time','America/Chicago':'Central time'};
+let tzChoice=(()=>{try{return localStorage.getItem('ams-tz')}catch(e){return null}})()||'local';
+function zone(){return tzChoice==='local'?deviceTz:tzChoice}
+function renderTimes(){
+  const z=zone();
   document.querySelectorAll('time[datetime]').forEach(t=>{
     if(t.dataset.tbd)return;
     const d=new Date(t.getAttribute('datetime'));
-    const opts=t.dataset.fmt==='full'?{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}:{hour:'numeric',minute:'2-digit',timeZoneName:'short'};
-    t.textContent=new Intl.DateTimeFormat(undefined,opts).format(d).replace(',',',');
+    const opts=t.dataset.fmt==='full'?{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short',timeZone:z}:{hour:'numeric',minute:'2-digit',timeZoneName:'short',timeZone:z};
+    t.textContent=new Intl.DateTimeFormat('en-US',opts).format(d);
   });
+  document.querySelectorAll('.tz').forEach(b=>b.classList.toggle('active',b.dataset.tz===tzChoice));
+  const note=document.getElementById('tznote');
+  if(note)note.textContent='Kickoff times are in '+(tzChoice==='local'?"your device's time zone ("+deviceTz.replace(/_/g,' ')+")":tzNames[tzChoice])+'.';
 }
+document.querySelectorAll('.tz').forEach(b=>b.addEventListener('click',()=>{tzChoice=b.dataset.tz;try{localStorage.setItem('ams-tz',tzChoice)}catch(e){}renderTimes();}));
+renderTimes();
 
 // Countdowns.
 function tick(){
@@ -543,7 +574,7 @@ async function refresh(){
   }
   document.body.classList.toggle('has-live',anyLive);
   const stamp=document.getElementById('livestamp');
-  if(stamp)stamp.textContent='Live scores checked '+new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+  if(stamp)stamp.textContent='Live scores checked '+new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZoneName:'short',timeZone:zone()}).format(new Date());
 }
 refresh();
 setInterval(()=>{if(windowOpen())refresh();},60000);
@@ -574,36 +605,36 @@ def main():
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body><main>
 <div class="top"><div><h1>Alma Mater Saturday</h1>
-<p class="sub">Five schools, three brothers, one page. Washington, Indiana, Calvin, Hope, and Wheaton (IL) football: records, rankings, ratings, kickoff times and where to watch, top players, and live scores on game days.</p>
-<span class="livepill"><i></i>Games in progress</span></div><button id="theme" class="toggle" type="button">Dark mode</button></div>
+<p class="sub">Three brothers went to five schools. Chris went to Calvin. Scott went to Hope and Washington. Matt went to Wheaton and Indiana. This page follows all five football teams: records, rankings, ratings, kickoff times, where to watch, top players, and live scores on game days.</p>
+<span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="tzs" role="group" aria-label="Time zone"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div><button id="theme" class="toggle" type="button">Dark mode</button></div></div>
 
 <h2 id="week">This week</h2>
-<p class="small">Kickoff times show in your time zone. Scores update every minute while a game is on. <span id="livestamp"></span></p>
+<p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch. Scores refresh every minute while a game is in progress. <span id="livestamp"></span></p>
 {this_week()}
 
 <h2 id="teams">The five</h2>
 <div class="teams">
-{"".join(team_card(s) for s in SCHOOLS)}
+{"".join(team_card(s) for s in ORDERED)}
 </div>
 
 <h2 id="ratings">Rankings and ratings</h2>
-<p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey ratings are shown two ways: rank inside the team's own division and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates, through games of {esc(massey_through)}.</p>
+<p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey appears twice for each team: rank inside its own division and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates, through games of {esc(massey_through)}.</p>
 {ratings_table()}
 
 <h3 style="margin-top:1.6em" id="hansen"><a href="https://hansenratings.com/">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/">hansenratings.com &rarr;</a></h3>
-<p class="small">Ratings, projections, and simulation results from <a href="https://hansenratings.com/">hansenratings.com</a>, which covers Division III only. Predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the automatic bid, Pool C the at-large bid. Sorted by predictive rank.</p>
+<p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
 {hansen_table()}
 
 <h2 id="margins">Point margin through the season</h2>
-<p class="small">Cumulative points for minus points against after each game played.</p>
+<p class="small">Each line is points for minus points against, added up game by game.</p>
 {margin_chart()}
 
 <h2 id="watch">Where to watch</h2>
-<p class="small">Every network or stream that appears on one of the five schedules this season, what it is, and whether it costs anything. Subscription prices are the ones published for 2026-27 and can change.</p>
+<p class="small">Every network and stream that appears on one of the five schedules this season, with what you need to watch it. Subscription prices are the published 2026-27 prices and can change.</p>
 {platforms_section()}
 
 <h2 id="players">Top players</h2>
-<p class="small">Season leaders in passing, rushing, receiving, tackles, sacks, and interceptions. Division I numbers come from ESPN; Division III numbers come from each school's official statistics page.</p>
+<p class="small">Season leaders in passing, rushing, receiving, tackles, sacks, and interceptions. Division I numbers come from ESPN. Division III numbers come from each school's official statistics page.</p>
 {players_section()}
 
 <h2 id="schedules">Schedules and results</h2>
@@ -611,9 +642,9 @@ def main():
 
 <section class="more">
 <h2>More Division III numbers</h2>
-<p>Three of these five schools play Division III, where the author also runs <a href="https://thed3statlab.com/">The D3 Stat Lab</a>: NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
+<p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/">The D3 Stat Lab</a>, which publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
 </section>
-<footer>Built {esc(built)} Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/">ESPN</a>, fetched {esc(fetched)} Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings">Massey Ratings</a> (through {esc(massey_through)}, refreshed by hand each week) and <a href="https://hansenratings.com/">Hansen Ratings</a> (fetched {esc(hansen_fetched[:16].replace("T", " "))}). Not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
+<footer>Built {esc(built)} Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/">ESPN</a>, fetched {esc(fetched)} Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings">Massey Ratings</a> (through {esc(massey_through)}, updated each week) and <a href="https://hansenratings.com/">Hansen Ratings</a> (fetched {esc(hansen_fetched[:16].replace("T", " "))}). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
 </main>
 <script>{JS}</script>
 </body></html>

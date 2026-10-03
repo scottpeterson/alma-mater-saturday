@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Chris",
+    "order": "older brother",
+    "schools": [
+      "calvin"
+    ],
+    "home": "Ada, Michigan",
+    "market": "Grand Rapids",
+    "zone": "Eastern"
+  },
+  {
+    "name": "Scott",
+    "order": "middle brother",
+    "schools": [
+      "hope",
+      "washington"
+    ],
+    "home": "Lowell, Michigan",
+    "market": "Grand Rapids",
+    "zone": "Eastern"
+  },
+  {
+    "name": "Matt",
+    "order": "younger brother",
+    "schools": [
+      "wheaton",
+      "indiana"
+    ],
+    "home": "Warrenville, Illinois",
+    "market": "Chicago",
+    "zone": "Central"
+  }
+]

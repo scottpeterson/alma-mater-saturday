@@ -20,7 +20,10 @@
     "logo": "assets/washington.png",
     "schedule_url": "https://gohuskies.com/sports/football/schedule",
     "stats_url": "https://gohuskies.com/sports/football/stats",
-    "hansen_key": null
+    "hansen_key": null,
+    "alumni": [
+      "Scott"
+    ]
   },
   {
     "slug": "indiana",
@@ -43,7 +46,10 @@
     "logo": "assets/indiana.png",
     "schedule_url": "https://iuhoosiers.com/sports/football/schedule",
     "stats_url": "https://iuhoosiers.com/sports/football/stats",
-    "hansen_key": null
+    "hansen_key": null,
+    "alumni": [
+      "Matt"
+    ]
   },
   {
     "slug": "calvin",
@@ -66,7 +72,20 @@
     "logo": "assets/calvin.svg",
     "schedule_url": "https://calvinknights.com/sports/football/schedule",
     "stats_url": "https://calvinknights.com/sports/football/stats",
-    "hansen_key": "Calvin"
+    "hansen_key": "Calvin",
+    "alumni": [
+      "Chris"
+    ],
+    "conference_members": [
+      "Adrian",
+      "Albion",
+      "Alma",
+      "Calvin",
+      "Hope",
+      "Kalamazoo",
+      "Olivet",
+      "Trine"
+    ]
   },
   {
     "slug": "hope",
@@ -89,7 +108,20 @@
     "logo": "assets/hope.png",
     "schedule_url": "https://athletics.hope.edu/sports/football/schedule",
     "stats_url": "https://athletics.hope.edu/sports/football/stats",
-    "hansen_key": "Hope"
+    "hansen_key": "Hope",
+    "alumni": [
+      "Scott"
+    ],
+    "conference_members": [
+      "Adrian",
+      "Albion",
+      "Alma",
+      "Calvin",
+      "Hope",
+      "Kalamazoo",
+      "Olivet",
+      "Trine"
+    ]
   },
   {
     "slug": "wheaton",
@@ -112,6 +144,20 @@
     "logo": "assets/wheaton.svg",
     "schedule_url": "https://athletics.wheaton.edu/sports/football/schedule",
     "stats_url": "https://athletics.wheaton.edu/sports/football/stats",
-    "hansen_key": "Wheaton Ill."
+    "hansen_key": "Wheaton Ill.",
+    "alumni": [
+      "Matt"
+    ],
+    "conference_members": [
+      "Augustana (IL)",
+      "Carroll (WI)",
+      "Carthage",
+      "Elmhurst",
+      "IL Wesleyan",
+      "Millikin",
+      "N Central (IL)",
+      "North Park",
+      "Wheaton (IL)"
+    ]
   }
 ]
