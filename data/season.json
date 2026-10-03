@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T11:43:42-05:00",
+ "fetched_at": "2026-10-03T11:52:07-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -1077,37 +1077,55 @@
      "label": "Passing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "90/121, 1258 yds, 19 TD, 2 INT, 210.22 rating"
+     "line": "90/121, 1258 yds, 19 TD, 2 INT, 210.22 rating",
+     "position": "QB",
+     "year": "Jr.",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
     },
     {
      "label": "Rushing",
      "name": "Hayden Slegers",
      "jersey": "2",
-     "line": "43 car, 219 yds, 0 TD, 5.1 avg"
+     "line": "43 car, 219 yds, 0 TD, 5.1 avg",
+     "position": "RB",
+     "year": "Jr.",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Slegers__Hayden.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
      "name": "Hunter Hogan",
      "jersey": "7",
-     "line": "30 rec, 368 yds, 7 TD, 12.27 avg"
+     "line": "30 rec, 368 yds, 7 TD, 12.27 avg",
+     "position": "RB",
+     "year": "R-Jr.",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Hogan__Hunter.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
      "name": "Nolan Bloomquist",
      "jersey": "10",
-     "line": "25.0 tackles, 2.0 TFL, 0 sacks"
+     "line": "25.0 tackles, 2.0 TFL, 0 sacks",
+     "position": "DB",
+     "year": "Fr.",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Bloomquist__Nolan.jpg?width=200&quality=90"
     },
     {
      "label": "Sacks",
      "name": "Kaden McCullough",
      "jersey": "30",
-     "line": "2.0 sacks, 3.0 TFL, 11.0 tackles"
+     "line": "2.0 sacks, 3.0 TFL, 11.0 tackles",
+     "position": "DE",
+     "year": "Jr.",
+     "headshot": "https://calvinknights.com/images/2026/8/13/McCullough__Kaden.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
      "name": "Caden Kolanowski",
      "jersey": "15",
-     "line": "3 INT, 0 PBU, 12.0 tackles"
+     "line": "3 INT, 0 PBU, 12.0 tackles",
+     "position": "DB",
+     "year": "R-Jr.",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Kolanowski__Caden.jpg?width=200&quality=90"
     }
    ]
   },
@@ -1399,37 +1417,55 @@
      "label": "Passing",
      "name": "Alex Thole",
      "jersey": "4",
-     "line": "62/83, 752 yds, 2 TD, 2 INT, 153.94 rating"
+     "line": "62/83, 752 yds, 2 TD, 2 INT, 153.94 rating",
+     "position": "QB",
+     "year": "Sr.",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
     },
     {
      "label": "Rushing",
      "name": "Brody Schuiteman",
      "jersey": "20",
-     "line": "50 car, 374 yds, 11 TD, 7.5 avg"
+     "line": "50 car, 374 yds, 11 TD, 7.5 avg",
+     "position": "RB",
+     "year": "Fr.",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Schuiteman_Brody.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
      "name": "Kaden DeHorn",
      "jersey": "15",
-     "line": "12 rec, 203 yds, 1 TD, 16.92 avg"
+     "line": "12 rec, 203 yds, 1 TD, 16.92 avg",
+     "position": "WR",
+     "year": "Sr.",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/DeHorn_Kaden.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
      "name": "Nolan Vis",
      "jersey": "5",
-     "line": "25.0 tackles, 1.0 TFL, 0 sacks"
+     "line": "25.0 tackles, 1.0 TFL, 0 sacks",
+     "position": "LB",
+     "year": "So.",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
     },
     {
      "label": "Sacks",
      "name": "Joey Mahaney",
      "jersey": "23",
-     "line": "1.5 sacks, 2.5 TFL, 7.0 tackles"
+     "line": "1.5 sacks, 2.5 TFL, 7.0 tackles",
+     "position": "LB",
+     "year": "Sr.",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Mahaney_Joey.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
      "name": "Trenten Bolhouse",
      "jersey": "25",
-     "line": "1 INT, 1 PBU, 10.0 tackles"
+     "line": "1 INT, 1 PBU, 10.0 tackles",
+     "position": "S",
+     "year": "Jr.",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Bollhouse_Trenton.jpg?width=200&quality=90"
     }
    ]
   },
@@ -1723,37 +1759,55 @@
      "label": "Passing",
      "name": "Mark Forcucci",
      "jersey": "5",
-     "line": "84/132, 1038 yds, 11 TD, 3 INT, 152.65 rating"
+     "line": "84/132, 1038 yds, 11 TD, 3 INT, 152.65 rating",
+     "position": "QB",
+     "year": "Sr.",
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Forcucci_Mark.jpg?width=200&quality=90"
     },
     {
      "label": "Rushing",
      "name": "Matt Crider",
      "jersey": "32",
-     "line": "67 car, 298 yds, 4 TD, 4.4 avg"
+     "line": "67 car, 298 yds, 4 TD, 4.4 avg",
+     "position": "RB",
+     "year": "Jr.",
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Crider_Matt.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
      "name": "Seth Kortenhoeven",
      "jersey": "4",
-     "line": "23 rec, 309 yds, 4 TD, 13.43 avg"
+     "line": "23 rec, 309 yds, 4 TD, 13.43 avg",
+     "position": "WR",
+     "year": "Sr.",
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Kortenhoeven_Seth.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
      "name": "Zeke Harris",
      "jersey": "8",
-     "line": "34.0 tackles, 3.0 TFL, 1.0 sacks"
+     "line": "34.0 tackles, 3.0 TFL, 1.0 sacks",
+     "position": "LB",
+     "year": "Jr.",
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Harris_Zeke.jpg?width=200&quality=90"
     },
     {
      "label": "Sacks",
      "name": "Chandler Bryant",
      "jersey": "44",
-     "line": "2.0 sacks, 2.0 TFL, 4.0 tackles"
+     "line": "2.0 sacks, 2.0 TFL, 4.0 tackles",
+     "position": "DL",
+     "year": "So.",
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Bryant_Chandler.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
      "name": "Eli Reeves",
      "jersey": "15",
-     "line": "2 INT, 1 PBU, 18.0 tackles"
+     "line": "2 INT, 1 PBU, 18.0 tackles",
+     "position": "DB",
+     "year": "Jr.",
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Reeves_Eli.jpg?width=200&quality=90"
     }
    ]
   }
@@ -1828,7 +1882,7 @@
   }
  },
  "hansen": {
-  "fetched": "2026-10-03T11:43:49-05:00",
+  "fetched": "2026-10-03T11:52:28-05:00",
   "teams": {
    "calvin": {
     "predictive": {

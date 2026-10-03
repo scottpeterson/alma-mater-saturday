@@ -18,6 +18,7 @@ import json
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -297,6 +298,45 @@ def _num(value):
         return 0.0
 
 
+def sidearm_roster(url):
+    """Jersey number and name -> position, class year, headshot from a Sidearm roster page."""
+    page = get(url, as_json=False)
+    by_number, by_name = {}, {}
+    for block in re.split(r'<li[^>]*class="sidearm-roster-player[ "]', page)[1:]:
+        name = re.search(r"<h3>\s*<a[^>]*>(.*?)</a>", block, flags=re.S)
+        if not name:
+            continue
+        number = re.search(r'sidearm-roster-player-jersey-number">\s*([^<]*?)\s*<', block)
+        pos = re.search(r'sidearm-roster-player-position-long-short hide-on-medium">\s*([^<]*?)\s*<', block)
+        if not pos:  # some schools put the abbreviation straight in the bold span
+            pos = re.search(r'sidearm-roster-player-position">\s*<span class="text-bold">\s*([^<]*?)\s*<', block)
+        year = re.search(r'sidearm-roster-player-academic-year[^"]*">\s*([^<]*?)\s*<', block)
+        img = re.search(r'sidearm-roster-player-image.*?<img[^>]*?(?:data-src|src)="([^"]+)"', block, flags=re.S)
+        info = {
+            "name": text(name.group(1)),
+            "position": pos.group(1).strip() if pos else None,
+            "year": year.group(1).strip() if year else None,
+            "headshot": re.sub(r"width=\d+", "width=200", urllib.parse.urljoin(url, img.group(1))) if img and "no-photo" not in img.group(1) else None,
+        }
+        if number and number.group(1).strip():
+            by_number[number.group(1).strip()] = info
+        by_name[info["name"].lower()] = info
+    return by_number, by_name
+
+
+def with_roster(players, roster):
+    by_number, by_name = roster
+    for p in players:
+        info = by_number.get(str(p.get("jersey")))
+        if info and p["name"].split()[-1].lower() not in info["name"].lower():
+            info = None
+        if not info:
+            info = by_name.get(p["name"].lower())
+        if info:
+            p.update({k: v for k, v in info.items() if k != "name"})
+    return players
+
+
 def sidearm_leaders(school):
     page = get(school["stats_url"], as_json=False)
     players = []
@@ -332,6 +372,11 @@ def sidearm_leaders(school):
         if _num(i.get("INT")) > 0:
             players.append({"label": "Interceptions", "name": _player_name(i["Player"]), "jersey": i.get("#"),
                             "line": _stat_line([f"{i.get('INT')} INT", f"{i.get('BU')} PBU" if i.get("BU") else None, f"{i.get('TOT')} tackles"])})
+    roster_url = school.get("roster_url") or school["stats_url"].rsplit("/", 1)[0] + "/roster"
+    try:
+        players = with_roster(players, sidearm_roster(roster_url))
+    except (urllib.error.URLError, TimeoutError):
+        pass
     return players
 
 

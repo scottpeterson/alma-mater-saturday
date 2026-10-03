@@ -287,7 +287,7 @@ def players_section():
                 initials = "".join(w[0] for w in (p.get("name") or "?").split()[:2])
                 face = f'<span class="face initials" style="background:{esc(s["color"])};color:{esc(s["text"])}">{esc(initials)}</span>'
             sub = " · ".join(x for x in (p.get("position"), f'#{p["jersey"]}' if p.get("jersey") else None, p.get("year")) if x)
-            cards.append(f'<div class="player"><span class="label">{esc(p["label"])}</span>{face}<div><div class="pname">{esc(p["name"])}</div><div class="psub">{esc(sub)}</div><div class="pline">{esc(p["line"])}</div></div></div>')
+            cards.append(f'<div class="player">{face}<div><span class="label">{esc(p["label"])}</span><div class="pname">{esc(p["name"])}</div><div class="psub">{esc(sub)}</div><div class="pline">{esc(p["line"])}</div></div></div>')
         blocks.append(f'<div class="teamplayers" style="--team:var(--c-{s["slug"]})"><h3><img src="{esc(s["logo"])}" alt=""> {esc(s["name"])} {esc(s["mascot"])}</h3><div class="players">{"".join(cards)}</div></div>')
     return "\n".join(blocks)
 
@@ -299,7 +299,7 @@ def schedule_table(school, team):
         cls = "w" if g["result"] == "W" else "l" if g["result"] == "L" else "live" if g["state"] == "in" else ""
         when = time_tag(g) if g["state"] != "post" else parse(g["date"]).astimezone(EASTERN).strftime("%a %b %-d")
         site = "Neutral" if g.get("neutral") else ("Home" if g["home"] else "Away")
-        rows.append(f'<tr class="{cls}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}"><td>{g["week"] or ""}</td><td class="lead">{when}</td><td class="lead opp">{opponent_label(g)}</td><td>{esc(site)}</td><td class="tv">{tv_chips(g) if g["state"] != "post" else esc(", ".join(g.get("broadcasts") or []))}</td><td class="res">{res}</td></tr>')
+        rows.append(f'<tr class="{cls}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}"><td class="lead">{g["week"] or ""}</td><td>{when}</td><td class="opp">{opponent_label(g)}</td><td>{esc(site)}</td><td class="tv">{tv_chips(g) if g["state"] != "post" else esc(", ".join(g.get("broadcasts") or []))}</td><td class="res">{res}</td></tr>')
     return f'<div class="tablewrap"><table class="sched"><thead><tr><th>Wk</th><th>Date</th><th>Opponent</th><th>Site</th><th>TV</th><th>Result</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
 
 
@@ -319,7 +319,7 @@ def schedules():
         res = result_text(g)
         cls = "w" if g["result"] == "W" else "l" if g["result"] == "L" else "live" if g["state"] == "in" else ""
         when = time_tag(g) if g["state"] != "post" else parse(g["date"]).astimezone(EASTERN).strftime("%a %b %-d")
-        rows.append(f'<tr class="{cls}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}"><td class="lead"><img src="{esc(s["logo"])}" alt=""> {esc(s["name"])}</td><td class="lead">{when}</td><td class="lead opp">{opponent_label(g)}</td><td class="tv">{tv_chips(g) if g["state"] != "post" else esc(", ".join(g.get("broadcasts") or []))}</td><td class="res">{res}</td></tr>')
+        rows.append(f'<tr class="{cls}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}"><td class="lead"><img src="{esc(s["logo"])}" alt=""> {esc(s["name"])}</td><td>{when}</td><td class="opp">{opponent_label(g)}</td><td class="tv">{tv_chips(g) if g["state"] != "post" else esc(", ".join(g.get("broadcasts") or []))}</td><td class="res">{res}</td></tr>')
     all_pane = f'<div class="pane" id="sched-all" data-pane="all"><div class="tablewrap"><table class="sched"><thead><tr><th>Team</th><th>Date</th><th>Opponent</th><th>TV</th><th>Result</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div></div>'
     return f'<div class="tabs">{"".join(tabs)}</div>{all_pane}{"".join(panes)}'
 
@@ -367,11 +367,11 @@ def margin_chart():
 # ---------------------------------------------------------------- page
 
 CSS = r"""
-:root{--bg:#f4f3ef;--surface:#ffffff;--surface2:#ecebe5;--line:#d8d5cb;--ink:#1e2229;--muted:#616873;--faint:#8c939d;--link:#1f4e79;--pos:#2e8b57;--neg:#c0504d;--live:#d6323c;--chip:#e9e7df;
+:root{--bg:#f4f3ef;--surface:#ffffff;--surface2:#ecebe5;--line:#d8d5cb;--ink:#1e2229;--muted:#616873;--faint:#8c939d;--link:#1f4e79;--pos:#2e8b57;--neg:#c0504d;--live:#d6323c;--chip:#e9e7df;--on-team:#ffffff;
 --c-washington:#4b2e83;--c-indiana:#990000;--c-calvin:#8c2131;--c-hope:#c45114;--c-wheaton:#00407e}
-:root[data-theme="dark"]{--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--chip:#2e343d;
+:root[data-theme="dark"]{--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--chip:#2e343d;--on-team:#15181d;
 --c-washington:#b7a0e6;--c-indiana:#ff8a8a;--c-calvin:#f0a3ad;--c-hope:#ffa26b;--c-wheaton:#8fbdf2}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--chip:#2e343d;
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--chip:#2e343d;--on-team:#15181d;
 --c-washington:#b7a0e6;--c-indiana:#ff8a8a;--c-calvin:#f0a3ad;--c-hope:#ffa26b;--c-wheaton:#8fbdf2}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Barlow",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
@@ -404,14 +404,13 @@ dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0;font
 .meta{font-size:.9rem;color:var(--muted);margin:10px 0 0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 table{border-collapse:collapse;width:100%;font-size:.93rem}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}th{background:var(--surface2);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
-tbody tr:last-child td{border-bottom:0}td.lead,th:first-child{text-align:left}td.lead img{height:20px;width:20px;object-fit:contain;vertical-align:-4px;margin-right:4px}
+tbody tr:last-child td{border-bottom:0}td.lead,td:first-child,th:first-child{text-align:left}td.lead img{height:20px;width:20px;object-fit:contain;vertical-align:-4px;margin-right:4px}
 tr.w td.res{color:var(--pos);font-weight:600}tr.l td.res{color:var(--neg);font-weight:600}tr.live td.res{color:var(--live);font-weight:600}td.tv{white-space:normal;min-width:120px}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}.tab{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:1rem}.tab.active{background:var(--team,var(--ink));color:#fff;border-color:transparent}
-:root[data-theme="dark"] .tab.active,.dark .tab.active{color:#111}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}.tab{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:1rem}.tab.active{background:var(--team,var(--ink));color:var(--on-team);border-color:transparent;font-weight:700}
 .teamplayers{margin-bottom:8px}.players{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
-.player{position:relative;display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.player .label{position:absolute;top:8px;right:10px;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.player{display:flex;gap:12px;align-items:center;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.player .label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--team);font-weight:700}
 .face{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--surface2);flex:none}.initials{display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem}
-.pname{font-weight:700;line-height:1.2}.psub{font-size:.82rem;color:var(--muted)}.pline{font-size:.9rem;margin-top:2px}
+.player>div{min-width:0}.pname{font-weight:700;line-height:1.2}.psub{font-size:.82rem;color:var(--muted)}.pline{font-size:.9rem;margin-top:2px}
 .chart{width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px}.chart .grid{stroke:var(--line);stroke-width:1}.chart .grid.zero{stroke:var(--faint);stroke-width:1.5}.chart .lab{fill:var(--muted);font-size:11px}.chart .line{fill:none;stroke-width:2.5;stroke-linejoin:round}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;font-size:.9rem}.lg i{display:inline-block;width:14px;height:4px;background:var(--team);margin-right:6px;vertical-align:middle;border-radius:2px}
 .more{margin-top:3em;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.more h2{margin:0 0 .4em;border:0;padding:0;font-size:1.2rem}.more p{margin:0}
