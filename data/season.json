@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T13:47:23-05:00",
+ "fetched_at": "2026-10-03T14:13:17-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -893,7 +893,7 @@
   "calvin": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "28th in NCAA Division III",
+   "standing": "34th in NCAA Division III",
    "games": [
     {
      "id": "401908738",
@@ -1284,7 +1284,7 @@
   "hope": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "28th in NCAA Division III",
+   "standing": "34th in NCAA Division III",
    "games": [
     {
      "id": "401908744",
@@ -1426,12 +1426,12 @@
       "MIAA Digital Network"
      ],
      "state": "in",
-     "status": "End of 1st",
-     "pf": 10,
-     "pa": 0,
+     "status": "4:14 - 2nd",
+     "pf": null,
+     "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 1,
+     "clock": "4:14",
+     "period": 2,
      "group": "35",
      "live_stats": "https://prestolivestats.com/9ezjs11trcc01fsg/fcl3nw8c63a4kl11",
      "live_feed": {
@@ -1815,11 +1815,11 @@
       "CCIW Network"
      ],
      "state": "in",
-     "status": "7:01 - 2nd",
+     "status": "End of 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "7:01",
+     "clock": "0:00",
      "period": 2,
      "group": "35",
      "live_stats": "http://www.sidearmstats.com/wheaton/football/",
@@ -1873,18 +1873,7 @@
       "type": "sidearm",
       "url": "https://sidearmstats.com/wheaton/football/game.json"
      },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 99.8
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 57,
-       "opp": 6,
-       "total": 63.6
-      }
-     }
+     "odds": null
     },
     {
      "id": "401907815",
@@ -2146,7 +2135,7 @@
   }
  },
  "hansen": {
-  "fetched": "2026-10-03T13:47:40-05:00",
+  "fetched": "2026-10-03T14:13:35-05:00",
   "teams": {
    "calvin": {
     "predictive": {

@@ -492,14 +492,29 @@ def _find_key(obj, key):
     return None
 
 
+HANSEN_STOP = {"college", "university", "state", "the", "of", "and", "illinois", "wisconsin", "indiana", "michigan", "ohio",
+               "texas", "pennsylvania", "minnesota", "iowa", "maine", "massachusetts", "connecticut", "california", "oregon", "virginia"}
+
+
+def _hansen_tokens(name):
+    """The words that identify a team in a Hansen name: no punctuation, no state tags, nothing under four letters."""
+    return {t for t in re.findall(r"[a-z]+", name.lower()) if len(t) > 3 and t not in HANSEN_STOP}
+
+
+def hansen_matches(hansen_name, opponent):
+    """True when every identifying word of the Hansen name appears in the ESPN opponent name."""
+    want = _hansen_tokens(hansen_name)
+    have = set(re.findall(r"[a-z]+", f'{opponent.get("name") or ""} {opponent.get("short") or ""}'.lower()))
+    return bool(want) and want <= have
+
+
 def hansen_odds(game, school, projections):
     mine = school["hansen_key"]
     for (home, away), row in projections.items():
         if mine not in (home, away):
             continue
-        opp_short = game["opponent"]["short"].lower().split()[0]
         other = away if home == mine else home
-        if opp_short not in other.lower():
+        if not hansen_matches(other, game["opponent"]):
             continue
         i_am_home = home == mine
         my_pct = row["H Win%"] if i_am_home else row["A Win%"]

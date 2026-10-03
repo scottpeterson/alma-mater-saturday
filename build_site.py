@@ -138,7 +138,7 @@ def hansen_badge(slug):
 # ---------------------------------------------------------------- sections
 
 def featured_games():
-    """Games to show in This week: live, upcoming within 8 days, or final within 36 hours."""
+    """One game per team for This week: in progress, final within 36 hours, or upcoming within 8 days."""
     rows = []
     for school in ORDERED:
         team = SEASON["teams"].get(school["slug"])
@@ -152,16 +152,14 @@ def featured_games():
                 rows.append((school, g))
             elif g["state"] == "post" and dt >= NOW - timedelta(hours=36):
                 rows.append((school, g))
-    # one upcoming game per team at most, plus any live or recent final
-    seen = set()
-    out = []
-    for school, g in sorted(rows, key=lambda r: r[1]["date"]):
-        key = (school["slug"], g["state"] == "pre")
-        if g["state"] == "pre" and key in seen:
-            continue
-        seen.add(key)
-        out.append((school, g))
-    return out
+    # One card per team: the game in progress, else the final from the last 36 hours, else the next game.
+    rank = {"in": 0, "post": 1, "pre": 2}
+    best = {}
+    for school, g in rows:
+        current = best.get(school["slug"])
+        if current is None or (rank[g["state"]], g["date"]) < (rank[current[1]["state"]], current[1]["date"]):
+            best[school["slug"]] = (school, g)
+    return sorted(best.values(), key=lambda r: r[1]["date"])
 
 
 def game_card(school, g):
