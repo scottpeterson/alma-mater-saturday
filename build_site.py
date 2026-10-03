@@ -640,6 +640,7 @@ def main():
 {players_section()}
 
 <h2 id="schedules">Schedules and results</h2>
+<p class="small">Opponent ranks come from the AP poll for Division I games and the D3football.com Top 25 for Division III games.</p>
 {schedules()}
 
 <section class="more">

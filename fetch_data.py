@@ -223,6 +223,62 @@ def d3football_map(parsed):
     return out
 
 
+STATE_ABBR = {"ill.": "il", "ind.": "in", "iowa": "ia", "wis.": "wi", "minn.": "mn", "mich.": "mi", "ohio": "oh", "pa.": "pa",
+              "n.y.": "ny", "n.j.": "nj", "conn.": "ct", "mass.": "ma", "md.": "md", "va.": "va", "n.c.": "nc", "texas": "tx",
+              "tenn.": "tn", "ky.": "ky", "ga.": "ga", "fla.": "fla", "ala.": "al", "la.": "la", "ark.": "ar", "neb.": "ne",
+              "colo.": "co", "calif.": "ca", "ore.": "or", "wash.": "wa", "maine": "me", "vt.": "vt", "n.h.": "nh", "r.i.": "ri"}
+
+
+def _norm(name):
+    """Lowercase tokens with the noise removed: punctuation, College/University, Mount vs Mt, UW- vs Wisconsin-."""
+    n = name.lower().replace("&", "and")
+    n = re.sub(r"\((.*?)\)", lambda m: " " + STATE_ABBR.get(m.group(1).strip(), m.group(1).strip().replace(".", "")) + " ", n)
+    n = n.replace("wisconsin-", "uw-").replace("wis.-", "uw-").replace("mount ", "mt ").replace("saint ", "st ")
+    n = re.sub(r"[.'’,-]", lambda m: " " if m.group(0) == "-" else "", n)
+    words = [w for w in n.split() if w not in ("college", "university", "the")]
+    return " ".join(words)
+
+
+def apply_d3_ranks(out):
+    """Give Division III opponents their D3football.com rank, matched by school name."""
+    try:
+        table = json.loads((DATA / "d3football.json").read_text()).get("ranked", {})
+    except (OSError, ValueError):
+        return
+    states = set(STATE_ABBR.values())
+    exact, loose = [], []
+    for k, v in table.items():
+        key = re.sub(r" u$", "", _norm(k))
+        exact.append((key, v["rank"]))
+        stateless = " ".join(w for w in key.split() if w not in states)
+        if stateless != key:
+            state = next(w for w in key.split() if w in states)
+            loose.append((stateless, v["rank"], state))
+    # Keys that carry a state win first; stateless fallbacks after; longer names before shorter.
+    exact.sort(key=lambda kv: -len(kv[0]))
+    loose.sort(key=lambda kv: -len(kv[0]))
+    for school in SCHOOLS:
+        if school["division"] == "FBS" or school["slug"] not in out["teams"]:
+            continue
+        for g in out["teams"][school["slug"]]["games"]:
+            opp = g["opponent"]
+            full = _norm(opp.get("name") or opp.get("short") or "")
+            short = _norm(opp.get("short") or "")
+            espn_states = {w for w in full.split() if w in states}
+            match = next((rank for key, rank in exact if full == key or full.startswith(key + " ") or short == key), None)
+            if match is None:
+                # A stateless key may only match when ESPN names no state, or names the same one.
+                match = next((rank for key, rank, state in loose
+                              if (full == key or full.startswith(key + " ")) and (not espn_states or state in espn_states)), None)
+            if match is not None:
+                opp["rank"] = match
+                opp["rank_source"] = "D3football.com"
+            else:
+                if opp.get("rank_source") == "D3football.com":
+                    opp["rank"] = None
+                    opp.pop("rank_source", None)
+
+
 def d3football_file():
     """The hand-refreshed copy (tools/d3football_extract.js), used when the live site serves its browser challenge."""
     path = DATA / "d3football.json"
@@ -624,6 +680,7 @@ def main():
                     pass
             out["errors"].append(f"{name}: {exc}")
             carry(name, {})
+    apply_d3_ranks(out)
     if previous.get("hansen_week") and not out.get("hansen_week"):
         out["hansen_week"] = previous["hansen_week"]
     (DATA / "season.json").write_text(json.dumps(out, indent=1))

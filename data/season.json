@@ -1089,7 +1089,8 @@
       "short": "Hope",
       "espn_id": "2812",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2812.png",
-      "rank": null
+      "rank": 15,
+      "rank_source": "D3football.com"
      },
      "venue": "Grand Rapids Christian High School",
      "city": "Grand Rapids, MI",
@@ -1564,7 +1565,8 @@
       "short": "Mt Union",
       "espn_id": "426",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/426.png",
-      "rank": null
+      "rank": 24,
+      "rank_source": "D3football.com"
      },
      "venue": "McCully Stadium",
      "city": "Wheaton, IL",
@@ -1716,7 +1718,8 @@
       "short": "N Central (IL)",
       "espn_id": "3071",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/3071.png",
-      "rank": null
+      "rank": 1,
+      "rank_source": "D3football.com"
      },
      "venue": "Benedetti-Wehrli Stadium",
      "city": "Naperville, IL",
