@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-04T07:14:45-05:00",
+ "fetched_at": "2026-10-04T15:22:26-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -169,7 +169,7 @@
       "short": "Iowa",
       "espn_id": "2294",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
-      "rank": 14
+      "rank": 20
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
@@ -189,8 +189,8 @@
        "provider": "DraftKings",
        "details": "WASH -2.5",
        "over_under": 41.5,
-       "home_ml": -125,
-       "away_ml": 105
+       "home_ml": -130,
+       "away_ml": 110
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -330,7 +330,7 @@
       "short": "Indiana",
       "espn_id": "84",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
-      "rank": 6
+      "rank": 7
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
@@ -358,7 +358,7 @@
       "short": "Oregon",
       "espn_id": "2483",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "rank": 15
+      "rank": 13
      },
      "venue": "Autzen Stadium",
      "city": "Eugene, OR",
@@ -626,7 +626,7 @@
      "odds": {
       "line": {
        "provider": "DraftKings",
-       "details": "IU -8.5",
+       "details": "IU -9.5",
        "over_under": 51.5,
        "home_ml": 260,
        "away_ml": -325
@@ -739,7 +739,7 @@
       "short": "USC",
       "espn_id": "30",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
-      "rank": 18
+      "rank": 19
      },
      "venue": "Memorial Stadium (Bloomington, IN)",
      "city": "Bloomington, IN",
@@ -1137,7 +1137,7 @@
       "short": "Hope",
       "espn_id": "2812",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2812.png",
-      "rank": 15,
+      "rank": 14,
       "rank_source": "D3football.com"
      },
      "venue": "Grand Rapids Christian High School",
@@ -1644,8 +1644,7 @@
       "short": "Mt Union",
       "espn_id": "426",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/426.png",
-      "rank": 24,
-      "rank_source": "D3football.com"
+      "rank": null
      },
      "venue": "McCully Stadium",
      "city": "Wheaton, IL",
@@ -2023,75 +2022,46 @@
  "polls": {
   "AP Poll": {
    "name": "AP Top 25",
-   "week": 5,
-   "date": "2026-09-27T07:00Z",
+   "week": 6,
+   "date": "2026-10-04T07:00Z",
    "ranks": {
-    "indiana": 6
+    "indiana": 7
    },
    "receiving_votes": {}
   },
   "AFCA Coaches Poll": {
    "name": "AFCA Coaches Poll",
-   "week": 5,
-   "date": "2026-09-27T07:00Z",
+   "week": 6,
+   "date": "2026-10-04T07:00Z",
    "ranks": {
     "indiana": 5
    },
-   "receiving_votes": {
-    "washington": 20.0
-   }
-  },
-  "FCS Coaches Poll": {
-   "name": "FCS Coaches Poll",
-   "week": 5,
-   "date": "2026-09-28T07:00Z",
-   "ranks": {},
    "receiving_votes": {}
-  },
-  "AFCA Div II": {
-   "name": "AFCA Division II Coaches Poll",
-   "week": 5,
-   "date": "2026-09-28T07:00Z",
-   "ranks": {},
-   "receiving_votes": {}
-  },
-  "AFCA Div III": {
-   "name": "AFCA Division III Coaches Poll",
-   "week": 5,
-   "date": "2026-09-28T07:00Z",
-   "ranks": {
-    "wheaton": 3,
-    "hope": 14
-   },
-   "receiving_votes": {
-    "calvin": 50.0
-   }
   }
  },
  "d3football": {
-  "label": "2026 Week 4",
-  "through": "Sept. 26, 2026",
+  "label": "2026 Week 5",
+  "through": "Oct. 3, 2026",
   "ranks": {
    "hope": {
-    "rank": 15,
-    "record": "4-0",
-    "points": 269,
-    "prev": "16"
+    "rank": 14,
+    "record": "5-0",
+    "points": 300,
+    "prev": "15"
    },
    "wheaton": {
-    "rank": 3,
-    "record": "4-0",
-    "points": 558,
+    "rank": 2,
+    "record": "5-0",
+    "points": 567,
     "prev": "3"
    }
   },
   "receiving_votes": {
-   "calvin": 3
-  },
-  "refreshed": "2026-10-03T18:58:00-05:00"
+   "calvin": 7
+  }
  },
  "hansen": {
-  "fetched": "2026-10-04T07:15:04-05:00",
+  "fetched": "2026-10-04T15:22:45-05:00",
   "teams": {
    "calvin": {
     "predictive": {

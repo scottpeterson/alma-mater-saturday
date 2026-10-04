@@ -1,178 +1,165 @@
 {
  "source": "https://d3football.com/top25/index",
- "refreshed": "2026-10-03T18:58:00-05:00",
- "label": "2026 Week 4",
- "through": "Sept. 26, 2026",
+ "refreshed": "2026-10-04T15:22:45-05:00",
+ "label": "2026 Week 5",
+ "through": "Oct. 3, 2026",
  "ranked": {
   "North Central (Ill.)": {
    "rank": 1,
-   "record": "3-0",
-   "points": 620,
+   "record": "4-0",
+   "points": 624,
    "prev": "1"
   },
-  "UW-River Falls": {
-   "rank": 2,
-   "record": "3-0",
-   "points": 596,
-   "prev": "2"
-  },
   "Wheaton (Ill.)": {
+   "rank": 2,
+   "record": "5-0",
+   "points": 567,
+   "prev": "3"
+  },
+  "St. John's": {
    "rank": 3,
    "record": "4-0",
    "points": 558,
-   "prev": "3"
+   "prev": "5"
   },
   "UW-Platteville": {
    "rank": 4,
-   "record": "3-0",
-   "points": 549,
+   "record": "4-0",
+   "points": 554,
    "prev": "4"
   },
-  "St. John's": {
-   "rank": 5,
-   "record": "3-0",
-   "points": 509,
-   "prev": "5"
-  },
   "UW-Whitewater": {
-   "rank": 6,
-   "record": "3-0",
-   "points": 464,
+   "rank": 5,
+   "record": "4-0",
+   "points": 549,
    "prev": "6"
   },
-  "Bethel": {
-   "rank": 7,
-   "record": "2-1",
-   "points": 449,
-   "prev": "9"
-  },
-  "John Carroll": {
-   "rank": 8,
-   "record": "4-0",
-   "points": 444,
-   "prev": "7"
+  "UW-River Falls": {
+   "rank": 6,
+   "record": "3-1",
+   "points": 485,
+   "prev": "2"
   },
   "Hardin-Simmons": {
-   "rank": 9,
-   "record": "2-0",
-   "points": 441,
-   "prev": "8"
+   "rank": 7,
+   "record": "3-0",
+   "points": 473,
+   "prev": "9"
   },
   "Trinity (Texas)": {
-   "rank": 10,
-   "record": "3-0",
-   "points": 376,
+   "rank": 8,
+   "record": "4-0",
+   "points": 429,
    "prev": "10"
   },
   "Endicott": {
-   "rank": 11,
-   "record": "4-0",
-   "points": 334,
-   "prev": "12"
-  },
-  "Wartburg": {
-   "rank": 12,
-   "record": "1-2",
-   "points": 332,
+   "rank": 9,
+   "record": "5-0",
+   "points": 373,
    "prev": "11"
   },
+  "Washington U.": {
+   "rank": 10,
+   "record": "5-0",
+   "points": 360,
+   "prev": "18"
+  },
+  "Wartburg": {
+   "rank": 11,
+   "record": "2-2",
+   "points": 331,
+   "prev": "12"
+  },
   "Salisbury": {
-   "rank": 13,
-   "record": "3-0",
-   "points": 322,
+   "rank": 12,
+   "record": "4-0",
+   "points": 330,
    "prev": "13"
   },
   "Christopher Newport": {
-   "rank": 14,
-   "record": "3-0",
-   "points": 285,
-   "prev": "17"
+   "rank": 13,
+   "record": "4-0",
+   "points": 318,
+   "prev": "14"
   },
   "Hope": {
-   "rank": 15,
-   "record": "4-0",
-   "points": 269,
-   "prev": "16"
-  },
-  "Berry": {
-   "rank": 16,
-   "record": "3-0",
-   "points": 250,
+   "rank": 14,
+   "record": "5-0",
+   "points": 300,
    "prev": "15"
   },
   "Cortland": {
-   "rank": 17,
-   "record": "4-0",
-   "points": 201,
-   "prev": "18"
+   "rank": 15,
+   "record": "5-0",
+   "points": 262,
+   "prev": "17"
   },
-  "Washington U.": {
-   "rank": 18,
-   "record": "4-0",
-   "points": 193,
-   "prev": "20"
+  "Bethel": {
+   "rank": 16,
+   "record": "2-2",
+   "points": 240,
+   "prev": "7"
+  },
+  "John Carroll": {
+   "rank": 17,
+   "record": "4-1",
+   "points": 235,
+   "prev": "8"
   },
   "UW-La Crosse": {
-   "rank": 19,
-   "record": "1-2",
-   "points": 188,
+   "rank": 18,
+   "record": "2-2",
+   "points": 201,
    "prev": "19"
   },
   "Mary Hardin-Baylor": {
+   "rank": 19,
+   "record": "3-1",
+   "points": 170,
+   "prev": "20"
+  },
+  "Baldwin Wallace 4-0 142 -- 21 Berry": {
    "rank": 20,
-   "record": "2-1",
-   "points": 133,
-   "prev": "21"
+   "record": "3-1",
+   "points": 96,
+   "prev": "16"
   },
-  "Heidelberg": {
-   "rank": 21,
-   "record": "4-0",
-   "points": 128,
-   "prev": "22"
-  },
-  "Utica": {
+  "Franklin and Marshall 4-0 80 -- 23 Randolph-Macon": {
    "rank": 22,
-   "record": "4-0",
-   "points": 113,
-   "prev": "23"
+   "record": "3-1",
+   "points": 73,
+   "prev": "25"
   },
   "Susquehanna": {
-   "rank": 23,
-   "record": "3-1",
-   "points": 71,
-   "prev": "14"
-  },
-  "Mount Union": {
    "rank": 24,
-   "record": "1-2",
-   "points": 60,
-   "prev": "24"
+   "record": "3-1",
+   "points": 53,
+   "prev": "23"
   },
-  "Randolph-Macon": {
+  "Heidelberg": {
    "rank": 25,
-   "record": "2-1",
-   "points": 54,
-   "prev": "25"
+   "record": "4-1",
+   "points": 52,
+   "prev": "21"
   }
  },
  "receiving_votes": {
-  "Franklin & Marshall": 53,
-  "Wabash": 24,
-  "Linfield": 23,
-  "Baldwin Wallace": 17,
-  "Wesleyan": 13,
-  "Chapman": 12,
-  "DePauw": 9,
-  "Johns Hopkins": 8,
-  "Dickinson": 6,
-  "Eastern": 5,
-  "Grove City": 4,
-  "Lake Forest": 4,
-  "Calvin": 3,
+  "Mount Union": 51,
+  "Utica": 43,
+  "Linfield": 41,
+  "Dickinson": 30,
+  "Chapman": 27,
+  "DePauw": 19,
+  "Wesleyan": 9,
+  "Rowan": 8,
+  "Washington & Jefferson": 8,
+  "Lake Forest": 7,
+  "Calvin": 7,
+  "Eastern": 6,
+  "Ursinus": 4,
+  "Trinity (Conn.)": 4,
+  "Hanover": 3,
   "Ithaca": 2,
-  "Rowan": 2,
-  "Washington & Jefferson": 2,
-  "Springfield": 1,
-  "Trinity (Conn.)": 1
+  "Whitworth": 1
  }
 }
