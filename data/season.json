@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-03T18:57:42-05:00",
+ "fetched_at": "2026-10-03T20:58:30-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -147,12 +147,12 @@
       "NBC"
      ],
      "state": "in",
-     "status": "7:00 - 1st",
+     "status": "5:32 - 3rd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "7:00",
-     "period": 1,
+     "clock": "5:32",
+     "period": 3,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675077&vislive=wash",
      "live_feed": null,
@@ -449,7 +449,7 @@
   "indiana": {
    "record": "4-0",
    "conf_record": null,
-   "standing": "5th in Big Ten",
+   "standing": "6th in Big Ten",
    "games": [
     {
      "id": "401858425",
@@ -590,13 +590,13 @@
      "broadcasts": [
       "BTN"
      ],
-     "state": "pre",
-     "status": "10/3 - 8:00 PM EDT",
+     "state": "in",
+     "status": "13:01 - 3rd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "13:01",
+     "period": 3,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673096&vislive=ind",
      "live_feed": null,
@@ -2090,10 +2090,11 @@
   },
   "receiving_votes": {
    "calvin": 3
-  }
+  },
+  "refreshed": "2026-10-03T18:58:00-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-03T18:58:00-05:00",
+  "fetched": "2026-10-03T20:58:44-05:00",
   "teams": {
    "calvin": {
     "predictive": {
