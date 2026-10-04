@@ -498,6 +498,8 @@ tr.w td.res{color:var(--pos);font-weight:600}tr.l td.res{color:var(--neg);font-w
 .more{margin-top:3em;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.more h2{margin:0 0 .4em;border:0;padding:0;font-size:1.2rem}.more p{margin:0}
 footer{margin-top:28px;font-size:.85rem;color:var(--muted);line-height:1.6}
 @media (max-width:640px){h1{font-size:2.1rem}.score{font-size:1.7rem}.big{font-size:2rem}main{padding-top:14px}}
+thead th[aria-sort]{cursor:pointer;user-select:none}thead th[aria-sort]::after{content:"";display:inline-block;width:.9em;color:var(--faint,var(--muted))}thead th[aria-sort="ascending"]::after{content:"\25B4"}thead th[aria-sort="descending"]::after{content:"\25BE"}
+h3.spaced{margin-top:1.6em}
 """
 
 JS = r"""
@@ -706,6 +708,19 @@ function show(name){tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===
 tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
 document.querySelectorAll('.tablink').forEach(a=>a.addEventListener('click',()=>show(a.dataset.tab)));
 })();
+// Sortable tables: click a header to sort by that column; click again to reverse.
+(function(){
+function cellKey(td){if(!td)return '';const t=td.querySelector('time[datetime]');const raw=td.dataset.sort!==undefined?td.dataset.sort:t?t.getAttribute('datetime'):td.textContent.trim();const n=parseFloat(String(raw).replace(/[,%#$]/g,''));return isNaN(n)||!/^[-+#$]?[\d.,]+%?$/.test(String(raw).replace(/\s/g,''))?String(raw).toLowerCase():n;}
+document.querySelectorAll('table').forEach(t=>{
+  const head=t.tHead,body=t.tBodies[0];if(!head||!body||body.rows.length<2)return;
+  const ths=[...head.rows[head.rows.length-1].cells];
+  ths.forEach((th,i)=>{th.setAttribute('aria-sort','none');th.setAttribute('role','button');th.tabIndex=0;
+    const go=()=>{const dir=th.getAttribute('aria-sort')==='ascending'?'descending':'ascending';ths.forEach(h=>h.setAttribute('aria-sort','none'));th.setAttribute('aria-sort',dir);
+      const rows=[...body.rows];rows.sort((a,b)=>{const x=cellKey(a.cells[i]),y=cellKey(b.cells[i]);const r=typeof x==='number'&&typeof y==='number'?x-y:typeof x==='number'?-1:typeof y==='number'?1:String(x).localeCompare(String(y));return dir==='ascending'?r:-r;});
+      rows.forEach(r=>body.appendChild(r));};
+    th.addEventListener('click',go);th.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
+});
+})();
 """
 
 
@@ -735,7 +750,9 @@ def main():
 <span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="ctl"><span class="seglabel" id="lbl-times">Times</span><div class="seg" role="group" aria-labelledby="lbl-times"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div></div><div class="ctl"><span class="seglabel" id="lbl-theme">Theme</span><div class="seg" role="group" aria-labelledby="lbl-theme"><button type="button" class="th" data-theme="light">Light</button><button type="button" class="th" data-theme="dark">Dark</button></div></div></div></div>
 
 <h2 id="week">This week</h2>
-<p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch. Scores refresh every minute while a game is in progress. During a game, each card shows who has the ball, the down and distance, and the last play. At halftime it shows which team gets the ball to start the second half. ESPN supplies that for Washington and Indiana. For the Division III games it comes from the home team's live stats feed, so it appears only when the home team publishes one. <span id="livestamp"></span></p>
+<p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch.</p>
+<p class="small">Scores refresh every minute while a game is in progress. During a game, each card shows who has the ball, the down and distance, and the last play. At halftime it shows which team gets the ball to start the second half.</p>
+<p class="small">ESPN supplies that for Washington and Indiana. For the Division III games it comes from the home team's live stats feed, so it appears only when the home team publishes one. <span id="livestamp"></span></p>
 {this_week()}
 
 <h2 id="teams">The five</h2>
@@ -747,7 +764,7 @@ def main():
 <p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey appears twice for each team: rank inside its own division, and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates. Massey's ratings run through games of {esc(massey_through)}.</p>
 {ratings_table()}
 
-<h3 style="margin-top:1.6em" id="hansen"><a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com &rarr;</a></h3>
+<h3 class="spaced" id="hansen"><a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com &rarr;</a></h3>
 <p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, and schedule strength. It also lists the season simulation's projected record, NPI, and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
 {hansen_table()}
 
