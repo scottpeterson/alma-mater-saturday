@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-04T15:22:26-05:00",
+ "fetched_at": "2026-10-04T16:15:53-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -186,7 +186,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "WASH -2.5",
        "over_under": 41.5,
        "home_ml": -130,
@@ -625,9 +625,9 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
-       "details": "IU -9.5",
-       "over_under": 51.5,
+       "provider": "Draft Kings",
+       "details": "IU -8.5",
+       "over_under": 52.5,
        "home_ml": 260,
        "away_ml": -325
       },
@@ -2058,10 +2058,11 @@
   },
   "receiving_votes": {
    "calvin": 7
-  }
+  },
+  "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-04T15:22:45-05:00",
+  "fetched": "2026-10-04T16:16:10-05:00",
   "teams": {
    "calvin": {
     "predictive": {
