@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-04T00:41:58-05:00",
+ "fetched_at": "2026-10-04T05:20:45-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -187,14 +187,14 @@
      "odds": {
       "line": {
        "provider": "Draft Kings",
-       "details": "WASH -1.5",
+       "details": "WASH -2.5",
        "over_under": 41.5,
-       "home_ml": -112,
-       "away_ml": -108
+       "home_ml": -125,
+       "away_ml": 105
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 35.3
+       "pct": 39.6
       }
      }
     },
@@ -230,7 +230,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 61.3
+       "pct": 54.8
       }
      }
     },
@@ -390,16 +390,16 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
-     "line": "95/137, 1129 YDS, 8.2 YPA, 7 TD, 3 INT"
+     "line": "110/163, 1327 YDS, 8.1 YPA, 8 TD, 3 INT"
     },
     {
      "label": "Rushing",
-     "name": "Demond Williams Jr.",
-     "position": "QB",
-     "jersey": "1",
-     "year": "Junior",
-     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
-     "line": "40 CAR, 165 YDS, 2 TD"
+     "name": "Brian Bonner Jr.",
+     "position": "RB",
+     "jersey": "34",
+     "year": "Freshman",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5200430.png",
+     "line": "41 CAR, 215 YDS"
     },
     {
      "label": "Receiving",
@@ -408,16 +408,16 @@
      "jersey": "2",
      "year": "Sophomore",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5166797.png",
-     "line": "30 REC, 308 YDS, 1 TD"
+     "line": "35 REC, 338 YDS, 1 TD"
     },
     {
      "label": "Tackles",
-     "name": "Jacob Manu",
-     "position": "LB",
-     "jersey": "9",
+     "name": "Alex McLaughlin",
+     "position": "S",
+     "jersey": "7",
      "year": "Senior",
-     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4896317.png",
-     "line": "24 tackles"
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
+     "line": "32 tackles"
     },
     {
      "label": "Sacks",
@@ -426,7 +426,7 @@
      "jersey": "9",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4896317.png",
-     "line": "2 sacks"
+     "line": "2.5 sacks"
     },
     {
      "label": "Interceptions",
@@ -633,7 +633,7 @@
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 67.9
+       "pct": 69.2
       }
      }
     },
@@ -667,7 +667,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 45.5
+       "pct": 45.9
       }
      }
     },
@@ -827,16 +827,16 @@
      "jersey": "10",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685401.png",
-     "line": "56/80, 850 YDS, 10.6 YPA, 11 TD"
+     "line": "76/107, 1101 YDS, 10.3 YPA, 15 TD"
     },
     {
      "label": "Rushing",
-     "name": "Lee Beebe Jr.",
+     "name": "Turbo Richard",
      "position": "RB",
-     "jersey": "29",
-     "year": "Senior",
-     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5091725.png",
-     "line": "71 CAR, 398 YDS, 3 TD"
+     "jersey": "1",
+     "year": "Junior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146724.png",
+     "line": "63 CAR, 587 YDS, 5 TD"
     },
     {
      "label": "Receiving",
@@ -845,7 +845,7 @@
      "jersey": "80",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
-     "line": "19 REC, 370 YDS, 6 TD"
+     "line": "27 REC, 477 YDS, 8 TD"
     },
     {
      "label": "Tackles",
@@ -854,7 +854,7 @@
      "jersey": "46",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
-     "line": "30 tackles"
+     "line": "37 tackles"
     },
     {
      "label": "Sacks",
@@ -863,7 +863,7 @@
      "jersey": "12",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4857878.png",
-     "line": "3 sacks"
+     "line": "4 sacks"
     },
     {
      "label": "Interceptions",
@@ -2091,7 +2091,7 @@
   "refreshed": "2026-10-03T18:58:00-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-04T00:42:20-05:00",
+  "fetched": "2026-10-04T05:21:02-05:00",
   "teams": {
    "calvin": {
     "predictive": {
