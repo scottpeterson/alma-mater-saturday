@@ -6,7 +6,7 @@
     ],
     "kind": "Cable channel",
     "teams": "Washington, Indiana",
-    "access": "Pay-TV subscription that carries Big Ten Network: cable or satellite, or a live-TV streaming service such as YouTube TV, Hulu + Live TV, Sling (Blue), Fubo, or DirecTV Stream. Fox One, Fox's own streaming service, also carries BTN.",
+    "access": "Pay-TV subscription that carries Big Ten Network. That means cable or satellite, or a live-TV streaming service such as YouTube TV, Hulu + Live TV, Sling (Blue), Fubo, or DirecTV Stream. Fox One, Fox's own streaming service, also carries BTN.",
     "free": false,
     "url": "https://www.bigtennetwork.com/",
     "note": "B1G+ is a separate subscription for events BTN does not televise. It does not carry BTN's football games."
@@ -84,7 +84,7 @@
     ],
     "kind": "Conference stream",
     "teams": "Hope, Calvin",
-    "access": "The Michigan Intercollegiate Athletic Association's official stream, MIAA Sports Network, runs on Hudl TV at miaasportsnetwork.com and in the MIAA Sports Network app for Apple TV, Roku, Fire TV, Android TV, iOS, and Android. The app is free to install. As of October 3, 2026, the network has not published a viewing price.",
+    "access": "MIAA Sports Network is the Michigan Intercollegiate Athletic Association's official stream. It runs on Hudl TV at miaasportsnetwork.com and in the MIAA Sports Network app for Apple TV, Roku, Fire TV, Android TV, iOS, and Android. The app is free to install. As of October 3, 2026, the network lists no viewing price.",
     "free": null,
     "url": "https://miaasportsnetwork.com/",
     "note": "The Michigan MIAA is a Division III conference. The Mid-America Intercollegiate Athletics Association (Division II) runs a different MIAA Network, which charges $15 per broadcast or $140 per year."

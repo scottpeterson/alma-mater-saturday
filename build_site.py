@@ -238,7 +238,8 @@ def platforms_section():
         also = f' <span class="muted">({esc(", ".join(p["also"]))})</span>' if p.get("also") else ""
         note = f'<p class="small">{esc(p["note"])}</p>' if p.get("note") else ""
         if p.get("local"):
-            stations = "; ".join(f"{esc(m)} area {esc(st)}" for m, st in p["local"].items())
+            parts = [f"{esc(st)} in the {esc(m)} area" for m, st in p["local"].items()]
+            stations = " and ".join(parts) if len(parts) <= 2 else ", ".join(parts[:-1]) + ", and " + parts[-1]
             note += f'<p class="small"><b>Local stations:</b> {stations}.</p>'
         cards.append(f'<article class="platform"><h3><a href="{esc(p["url"])}" target="_blank" rel="noopener">{esc(p["name"])}</a>{also}</h3><div class="chips">{tag}<span class="chip">{esc(p["kind"])}</span>{sched}</div><p><b>Teams:</b> {esc(p["teams"])}</p><p>{esc(p["access"])}</p>{note}</article>')
     return '<div class="platforms">' + "".join(cards) + "</div>"
@@ -734,7 +735,7 @@ def main():
 <span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="ctl"><span class="seglabel" id="lbl-times">Times</span><div class="seg" role="group" aria-labelledby="lbl-times"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div></div><div class="ctl"><span class="seglabel" id="lbl-theme">Theme</span><div class="seg" role="group" aria-labelledby="lbl-theme"><button type="button" class="th" data-theme="light">Light</button><button type="button" class="th" data-theme="dark">Dark</button></div></div></div></div>
 
 <h2 id="week">This week</h2>
-<p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch. Scores refresh every minute while a game is in progress. During a game, each card shows who has the ball, the down and distance, and the last play. At halftime it shows which team gets the ball to start the second half. ESPN supplies that for Washington and Indiana. For the Division III games it comes from the stat crew's live stats feed, so it appears only when the home team publishes one. <span id="livestamp"></span></p>
+<p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch. Scores refresh every minute while a game is in progress. During a game, each card shows who has the ball, the down and distance, and the last play. At halftime it shows which team gets the ball to start the second half. ESPN supplies that for Washington and Indiana. For the Division III games it comes from the home team's live stats feed, so it appears only when the home team publishes one. <span id="livestamp"></span></p>
 {this_week()}
 
 <h2 id="teams">The five</h2>
@@ -743,11 +744,11 @@ def main():
 </div>
 
 <h2 id="ratings">Rankings and ratings</h2>
-<p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey appears twice for each team: rank inside its own division and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates, through games of {esc(massey_through)}.</p>
+<p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey appears twice for each team: rank inside its own division, and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates. Massey's ratings run through games of {esc(massey_through)}.</p>
 {ratings_table()}
 
 <h3 style="margin-top:1.6em" id="hansen"><a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com &rarr;</a></h3>
-<p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
+<p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, and schedule strength. It also lists the season simulation's projected record, NPI, and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
 {hansen_table()}
 
 <h2 id="margins">Point margin through the season</h2>
@@ -768,7 +769,7 @@ def main():
 
 <section class="more">
 <h2>More Division III numbers</h2>
-<p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/" target="_blank" rel="noopener">The D3 Stat Lab</a>, which publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
+<p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/" target="_blank" rel="noopener">The D3 Stat Lab</a>. It publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
 </section>
 <footer>Built {esc(built)} Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched {esc(fetched)} Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through {esc(massey_through)}, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched {esc(hansen_fetched[:16].replace("T", " "))}). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
 </main>
