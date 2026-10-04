@@ -473,7 +473,7 @@ button{font:inherit;cursor:pointer}
 .scoreline{display:flex;align-items:baseline;justify-content:space-between;gap:10px;min-height:1.2em;margin-bottom:6px}.score{font-size:2rem;font-weight:700;line-height:1}.dash{color:var(--faint);padding:0 .1em}.status{font-weight:600;color:var(--muted)}
 .game.live .status{color:var(--live)}.game.live .scoreline .status::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--live);margin-right:6px;animation:pulse 1.4s infinite}
 dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0;font-size:.95rem}dt{color:var(--muted)}dd{margin:0}
-.situation{display:none;margin:0 0 10px;padding:8px 10px;border-radius:10px;background:var(--surface2);font-size:.9rem;line-height:1.35}.situation.on{display:block}.situation .poss{font-weight:700;color:var(--ink)}.situation .poss.mine{color:var(--team)}.situation .poss::before{content:"";display:inline-block;width:10px;height:7px;border-radius:50%;background:currentColor;margin-right:5px;vertical-align:1px}.situation .dd{font-weight:600}.situation .last{color:var(--muted);margin-top:3px}
+.situation{display:none;margin:0 0 10px;padding:8px 10px;border-radius:10px;background:var(--surface2);font-size:.9rem;line-height:1.35}.situation.on{display:block}.situation .poss{font-weight:700;color:var(--ink)}.situation .poss.mine{color:var(--team)}.situation .poss::before{content:"";display:inline-block;width:10px;height:7px;border-radius:50%;background:currentColor;margin-right:5px;vertical-align:1px}.situation .dd{font-weight:600}.situation .half{font-weight:600}.situation .last{color:var(--muted);margin-top:3px}
 .chip{display:inline-block;background:var(--chip);border-radius:6px;padding:1px 7px;font-size:.85rem;margin:1px 4px 1px 0;white-space:nowrap}.chip.tbd{color:var(--muted)}
 .count{color:var(--muted);font-size:.9rem}
 .teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
@@ -568,8 +568,9 @@ function showSituation(el,s){
   const box=el.querySelector('.situation');if(!box)return;
   if(!s){box.classList.remove('on');box.textContent='';return;}
   const parts=[];
-  if(s.poss){const me=el.querySelector('.who').firstChild.textContent.trim().toLowerCase(),who=s.poss.toLowerCase();const mine=me.startsWith(who)||who.startsWith(me);parts.push('<span class="poss'+(mine?' mine':'')+'">'+escHtml(s.poss)+' ball</span>');}
-  const dd=[s.dd,s.spot].filter(Boolean).join(' at ');
+  if(s.half)parts.push('<span class="half">'+escHtml(s.half)+' gets the ball to start the second half</span>');
+  if(s.poss&&!s.half){const me=el.querySelector('.who').firstChild.textContent.trim().toLowerCase(),who=s.poss.toLowerCase();const mine=me.startsWith(who)||who.startsWith(me);parts.push('<span class="poss'+(mine?' mine':'')+'">'+escHtml(s.poss)+' ball</span>');}
+  const dd=s.half?'':[s.dd,s.spot].filter(Boolean).join(' at ');
   if(dd)parts.push('<span class="dd">'+escHtml(dd)+'</span>');
   let h=parts.length?'<div>'+parts.join(' · ')+'</div>':'';
   if(s.last)h+='<div class="last">Last play: '+escHtml(s.last)+'</div>';
@@ -582,6 +583,22 @@ function espnSituation(comp,mine,other){
   const poss=s.possession===mine.team.id?mine:s.possession===other.team.id?other:null;
   return {poss:poss?poss.team.shortDisplayName:null,dd:s.shortDownDistanceText||(s.downDistanceText||'').split(' at ')[0],spot:s.possessionText||'',last:s.lastPlay&&s.lastPlay.text||''};
 }
+// Who gets the ball after halftime: the team that kicked off to start the game. Looked up once per game.
+const openers=new Map();
+function isHalftime(period,clock){return period===2&&/^0?0:00$/.test(clock);}
+function opener(key,load){if(!openers.has(key))openers.set(key,load().catch(()=>null));return openers.get(key);}
+// ESPN: the game summary lists every drive; the first kickoff's start.team is the kicking team.
+function espnOpener(eventId){return opener('espn'+eventId,async()=>{
+  const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event='+eventId,{cache:'no-store'});
+  const j=await r.json();const drives=((j.drives||{}).previous||[]);
+  for(const d of drives)for(const p of d.plays||[]){if(/kickoff/i.test((p.type||{}).text||'')&&p.start&&p.start.team)return String(p.start.team.id);}
+  return null;});}
+// Sidearm: game.json?detail=full carries the whole play list, oldest first; the first kickoff names the kicking side.
+function sidearmOpener(url){return opener(url,async()=>{
+  const r=await fetch(url+'?detail=full',{cache:'no-store'});const j=await r.json();
+  const ko=(j.Plays||[]).find(p=>p.Type==='Kickoff');return ko?ko.Team:null;});}
+// PrestoSports: the first kickoff play in the first quarter; hasball is the kicking team's id.
+function prestoOpener(x){const q=x.querySelector('qtr[number="1"]');const ko=q&&q.querySelector('play[type="K"]');return ko?ko.getAttribute('hasball'):null;}
 // The school feeds. Sidearm: sidearmstats.com/<client>/football/game.json. PrestoSports: data.prestolivestats.com/xml/<site>/events/<event>.xml.
 async function feedState(el){
   const url=el.dataset.feed,type=el.dataset.feedType;if(!url)return null;
@@ -596,7 +613,9 @@ async function feedState(el){
     if(last&&(last.Turnover||/punt|kickoff/i.test((last.Type||'')+' '+(last.Narrative||''))))side=side==='HomeTeam'?'VisitingTeam':'HomeTeam';
     const m=/^(\d+)(?:st|nd|rd|th) and (\d+|goal) on the ([A-Za-z]+)(\d+)/i.exec(g.Context||'');
     const H={id:g.HomeTeam.Id,name:g.HomeTeam.Name},V={id:g.VisitingTeam.Id,name:g.VisitingTeam.Name};
-    return {complete:!!g.IsComplete,home:+g.HomeTeam.Score||0,away:+g.VisitingTeam.Score||0,period:+g.Period||0,clock:fmtClock(g.ClockSeconds),
+    const period=+g.Period||0,clock=fmtClock(g.ClockSeconds);
+    const kicked=isHalftime(period,clock)?await sidearmOpener(url):null;
+    return {complete:!!g.IsComplete,home:+g.HomeTeam.Score||0,away:+g.VisitingTeam.Score||0,period,clock,half:kicked==='HomeTeam'?H.name:kicked==='VisitingTeam'?V.name:null,
       poss:side==='HomeTeam'?H.name:side==='VisitingTeam'?V.name:null,
       dd:m?ordinal(+m[1])+' & '+(/goal/i.test(m[2])?'Goal':m[2]):fixSpots(g.Context||'',H,V),spot:m?sideName(m[3],H,V)+' '+(+m[4]):'',last:last?fixSpots(fixNames(last.Narrative),H,V):''};
   }
@@ -609,7 +628,10 @@ async function feedState(el){
     const spotRaw=dt?dt.getAttribute('spot')||'':'';const sm=/^([A-Za-z]+)(\d+)$/.exec(spotRaw);
     const H={id:teams.H&&teams.H.id,name:teams.H?teams.H.name:'Home'},V={id:teams.V&&teams.V.id,name:teams.V?teams.V.name:'Visitor'};
     const down=dt?+dt.getAttribute('down')||0:0,togo=dt?dt.getAttribute('togo'):'';
-    return {complete:st.getAttribute('complete')==='Y',home:teams.H?teams.H.score:0,away:teams.V?teams.V.score:0,period:+st.getAttribute('period')||0,clock:(dt&&dt.getAttribute('clock'))||st.getAttribute('clock')||'',
+    const period=+st.getAttribute('period')||0,clock=(dt&&dt.getAttribute('clock'))||st.getAttribute('clock')||'';
+    const kicked=isHalftime(period,clock)?prestoOpener(x):null;
+    const kicker=kicked?Object.values(teams).find(t=>t.id===kicked):null;
+    return {complete:st.getAttribute('complete')==='Y',home:teams.H?teams.H.score:0,away:teams.V?teams.V.score:0,period,clock,half:kicker?kicker.name:null,
       poss:hb&&teams[hb]?teams[hb].name:null,dd:down?ordinal(down)+' & '+(togo==='0'?'Goal':togo):'',spot:sm?sideName(sm[1],H,V)+' '+(+sm[2]):spotRaw,
       last:fixSpots(fixNames((dt&&dt.getAttribute('lastplay')||'').replace(/,?\s*clock \d+:\d+\.?$/,'')),H,V)};
   }
@@ -619,7 +641,7 @@ async function applyFeed(el){
   let f=null;try{f=await feedState(el);}catch(e){}
   if(!f||f.complete)return false;
   const home=el.dataset.home==='1';
-  const status=f.clock==='0:00'&&f.period===2?'Halftime':f.clock+' - '+ordinal(f.period);
+  const status=isHalftime(f.period,f.clock)?'Halftime':f.clock+' - '+ordinal(f.period);
   setScore(el,home?f.home:f.away,home?f.away:f.home,status);
   el.classList.add('live');el.classList.remove('pre');
   showSituation(el,f);
@@ -633,6 +655,7 @@ async function refresh(){
   if(!keys.size){document.body.classList.remove('has-live');return;}
   let anyLive=false;
   const shown=new Set();
+  const halfJobs=[];
   for(const key of keys){
     const [group,date]=key.split('|');
     try{
@@ -653,12 +676,18 @@ async function refresh(){
         }
         el.classList.toggle('live',state==='in');el.classList.toggle('final',state==='post');el.classList.toggle('pre',state==='pre');
         if(state==='in')anyLive=true;
-        const sit=state==='in'?espnSituation(comp,mine,other):null;
-        if(sit){showSituation(el,sit);shown.add(el);}
+        if(state==='in'&&st.type.name==='STATUS_HALFTIME'){
+          shown.add(el);
+          halfJobs.push(espnOpener(ev.id).then(id=>{const t=id===mine.team.id?mine:id===other.team.id?other:null;showSituation(el,{half:t?t.team.shortDisplayName:null,last:comp.situation&&comp.situation.lastPlay&&comp.situation.lastPlay.text||''});}));
+        }else{
+          const sit=state==='in'?espnSituation(comp,mine,other):null;
+          if(sit){showSituation(el,sit);shown.add(el);}
+        }
         document.querySelectorAll('tr[data-game="'+ev.id+'"] td.res').forEach(td=>{if(state!=='pre'){td.textContent=(state==='post'?(+mine.score>+other.score?'W ':+mine.score<+other.score?'L ':'T ')+mine.score+'-'+other.score:(mine.score||0)+'-'+(other.score||0)+', '+st.type.shortDetail);td.parentElement.classList.toggle('live',state==='in');}});
       });
     }catch(e){}
   }
+  await Promise.all(halfJobs);
   // The stat crew's feed fills in what ESPN leaves out and is usually a play or two ahead of it.
   const pending=cards.filter(c=>c.dataset.feed&&!c.classList.contains('final')&&!shown.has(c)&&inWindow(c,now));
   await Promise.all(pending.map(async c=>{if(await applyFeed(c)){anyLive=true;shown.add(c);}}));
@@ -704,7 +733,7 @@ def main():
 <span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="ctl"><span class="seglabel" id="lbl-times">Times</span><div class="seg" role="group" aria-labelledby="lbl-times"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div></div><div class="ctl"><span class="seglabel" id="lbl-theme">Theme</span><div class="seg" role="group" aria-labelledby="lbl-theme"><button type="button" class="th" data-theme="light">Light</button><button type="button" class="th" data-theme="dark">Dark</button></div></div></div></div>
 
 <h2 id="week">This week</h2>
-<p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch. Scores refresh every minute while a game is in progress. During a game, each card shows who has the ball, the down and distance, and the last play. ESPN supplies that for Washington and Indiana. For the Division III games it comes from the stat crew's live stats feed, so it appears only when the home team publishes one. <span id="livestamp"></span></p>
+<p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch. Scores refresh every minute while a game is in progress. During a game, each card shows who has the ball, the down and distance, and the last play. At halftime it shows which team gets the ball to start the second half. ESPN supplies that for Washington and Indiana. For the Division III games it comes from the stat crew's live stats feed, so it appears only when the home team publishes one. <span id="livestamp"></span></p>
 {this_week()}
 
 <h2 id="teams">The five</h2>

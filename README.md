@@ -110,6 +110,14 @@ Two kinds of source feed the in-game card:
   name the team in possession, so the page infers it from the last play and
   flips it after a punt, kickoff, or turnover.
 
+At halftime the card names the team that gets the ball to start the second
+half: the team that kicked off to start the game. The page looks that up
+once per game from the play list. ESPN's game summary
+(`.../summary?event=<id>`) lists every drive, and the first kickoff's
+`start.team` is the kicking team. Sidearm's `game.json?detail=full` adds the
+full `Plays` list, oldest first. Presto's XML already holds every play, and
+the first `type="K"` play in quarter 1 names the kicking team in `hasball`.
+
 Each game in `data/season.json` carries `live_stats` (the link) and
 `live_feed` (`{"type": "sidearm" | "presto", "url": ...}` or null). If a
 schedule page fails to load, the games keep the previous run's values.
