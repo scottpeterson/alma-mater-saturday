@@ -727,6 +727,7 @@ def main():
 <link rel="icon" href="assets/hope.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<script data-goatcounter="https://almamatersaturday.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>{CSS}</style></head><body><main>
 <div class="top"><div><h1>Alma Mater Saturday</h1>
 <p class="sub">Three brothers went to five schools. Chris went to Calvin. Scott went to Hope and Washington. Matt went to Wheaton and Indiana. This page follows all five football teams: records, rankings, ratings, kickoff times, where to watch, top players, and live scores on game days.</p>
