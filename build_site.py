@@ -131,7 +131,7 @@ def hansen_badge(slug):
     pred = h.get("predictive")
     if not pred:
         return ""
-    return (f'<a class="badge hansen" href="https://hansenratings.com/ratings/predictive/2026/" title="Hansen Ratings predictive rank">'
+    return (f'<a class="badge hansen" href="https://hansenratings.com/ratings/predictive/2026/" title="Hansen Ratings predictive rank" target="_blank" rel="noopener">'
             f'<b>#{pred["Rank"]}</b> Hansen</a>')
 
 
@@ -178,9 +178,9 @@ def game_card(school, g):
     rank = f'<span class="rk">#{opp["rank"]}</span> ' if opp.get("rank") else ""
     feed = g.get("live_feed") or {}
     feed_attrs = f' data-feed="{esc(feed["url"])}" data-feed-type="{esc(feed["type"])}"' if feed.get("url") else ""
-    stats_links = [f'<a href="https://www.espn.com/college-football/game/_/gameId/{esc(g["id"])}">ESPN</a>']
+    stats_links = [f'<a href="https://www.espn.com/college-football/game/_/gameId/{esc(g["id"])}" target="_blank" rel="noopener">ESPN</a>']
     if g.get("live_stats"):
-        stats_links.insert(0, f'<a href="{esc(g["live_stats"])}">Live stats</a>')
+        stats_links.insert(0, f'<a href="{esc(g["live_stats"])}" target="_blank" rel="noopener">Live stats</a>')
     return f'''<article class="game {status_class}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}" data-date="{esc(g["date"])}" data-home="{1 if g["home"] else 0}"{feed_attrs} style="--team:var(--c-{school["slug"]})">
 <header><img src="{esc(school["logo"])}" alt=""><div><div class="who">{esc(school["name"])} <span class="muted">{esc(school["mascot"])}</span></div><div class="what">{"vs" if g["home"] or g.get("neutral") else "at"} {rank}{esc(opp["name"])}</div></div>{opp_logo}</header>
 <div class="body">
@@ -216,7 +216,7 @@ def odds_rows(school, g):
         if "Hansen" in prob["source"]:
             week = SEASON.get("hansen_week") or "/projections/2026/"
             href = "https://hansenratings.com" + week if week.startswith("/") else week
-            src = f'<a href="{href}">{src}</a>'
+            src = f'<a href="{href}" target="_blank" rel="noopener">{src}</a>'
         rows.append(f'<dt>Win odds</dt><dd>{esc(school["name"])} {prob["pct"]:g}%{extra} <span class="src">{src}</span></dd>')
     return "".join(rows)
 
@@ -240,7 +240,7 @@ def platforms_section():
         if p.get("local"):
             stations = "; ".join(f"{esc(m)} area {esc(st)}" for m, st in p["local"].items())
             note += f'<p class="small"><b>Local stations:</b> {stations}.</p>'
-        cards.append(f'<article class="platform"><h3><a href="{esc(p["url"])}">{esc(p["name"])}</a>{also}</h3><div class="chips">{tag}<span class="chip">{esc(p["kind"])}</span>{sched}</div><p><b>Teams:</b> {esc(p["teams"])}</p><p>{esc(p["access"])}</p>{note}</article>')
+        cards.append(f'<article class="platform"><h3><a href="{esc(p["url"])}" target="_blank" rel="noopener">{esc(p["name"])}</a>{also}</h3><div class="chips">{tag}<span class="chip">{esc(p["kind"])}</span>{sched}</div><p><b>Teams:</b> {esc(p["teams"])}</p><p>{esc(p["access"])}</p>{note}</article>')
     return '<div class="platforms">' + "".join(cards) + "</div>"
 
 
@@ -296,7 +296,7 @@ def team_card(school):
 <dt>Margin</dt><dd><b class="{ "pos" if team["diff"] > 0 else "neg" if team["diff"] < 0 else ""}">{signed(team["diff"])}</b> total, {signed(round(avg, 1))} per game</dd>
 {last_and_next(team)}
 </dl>
-<p class="meta"><a href="{esc(school["schedule_url"])}">Official schedule</a> · <a href="#sched-{school["slug"]}" class="tablink" data-tab="{school["slug"]}">Full schedule below</a></p>
+<p class="meta"><a href="{esc(school["schedule_url"])}" target="_blank" rel="noopener">Official schedule</a> · <a href="#sched-{school["slug"]}" class="tablink" data-tab="{school["slug"]}">Full schedule below</a></p>
 </div></article>'''
 
 
@@ -745,8 +745,8 @@ def main():
 <p class="small">Sorted by Massey rank across all divisions. Polls: AP and Coaches for the Division I teams{f" (week {ap_week})" if ap_week else ""}, D3football.com Top 25 for the Division III teams{f" ({d3.get('label')}, through {d3.get('through')})" if d3.get("label") else ""}. Massey appears twice for each team: rank inside its own division and rank across all {MASSEY["division_sizes"].get("all")} college teams Massey rates, through games of {esc(massey_through)}.</p>
 {ratings_table()}
 
-<h3 style="margin-top:1.6em" id="hansen"><a href="https://hansenratings.com/">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/">hansenratings.com &rarr;</a></h3>
-<p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
+<h3 style="margin-top:1.6em" id="hansen"><a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com &rarr;</a></h3>
+<p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, schedule strength, and the season simulation's projected record, NPI, and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
 {hansen_table()}
 
 <h2 id="margins">Point margin through the season</h2>
@@ -767,9 +767,9 @@ def main():
 
 <section class="more">
 <h2>More Division III numbers</h2>
-<p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/">The D3 Stat Lab</a>, which publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
+<p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/" target="_blank" rel="noopener">The D3 Stat Lab</a>, which publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
 </section>
-<footer>Built {esc(built)} Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/">ESPN</a>, fetched {esc(fetched)} Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings">Massey Ratings</a> (through {esc(massey_through)}, updated each week) and <a href="https://hansenratings.com/">Hansen Ratings</a> (fetched {esc(hansen_fetched[:16].replace("T", " "))}). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
+<footer>Built {esc(built)} Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched {esc(fetched)} Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through {esc(massey_through)}, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched {esc(hansen_fetched[:16].replace("T", " "))}). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
 </main>
 <script>{JS}</script>
 </body></html>
