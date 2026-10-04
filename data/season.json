@@ -1,9 +1,9 @@
 {
- "fetched_at": "2026-10-03T20:58:30-05:00",
+ "fetched_at": "2026-10-03T22:45:54-05:00",
  "season": 2026,
  "teams": {
   "washington": {
-   "record": "3-1",
+   "record": "3-2",
    "conf_record": null,
    "standing": "12th in Big Ten",
    "games": [
@@ -146,29 +146,16 @@
      "broadcasts": [
       "NBC"
      ],
-     "state": "in",
-     "status": "5:32 - 3rd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "5:32",
-     "period": 3,
+     "state": "post",
+     "status": "Final",
+     "pf": 21,
+     "pa": 25,
+     "result": "L",
+     "clock": "0:00",
+     "period": 4,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675077&vislive=wash",
-     "live_feed": null,
-     "odds": {
-      "line": {
-       "provider": "DraftKings",
-       "details": "USC -7.5",
-       "over_under": 58.5,
-       "home_ml": -305,
-       "away_ml": 245
-      },
-      "win_prob": {
-       "source": "ESPN matchup predictor",
-       "pct": 16.2
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401858487",
@@ -239,7 +226,13 @@
      "period": 0,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=674929&vislive=wash",
-     "live_feed": null
+     "live_feed": null,
+     "odds": {
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 61.3
+      }
+     }
     },
     {
      "id": "401858504",
@@ -382,12 +375,12 @@
      "live_feed": null
     }
    ],
-   "played": 4,
-   "pf": 112,
-   "pa": 67,
-   "diff": 45,
+   "played": 5,
+   "pf": 133,
+   "pa": 92,
+   "diff": 41,
    "wins": 3,
-   "losses": 1,
+   "losses": 2,
    "ties": 0,
    "players": [
     {
@@ -447,9 +440,9 @@
    ]
   },
   "indiana": {
-   "record": "4-0",
+   "record": "5-0",
    "conf_record": null,
-   "standing": "6th in Big Ten",
+   "standing": "1st in Big Ten",
    "games": [
     {
      "id": "401858425",
@@ -590,29 +583,16 @@
      "broadcasts": [
       "BTN"
      ],
-     "state": "in",
-     "status": "13:01 - 3rd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "13:01",
-     "period": 3,
+     "state": "post",
+     "status": "Final",
+     "pf": 47,
+     "pa": 15,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673096&vislive=ind",
-     "live_feed": null,
-     "odds": {
-      "line": {
-       "provider": "DraftKings",
-       "details": "IU -24.5",
-       "over_under": 56.5,
-       "home_ml": 1200,
-       "away_ml": -2400
-      },
-      "win_prob": {
-       "source": "ESPN matchup predictor",
-       "pct": 95.9
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401858481",
@@ -683,7 +663,13 @@
      "period": 0,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672666",
-     "live_feed": null
+     "live_feed": null,
+     "odds": {
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 45.5
+      }
+     }
     },
     {
      "id": "401858496",
@@ -826,11 +812,11 @@
      "live_feed": null
     }
    ],
-   "played": 4,
-   "pf": 174,
-   "pa": 39,
-   "diff": 135,
-   "wins": 4,
+   "played": 5,
+   "pf": 221,
+   "pa": 54,
+   "diff": 167,
+   "wins": 5,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -2094,7 +2080,7 @@
   "refreshed": "2026-10-03T18:58:00-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-03T20:58:44-05:00",
+  "fetched": "2026-10-03T22:46:12-05:00",
   "teams": {
    "calvin": {
     "predictive": {
