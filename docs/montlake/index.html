@@ -224,6 +224,10 @@
   .game.big.uw .g-time,.game.big.uw .why{color:var(--uw-gold)}
   .game.big .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#FFFFFF}
   .game.big .g-status{color:rgba(255,255,255,.7)}
+  .g-status.win{color:#2C6A08}
+  .g-status.loss{color:#A02830}
+  .game.big .g-status.win{color:#A5E871}
+  .game.big .g-status.loss{color:#FFC2C6}
 
 
   .bye{
@@ -430,7 +434,10 @@ function fmtTime(g){
   return new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(new Date(g.dt));
 }
 function status(g){
-  if(g.final) return {cls:"final", txt:"Final · "+g.final};
+  if(g.final){
+    const r = {W:" win", L:" loss"}[g.final[0]] || "";
+    return {cls:"final"+r, txt:"Final · "+g.final};
+  }
   if(!g.dt) return null;
   const now = Date.now(), t = new Date(g.dt).getTime();
   if(now > t + 4.5*3600*1000) return {cls:"final", txt:"Final"};
