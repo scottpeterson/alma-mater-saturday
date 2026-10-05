@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-05T00:26:05-05:00",
+ "fetched_at": "2026-10-05T09:26:17-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -626,10 +626,10 @@
      "odds": {
       "line": {
        "provider": "DraftKings",
-       "details": "IU -7",
+       "details": "IU -7.5",
        "over_under": 52.5,
-       "home_ml": 260,
-       "away_ml": -325
+       "home_ml": 245,
+       "away_ml": -305
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -2062,7 +2062,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-05T00:26:21-05:00",
+  "fetched": "2026-10-05T09:26:31-05:00",
   "teams": {
    "calvin": {
     "predictive": {
