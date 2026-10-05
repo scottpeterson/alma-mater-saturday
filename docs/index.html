@@ -10,7 +10,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
 <script data-goatcounter="https://almamatersaturday.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<style>
+<style>:root{--sn-max:1080px;--sn-pad:16px}
+.sitenav{background:var(--surface2,var(--paper-2,#f2f2f2))}
+.sitenav-in{max-width:var(--sn-max);margin:0 auto;padding:8px var(--sn-pad);display:flex;flex-wrap:wrap;gap:6px}
+.sn{font-family:"Barlow Condensed","Avenir Next Condensed","Arial Narrow",sans-serif;font-size:1rem;font-weight:600;line-height:1.5;text-decoration:none;color:var(--ink,#1e2229);background:var(--surface,var(--paper,#fff));border:1px solid var(--line,#d8d5cb);border-radius:999px;padding:6px 14px}
+.sn:hover{border-color:var(--ink,#1e2229)}
+.sn:focus-visible{outline:2px solid var(--accent,var(--hawk-blue,#1f5fbf));outline-offset:2px}
+.sn[aria-current="page"]{background:var(--ink,#1e2229);color:var(--surface,var(--paper,#fff));border-color:transparent;font-weight:700}
+
 :root{color-scheme:light;--bg:#f4f3ef;--surface:#ffffff;--surface2:#ecebe5;--line:#d8d5cb;--ink:#1e2229;--muted:#616873;--faint:#8c939d;--link:#1f4e79;--pos:#2e8b57;--neg:#c0504d;--live:#d6323c;--accent:#1f5fbf;--chip:#e9e7df;--on-team:#ffffff;
 --c-washington:#4b2e83;--c-indiana:#990000;--c-calvin:#8c2131;--c-hope:#c45114;--c-wheaton:#00407e}
 :root[data-theme="dark"]{color-scheme:dark;--bg:#15181d;--surface:#1d2128;--surface2:#252a32;--line:#363c46;--ink:#e7e9ec;--muted:#a7adb7;--faint:#7d848f;--link:#8ab8e6;--pos:#5fc08a;--neg:#e2807c;--accent:#7fb0ff;--chip:#2e343d;--on-team:#15181d;
@@ -65,7 +72,9 @@ footer{margin-top:28px;font-size:.85rem;color:var(--muted);line-height:1.6}
 @media (max-width:640px){h1{font-size:2.1rem}.score{font-size:1.7rem}.big{font-size:2rem}main{padding-top:14px}}
 thead th[aria-sort]{cursor:pointer;user-select:none}thead th[aria-sort]::after{content:"";display:inline-block;width:.9em;color:var(--faint,var(--muted))}thead th[aria-sort="ascending"]::after{content:"\25B4"}thead th[aria-sort="descending"]::after{content:"\25BE"}
 h3.spaced{margin-top:1.6em}
-</style></head><body><main>
+</style></head><body>
+<nav class="sitenav" aria-label="Pages"><div class="sitenav-in"><a class="sn" href="./" aria-current="page">Alma Mater Saturday</a><a class="sn" href="montlake/">Montlake &amp; Lumen</a></div></nav>
+<main>
 <div class="top"><div><h1>Alma Mater Saturday</h1>
 <p class="sub">Three brothers went to five schools. Chris went to Calvin. Scott went to Hope and Washington. Matt went to Wheaton and Indiana. This page follows all five football teams: records, rankings, ratings, kickoff times, where to watch, top players, and live scores on game days.</p>
 <span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="ctl"><span class="seglabel" id="lbl-times">Times</span><div class="seg" role="group" aria-labelledby="lbl-times"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div></div><div class="ctl"><span class="seglabel" id="lbl-theme">Theme</span><div class="seg" role="group" aria-labelledby="lbl-theme"><button type="button" class="th" data-theme="light">Light</button><button type="button" class="th" data-theme="dark">Dark</button></div></div></div></div>
@@ -206,7 +215,7 @@ h3.spaced{margin-top:1.6em}
 <h2>More Division III numbers</h2>
 <p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/" target="_blank" rel="noopener">The D3 Stat Lab</a>. It publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
 </section>
-<footer>Built 2026-10-05 9:26 AM Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched 2026-10-05 9:26 AM Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through Fri, Oct 02, 2026, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched 2026-10-05 09:26). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
+<footer>Built 2026-10-05 11:17 AM Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched 2026-10-05 9:26 AM Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through Fri, Oct 02, 2026, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched 2026-10-05 09:26). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
 </main>
 <script>
 (function(){

@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="darkreader-lock">
+<title>Montlake &amp; Lumen</title>
+<meta name="description" content="Every 2026 Seahawks and Washington Huskies game with the Eastern kickoff time and the streaming service that carries it in the Grand Rapids TV market.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-2:#F5F7FA;
+    --line:#DDE4EE;
+    --line-soft:#E9EEF5;
+    --ink:#152238;
+    --ink-2:#51617D;
+    --ink-3:#8593A9;
+    --hawk-blue:#003DA5;   /* Throwback royal */
+    --hawk-navy:#002244;
+    --hawk-green:#69BE28;  /* Action Green */
+    --hawk-green-ink:#377D0C;
+    --hawk-tint:#F1F6FF;
+    --hawk-tint-line:#C4D5F2;
+    --uw-purple:#4B2E83;
+    --uw-gold:#FFC700;
+    --uw-gold-deep:#9A7500;
+    --uw-tint:#F6F3FB;
+    --uw-tint-line:#D9CFEA;
+    --live:#D6323C;
+    --disp:"Barlow Condensed","Arial Narrow",sans-serif;
+    --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--hawk-blue)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
+
+  /* Header */
+  header.top{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .top-inner{
+    max-width:760px;margin:0 auto;padding:12px 18px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .crest{
+    width:34px;height:34px;flex:none;border-radius:8px;
+    background:linear-gradient(135deg,var(--hawk-blue) 0 50%,var(--uw-purple) 50% 100%);
+    display:flex;align-items:center;justify-content:center;
+    color:#FFFFFF;font-family:var(--disp);font-weight:700;font-size:15px;
+  }
+  .wordmark{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:var(--hawk-navy)}
+  .wordmark small{display:block;font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.08em;color:var(--ink-2);text-transform:none;margin-top:1px}
+
+  /* Hero */
+  .hero{padding:40px 0 8px}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-purple);margin:0 0 10px}
+  h1{
+    font-family:var(--disp);font-weight:700;line-height:.98;
+    font-size:clamp(44px,9vw,68px);margin:0 0 14px;text-transform:uppercase;letter-spacing:.005em;
+    text-wrap:balance;color:var(--hawk-navy);
+  }
+  h1 .dim{color:#9AA9C0}
+  .lede{color:var(--ink-2);max-width:58ch;margin:0 0 26px;font-size:17px}
+  .lede strong{color:var(--ink);font-weight:600}
+
+  /* Stat tiles */
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 34px;background:var(--paper)}
+  .tile{padding:16px 16px 13px}
+  .tile+.tile{border-left:1px solid var(--line)}
+  .tile .num{font-family:var(--disp);font-weight:700;font-size:34px;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .tile .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:6px}
+  .tile.hawk{box-shadow:inset 0 -4px 0 var(--hawk-green)}
+  .tile.hawk .num{color:var(--hawk-blue)}
+  .tile.uw{box-shadow:inset 0 -4px 0 var(--uw-gold)}
+  .tile.uw .num{color:var(--uw-purple)}
+
+  /* Section headings */
+  h2{font-family:var(--disp);font-weight:700;font-size:26px;text-transform:uppercase;letter-spacing:.02em;margin:44px 0 6px;color:var(--hawk-navy)}
+  .sub{color:var(--ink-2);margin:0 0 18px;max-width:60ch}
+
+  /* Next kickoff cards: solid team color */
+  .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:620px){.next-grid{grid-template-columns:1fr}}
+  .next-card{border-radius:14px;overflow:hidden;color:#FFFFFF}
+  .next-card.hawk{background:var(--hawk-blue)}
+  .next-card.uw{background:var(--uw-purple)}
+  .next-card .bar{height:5px}
+  .next-card.hawk .bar{background:var(--hawk-green)}
+  .next-card.uw .bar{background:var(--uw-gold)}
+  .next-card .pad{padding:16px 18px 18px}
+  .next-tag{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .next-card.hawk .next-tag{color:#A5E871}
+  .next-card.uw .next-tag{color:var(--uw-gold)}
+  .pulse{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  @media(prefers-reduced-motion:reduce){.pulse{animation:none}}
+  .next-match{font-family:var(--disp);font-weight:700;font-size:27px;line-height:1.05;text-transform:uppercase;margin-bottom:3px;color:#FFFFFF}
+  .next-match .at{color:rgba(255,255,255,.55)}
+  .next-venue{color:rgba(255,255,255,.75);font-size:14px;margin-bottom:12px}
+  .next-when{font-family:var(--mono);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.9)}
+  .next-card.hawk .next-when .t{color:#8FE04D}
+  .next-card.uw .next-when .t{color:var(--uw-gold)}
+  .next-count{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.7);margin-top:4px;font-variant-numeric:tabular-nums}
+  .next-card .chips{margin-top:12px}
+  .next-card .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#FFFFFF}
+
+  /* Service cheat sheet */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
+  .svc{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:14px 16px}
+  .svc h3{margin:0 0 4px;font-family:var(--disp);font-weight:600;font-size:19px;letter-spacing:.02em;display:flex;align-items:center;gap:8px;color:var(--ink)}
+  .svc .dot{width:9px;height:9px;border-radius:50%;flex:none}
+  .svc p{margin:0;color:var(--ink-2);font-size:14px}
+  .svc .count{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-top:8px;font-variant-numeric:tabular-nums}
+  .callout{border:1px solid #C9E2B2;border-radius:10px;background:#F3FAEB;padding:14px 16px;margin:14px 0 0;color:var(--ink);font-size:15px}
+  .callout b{font-weight:600}
+  .callout.gold{border-color:#E2D3A8;background:#FBF6E7}
+  .svc ul{margin:6px 0;padding-left:18px;color:var(--ink-2);font-size:14px}
+  .callout ul{margin:6px 0 0;padding-left:20px}
+
+  /* Filters */
+  .filters{
+    position:sticky;top:59px;z-index:15;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    padding:12px 0;margin-bottom:4px;
+    background:linear-gradient(var(--paper) 85%,rgba(255,255,255,0));
+  }
+  .tab{
+    font-family:var(--body);font-weight:600;font-size:14px;
+    color:var(--ink-2);background:var(--paper);border:1px solid var(--line);
+    border-radius:999px;padding:7px 16px;cursor:pointer;
+  }
+  .tab:hover{color:var(--ink)}
+  .tab:focus-visible,.chk:focus-visible{outline:2px solid var(--hawk-blue);outline-offset:2px}
+  .tab[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .tab[data-team="hawks"][aria-pressed="true"]{background:var(--hawk-blue);border-color:var(--hawk-blue);color:#FFFFFF;box-shadow:inset 0 -3px 0 var(--hawk-green)}
+  .tab[data-team="uw"][aria-pressed="true"]{background:var(--uw-purple);border-color:var(--uw-purple);color:var(--uw-gold)}
+  .chk{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--ink-2);cursor:pointer;margin-left:auto}
+  .chk input{accent-color:var(--hawk-green);width:15px;height:15px;cursor:pointer}
+
+  /* Month groups & game cards */
+  .month{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 10px;display:flex;align-items:center;gap:12px}
+  .month::after{content:"";flex:1;height:1px;background:var(--line)}
+  .games{display:flex;flex-direction:column;gap:10px}
+  .game{border:1px solid var(--line);border-radius:13px;background:var(--paper);padding:13px 16px 14px}
+  .game.hawks{background:var(--hawk-tint);border-color:var(--hawk-tint-line)}
+  .game.uw{background:var(--uw-tint);border-color:var(--uw-tint-line)}
+  .g-top{display:flex;align-items:baseline;gap:10px;margin-bottom:5px}
+  .g-date{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .g-time{font-family:var(--mono);font-size:12.5px;font-weight:600;margin-left:auto;font-variant-numeric:tabular-nums}
+  .game.hawks .g-time{color:var(--hawk-green-ink)}
+  .game.uw .g-time{color:var(--uw-gold-deep)}
+  .g-time.tbd{color:var(--ink-3);font-weight:400}
+  .g-match{font-family:var(--disp);font-weight:700;font-size:23px;line-height:1.1;text-transform:uppercase;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .game.hawks .g-match{color:var(--hawk-blue)}
+  .game.uw .g-match{color:var(--uw-purple)}
+  .g-match .at{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-3);text-transform:lowercase}
+  .g-note{color:var(--ink-2);font-size:13.5px;margin-top:2px}
+  .game.hawks .why{color:var(--hawk-green-ink)}
+  .game.uw .why{color:var(--uw-gold-deep)}
+  .g-foot{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--body);font-weight:600;font-size:12px;
+    border:1px solid var(--line);border-radius:7px;padding:3.5px 9px;
+    color:var(--ink);background:var(--paper);
+  }
+  .chip .dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .chip.ghost{color:var(--ink-3);border-style:dashed}
+  .chip.owned{border-color:var(--hawk-green);box-shadow:inset 0 0 0 1px var(--hawk-green)}
+  .game.big .chip.owned,.next-card .chip.owned{border-color:#A5E871;box-shadow:inset 0 0 0 1px #A5E871}
+
+  /* Watchability pill */
+  .watch{
+    margin-left:auto;display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;
+    border-radius:7px;padding:3.5px 9px;border:1px solid transparent;white-space:nowrap;
+  }
+  .w-yes{color:#2C6A08;background:#EFF8E5;border-color:#BFE39B}
+  .w-mobile{color:#0B4FA8;background:#EDF4FF;border-color:#B9D2F5}
+  .w-replay{color:#8A5B00;background:#FDF4E0;border-color:#EBD49E}
+  .w-no{color:#A02830;background:#FCEFF0;border-color:#F0C3C7}
+  .w-tbd{color:var(--ink-3);background:var(--paper-2);border-color:var(--line)}
+  .game.big .watch,.next-card .watch{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#FFFFFF}
+
+  /* Subscription picker */
+  .subs{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .sub-toggle{
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;user-select:none;
+    font-family:var(--body);font-weight:600;font-size:13.5px;color:var(--ink-2);
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--paper);
+  }
+  .sub-toggle .dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .sub-toggle input{position:absolute;opacity:0;pointer-events:none}
+  .sub-toggle.on{background:var(--hawk-navy);border-color:var(--hawk-navy);color:#FFFFFF}
+  .sub-toggle:has(input:focus-visible){outline:2px solid var(--hawk-blue);outline-offset:2px}
+  .sub-note{font-size:13px;color:var(--ink-3);margin-top:10px}
+  .g-status{margin-left:auto;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .g-status.final{color:var(--ink-2)}
+  .g-status.live{color:var(--live)}
+  .badge-wk{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-3);letter-spacing:.06em}
+
+  /* Marquee games: solid team color */
+  .game.big.hawks{background:var(--hawk-blue);border-color:var(--hawk-blue)}
+  .game.big.uw{background:var(--uw-purple);border-color:var(--uw-purple)}
+  .game.big .g-date,.game.big .badge-wk{color:rgba(255,255,255,.65)}
+  .game.big .g-match{color:#FFFFFF}
+  .game.big .g-match .at{color:rgba(255,255,255,.55)}
+  .game.big .g-note{color:rgba(255,255,255,.75)}
+  .game.big.hawks .g-time,.game.big.hawks .why{color:#8FE04D}
+  .game.big.uw .g-time,.game.big.uw .why{color:var(--uw-gold)}
+  .game.big .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#FFFFFF}
+  .game.big .g-status{color:rgba(255,255,255,.7)}
+
+
+  .bye{
+    border:1px dashed var(--line);border-radius:13px;padding:11px 16px;
+    color:var(--ink-3);font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .empty{color:var(--ink-3);padding:30px 0;text-align:center;display:none}
+
+  footer{margin-top:56px;border-top:1px solid var(--line-soft);padding-top:18px;color:var(--ink-3);font-size:13px}
+  footer p{margin:0 0 6px;max-width:70ch}
+
+  /* service dot colors (identity only) */
+  .d-foxone{background:#1E5EDB}.d-peacock{background:#E7B416}.d-paramount{background:#2B6BFF}
+  .d-espn{background:#D6323C}.d-prime{background:#1799C6}.d-nflplus{background:#7A4FD6}
+  .d-king5{background:#6B7A93}.d-btn{background:#1E5EDB}.d-tbd{background:#8593A9}
+  .d-st{background:#E07A24}
+</style>
+<link rel="icon" href="../assets/washington.png">
+<script data-goatcounter="https://almamatersaturday.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>:root{--sn-max:760px;--sn-pad:18px}
+.sitenav{background:var(--surface2,var(--paper-2,#f2f2f2))}
+.sitenav-in{max-width:var(--sn-max);margin:0 auto;padding:8px var(--sn-pad);display:flex;flex-wrap:wrap;gap:6px}
+.sn{font-family:"Barlow Condensed","Avenir Next Condensed","Arial Narrow",sans-serif;font-size:1rem;font-weight:600;line-height:1.5;text-decoration:none;color:var(--ink,#1e2229);background:var(--surface,var(--paper,#fff));border:1px solid var(--line,#d8d5cb);border-radius:999px;padding:6px 14px}
+.sn:hover{border-color:var(--ink,#1e2229)}
+.sn:focus-visible{outline:2px solid var(--accent,var(--hawk-blue,#1f5fbf));outline-offset:2px}
+.sn[aria-current="page"]{background:var(--ink,#1e2229);color:var(--surface,var(--paper,#fff));border-color:transparent;font-weight:700}
+</style>
+</head><body>
+<nav class="sitenav" aria-label="Pages"><div class="sitenav-in"><a class="sn" href="../">Alma Mater Saturday</a><a class="sn" href="../montlake/" aria-current="page">Montlake &amp; Lumen</a></div></nav>
+<header class="top">
+  <div class="top-inner">
+    <div class="crest">206</div>
+    <div class="wordmark">Montlake &amp; Lumen
+      <small>2026 Seattle football · all times Eastern</small>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Seahawks + Washington Huskies · Preseason through Week 18</p>
+    <h1>Every kickoff.<br><span class="dim">Where to stream it.</span></h1>
+    <p class="lede">All <strong>32 games</strong> of Seattle's 2026 football calendar in one list: 20 Seahawks games and 12 Husky Saturdays. Each game shows its kickoff in Eastern time and the service that carries it in the Grand Rapids, Mich., TV market. The defending Super Bowl LX champions open at home against New England on a Wednesday night. The Apple Cup opens the college season at Husky Stadium.</p>
+
+    <div class="tiles">
+      <div class="tile hawk"><div class="num">20</div><div class="lbl">Seahawks games</div></div>
+      <div class="tile uw"><div class="num">12</div><div class="lbl">Huskies games</div></div>
+      <div class="tile"><div class="num">ET</div><div class="lbl">All kickoffs</div></div>
+    </div>
+
+    <div class="next-grid" id="nextGrid"></div>
+  </section>
+
+  <section>
+    <h2>The subscriptions that matter</h2>
+    <p class="sub">You watch from outside the Seahawks' home market, so the regional Sunday-afternoon games need Sunday Ticket. National broadcasts and every Husky game work anywhere.</p>
+    <div class="svc-grid">
+      <div class="svc"><h3><span class="dot d-st"></span>NFL Sunday Ticket</h3><p>The main service for out-of-market fans. It carries every regional Sunday-afternoon FOX and CBS game, through YouTube or YouTube TV. Without it, most Seahawks Sunday games do not air in West Michigan.</p><div class="count" data-svc-count="Sunday Ticket"></div></div>
+      <div class="svc"><h3><span class="dot d-foxone"></span>FOX One</h3><p>FOX, FS1, FS2, and Big Ten Network (BTN), including your live local FOX station. It covers the national FOX games (the Saturday Eagles game, Christmas vs. the Rams) and every Husky game on FOX, FS1, or BTN. Prices: $19.99/mo or $199.99/yr, $39.99/mo bundled with ESPN Unlimited, or $15/mo as a Verizon myPlan or myHome perk. The B1G+ add-on covers only events that are not on TV, so you don't need it for football.</p><div class="count" data-svc-count="FOX One,BTN"></div></div>
+      <div class="svc"><h3><span class="dot d-peacock"></span>Peacock</h3><p>NBC games: the Wednesday-night opener, Sunday Night Football vs. Kansas City, the Apple Cup, and Washington at USC on Big Ten Saturday Night.</p><div class="count" data-svc-count="Peacock"></div></div>
+      <div class="svc"><h3><span class="dot d-espn"></span>ESPN Unlimited</h3><p>Both Monday Night Football home games: Bears in November, Cowboys in December.</p><div class="count" data-svc-count="ESPN Unlimited"></div></div>
+      <div class="svc"><h3><span class="dot d-prime"></span>Prime Video</h3><p>One game only: Thursday night at Denver in Week 6. NFL+ streams every primetime game on phones and tablets, so you can watch that game without Prime.</p><div class="count" data-svc-count="Prime Video"></div></div>
+      <div class="svc"><h3><span class="dot d-nflplus"></span>NFL+ Premium</h3><p>The best value for a Seahawks fan outside Seattle. It includes:</p><ul><li>Live out-of-market preseason games (both KING 5-only broadcasts)</li><li>Every primetime game live on a phone or tablet, including Sunday Night Football, Monday Night Football, and Prime's Thursday Night Football</li><li>Full and condensed replays of every game, including the regional Sunday games that only Sunday Ticket carries live</li><li>NFL RedZone and NFL Network</li></ul><p>Live games play only on phones and tablets, with no casting. Replays play on smart TVs and streaming boxes. $14.99/mo or $99.99/yr. The 20% annual discount (about $80) ended September 21.</p><div class="count" data-svc-count="NFL+"></div></div>
+    </div>
+    <div class="callout"><b>Grand Rapids is its own TV market.</b> The local FOX (WXMI 17) and CBS (WWMT 3) stations usually carry the Lions' window, so Seattle's regional Sunday games rarely air there. If a network puts the Seahawks in the national doubleheader window, the game is free over the air. Check the weekly coverage maps at 506sports.com before each Sunday.</div>
+    <div class="callout gold">Husky games marked TBD (to be determined) air on FOX, CBS, NBC, BTN, or Peacock under the Big Ten's TV contract. If CBS picks a game, you need Paramount+. College broadcasts are national, so blackouts do not apply. The conference announces each kickoff time and network about 12 days before the game.</div>
+    <div class="callout"><b>A pricing plan at full price</b> (no introductory trials):<ul><li>Keep Peacock year-round.</li><li>Buy NFL+ Premium annual at $99.99. The September discount to about $80 ended September 21.</li><li>Add FOX One ($19.99/mo) only for the months with games you care about, and cancel it between them.</li><li>Skip Sunday Ticket unless live regional Sunday games matter more to you than replays. NFL+ Premium has a full replay of each of those games.</li></ul></div>
+  </section>
+
+  <section>
+    <h2>Your services</h2>
+    <p class="sub">Select the services you subscribe to. Each game below then shows whether you can watch it, and how. This browser saves your choices.</p>
+    <div class="subs" id="subsBar"></div>
+    <p class="sub-note">The default selection is Peacock, Paramount+, and NFL+ Premium. With NFL+ Premium, you can watch the Thursday night game without Prime Video, on a phone or tablet only.</p>
+  </section>
+
+  <section>
+    <h2>Full schedule</h2>
+    <div class="filters" role="group" aria-label="Filter games">
+      <button class="tab" data-team="all" aria-pressed="true">All games</button>
+      <button class="tab" data-team="hawks" aria-pressed="false">Seahawks</button>
+      <button class="tab" data-team="uw" aria-pressed="false">Huskies</button>
+      <label class="chk"><input type="checkbox" id="homeOnly">Home only</label>
+    </div>
+    <div id="schedule"></div>
+    <p class="empty" id="empty">No games match this filter.</p>
+  </section>
+
+  <footer>
+    <p>Schedules come from NFL.com, Seahawks.com, and GoHuskies.com as of August 23, 2026. Results and Husky kickoff times were updated October 3, 2026. All times are Eastern. The streaming picks assume you watch in the Grand Rapids, Mich., TV market. Flex scheduling can move late-season NFL games. The NFL sets the Week 18 kickoffs after Week 17. The Big Ten announces its times and networks during the season.</p>
+    <p>Home venues: Lumen Field (Seahawks) and Husky Stadium (Washington).</p>
+  </footer>
+</div>
+
+<script>
+const SVC_DOTS = {
+  "FOX One":"d-foxone","Peacock":"d-peacock","Paramount+":"d-paramount",
+  "ESPN Unlimited":"d-espn","Prime Video":"d-prime","NFL+":"d-nflplus",
+  "KING 5":"d-king5","BTN":"d-btn","TBD":"d-tbd","Sunday Ticket":"d-st"
+};
+
+
+// team: hawks|uw. home: true/false. dt: ISO instant (stored with PT offset), or null when TBD.
+// svc: streaming chips for the Grand Rapids market. net: broadcast note. note: context line.
+const GAMES = [
+  // Seahawks preseason
+  {team:"hawks", wk:"Pre 1", date:"2026-08-15", dt:"2026-08-15T17:00:00-07:00", opp:"Cowboys", home:true,  venue:"Lumen Field", svc:["NFL+"], net:"KING 5 (Seattle)", note:"Preseason opener", final:"L 7-17"},
+  {team:"hawks", wk:"Pre 2", date:"2026-08-23", dt:"2026-08-23T17:00:00-07:00", opp:"Titans",  home:false, venue:"Nissan Stadium, Nashville", svc:["FOX One","NFL+"], net:"FOX", note:"National broadcast", final:"L 16-19"},
+  {team:"hawks", wk:"Pre 3", date:"2026-08-28", dt:"2026-08-28T17:00:00-07:00", opp:"Chiefs",  home:false, venue:"Arrowhead Stadium, Kansas City", svc:["NFL+"], net:"KING 5 (Seattle)", note:"Preseason finale", final:"T 9-9"},
+  // Huskies
+  {team:"uw", wk:"Wk 1",  date:"2026-09-06", dt:"2026-09-06T13:00:00-07:00", opp:"Washington State", home:true, venue:"Husky Stadium", svc:["Peacock"], net:"NBC", note:"Apple Cup, Sunday season opener", big:true, final:"W 24-10"},
+  {team:"uw", wk:"Wk 2",  date:"2026-09-12", dt:"2026-09-12T12:30:00-07:00", opp:"Utah State", home:true, venue:"Husky Stadium", svc:["FOX One"], net:"BTN", final:"W 16-14"},
+  {team:"uw", wk:"Wk 3",  date:"2026-09-19", dt:"2026-09-19T16:15:00-07:00", opp:"Eastern Washington", home:true, venue:"Husky Stadium", svc:["FOX One"], net:"BTN", final:"W 48-16"},
+  {team:"uw", wk:"Wk 4",  date:"2026-09-26", dt:"2026-09-26T20:00:00-07:00", opp:"Minnesota", home:true, venue:"Husky Stadium", svc:["FOX One"], net:"FOX", note:"Big Ten opener", final:"L 24-27"},
+  {team:"uw", wk:"Wk 5",  date:"2026-10-03", dt:"2026-10-03T16:30:00-07:00", opp:"USC", home:false, venue:"L.A. Memorial Coliseum, Los Angeles", svc:["Peacock"], net:"NBC", note:"Big Ten Saturday Night vs. No. 18 USC"},
+  {team:"uw", wk:"Wk 6",  date:"2026-10-09", dt:"2026-10-09T18:00:00-07:00", opp:"Iowa", home:true, venue:"Husky Stadium", svc:["FOX One"], net:"FOX or FS1", note:"Friday night at Montlake"},
+  {team:"uw", wk:"Wk 7",  date:"2026-10-16", dt:"2026-10-16T17:00:00-07:00", opp:"Purdue", home:false, venue:"West Lafayette, Ind.", svc:["FOX One"], net:"FOX", note:"Friday night"},
+  {team:"uw", wk:"bye",   date:"2026-10-24"},
+  {team:"uw", wk:"Wk 9",  date:"2026-10-31", dt:null, opp:"Nebraska", home:false, venue:"Lincoln, Neb.", svc:["TBD"]},
+  {team:"uw", wk:"Wk 10", date:"2026-11-07", dt:null, opp:"Penn State", home:true, venue:"Husky Stadium", svc:["TBD"], big:true},
+  {team:"uw", wk:"Wk 11", date:"2026-11-14", dt:null, opp:"Michigan State", home:false, venue:"East Lansing, Mich.", svc:["TBD"]},
+  {team:"uw", wk:"Wk 12", date:"2026-11-21", dt:null, opp:"Indiana", home:true, venue:"Husky Stadium", svc:["TBD"]},
+  {team:"uw", wk:"Wk 13", date:"2026-11-28", dt:null, opp:"Oregon", home:false, venue:"Autzen Stadium, Eugene", svc:["TBD"], note:"Regular-season finale", big:true},
+  // Seahawks regular season
+  {team:"hawks", wk:"Wk 1",  date:"2026-09-09", dt:"2026-09-09T17:20:00-07:00", opp:"Patriots", home:true,  venue:"Lumen Field", svc:["Peacock"], net:"NBC national", note:"Wednesday-night opener, Super Bowl LX rematch", big:true, mobile:true, final:"W 13-10"},
+  {team:"hawks", wk:"Wk 2",  date:"2026-09-20", dt:"2026-09-20T13:25:00-07:00", opp:"Cardinals", home:false, venue:"State Farm Stadium, Glendale", svc:["Sunday Ticket"], net:"FOX regional", final:"W 31-7"},
+  {team:"hawks", wk:"Wk 3",  date:"2026-09-27", dt:"2026-09-27T10:00:00-07:00", opp:"Commanders", home:false, venue:"Northwest Stadium, Landover", svc:["Sunday Ticket"], net:"FOX regional", note:"Early kickoff", final:"L 31-33"},
+  {team:"hawks", wk:"Wk 4",  date:"2026-10-04", dt:"2026-10-04T13:25:00-07:00", opp:"Chargers", home:true,  venue:"Lumen Field", svc:["Sunday Ticket"], net:"CBS regional"},
+  {team:"hawks", wk:"Wk 5",  date:"2026-10-11", dt:"2026-10-11T13:25:00-07:00", opp:"49ers", home:true, venue:"Lumen Field", svc:["Sunday Ticket"], net:"FOX regional", note:"NFC West rival", big:true},
+  {team:"hawks", wk:"Wk 6",  date:"2026-10-15", dt:"2026-10-15T17:15:00-07:00", opp:"Broncos", home:false, venue:"Empower Field, Denver", svc:["Prime Video"], note:"Thursday Night Football, national", mobile:true},
+  {team:"hawks", wk:"Wk 7",  date:"2026-10-25", dt:"2026-10-25T17:20:00-07:00", opp:"Chiefs", home:true, venue:"Lumen Field", svc:["Peacock"], net:"NBC national", note:"Sunday Night Football", big:true, mobile:true},
+  {team:"hawks", wk:"Wk 8",  date:"2026-11-02", dt:"2026-11-02T17:15:00-08:00", opp:"Bears", home:true, venue:"Lumen Field", svc:["ESPN Unlimited"], net:"ESPN national", note:"Monday Night Football", mobile:true},
+  {team:"hawks", wk:"Wk 9",  date:"2026-11-08", dt:"2026-11-08T13:25:00-08:00", opp:"Cardinals", home:true, venue:"Lumen Field", svc:["Sunday Ticket"], net:"FOX regional"},
+  {team:"hawks", wk:"Wk 10", date:"2026-11-15", dt:"2026-11-15T13:05:00-08:00", opp:"Raiders", home:false, venue:"Allegiant Stadium, Las Vegas", svc:["Sunday Ticket"], net:"CBS regional"},
+  {team:"hawks", wk:"bye",   date:"2026-11-22"},
+  {team:"hawks", wk:"Wk 12", date:"2026-11-29", dt:"2026-11-29T13:25:00-08:00", opp:"49ers", home:false, venue:"Levi's Stadium, Santa Clara", svc:["Sunday Ticket"], net:"FOX regional"},
+  {team:"hawks", wk:"Wk 13", date:"2026-12-07", dt:"2026-12-07T17:15:00-08:00", opp:"Cowboys", home:true, venue:"Lumen Field", svc:["ESPN Unlimited"], net:"ESPN national", note:"Monday Night Football", mobile:true},
+  {team:"hawks", wk:"Wk 14", date:"2026-12-13", dt:"2026-12-13T13:25:00-08:00", opp:"Giants", home:true, venue:"Lumen Field", svc:["Sunday Ticket"], net:"FOX regional"},
+  {team:"hawks", wk:"Wk 15", date:"2026-12-19", dt:"2026-12-19T14:00:00-08:00", opp:"Eagles", home:false, venue:"Lincoln Financial Field, Philadelphia", svc:["FOX One"], net:"FOX national", note:"Saturday game", mobile:true},
+  {team:"hawks", wk:"Wk 16", date:"2026-12-25", dt:"2026-12-25T17:15:00-08:00", opp:"Rams", home:true, venue:"Lumen Field", svc:["FOX One"], net:"FOX national", note:"First Christmas game in franchise history", big:true, mobile:true},
+  {team:"hawks", wk:"Wk 17", date:"2027-01-03", dt:"2027-01-03T10:00:00-08:00", opp:"Panthers", home:false, venue:"Bank of America Stadium, Charlotte", svc:["Sunday Ticket"], net:"FOX regional", note:"Early kickoff"},
+  {team:"hawks", wk:"Wk 18", date:"2027-01-10", dt:null, opp:"Rams", home:false, venue:"SoFi Stadium, Inglewood", svc:["TBD"], note:"Date and time set after Week 17"},
+];
+
+// Subscription picker. NFL+ assumes the Premium tier.
+const SERVICES = ["Sunday Ticket","FOX One","Peacock","Paramount+","ESPN Unlimited","Prime Video","NFL+"];
+const DEFAULT_OWNED = ["Peacock","Paramount+","NFL+"];
+function loadOwned(){
+  try{
+    const raw = localStorage.getItem("ml-subs");
+    if(raw){ const arr = JSON.parse(raw); if(Array.isArray(arr)) return new Set(arr.filter(s=>SERVICES.includes(s))); }
+  }catch(e){}
+  return new Set(DEFAULT_OWNED);
+}
+let OWNED = loadOwned();
+function saveOwned(){
+  try{ localStorage.setItem("ml-subs", JSON.stringify([...OWNED])); }catch(e){}
+}
+function renderSubs(){
+  document.getElementById("subsBar").innerHTML = SERVICES.map(s=>{
+    const on = OWNED.has(s);
+    return `<label class="sub-toggle${on?" on":""}"><input type="checkbox" data-sub="${s}"${on?" checked":""}><span class="dot ${SVC_DOTS[s]}"></span>${s}</label>`;
+  }).join("");
+  document.querySelectorAll("[data-sub]").forEach(cb=>{
+    cb.addEventListener("change",()=>{
+      if(cb.checked) OWNED.add(cb.dataset.sub); else OWNED.delete(cb.dataset.sub);
+      saveOwned(); renderSubs(); render(); nextCards();
+    });
+  });
+}
+// How this household can watch a game, given OWNED.
+function watchState(g){
+  const svc = g.svc||[];
+  if(svc.includes("TBD")) return {cls:"w-tbd", txt:"Network TBD"};
+  if(svc.some(s=>OWNED.has(s))){
+    const only = svc.filter(s=>OWNED.has(s));
+    if(only.length===1 && only[0]==="NFL+" && !svc.some(s=>s!=="NFL+" && OWNED.has(s)))
+      return {cls:"w-mobile", txt:"NFL+ · phone/tablet"};
+    return {cls:"w-yes", txt:"You can watch"};
+  }
+  if(g.mobile && OWNED.has("NFL+")) return {cls:"w-mobile", txt:"NFL+ · phone/tablet"};
+  if(g.team==="hawks" && OWNED.has("NFL+")) return {cls:"w-replay", txt:"Replay only · NFL+"};
+  return {cls:"w-no", txt:`Needs ${svc[0]}`};
+}
+function watchHtml(g){
+  const w = watchState(g);
+  return `<span class="watch ${w.cls}">${w.txt}</span>`;
+}
+
+const TEAM_NAME = {hawks:"Seahawks", uw:"Huskies"};
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+function parseDateParts(iso){
+  const [y,m,d] = iso.split("-").map(Number);
+  return {y, m, d, dow: DOW[new Date(Date.UTC(y, m-1, d)).getUTCDay()]};
+}
+function fmtDate(g){
+  const p = parseDateParts(g.date);
+  return `${p.dow}, ${MONTHS[p.m-1].slice(0,3)} ${p.d}`;
+}
+function fmtTime(g){
+  if(!g.dt) return "TBD";
+  return new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(new Date(g.dt));
+}
+function status(g){
+  if(g.final) return {cls:"final", txt:"Final · "+g.final};
+  if(!g.dt) return null;
+  const now = Date.now(), t = new Date(g.dt).getTime();
+  if(now > t + 4.5*3600*1000) return {cls:"final", txt:"Final"};
+  if(now >= t) return {cls:"live", txt:"● Likely in progress"};
+  return null;
+}
+function chipsHtml(svc){
+  return (svc||[]).map(s =>
+    `<span class="chip${s==="TBD"?" ghost":""}${OWNED.has(s)?" owned":""}"><span class="dot ${SVC_DOTS[s]||"d-tbd"}"></span>${s}</span>`
+  ).join("");
+}
+function matchHtml(g){
+  const me = TEAM_NAME[g.team];
+  return g.home
+    ? `${g.opp} <span class="at">at</span> ${me}`
+    : `${me} <span class="at">at</span> ${g.opp}`;
+}
+
+function gameCard(g){
+  if(!g.opp){
+    return `<div class="bye" data-team="${g.team}" data-bye="1">${TEAM_NAME[g.team]} bye week · ${fmtDate(g)}</div>`;
+  }
+  const st = status(g);
+  const time = fmtTime(g);
+  return `<div class="game ${g.team}${g.big?" big":""}" data-team="${g.team}" data-home="${g.home?1:0}">
+    <div class="g-top">
+      <span class="badge-wk">${g.wk}</span>
+      <span class="g-date">${fmtDate(g)}</span>
+      <span class="g-time${g.dt?"":" tbd"}">${time}</span>
+    </div>
+    <div class="g-match">${matchHtml(g)}</div>
+    <div class="g-note">${g.venue}${g.net?` · ${g.net}`:""}${g.note?` · <span class="why">${g.note}</span>`:""}</div>
+    <div class="g-foot">
+      <span class="chips">${chipsHtml(g.svc)}</span>
+      ${st?`<span class="g-status ${st.cls}">${st.txt}</span>`:watchHtml(g)}
+    </div>
+  </div>`;
+}
+
+function render(){
+  const team = document.querySelector('.tab[aria-pressed="true"]').dataset.team;
+  const homeOnly = document.getElementById("homeOnly").checked;
+  const list = GAMES.filter(g=>{
+    if(team!=="all" && g.team!==team) return false;
+    if(homeOnly && (!g.opp || !g.home)) return false;
+    return true;
+  }).sort((a,b)=>a.date.localeCompare(b.date));
+
+  const groups = new Map();
+  for(const g of list){
+    const p = parseDateParts(g.date);
+    const key = `${MONTHS[p.m-1]} ${p.y}`;
+    if(!groups.has(key)) groups.set(key,[]);
+    groups.get(key).push(g);
+  }
+  let html = "";
+  for(const [label,games] of groups){
+    html += `<div class="month">${label}</div><div class="games">${games.map(gameCard).join("")}</div>`;
+  }
+  document.getElementById("schedule").innerHTML = html;
+  document.getElementById("empty").style.display = list.length ? "none":"block";
+}
+
+function nextCards(){
+  const now = Date.now();
+  const grid = document.getElementById("nextGrid");
+  let html = "";
+  for(const team of ["hawks","uw"]){
+    const g = GAMES
+      .filter(x=>x.team===team && x.opp && !x.final)
+      .filter(x=>{
+        if(x.dt) return new Date(x.dt).getTime() + 4.5*3600*1000 > now;
+        const p = parseDateParts(x.date);
+        return Date.UTC(p.y,p.m-1,p.d,23,59) + 8*3600*1000 > now;
+      })
+      .sort((a,b)=>a.date.localeCompare(b.date))[0];
+    if(!g) continue;
+    let count = "";
+    if(g.dt){
+      const ms = new Date(g.dt).getTime() - now;
+      if(ms > 0){
+        const days = Math.floor(ms/86400000), hrs = Math.floor(ms%86400000/3600000);
+        count = days>0 ? `in ${days}d ${hrs}h` : `in ${hrs}h ${Math.floor(ms%3600000/60000)}m`;
+      } else count = "kicking off now";
+    }
+    html += `<div class="next-card ${team==="hawks"?"hawk":"uw"}">
+      <div class="bar"></div>
+      <div class="pad">
+        <div class="next-tag"><span class="pulse"></span>Next ${TEAM_NAME[team]} kickoff</div>
+        <div class="next-match">${matchHtml(g)}</div>
+        <div class="next-venue">${g.venue}</div>
+        <div class="next-when">${fmtDate(g)} · <span class="t">${fmtTime(g)}</span></div>
+        ${count?`<div class="next-count">${count}</div>`:""}
+        <div class="chips">${chipsHtml(g.svc)}${watchHtml(g)}</div>
+      </div>
+    </div>`;
+  }
+  grid.innerHTML = html;
+}
+
+function svcCounts(){
+  document.querySelectorAll("[data-svc-count]").forEach(el=>{
+    const names = el.dataset.svcCount.split(",");
+    const n = GAMES.filter(g=>g.opp && (g.svc||[]).some(s=>names.includes(s))).length;
+    el.textContent = `${n} of 32 games`;
+  });
+}
+
+document.querySelectorAll(".tab").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-pressed","false"));
+    btn.setAttribute("aria-pressed","true");
+    render();
+  });
+});
+document.getElementById("homeOnly").addEventListener("change",render);
+
+renderSubs(); nextCards(); svcCounts(); render();
+setInterval(nextCards, 60000);
+</script>
+
+</body></html>

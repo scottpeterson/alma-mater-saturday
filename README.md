@@ -22,7 +22,8 @@ One page for the football teams of the five schools that three brothers attended
 | `fetch_data.py` | Pulls ESPN schedules, records, polls, and leaders, plus the D3football.com Top 25, Hansen Ratings, and school stats pages. Writes `data/season.json` |
 | `data/massey.json` | Massey ratings, refreshed by hand (see below) |
 | `tools/massey_extract.js` | Browser snippet that produces the Massey JSON |
-| `build_site.py` | Renders `docs/index.html` |
+| `build_site.py` | Renders `docs/index.html` and publishes `pages/montlake.html` as `docs/montlake/index.html`. Adds the tab bar that links the two pages |
+| `pages/montlake.html` | Montlake & Lumen: Seahawks and Huskies kickoffs and streaming services for the Grand Rapids TV market. Edited by hand (see below) |
 | `docs/` | The published site (GitHub Pages), with `CNAME` and `assets/` |
 | `.github/workflows/update.yml` | Scheduled fetch, build, commit |
 
@@ -101,6 +102,32 @@ the first `type="K"` play in quarter 1 names the kicking team in `hasball`.
 Each game in `data/season.json` carries `live_stats` (the link) and
 `live_feed` (`{"type": "sidearm" | "presto", "url": ...}` or null). If a
 schedule page fails to load, the games keep the previous run's values.
+
+## Updating Montlake & Lumen (by hand)
+
+The Montlake & Lumen tab (`/montlake/`) has no fetcher. All game data is in the
+`GAMES` list in `pages/montlake.html`. Edit that file only. `build_site.py`
+copies it to `docs/montlake/index.html` and adds the tab bar and the
+GoatCounter tag at the `<!--SITENAV-->` marker and before `</head>`.
+
+1. Add each result as `final:"W 16-14"` (hyphen, not a dash).
+2. When a time is announced, set `dt` (Pacific offset) and the `svc` and `net`
+   values for that game.
+3. When a Husky game goes to NBC, Peacock, or FOX, update the matching service
+   card under "The subscriptions that matter."
+4. Change the "updated" date in the footer.
+5. Run `python3 build_site.py`, then commit and push.
+
+Sources: Seahawks results from `~/Documents/Football/seahawks/roster/nfl_games.json`.
+Husky results and kickoff times from
+`https://gohuskies.com/sports/football/schedule/text`. Networks from each
+game's broadcast announcement.
+
+This page is public. Keep personal details out of it: no ZIP code, no travel
+dates.
+
+The page has a light theme only, by choice, so `check_page.py` reports the
+missing dark theme blocks and `color-scheme` meta as errors on this page.
 
 ## Running locally
 

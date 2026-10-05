@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Render docs/index.html from schools.json, data/season.json, and data/massey.json."""
+"""Render docs/index.html from schools.json, data/season.json, and data/massey.json.
+
+Also copies pages/montlake.html to docs/montlake/index.html and adds the site
+tab bar and analytics tag to it."""
 import html
 import json
 from datetime import datetime, timedelta, timezone
@@ -11,6 +14,8 @@ SCHOOLS = json.loads((BASE / "schools.json").read_text())
 SEASON = json.loads((BASE / "data" / "season.json").read_text())
 MASSEY = json.loads((BASE / "data" / "massey.json").read_text())
 OUT = BASE / "docs" / "index.html"
+MONTLAKE_SRC = BASE / "pages" / "montlake.html"
+MONTLAKE_OUT = BASE / "docs" / "montlake" / "index.html"
 EASTERN = ZoneInfo("America/New_York")
 CENTRAL = ZoneInfo("America/Chicago")
 BY_SLUG = {s["slug"]: s for s in SCHOOLS}
@@ -443,6 +448,49 @@ def margin_chart():
     return "".join(parts) + f'<div class="legend">{legend}</div>'
 
 
+# ---------------------------------------------------------------- site tabs
+
+GOATCOUNTER = '<script data-goatcounter="https://almamatersaturday.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
+
+# The tab bar sits on two pages with different token names, so every color
+# names the Alma Mater Saturday token first and the Montlake token second.
+NAV_CSS = r"""
+.sitenav{background:var(--surface2,var(--paper-2,#f2f2f2))}
+.sitenav-in{max-width:var(--sn-max);margin:0 auto;padding:8px var(--sn-pad);display:flex;flex-wrap:wrap;gap:6px}
+.sn{font-family:"Barlow Condensed","Avenir Next Condensed","Arial Narrow",sans-serif;font-size:1rem;font-weight:600;line-height:1.5;text-decoration:none;color:var(--ink,#1e2229);background:var(--surface,var(--paper,#fff));border:1px solid var(--line,#d8d5cb);border-radius:999px;padding:6px 14px}
+.sn:hover{border-color:var(--ink,#1e2229)}
+.sn:focus-visible{outline:2px solid var(--accent,var(--hawk-blue,#1f5fbf));outline-offset:2px}
+.sn[aria-current="page"]{background:var(--ink,#1e2229);color:var(--surface,var(--paper,#fff));border-color:transparent;font-weight:700}
+"""
+
+PAGES = [("index", "Alma Mater Saturday"), ("montlake", "Montlake &amp; Lumen")]
+
+
+def site_nav(active):
+    """Return the tab bar for the page named `active`, with links relative to that page."""
+    up = "../" if active != "index" else ""
+    links = []
+    for slug, label in PAGES:
+        href = up if slug == "index" else f"{up}{slug}/"
+        href = href or "./"
+        current = ' aria-current="page"' if slug == active else ""
+        links.append(f'<a class="sn" href="{href}"{current}>{label}</a>')
+    return f'<nav class="sitenav" aria-label="Pages"><div class="sitenav-in">{"".join(links)}</div></nav>'
+
+
+def build_montlake():
+    """Publish the hand-edited Montlake page with the tab bar and analytics tag."""
+    src = MONTLAKE_SRC.read_text()
+    for marker in ("</head>", "<!--SITENAV-->"):
+        if src.count(marker) != 1:
+            raise SystemExit(f"{MONTLAKE_SRC}: expected one {marker}")
+    head = f'<link rel="icon" href="../assets/washington.png">\n{GOATCOUNTER}\n<style>:root{{--sn-max:760px;--sn-pad:18px}}{NAV_CSS}</style>\n</head>'
+    page = src.replace("</head>", head).replace("<!--SITENAV-->", site_nav("montlake"))
+    MONTLAKE_OUT.parent.mkdir(parents=True, exist_ok=True)
+    MONTLAKE_OUT.write_text(page)
+    print(f"wrote {MONTLAKE_OUT} ({len(page)} bytes)")
+
+
 # ---------------------------------------------------------------- page
 
 CSS = r"""
@@ -743,8 +791,10 @@ def main():
 <link rel="icon" href="assets/hope.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
-<script data-goatcounter="https://almamatersaturday.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<style>{CSS}</style></head><body><main>
+{GOATCOUNTER}
+<style>:root{{--sn-max:1080px;--sn-pad:16px}}{NAV_CSS}{CSS}</style></head><body>
+{site_nav("index")}
+<main>
 <div class="top"><div><h1>Alma Mater Saturday</h1>
 <p class="sub">Three brothers went to five schools. Chris went to Calvin. Scott went to Hope and Washington. Matt went to Wheaton and Indiana. This page follows all five football teams: records, rankings, ratings, kickoff times, where to watch, top players, and live scores on game days.</p>
 <span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="ctl"><span class="seglabel" id="lbl-times">Times</span><div class="seg" role="group" aria-labelledby="lbl-times"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div></div><div class="ctl"><span class="seglabel" id="lbl-theme">Theme</span><div class="seg" role="group" aria-labelledby="lbl-theme"><button type="button" class="th" data-theme="light">Light</button><button type="button" class="th" data-theme="dark">Dark</button></div></div></div></div>
@@ -796,6 +846,7 @@ def main():
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(page)
     print(f"wrote {OUT} ({len(page)} bytes)")
+    build_montlake()
 
 
 if __name__ == "__main__":
