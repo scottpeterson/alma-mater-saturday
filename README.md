@@ -73,7 +73,7 @@ rating.
 ## Live scores
 
 The page itself polls from the browser once a minute while any of the five games is within 30 minutes of kickoff or in progress. Scores do not wait for a rebuild. The scheduled workflow runs every 20 minutes on Saturdays and
-four times a day otherwise to refresh records, polls, and ratings.
+once a day otherwise (12:07 UTC) to refresh records, polls, and ratings.
 
 Two kinds of source feed the in-game card:
 

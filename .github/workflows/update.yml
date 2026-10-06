@@ -2,7 +2,7 @@ name: Update site
 
 on:
   schedule:
-    - cron: "7 */6 * * *"            # four times a day
+    - cron: "7 12 * * *"             # once a day, 8:07 AM Eastern during daylight time
     - cron: "*/20 15-23 * * 6"       # Saturdays from 11 AM to 7:40 PM Eastern during daylight time
     - cron: "*/20 0-6 * * 0"         # Saturday night games, through 2:40 AM Eastern Sunday
   workflow_dispatch:
