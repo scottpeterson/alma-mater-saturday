@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-06T01:10:53-05:00",
+ "fetched_at": "2026-10-07T13:49:20-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -186,15 +186,15 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
-       "details": "WASH -3",
+       "provider": "DraftKings",
+       "details": "WASH -3.5",
        "over_under": 41.5,
        "home_ml": -166,
        "away_ml": 140
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 39.6
+       "pct": 39.8
       }
      }
     },
@@ -230,7 +230,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 54.8
+       "pct": 55.0
       }
      }
     },
@@ -417,7 +417,7 @@
      "jersey": "7",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
-     "line": "32 tackles"
+     "line": "36 tackles"
     },
     {
      "label": "Sacks",
@@ -625,9 +625,9 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
-       "details": "IU -7",
-       "over_under": 51.5,
+       "provider": "DraftKings",
+       "details": "IU -7.5",
+       "over_under": 49.5,
        "home_ml": 245,
        "away_ml": -305
       },
@@ -640,8 +640,8 @@
     {
      "id": "401858488",
      "week": 7,
-     "date": "2026-10-17T04:00Z",
-     "time_tbd": true,
+     "date": "2026-10-17T16:00Z",
+     "time_tbd": false,
      "home": true,
      "neutral": false,
      "opponent": {
@@ -653,9 +653,11 @@
      },
      "venue": "Memorial Stadium (Bloomington, IN)",
      "city": "Bloomington, IN",
-     "broadcasts": [],
+     "broadcasts": [
+      "Fox"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "10/17 - 12:00 PM EDT",
      "pf": null,
      "pa": null,
      "result": null,
@@ -667,7 +669,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 45.9
+       "pct": 46.0
       }
      }
     },
@@ -1046,7 +1048,10 @@
      },
      "venue": "Grand Rapids Christian High School",
      "city": "Grand Rapids, MI",
-     "broadcasts": [],
+     "broadcasts": [
+      "YouTube",
+      "Calvin Broadcast Network"
+     ],
      "state": "pre",
      "status": "10/17 - 12:00 PM EDT",
      "pf": null,
@@ -1424,7 +1429,9 @@
      },
      "venue": "Ray and Sue Smith Stadium",
      "city": "Holland, MI",
-     "broadcasts": [],
+     "broadcasts": [
+      "YouTube"
+     ],
      "state": "pre",
      "status": "10/17 - 2:00 PM EDT",
      "pf": null,
@@ -1844,7 +1851,9 @@
      },
      "venue": "McCully Stadium",
      "city": "Wheaton, IL",
-     "broadcasts": [],
+     "broadcasts": [
+      "CCIW Network"
+     ],
      "state": "pre",
      "status": "10/17 - 2:00 PM EDT",
      "pf": null,
@@ -2088,7 +2097,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-06T01:11:15-05:00",
+  "fetched": "2026-10-07T13:49:42-05:00",
   "teams": {
    "calvin": {
     "predictive": {
