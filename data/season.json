@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-07T13:49:20-05:00",
+ "fetched_at": "2026-10-08T13:47:20-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -186,8 +186,8 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
-       "details": "WASH -3.5",
+       "provider": "Draft Kings",
+       "details": "WASH -3",
        "over_under": 41.5,
        "home_ml": -166,
        "away_ml": 140
@@ -230,7 +230,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 55.0
+       "pct": 55.5
       }
      }
     },
@@ -625,15 +625,15 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -7.5",
-       "over_under": 49.5,
+       "over_under": 48.5,
        "home_ml": 245,
        "away_ml": -305
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 69.2
+       "pct": 69.1
       }
      }
     },
@@ -667,9 +667,16 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672666",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "Draft Kings",
+       "details": "OSU -2.5",
+       "over_under": 48.5,
+       "home_ml": 120,
+       "away_ml": -142
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 46.0
+       "pct": 45.9
       }
      }
     },
@@ -1233,7 +1240,7 @@
      "label": "Tackles",
      "name": "Carson Schnurstein",
      "jersey": "2",
-     "line": "32.0 tackles, 0.5 TFL, 0 sacks",
+     "line": "33.0 tackles, 0.5 TFL, 0 sacks",
      "position": "LB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Schnurstein__Carson.jpg?width=200&quality=90"
@@ -1242,7 +1249,7 @@
      "label": "Sacks",
      "name": "Peter Markvluwer",
      "jersey": "95",
-     "line": "3.0 sacks, 6.0 TFL, 11.0 tackles",
+     "line": "3.0 sacks, 6.0 TFL, 12.0 tackles",
      "position": "DL",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Markvluwer__Peter.jpg?width=200&quality=90"
@@ -1817,10 +1824,10 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
-     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_stats": "https://northcentralcardinals.com/sidearmstats/football/summary",
      "live_feed": {
       "type": "sidearm",
-      "url": "https://sidearmstats.com/wheaton/football/game.json"
+      "url": "https://sidearmstats.com/northcentralcollege/football/game.json"
      },
      "odds": {
       "win_prob": {
@@ -2097,7 +2104,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-07T13:49:42-05:00",
+  "fetched": "2026-10-08T13:47:36-05:00",
   "teams": {
    "calvin": {
     "predictive": {
