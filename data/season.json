@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-08T13:47:20-05:00",
+ "fetched_at": "2026-10-09T13:17:30-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -173,7 +173,9 @@
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
-     "broadcasts": [],
+     "broadcasts": [
+      "Fox"
+     ],
      "state": "pre",
      "status": "10/9 - 9:00 PM EDT",
      "pf": null,
@@ -186,11 +188,11 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
-       "details": "WASH -3",
-       "over_under": 41.5,
-       "home_ml": -166,
-       "away_ml": 140
+       "provider": "DraftKings",
+       "details": "WASH -2.5",
+       "over_under": 40.5,
+       "home_ml": -148,
+       "away_ml": 124
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -625,15 +627,15 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "IU -7.5",
-       "over_under": 48.5,
+       "over_under": 47.5,
        "home_ml": 245,
        "away_ml": -305
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 69.1
+       "pct": 69.9
       }
      }
     },
@@ -668,7 +670,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "OSU -2.5",
        "over_under": 48.5,
        "home_ml": 120,
@@ -676,7 +678,7 @@
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 45.9
+       "pct": 46.8
       }
      }
     },
@@ -2104,7 +2106,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-08T13:47:36-05:00",
+  "fetched": "2026-10-09T13:17:46-05:00",
   "teams": {
    "calvin": {
     "predictive": {
