@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-10T14:02:24-05:00",
+ "fetched_at": "2026-10-10T17:33:37-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -435,7 +435,7 @@
    ]
   },
   "indiana": {
-   "record": "5-0",
+   "record": "6-0",
    "conf_record": null,
    "standing": "1st in Big Ten",
    "games": [
@@ -608,29 +608,16 @@
      "broadcasts": [
       "Fox"
      ],
-     "state": "in",
-     "status": "9:24 - 4th",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "9:24",
+     "state": "post",
+     "status": "Final",
+     "pf": 20,
+     "pa": 17,
+     "result": "W",
+     "clock": "0:00",
      "period": 4,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672936&vislive=ind",
-     "live_feed": null,
-     "odds": {
-      "line": {
-       "provider": "Draft Kings",
-       "details": "IU -9.5",
-       "over_under": 48.5,
-       "home_ml": 285,
-       "away_ml": -360
-      },
-      "win_prob": {
-       "source": "ESPN matchup predictor",
-       "pct": 69.9
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401858488",
@@ -694,7 +681,13 @@
      "period": 0,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672806&vislive=ind",
-     "live_feed": null
+     "live_feed": null,
+     "odds": {
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 83.3
+      }
+     }
     },
     {
      "id": "401858501",
@@ -809,11 +802,11 @@
      "live_feed": null
     }
    ],
-   "played": 5,
-   "pf": 221,
-   "pa": 54,
-   "diff": 167,
-   "wins": 5,
+   "played": 6,
+   "pf": 241,
+   "pa": 71,
+   "diff": 170,
+   "wins": 6,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -876,7 +869,7 @@
   "calvin": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "20th in NCAA Division III",
+   "standing": "25th in NCAA Division III",
    "games": [
     {
      "id": "401908738",
@@ -1256,7 +1249,7 @@
   "hope": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "20th in NCAA Division III",
+   "standing": "24th in NCAA Division III",
    "games": [
     {
      "id": "401908744",
@@ -1632,7 +1625,7 @@
   "wheaton": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "5th in NCAA Division III",
+   "standing": "13th in NCAA Division III",
    "games": [
     {
      "id": "401907850",
@@ -2092,7 +2085,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-10T14:02:49-05:00",
+  "fetched": "2026-10-10T17:33:57-05:00",
   "teams": {
    "calvin": {
     "predictive": {
