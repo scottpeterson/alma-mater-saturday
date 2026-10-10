@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-10T12:16:50-05:00",
+ "fetched_at": "2026-10-10T14:02:24-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -609,18 +609,18 @@
       "Fox"
      ],
      "state": "in",
-     "status": "6:56 - 2nd",
+     "status": "9:24 - 4th",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "6:56",
-     "period": 2,
+     "clock": "9:24",
+     "period": 4,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672936&vislive=ind",
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -9.5",
        "over_under": 48.5,
        "home_ml": 285,
@@ -876,7 +876,7 @@
   "calvin": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "19th in NCAA Division III",
+   "standing": "20th in NCAA Division III",
    "games": [
     {
      "id": "401908738",
@@ -1256,7 +1256,7 @@
   "hope": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "19th in NCAA Division III",
+   "standing": "20th in NCAA Division III",
    "games": [
     {
      "id": "401908744",
@@ -2092,7 +2092,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-10T12:17:03-05:00",
+  "fetched": "2026-10-10T14:02:49-05:00",
   "teams": {
    "calvin": {
     "predictive": {
