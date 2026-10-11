@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-10T17:33:37-05:00",
+ "fetched_at": "2026-10-10T20:12:28-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "3-3",
    "conf_record": null,
-   "standing": "18th in Big Ten",
+   "standing": "16th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -1249,7 +1249,7 @@
   "hope": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "24th in NCAA Division III",
+   "standing": "25th in NCAA Division III",
    "games": [
     {
      "id": "401908744",
@@ -1797,13 +1797,13 @@
      "broadcasts": [
       "CCIW Network"
      ],
-     "state": "pre",
-     "status": "10/10 - 7:00 PM EDT",
+     "state": "in",
+     "status": "15:00 - 4th",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "15:00",
+     "period": 4,
      "group": "35",
      "live_stats": "https://northcentralcardinals.com/sidearmstats/football/summary",
      "live_feed": {
@@ -2085,7 +2085,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-10T17:33:57-05:00",
+  "fetched": "2026-10-10T20:12:46-05:00",
   "teams": {
    "calvin": {
     "predictive": {
