@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-11T05:17:20-05:00",
+ "fetched_at": "2026-10-11T12:38:59-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -217,9 +217,16 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=674929&vislive=wash",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "Draft Kings",
+       "details": "PUR -2.5",
+       "over_under": 51.5,
+       "home_ml": -148,
+       "away_ml": 124
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 51.4
+       "pct": 39.7
       }
      }
     },
@@ -253,7 +260,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 12.0
+       "pct": 10.7
       }
      }
     },
@@ -652,13 +659,13 @@
       "line": {
        "provider": "Draft Kings",
        "details": "OSU -4",
-       "over_under": 49.5,
-       "home_ml": 160,
-       "away_ml": -192
+       "over_under": 50.5,
+       "home_ml": 154,
+       "away_ml": -185
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 46.4
+       "pct": 47.8
       }
      }
     },
@@ -692,7 +699,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 83.3
+       "pct": 82.6
       }
      }
     },
@@ -2043,49 +2050,14 @@
   }
  },
  "polls": {
-  "AP Poll": {
-   "name": "AP Top 25",
-   "week": 6,
-   "date": "2026-10-04T07:00Z",
-   "ranks": {
-    "indiana": 7
-   },
-   "receiving_votes": {}
-  },
   "AFCA Coaches Poll": {
    "name": "AFCA Coaches Poll",
-   "week": 6,
-   "date": "2026-10-04T07:00Z",
+   "week": 7,
+   "date": "2026-10-11T07:00Z",
    "ranks": {
-    "indiana": 5
+    "indiana": 4
    },
    "receiving_votes": {}
-  },
-  "FCS Coaches Poll": {
-   "name": "FCS Coaches Poll",
-   "week": 6,
-   "date": "2026-10-05T07:00Z",
-   "ranks": {},
-   "receiving_votes": {}
-  },
-  "AFCA Div II": {
-   "name": "AFCA Division II Coaches Poll",
-   "week": 6,
-   "date": "2026-10-05T07:00Z",
-   "ranks": {},
-   "receiving_votes": {}
-  },
-  "AFCA Div III": {
-   "name": "AFCA Division III Coaches Poll",
-   "week": 6,
-   "date": "2026-10-05T07:00Z",
-   "ranks": {
-    "wheaton": 2,
-    "hope": 12
-   },
-   "receiving_votes": {
-    "calvin": 65.0
-   }
   }
  },
  "d3football": {
@@ -2111,7 +2083,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-11T05:17:51-05:00",
+  "fetched": "2026-10-11T12:39:15-05:00",
   "teams": {
    "calvin": {
     "predictive": {
