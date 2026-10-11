@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-10T20:12:28-05:00",
+ "fetched_at": "2026-10-10T22:22:10-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "3-3",
    "conf_record": null,
-   "standing": "16th in Big Ten",
+   "standing": "15th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -869,7 +869,7 @@
   "calvin": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "25th in NCAA Division III",
+   "standing": "27th in NCAA Division III",
    "games": [
     {
      "id": "401908738",
@@ -1249,7 +1249,7 @@
   "hope": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "25th in NCAA Division III",
+   "standing": "27th in NCAA Division III",
    "games": [
     {
      "id": "401908744",
@@ -1623,9 +1623,9 @@
    ]
   },
   "wheaton": {
-   "record": "5-0",
+   "record": "6-0",
    "conf_record": null,
-   "standing": "13th in NCAA Division III",
+   "standing": "2nd in NCAA Division III",
    "games": [
     {
      "id": "401907850",
@@ -1797,31 +1797,16 @@
      "broadcasts": [
       "CCIW Network"
      ],
-     "state": "in",
-     "status": "15:00 - 4th",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "15:00",
+     "state": "post",
+     "status": "Final",
+     "pf": 13,
+     "pa": 10,
+     "result": "W",
+     "clock": "0:00",
      "period": 4,
      "group": "35",
      "live_stats": "https://northcentralcardinals.com/sidearmstats/football/summary",
-     "live_feed": {
-      "type": "sidearm",
-      "url": "https://sidearmstats.com/northcentralcollege/football/game.json"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 17.4
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 22,
-       "opp": 36,
-       "total": 57.8
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401907815",
@@ -1886,7 +1871,8 @@
      "live_feed": {
       "type": "sidearm",
       "url": "https://sidearmstats.com/wheaton/football/game.json"
-     }
+     },
+     "odds": null
     },
     {
      "id": "401907830",
@@ -1951,11 +1937,11 @@
      }
     }
    ],
-   "played": 5,
-   "pf": 212,
-   "pa": 49,
-   "diff": 163,
-   "wins": 5,
+   "played": 6,
+   "pf": 225,
+   "pa": 59,
+   "diff": 166,
+   "wins": 6,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -1963,7 +1949,7 @@
      "label": "Passing",
      "name": "Mark Forcucci",
      "jersey": "5",
-     "line": "103/158, 1220 yds, 7.7 YPA, 11 TD, 3 INT, 149.23 rating",
+     "line": "121/191, 1492 yds, 7.8 YPA, 11 TD, 4 INT, 143.78 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Forcucci_Mark.jpg?width=200&quality=90"
@@ -1972,7 +1958,7 @@
      "label": "Rushing",
      "name": "Matt Crider",
      "jersey": "32",
-     "line": "84 car, 392 yds, 6 TD, 4.7 avg",
+     "line": "100 car, 427 yds, 7 TD, 4.3 avg",
      "position": "RB",
      "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Crider_Matt.jpg?width=200&quality=90"
@@ -1981,7 +1967,7 @@
      "label": "Receiving",
      "name": "Seth Kortenhoeven",
      "jersey": "4",
-     "line": "26 rec, 333 yds, 4 TD, 12.81 avg",
+     "line": "31 rec, 400 yds, 4 TD, 12.90 avg",
      "position": "WR",
      "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Kortenhoeven_Seth.jpg?width=200&quality=90"
@@ -1990,28 +1976,28 @@
      "label": "Tackles",
      "name": "Zeke Harris",
      "jersey": "8",
-     "line": "45.0 tackles, 4.0 TFL, 1.0 sacks",
+     "line": "63.0 tackles, 10.5 TFL, 2.5 sacks",
      "position": "LB",
      "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Harris_Zeke.jpg?width=200&quality=90"
     },
     {
      "label": "Sacks",
-     "name": "Maxton Leathers",
-     "jersey": "93",
-     "line": "2.0 sacks, 3.0 TFL, 12.0 tackles",
-     "position": "DL",
-     "year": "Senior",
-     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Leathers_Maxton.jpg?width=200&quality=90"
+     "name": "Zeke Harris",
+     "jersey": "8",
+     "line": "2.5 sacks, 10.5 TFL, 63.0 tackles",
+     "position": "LB",
+     "year": "Junior",
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Harris_Zeke.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
-     "name": "Eli Reeves",
-     "jersey": "15",
-     "line": "2 INT, 1 PBU, 23.0 tackles",
+     "name": "Brett Dieter",
+     "jersey": "5",
+     "line": "2 INT, 3 PBU, 27.0 tackles",
      "position": "DB",
      "year": "Junior",
-     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Reeves_Eli.jpg?width=200&quality=90"
+     "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Dieter_Brett.jpg?width=200&quality=90"
     }
    ]
   }
@@ -2085,7 +2071,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-10T20:12:46-05:00",
+  "fetched": "2026-10-10T22:22:26-05:00",
   "teams": {
    "calvin": {
     "predictive": {
