@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-11T12:38:59-05:00",
+ "fetched_at": "2026-10-12T16:12:44-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "3-3",
    "conf_record": null,
-   "standing": "15th in Big Ten",
+   "standing": "1st in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -219,10 +219,10 @@
      "odds": {
       "line": {
        "provider": "Draft Kings",
-       "details": "PUR -2.5",
-       "over_under": 51.5,
-       "home_ml": -148,
-       "away_ml": 124
+       "details": "PUR -3.5",
+       "over_under": 52.5,
+       "home_ml": -170,
+       "away_ml": 142
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -332,7 +332,7 @@
       "short": "Indiana",
       "espn_id": "84",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
-      "rank": 7
+      "rank": 5
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
@@ -360,7 +360,7 @@
       "short": "Oregon",
       "espn_id": "2483",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "rank": 13
+      "rank": null
      },
      "venue": "Autzen Stadium",
      "city": "Eugene, OR",
@@ -638,7 +638,7 @@
       "short": "Ohio State",
       "espn_id": "194",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
-      "rank": 5
+      "rank": 4
      },
      "venue": "Memorial Stadium (Bloomington, IN)",
      "city": "Bloomington, IN",
@@ -658,10 +658,10 @@
      "odds": {
       "line": {
        "provider": "Draft Kings",
-       "details": "OSU -4",
+       "details": "OSU -3.5",
        "over_under": 50.5,
-       "home_ml": 154,
-       "away_ml": -185
+       "home_ml": 142,
+       "away_ml": -170
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -883,7 +883,7 @@
   "calvin": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "28th in NCAA Division III",
+   "standing": "1st in Div II/III",
    "games": [
     {
      "id": "401908738",
@@ -1274,7 +1274,7 @@
   "hope": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "28th in NCAA Division III",
+   "standing": null,
    "games": [
     {
      "id": "401908744",
@@ -2050,12 +2050,46 @@
   }
  },
  "polls": {
+  "AP Poll": {
+   "name": "AP Top 25",
+   "week": 7,
+   "date": "2026-10-11T07:00Z",
+   "ranks": {
+    "indiana": 5
+   },
+   "receiving_votes": {}
+  },
   "AFCA Coaches Poll": {
    "name": "AFCA Coaches Poll",
    "week": 7,
    "date": "2026-10-11T07:00Z",
    "ranks": {
     "indiana": 4
+   },
+   "receiving_votes": {}
+  },
+  "FCS Coaches Poll": {
+   "name": "FCS Coaches Poll",
+   "week": 7,
+   "date": "2026-10-12T07:00Z",
+   "ranks": {},
+   "receiving_votes": {}
+  },
+  "AFCA Div II": {
+   "name": "AFCA Division II Coaches Poll",
+   "week": 7,
+   "date": "2026-10-12T07:00Z",
+   "ranks": {},
+   "receiving_votes": {}
+  },
+  "AFCA Div III": {
+   "name": "AFCA Division III Coaches Poll",
+   "week": 7,
+   "date": "2026-10-12T07:00Z",
+   "ranks": {
+    "wheaton": 1,
+    "hope": 11,
+    "calvin": 23
    },
    "receiving_votes": {}
   }
@@ -2083,7 +2117,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-11T12:39:15-05:00",
+  "fetched": "2026-10-12T16:13:12-05:00",
   "teams": {
    "calvin": {
     "predictive": {
@@ -2136,33 +2170,32 @@
     },
     "simulation": {
      "Conf": "MIAA",
-     "W": 8.2296,
-     "L": 1.7704,
-     "DIII W": 8.2296,
-     "DIII L": 1.7704,
-     "ConfW": 5.2296,
-     "ConfL": 1.7704,
-     "NPI": 63.7230405298267,
-     "Rank": 40.9184,
-     "SOS": 52.8041394033327,
-     "QWB": 0.23054732882225,
-     "Pool A": 0.1272,
-     "Pool C": 0.239,
-     "Playoff": 0.3662,
-     "Top 8%": 0.0537,
+     "W": 8.2435,
+     "L": 1.7565,
+     "DIII W": 8.2435,
+     "DIII L": 1.7565,
+     "ConfW": 5.2435,
+     "ConfL": 1.7565,
+     "NPI": 63.9996965279966,
+     "Rank": 40.0278,
+     "SOS": 53.2215501510096,
+     "QWB": 0.24157192126018,
+     "Pool A": 0.1293,
+     "Pool C": 0.2575,
+     "Playoff": 0.3868,
+     "Top 8%": 0.0536,
      "Bowl": 0,
-     "R40W%": 0.313,
-     "R32W%": 0.0997,
-     "R16W%": 0.0317,
-     "R8W%": 0.0056,
-     "R4W%": 0.0008,
-     "R2W%": 0.0002,
-     "Wk6_Lev": 0,
-     "Wk7_Lev": 0.361080981707878,
-     "Wk8_Lev": 0.349626147468167,
-     "Wk9_Lev": 0.535612245307316,
-     "Wk10_Lev": 0.55015018170673,
-     "Wk11_Lev": 0.51714391040254
+     "R40W%": 0.3436,
+     "R32W%": 0.1125,
+     "R16W%": 0.0335,
+     "R8W%": 0.0073,
+     "R4W%": 0.002,
+     "R2W%": 0.0001,
+     "Wk7_Lev": 0.35199925377775,
+     "Wk8_Lev": 0.37059520284276,
+     "Wk9_Lev": 0.564614611596825,
+     "Wk10_Lev": 0.549287586434935,
+     "Wk11_Lev": 0.536222748516055
     }
    },
    "hope": {
@@ -2216,33 +2249,32 @@
     },
     "simulation": {
      "Conf": "MIAA",
-     "W": 9.5723,
-     "L": 0.4277,
-     "DIII W": 9.5723,
-     "DIII L": 0.4277,
-     "ConfW": 6.5723,
-     "ConfL": 0.4277,
-     "NPI": 74.4565850323491,
-     "Rank": 8.783,
-     "SOS": 59.259445726355,
-     "QWB": 1.34472739644545,
-     "Pool A": 0.7631,
-     "Pool C": 0.1799,
-     "Playoff": 0.943,
-     "Top 8%": 0.6529,
+     "W": 9.56,
+     "L": 0.44,
+     "DIII W": 9.56,
+     "DIII L": 0.44,
+     "ConfW": 6.56,
+     "ConfL": 0.44,
+     "NPI": 74.3790657446323,
+     "Rank": 9.2985,
+     "SOS": 59.2287034070635,
+     "QWB": 1.33604979767379,
+     "Pool A": 0.758,
+     "Pool C": 0.1793,
+     "Playoff": 0.9373,
+     "Top 8%": 0.6506,
      "Bowl": 0,
-     "R40W%": 0.9393,
-     "R32W%": 0.6786,
-     "R16W%": 0.4054,
-     "R8W%": 0.2081,
-     "R4W%": 0.0841,
-     "R2W%": 0.0283,
-     "Wk6_Lev": 0,
-     "Wk7_Lev": 0.29059024147488,
-     "Wk8_Lev": 0.259821594928824,
-     "Wk9_Lev": 0.251018631913796,
-     "Wk10_Lev": 0.221848592320154,
-     "Wk11_Lev": 0.292375396845882
+     "R40W%": 0.9338,
+     "R32W%": 0.6854,
+     "R16W%": 0.4108,
+     "R8W%": 0.2042,
+     "R4W%": 0.0856,
+     "R2W%": 0.031,
+     "Wk7_Lev": 0.319001693293087,
+     "Wk8_Lev": 0.293265233483456,
+     "Wk9_Lev": 0.437387477495499,
+     "Wk10_Lev": 0.245851833466626,
+     "Wk11_Lev": 0.314295532860474
     }
    },
    "wheaton": {
@@ -2296,33 +2328,32 @@
     },
     "simulation": {
      "Conf": "CCIW",
-     "W": 9.0585,
-     "L": 0.9415,
-     "DIII W": 9.0585,
-     "DIII L": 0.9415,
-     "ConfW": 7.0585,
-     "ConfL": 0.9415,
-     "NPI": 70.7171152490559,
-     "Rank": 14.7211,
-     "SOS": 58.8498919726179,
-     "QWB": 0.915254738189857,
-     "Pool A": 0.1981,
-     "Pool C": 0.7066,
-     "Playoff": 0.9047,
-     "Top 8%": 0.185,
-     "Bowl": 0.0421,
-     "R40W%": 0.8993,
-     "R32W%": 0.6573,
-     "R16W%": 0.3369,
-     "R8W%": 0.1673,
-     "R4W%": 0.075,
-     "R2W%": 0.0291,
-     "Wk6_Lev": 0.117688260970209,
-     "Wk7_Lev": 0.792496487281366,
+     "W": 9.9225,
+     "L": 0.0775,
+     "DIII W": 9.9225,
+     "DIII L": 0.0775,
+     "ConfW": 7.9225,
+     "ConfL": 0.0775,
+     "NPI": 77.8465766023749,
+     "Rank": 2.8657,
+     "SOS": 60.7413570097694,
+     "QWB": 1.87778120299181,
+     "Pool A": 0.999,
+     "Pool C": 0.0005,
+     "Playoff": 0.9995,
+     "Top 8%": 0.9286,
+     "Bowl": 0.0001,
+     "R40W%": 0.9993,
+     "R32W%": 0.7779,
+     "R16W%": 0.53,
+     "R8W%": 0.2775,
+     "R4W%": 0.1388,
+     "R2W%": 0.0519,
+     "Wk7_Lev": 0.0739735311422422,
      "Wk8_Lev": 0,
-     "Wk9_Lev": 0.695943841005609,
-     "Wk10_Lev": 0.904790479047905,
-     "Wk11_Lev": 0.622910047585503
+     "Wk9_Lev": 0.00747384155455899,
+     "Wk10_Lev": -0.000500100020004,
+     "Wk11_Lev": 0.0195979899497487
     }
    }
   },
