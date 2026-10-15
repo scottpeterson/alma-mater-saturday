@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-14T12:01:33-05:00",
+ "fetched_at": "2026-10-15T11:49:20-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "3-3",
    "conf_record": null,
-   "standing": "1st in Big Ten",
+   "standing": "15th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -220,7 +220,7 @@
       "line": {
        "provider": "DraftKings",
        "details": "PUR -3.5",
-       "over_under": 51.5,
+       "over_under": 50.5,
        "home_ml": -170,
        "away_ml": 142
       },
@@ -260,7 +260,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 10.7
+       "pct": 10.9
       }
      }
     },
@@ -659,13 +659,13 @@
       "line": {
        "provider": "DraftKings",
        "details": "OSU -3.5",
-       "over_under": 51.5,
+       "over_under": 50.5,
        "home_ml": 150,
        "away_ml": -180
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 47.9
+       "pct": 48.5
       }
      }
     },
@@ -699,9 +699,16 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672806&vislive=ind",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "IU -9.5",
+       "over_under": 44.5,
+       "home_ml": 310,
+       "away_ml": -395
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 82.6
+       "pct": 83.0
       }
      }
     },
@@ -885,7 +892,7 @@
   "calvin": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "1st in Div II/III",
+   "standing": "11th in Div II/III",
    "games": [
     {
      "id": "401908738",
@@ -1668,7 +1675,7 @@
   "wheaton": {
    "record": "6-0",
    "conf_record": null,
-   "standing": "1st in Div II/III",
+   "standing": "2nd in Div II/III",
    "games": [
     {
      "id": "401907850",
@@ -2124,7 +2131,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-14T12:01:46-05:00",
+  "fetched": "2026-10-15T11:49:38-05:00",
   "teams": {
    "calvin": {
     "predictive": {
