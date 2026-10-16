@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-15T11:49:20-05:00",
+ "fetched_at": "2026-10-16T11:31:25-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -220,9 +220,9 @@
       "line": {
        "provider": "DraftKings",
        "details": "PUR -3.5",
-       "over_under": 50.5,
-       "home_ml": -170,
-       "away_ml": 142
+       "over_under": 49.5,
+       "home_ml": -162,
+       "away_ml": 136
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -260,7 +260,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 10.9
+       "pct": 10.8
       }
      }
     },
@@ -419,7 +419,7 @@
      "jersey": "7",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
-     "line": "44 tackles"
+     "line": "40 tackles"
     },
     {
      "label": "Sacks",
@@ -658,14 +658,14 @@
      "odds": {
       "line": {
        "provider": "DraftKings",
-       "details": "OSU -3.5",
+       "details": "OSU -3",
        "over_under": 50.5,
-       "home_ml": 150,
-       "away_ml": -180
+       "home_ml": 136,
+       "away_ml": -162
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 48.5
+       "pct": 48.6
       }
      }
     },
@@ -703,8 +703,8 @@
        "provider": "DraftKings",
        "details": "IU -9.5",
        "over_under": 44.5,
-       "home_ml": 310,
-       "away_ml": -395
+       "home_ml": 285,
+       "away_ml": -360
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -892,7 +892,7 @@
   "calvin": {
    "record": "5-0",
    "conf_record": null,
-   "standing": "11th in Div II/III",
+   "standing": null,
    "games": [
     {
      "id": "401908738",
@@ -2131,7 +2131,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-15T11:49:38-05:00",
+  "fetched": "2026-10-16T11:31:45-05:00",
   "teams": {
    "calvin": {
     "predictive": {
