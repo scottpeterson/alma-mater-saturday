@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-17T16:50:16-05:00",
+ "fetched_at": "2026-10-17T18:36:10-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "4-3",
    "conf_record": null,
-   "standing": "14th in Big Ten",
+   "standing": "15th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -871,7 +871,7 @@
   "calvin": {
    "record": "6-0",
    "conf_record": null,
-   "standing": "9th in Div II/III",
+   "standing": "11th in Div II/III",
    "games": [
     {
      "id": "401908738",
@@ -2068,7 +2068,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-17T16:50:27-05:00",
+  "fetched": "2026-10-17T18:36:27-05:00",
   "teams": {
    "calvin": {
     "predictive": {
