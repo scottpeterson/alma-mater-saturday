@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-17T12:35:46-05:00",
+ "fetched_at": "2026-10-17T14:40:48-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -639,12 +639,12 @@
       "Fox"
      ],
      "state": "in",
-     "status": "3:27 - 2nd",
+     "status": "1:58 - 4th",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "3:27",
-     "period": 2,
+     "clock": "1:58",
+     "period": 4,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672666",
      "live_feed": null,
@@ -1049,13 +1049,13 @@
       "YouTube",
       "Calvin Broadcast Network"
      ],
-     "state": "pre",
-     "status": "10/17 - 12:00 PM EDT",
+     "state": "in",
+     "status": "0:09 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "0:09",
+     "period": 2,
      "group": "35",
      "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
      "live_feed": {
@@ -1217,7 +1217,7 @@
      "label": "Passing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "113/158, 1469 yds, 9.3 YPA, 21 TD, 2 INT, 190.95 rating",
+     "line": "140/192, 1803 yds, 9.4 YPA, 29 TD, 2 INT, 199.56 rating",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1226,7 +1226,7 @@
      "label": "Rushing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "36 car, 251 yds, 2 TD, 7.0 avg",
+     "line": "47 car, 321 yds, 2 TD, 6.8 avg",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1235,19 +1235,19 @@
      "label": "Receiving",
      "name": "Hunter Hogan",
      "jersey": "7",
-     "line": "33 rec, 410 yds, 8 TD, 12.42 avg",
+     "line": "39 rec, 521 yds, 10 TD, 13.36 avg",
      "position": "RB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Hogan__Hunter.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
-     "name": "Carson Schnurstein",
-     "jersey": "2",
-     "line": "33.0 tackles, 0.5 TFL, 0 sacks",
-     "position": "LB",
-     "year": "Junior",
-     "headshot": "https://calvinknights.com/images/2026/8/13/Schnurstein__Carson.jpg?width=200&quality=90"
+     "name": "Nolan Bloomquist",
+     "jersey": "10",
+     "line": "39.0 tackles, 2.5 TFL, 0 sacks",
+     "position": "DB",
+     "year": "Freshman",
+     "headshot": "https://calvinknights.com/images/2026/8/13/Bloomquist__Nolan.jpg?width=200&quality=90"
     },
     {
      "label": "Sacks",
@@ -1262,7 +1262,7 @@
      "label": "Interceptions",
      "name": "Caden Kolanowski",
      "jersey": "15",
-     "line": "4 INT, 0 PBU, 16.0 tackles",
+     "line": "4 INT, 1 PBU, 16.0 tackles",
      "position": "DB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Kolanowski__Caden.jpg?width=200&quality=90"
@@ -2117,7 +2117,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-17T12:36:00-05:00",
+  "fetched": "2026-10-17T14:41:08-05:00",
   "teams": {
    "calvin": {
     "predictive": {
