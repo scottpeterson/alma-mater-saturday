@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-17T10:25:37-05:00",
+ "fetched_at": "2026-10-17T12:35:46-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -638,20 +638,20 @@
      "broadcasts": [
       "Fox"
      ],
-     "state": "pre",
-     "status": "10/17 - 12:00 PM EDT",
+     "state": "in",
+     "status": "3:27 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "3:27",
+     "period": 2,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672666",
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
-       "details": "OSU -2.5",
+       "provider": "Draft Kings",
+       "details": "OSU -3",
        "over_under": 49.5,
        "home_ml": 124,
        "away_ml": -148
@@ -692,13 +692,6 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672806&vislive=ind",
      "live_feed": null,
      "odds": {
-      "line": {
-       "provider": "DraftKings",
-       "details": "IU -8.5",
-       "over_under": 44.5,
-       "home_ml": 285,
-       "away_ml": -360
-      },
       "win_prob": {
        "source": "ESPN matchup predictor",
        "pct": 83.0
@@ -2124,7 +2117,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-17T10:26:03-05:00",
+  "fetched": "2026-10-17T12:36:00-05:00",
   "teams": {
    "calvin": {
     "predictive": {
