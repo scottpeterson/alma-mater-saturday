@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-19T13:40:24-05:00",
+ "fetched_at": "2026-10-20T11:47:50-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -220,8 +220,8 @@
     {
      "id": "401858504",
      "week": 9,
-     "date": "2026-10-31T04:00Z",
-     "time_tbd": true,
+     "date": "2026-11-01T00:00Z",
+     "time_tbd": false,
      "home": false,
      "neutral": false,
      "opponent": {
@@ -233,9 +233,11 @@
      },
      "venue": "Memorial Stadium (Lincoln, NE)",
      "city": "Lincoln, NE",
-     "broadcasts": [],
+     "broadcasts": [
+      "BTN"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "10/31 - 8:00 PM EDT",
      "pf": null,
      "pa": null,
      "result": null,
@@ -683,8 +685,8 @@
        "provider": "DraftKings",
        "details": "IU -7",
        "over_under": 41.5,
-       "home_ml": 230,
-       "away_ml": -285
+       "home_ml": 225,
+       "away_ml": -278
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -695,8 +697,8 @@
     {
      "id": "401858501",
      "week": 9,
-     "date": "2026-10-31T04:00Z",
-     "time_tbd": true,
+     "date": "2026-10-31T19:30Z",
+     "time_tbd": false,
      "home": true,
      "neutral": false,
      "opponent": {
@@ -708,9 +710,11 @@
      },
      "venue": "Memorial Stadium (Bloomington, IN)",
      "city": "Bloomington, IN",
-     "broadcasts": [],
+     "broadcasts": [
+      "CBS"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "10/31 - 3:30 PM EDT",
      "pf": null,
      "pa": null,
      "result": null,
@@ -1122,7 +1126,9 @@
      },
      "venue": "Fred Zollner Athletic Stadium",
      "city": "Angola, IN",
-     "broadcasts": [],
+     "broadcasts": [
+      "MIAA Digital Network"
+     ],
      "state": "pre",
      "status": "10/31 - 1:00 PM EDT",
      "pf": null,
@@ -1512,7 +1518,9 @@
      },
      "venue": "Ray and Sue Smith Stadium",
      "city": "Holland, MI",
-     "broadcasts": [],
+     "broadcasts": [
+      "YouTube"
+     ],
      "state": "pre",
      "status": "10/31 - 1:00 PM EDT",
      "pf": null,
@@ -1884,7 +1892,9 @@
      },
      "venue": "Charles D. Lindberg Stadium",
      "city": "Rock Island, IL",
-     "broadcasts": [],
+     "broadcasts": [
+      "CCIW Network"
+     ],
      "state": "pre",
      "status": "10/31 - 2:00 PM EDT",
      "pf": null,
@@ -2061,6 +2071,17 @@
    "date": "2026-10-19T07:00Z",
    "ranks": {},
    "receiving_votes": {}
+  },
+  "AFCA Div III": {
+   "name": "AFCA Division III Coaches Poll",
+   "week": 8,
+   "date": "2026-10-19T07:00Z",
+   "ranks": {
+    "wheaton": 1,
+    "hope": 9,
+    "calvin": 23
+   },
+   "receiving_votes": {}
   }
  },
  "d3football": {
@@ -2086,7 +2107,7 @@
   "refreshed": "2026-10-04T15:22:45-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-19T13:40:39-05:00",
+  "fetched": "2026-10-20T11:48:07-05:00",
   "teams": {
    "calvin": {
     "predictive": {
@@ -2139,31 +2160,31 @@
     },
     "simulation": {
      "Conf": "MIAA",
-     "W": 8.3105,
-     "L": 1.6895,
-     "DIII W": 8.3105,
-     "DIII L": 1.6895,
-     "ConfW": 5.3105,
-     "ConfL": 1.6895,
-     "NPI": 64.2967966412745,
-     "Rank": 38.3297,
-     "SOS": 53.1504282444864,
-     "QWB": 0.254466607365215,
-     "Pool A": 0.1704,
-     "Pool C": 0.2325,
-     "Playoff": 0.4029,
-     "Top 8%": 0.0645,
+     "W": 8.3063,
+     "L": 1.6937,
+     "DIII W": 8.3063,
+     "DIII L": 1.6937,
+     "ConfW": 5.3063,
+     "ConfL": 1.6937,
+     "NPI": 64.2643701010883,
+     "Rank": 38.4062,
+     "SOS": 53.0999029386613,
+     "QWB": 0.253677687239608,
+     "Pool A": 0.1668,
+     "Pool C": 0.2411,
+     "Playoff": 0.4079,
+     "Top 8%": 0.0605,
      "Bowl": 0,
-     "R40W%": 0.369,
-     "R32W%": 0.1244,
-     "R16W%": 0.0338,
-     "R8W%": 0.0069,
-     "R4W%": 0.0018,
-     "R2W%": 0.0004,
-     "Wk8_Lev": 0.374211293826182,
-     "Wk9_Lev": 0.519053270946821,
-     "Wk10_Lev": 0.557180152281499,
-     "Wk11_Lev": 0.542237029985721
+     "R40W%": 0.372,
+     "R32W%": 0.1237,
+     "R16W%": 0.0377,
+     "R8W%": 0.0063,
+     "R4W%": 0.002,
+     "R2W%": 0.0001,
+     "Wk8_Lev": 0.397576450935941,
+     "Wk9_Lev": 0.51664150630985,
+     "Wk10_Lev": 0.540260134797621,
+     "Wk11_Lev": 0.560466259073015
     }
    },
    "hope": {
@@ -2217,31 +2238,31 @@
     },
     "simulation": {
      "Conf": "MIAA",
-     "W": 9.5029,
-     "L": 0.4971,
-     "DIII W": 9.5029,
-     "DIII L": 0.4971,
-     "ConfW": 6.5029,
-     "ConfL": 0.4971,
-     "NPI": 73.9069791986643,
-     "Rank": 9.7598,
-     "SOS": 59.0101662054625,
-     "QWB": 1.26192289743652,
-     "Pool A": 0.6933,
-     "Pool C": 0.2376,
-     "Playoff": 0.9309,
-     "Top 8%": 0.597,
+     "W": 9.5023,
+     "L": 0.4977,
+     "DIII W": 9.5023,
+     "DIII L": 0.4977,
+     "ConfW": 6.5023,
+     "ConfL": 0.4977,
+     "NPI": 73.8993959144663,
+     "Rank": 9.7571,
+     "SOS": 59.0153509342316,
+     "QWB": 1.26276029690273,
+     "Pool A": 0.6914,
+     "Pool C": 0.2445,
+     "Playoff": 0.9359,
+     "Top 8%": 0.5937,
      "Bowl": 0,
-     "R40W%": 0.9255,
-     "R32W%": 0.6481,
-     "R16W%": 0.3438,
-     "R8W%": 0.1582,
-     "R4W%": 0.0565,
-     "R2W%": 0.0182,
-     "Wk8_Lev": 0.273535220539829,
-     "Wk9_Lev": 0.375682558747317,
-     "Wk10_Lev": 0.223296750573745,
-     "Wk11_Lev": 0.375795940209868
+     "R40W%": 0.9309,
+     "R32W%": 0.6452,
+     "R16W%": 0.3414,
+     "R8W%": 0.1606,
+     "R4W%": 0.0609,
+     "R2W%": 0.0185,
+     "Wk8_Lev": 0.255753353763938,
+     "Wk9_Lev": 0.135967983991996,
+     "Wk10_Lev": 0.20934330870983,
+     "Wk11_Lev": 0.352538959293437
     }
    },
    "wheaton": {
@@ -2295,31 +2316,31 @@
     },
     "simulation": {
      "Conf": "CCIW",
-     "W": 9.9289,
-     "L": 0.0711,
-     "DIII W": 9.9289,
-     "DIII L": 0.0711,
-     "ConfW": 7.9289,
-     "ConfL": 0.0711,
-     "NPI": 77.0356317755533,
-     "Rank": 3.8541,
-     "SOS": 59.7593066943774,
-     "QWB": 1.61050029090054,
-     "Pool A": 0.9995,
+     "W": 9.9252,
+     "L": 0.0748,
+     "DIII W": 9.9252,
+     "DIII L": 0.0748,
+     "ConfW": 7.9252,
+     "ConfL": 0.0748,
+     "NPI": 77.0114699989497,
+     "Rank": 3.908,
+     "SOS": 59.7551108477817,
+     "QWB": 1.61128139590421,
+     "Pool A": 0.9994,
      "Pool C": 0.0002,
-     "Playoff": 0.9997,
-     "Top 8%": 0.9282,
+     "Playoff": 0.9996,
+     "Top 8%": 0.9266,
      "Bowl": 0.0001,
-     "R40W%": 0.9997,
-     "R32W%": 0.7853,
-     "R16W%": 0.5105,
-     "R8W%": 0.2781,
-     "R4W%": 0.1246,
-     "R2W%": 0.0452,
+     "R40W%": 0.9996,
+     "R32W%": 0.7839,
+     "R16W%": 0.5175,
+     "R8W%": 0.2834,
+     "R4W%": 0.1255,
+     "R2W%": 0.0438,
      "Wk8_Lev": 0,
-     "Wk9_Lev": 0.00466562986003105,
-     "Wk10_Lev": 0.9997,
-     "Wk11_Lev": 0.0441176470588235
+     "Wk9_Lev": 0.0058224163027657,
+     "Wk10_Lev": 0.9996,
+     "Wk11_Lev": 0.0655737704918032
     }
    }
   },
