@@ -283,12 +283,12 @@ def d3football_top25():
 
 def d3football_parse(body_text):
     title = re.search(r"D3football\.com Top 25, (\d{4} Week \d+|\d{4} preseason|\d{4} final)", body_text)
-    through = re.search(r"Through games of ([A-Z][a-z]+\.? \d+, \d{4})", body_text)
+    through = re.search(r"Through games of ([A-Z][a-z]+\.? \d+(?:, \d{4})?)", body_text)
     body = body_text[body_text.find("Rank School"):]
     end = body.find("The D3football.com Top 25 is voted")
     body = body[:end] if end > 0 else body
     ranked = {}
-    pattern = re.compile(r"(\d{1,2}) ([A-Z][^()]*?(?: \([A-Z][a-z.]+\))?)(?: \((\d+)\))? (\d+-\d+(?:-\d+)?) (\d+) (\d+|NR|RV)")
+    pattern = re.compile(r"(\d{1,2}) ([A-Z][^()]*?(?: \([A-Z][a-z.]+\))?)(?: \((\d+)\))? (\d+-\d+(?:-\d+)?) (\d+)(?: [+-]?\d+| -+)? (\d+|NR|RV)")
     for m in pattern.finditer(body):
         ranked[m.group(2).strip()] = {"rank": int(m.group(1)), "record": m.group(4), "points": int(m.group(5)), "prev": m.group(6)}
     rv = {}

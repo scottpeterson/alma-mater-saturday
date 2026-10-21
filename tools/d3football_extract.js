@@ -3,12 +3,12 @@
 (() => {
   const flat = document.body.innerText.replace(/\s+/g, " ");
   const title = (flat.match(/D3football\.com Top 25, (\d{4} Week \d+|\d{4} preseason|\d{4} final)/) || [])[1] || null;
-  const through = (flat.match(/Through games of ([A-Z][a-z]+\.? \d+, \d{4})/) || [])[1] || null;
+  const through = (flat.match(/Through games of ([A-Z][a-z]+\.? \d+(?:, \d{4})?)/) || [])[1] || null;
   let body = flat.slice(flat.indexOf("Rank School"));
   const end = body.indexOf("The D3football.com Top 25 is voted");
   if (end > 0) body = body.slice(0, end);
   const ranked = {};
-  const re = /(\d{1,2}) ([A-Z][^()]*?(?: \([A-Z][a-z.]+\))?)(?: \((\d+)\))? (\d+-\d+(?:-\d+)?) (\d+) (\d+|NR|RV)/g;
+  const re = /(\d{1,2}) ([A-Z][^()]*?(?: \([A-Z][a-z.]+\))?)(?: \((\d+)\))? (\d+-\d+(?:-\d+)?) (\d+)(?: [+-]?\d+| -+)? (\d+|NR|RV)/g;
   let m;
   while ((m = re.exec(body))) ranked[m[2].trim()] = { rank: +m[1], record: m[4], points: +m[5], prev: m[6] };
   const rv = {};

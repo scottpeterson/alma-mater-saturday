@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-20T11:47:50-05:00",
+ "fetched_at": "2026-10-21T08:55:17-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -283,7 +283,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 41.5
+       "pct": 41.1
       }
      }
     },
@@ -726,7 +726,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 97.0
+       "pct": 96.9
       }
      }
     },
@@ -1156,7 +1156,7 @@
       "short": "Hope",
       "espn_id": "2812",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2812.png",
-      "rank": 14,
+      "rank": 9,
       "rank_source": "D3football.com"
      },
      "venue": "Grand Rapids Christian High School",
@@ -1827,7 +1827,7 @@
       "short": "N Central (IL)",
       "espn_id": "3071",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/3071.png",
-      "rank": 1,
+      "rank": 4,
       "rank_source": "D3football.com"
      },
      "venue": "Benedetti-Wehrli Stadium",
@@ -2085,29 +2085,29 @@
   }
  },
  "d3football": {
-  "label": "2026 Week 5",
-  "through": "Oct. 3, 2026",
+  "label": "2026 Week 7",
+  "through": "Oct. 17",
   "ranks": {
    "hope": {
-    "rank": 14,
-    "record": "5-0",
-    "points": 300,
-    "prev": "15"
+    "rank": 9,
+    "record": "6-0",
+    "points": 364,
+    "prev": "12"
    },
    "wheaton": {
-    "rank": 2,
-    "record": "5-0",
-    "points": 567,
-    "prev": "3"
+    "rank": 1,
+    "record": "7-0",
+    "points": 619,
+    "prev": "1"
    }
   },
   "receiving_votes": {
-   "calvin": 7
+   "calvin": 23
   },
-  "refreshed": "2026-10-04T15:22:45-05:00"
+  "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-20T11:48:07-05:00",
+  "fetched": "2026-10-21T08:56:13-05:00",
   "teams": {
    "calvin": {
     "predictive": {
