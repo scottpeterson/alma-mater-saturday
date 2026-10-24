@@ -98,7 +98,7 @@ def poll_badges(slug):
 
     def badge(label, rank, rv, have_poll=True):
         if not have_poll:
-            return  # the poll itself is missing this run; say nothing rather than "NR"
+            return  # the poll is missing this run, so say nothing rather than "NR"
         if rank:
             badges.append(f'<span class="badge"><b>#{rank}</b> {esc(label)}</span>')
         elif rv:
@@ -271,7 +271,7 @@ def last_and_next(team):
 
 
 def conference_line(school, team):
-    """ESPN's standing text for Division I; a conference record computed from results for Division III."""
+    """ESPN's standing text for Division I. For Division III, a conference record computed from results."""
     members = school.get("conference_members")
     if not members:
         return team.get("standing") or ""
@@ -593,8 +593,8 @@ function tick(){
 }
 tick();setInterval(tick,60000);
 
-// Live scores: ESPN for every game, plus the stat crew's own feed (Sidearm or PrestoSports)
-// for the ball, down and distance, and the last play when ESPN has none (Division III).
+// Live scores: ESPN for every game, plus the live stats feed (Sidearm or PrestoSports)
+// for possession, down and distance, and the last play when ESPN has none (Division III).
 const API='https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard';
 const cards=[...document.querySelectorAll('.game[data-game]')];
 function etParts(iso){const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date(iso));const g=k=>p.find(x=>x.type===k).value;return {y:g('year'),m:g('month'),d:g('day')};}
@@ -604,9 +604,9 @@ function inWindow(c,now){const t=new Date(c.dataset.date).getTime();return c.cla
 function windowOpen(){const now=Date.now();return cards.some(c=>inWindow(c,now));}
 function escHtml(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function ordinal(n){return ['','1st','2nd','3rd','4th'][n]||(n>4?'OT'+(n>5?n-4:''):'');}
-// Sidearm writes players as "Last,First" and tacklers as "(A,B;C,D)"; readers want "First Last".
+// Sidearm writes players as "Last,First" and tacklers as "(A,B;C,D)". Readers want "First Last".
 function fixNames(t){return String(t||'').replace(/((?:(?:de|van|von|der|den|la|le|del|da|di|du) )*[A-Z][\w'\-]*(?:, ?(?:Jr|Sr|II|III|IV)\.?)?),([A-Z][\w'\-.]*)/g,'$2 $1').replace(/;(?=\S)/g,'; ');}
-// Feeds mark the side of the field as H/V (home/visitor) or by the crew's team id; show the team's name instead.
+// Feeds mark the side of the field as H/V (home/visitor) or by the crew's team id. Show the team's name instead.
 function sideName(prefix,home,away){const p=String(prefix||'');const u=p.toUpperCase();if(u===String(home.id||'').toUpperCase()||/^(H|HOME)$/.test(u))return home.name;if(u===String(away.id||'').toUpperCase()||/^(V|VIS|VISITOR|A|AWAY)$/.test(u))return away.name;return p;}
 function fixSpots(t,home,away){return String(t||'').replace(/\b(H|V|HOME|VIS|VISITOR)(\d{1,2})\b/g,(m,a,b)=>sideName(a,home,away)+' '+(+b));}
 function fmtClock(sec){sec=Math.max(0,+sec||0);return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');}
@@ -634,23 +634,23 @@ function espnSituation(comp,mine,other){
   const poss=s.possession===mine.team.id?mine:s.possession===other.team.id?other:null;
   return {poss:poss?poss.team.shortDisplayName:null,dd:s.shortDownDistanceText||(s.downDistanceText||'').split(' at ')[0],spot:s.possessionText||'',last:s.lastPlay&&s.lastPlay.text||''};
 }
-// Who gets the ball after halftime: the team that kicked off to start the game. Looked up once per game.
+// The team that gets the ball after halftime is the team that kicked off to start the game. The page looks it up once per game.
 const openers=new Map();
 function isHalftime(period,clock){return period===2&&/^0?0:00$/.test(clock);}
 function opener(key,load){if(!openers.has(key))openers.set(key,load().catch(()=>null));return openers.get(key);}
-// ESPN: the game summary lists every drive; the first kickoff's start.team is the kicking team.
+// ESPN: the game summary lists every drive. The first kickoff's start.team is the kicking team.
 function espnOpener(eventId){return opener('espn'+eventId,async()=>{
   const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event='+eventId,{cache:'no-store'});
   const j=await r.json();const drives=((j.drives||{}).previous||[]);
   for(const d of drives)for(const p of d.plays||[]){if(/kickoff/i.test((p.type||{}).text||'')&&p.start&&p.start.team)return String(p.start.team.id);}
   return null;});}
-// Sidearm: game.json?detail=full carries the whole play list, oldest first; the first kickoff names the kicking side.
+// Sidearm: game.json?detail=full carries the whole play list, oldest first. The first kickoff's Team is the kicking team.
 function sidearmOpener(url){return opener(url,async()=>{
   const r=await fetch(url+'?detail=full',{cache:'no-store'});const j=await r.json();
   const ko=(j.Plays||[]).find(p=>p.Type==='Kickoff');return ko?ko.Team:null;});}
-// PrestoSports: the first kickoff play in the first quarter; hasball is the kicking team's id.
+// PrestoSports: the first kickoff play in the first quarter. Its hasball is the kicking team's id.
 function prestoOpener(x){const q=x.querySelector('qtr[number="1"]');const ko=q&&q.querySelector('play[type="K"]');return ko?ko.getAttribute('hasball'):null;}
-// The school feeds. Sidearm: sidearmstats.com/<client>/football/game.json. PrestoSports: data.prestolivestats.com/xml/<site>/events/<event>.xml.
+// The live stats feeds. Sidearm: sidearmstats.com/<client>/football/game.json. PrestoSports: data.prestolivestats.com/xml/<site>/events/<event>.xml.
 async function feedState(el){
   const url=el.dataset.feed,type=el.dataset.feedType;if(!url)return null;
   const r=await fetch(url,{cache:'no-store'});if(!r.ok)return null;
@@ -660,7 +660,7 @@ async function feedState(el){
     if(!g||!g.HasStarted||g.Date!==day)return null;
     const last=(g.LastPlays||[])[0];
     let side=last?last.Team:null;
-    // The feed names the team that ran the last play; a punt, kickoff, or turnover hands the ball over.
+    // The feed reports the team that ran the last play. After a punt, kickoff, or turnover, the other team has the ball.
     if(last&&(last.Turnover||/punt|kickoff/i.test((last.Type||'')+' '+(last.Narrative||''))))side=side==='HomeTeam'?'VisitingTeam':'HomeTeam';
     const m=/^(\d+)(?:st|nd|rd|th) and (\d+|goal) on the ([A-Za-z]+)(\d+)/i.exec(g.Context||'');
     const H={id:g.HomeTeam.Id,name:g.HomeTeam.Name},V={id:g.VisitingTeam.Id,name:g.VisitingTeam.Name};
@@ -739,7 +739,7 @@ async function refresh(){
     }catch(e){}
   }
   await Promise.all(halfJobs);
-  // The stat crew's feed fills in what ESPN leaves out and is usually a play or two ahead of it.
+  // The live stats feed fills in what ESPN leaves out, and it is usually a play or two ahead of ESPN.
   const pending=cards.filter(c=>c.dataset.feed&&!c.classList.contains('final')&&!shown.has(c)&&inWindow(c,now));
   await Promise.all(pending.map(async c=>{if(await applyFeed(c)){anyLive=true;shown.add(c);}}));
   cards.forEach(c=>{if(!shown.has(c))showSituation(c,null);});
@@ -756,7 +756,7 @@ function show(name){tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===
 tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
 document.querySelectorAll('.tablink').forEach(a=>a.addEventListener('click',()=>show(a.dataset.tab)));
 })();
-// Sortable tables: click a header to sort by that column; click again to reverse.
+// Sortable tables: click a header to sort by that column. Click again to reverse.
 (function(){
 function cellKey(td){if(!td)return '';const t=td.querySelector('time[datetime]');const raw=td.dataset.sort!==undefined?td.dataset.sort:t?t.getAttribute('datetime'):td.textContent.trim();const n=parseFloat(String(raw).replace(/[,%#$]/g,''));return isNaN(n)||!/^[-+#$]?[\d.,]+%?$/.test(String(raw).replace(/\s/g,''))?String(raw).toLowerCase():n;}
 document.querySelectorAll('table').forEach(t=>{
@@ -802,7 +802,7 @@ def main():
 <h2 id="week">This week</h2>
 <p class="small"><span id="tznote">Kickoff times are in your device's time zone.</span> Use the Eastern, Central, and Device buttons at the top to switch.</p>
 <p class="small">Scores refresh every minute while a game is in progress. During a game, each card shows who has the ball, the down and distance, and the last play. At halftime it shows which team gets the ball to start the second half.</p>
-<p class="small">ESPN supplies that for Washington and Indiana. For the Division III games it comes from the home team's live stats feed, so it appears only when the home team publishes one. <span id="livestamp"></span></p>
+<p class="small">ESPN supplies those details for Washington and Indiana. For the Division III games, the home team's live stats feed supplies them, so they appear only when the home team publishes one. <span id="livestamp"></span></p>
 {this_week()}
 
 <h2 id="teams">The five</h2>
@@ -815,7 +815,7 @@ def main():
 {ratings_table()}
 
 <h3 class="spaced" id="hansen"><a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (Division III) <a class="sitelink" href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com &rarr;</a></h3>
-<p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, and schedule strength. It also lists the season simulation's projected record, NPI, and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
+<p class="small">Ratings, projections, and simulation results come from <a href="https://hansenratings.com/" target="_blank" rel="noopener">hansenratings.com</a>, which covers Division III only. The table lists predictive rank and rating, adjusted offense and defense, Elo, résumé rank, and schedule strength. It also lists the season simulation's projected record, NCAA Power Index (NPI), and playoff odds. Pool A is the conference automatic bid and Pool C is the at-large bid. Rows are sorted by predictive rank.</p>
 {hansen_table()}
 
 <h2 id="margins">Point margin through the season</h2>

@@ -11,7 +11,7 @@ Sources, all public and unauthenticated:
   D3football.com         d3football.com/top25/index                  (D3football.com Top 25)
   Hansen Ratings         hansenratings.com/ratings/... and /simulation (D3 ratings, odds)
 
-Massey ratings are refreshed by hand into data/massey.json (see README) because
+You refresh Massey ratings by hand into data/massey.json (see README), because
 masseyratings.com sits behind a browser challenge.
 """
 import html
@@ -160,11 +160,11 @@ def _add_link(links, label, href):
 
 
 def live_feed(url):
-    """The browser-readable feed behind a live stats link, or None when the vendor has none we can read.
+    """The browser-readable feed behind a live stats link, or None when the vendor has none the page can read.
 
     Sidearm live stats read https://sidearmstats.com/<client>/football/game.json and PrestoSports
     reads https://data.prestolivestats.com/xml/<site>/events/<event>.xml. Both allow cross-origin
-    requests, so the page polls them directly. StatBroadcast (the FBS schools) has no such feed;
+    requests, so the page polls them directly. StatBroadcast (the FBS schools) has no such feed.
     ESPN covers those games.
     """
     if url in _feed_cache:
@@ -191,7 +191,7 @@ def live_feed(url):
 def attach_live_stats(school, games, previous_games):
     """Add live_stats (the link) and live_feed (the readable feed) to each game.
 
-    Returns an error message when the schedule page could not be read; the games then keep
+    If the schedule page cannot be read, returns an error message, and the games keep
     the values from the previous run.
     """
     old = {g["id"]: g for g in previous_games}
@@ -246,7 +246,7 @@ def d3football_week_urls():
     except (urllib.error.URLError, TimeoutError):
         pass
     today = now().date()
-    # Week 1 poll follows the first Saturday of September; one poll per week after that.
+    # The week 1 poll follows the first Saturday of September. One poll per week follows after that.
     first_poll = date(today.year, 9, 7)
     est = max(1, (today - first_poll).days // 7 + 1)
     for n in (est + 1, est, est - 1, est - 2):
@@ -344,7 +344,7 @@ def apply_d3_ranks(out):
         if stateless != key:
             state = next(w for w in key.split() if w in states)
             loose.append((stateless, v["rank"], state))
-    # Keys that carry a state win first; stateless fallbacks after; longer names before shorter.
+    # Keys that carry a state win first, then stateless fallbacks. Longer names come before shorter.
     exact.sort(key=lambda kv: -len(kv[0]))
     loose.sort(key=lambda kv: -len(kv[0]))
     for school in SCHOOLS:
@@ -497,7 +497,7 @@ HANSEN_STOP = {"college", "university", "state", "the", "of", "and", "illinois",
 
 
 def _hansen_tokens(name):
-    """The words that identify a team in a Hansen name: no punctuation, no state tags, nothing under four letters."""
+    """The words that identify a team in a Hansen name, with punctuation, state tags, and words under four letters removed."""
     return {t for t in re.findall(r"[a-z]+", name.lower()) if len(t) > 3 and t not in HANSEN_STOP}
 
 
