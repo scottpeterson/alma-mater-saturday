@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-24T12:42:42-05:00",
+ "fetched_at": "2026-10-24T14:56:22-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "4-3",
    "conf_record": null,
-   "standing": "15th in Big Ten",
+   "standing": "13th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -437,9 +437,9 @@
    ]
   },
   "indiana": {
-   "record": "6-1",
+   "record": "7-1",
    "conf_record": null,
-   "standing": "2nd in Big Ten",
+   "standing": "3rd in Big Ten",
    "games": [
     {
      "id": "401858425",
@@ -670,29 +670,16 @@
      "broadcasts": [
       "Fox"
      ],
-     "state": "in",
-     "status": "0:01 - 2nd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "0:01",
-     "period": 2,
+     "state": "post",
+     "status": "Final/OT",
+     "pf": 13,
+     "pa": 6,
+     "result": "W",
+     "clock": "0:00",
+     "period": 5,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672806&vislive=ind",
-     "live_feed": null,
-     "odds": {
-      "line": {
-       "provider": "DraftKings",
-       "details": "IU -7.5",
-       "over_under": 43.5,
-       "home_ml": 240,
-       "away_ml": -298
-      },
-      "win_prob": {
-       "source": "ESPN matchup predictor",
-       "pct": 82.1
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401858501",
@@ -756,7 +743,13 @@
      "period": 0,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672667",
-     "live_feed": null
+     "live_feed": null,
+     "odds": {
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 85.2
+      }
+     }
     },
     {
      "id": "401858535",
@@ -815,11 +808,11 @@
      "live_feed": null
     }
    ],
-   "played": 7,
-   "pf": 256,
-   "pa": 90,
-   "diff": 166,
-   "wins": 6,
+   "played": 8,
+   "pf": 269,
+   "pa": 96,
+   "diff": 173,
+   "wins": 7,
    "losses": 1,
    "ties": 0,
    "players": [
@@ -882,7 +875,7 @@
   "calvin": {
    "record": "6-0",
    "conf_record": null,
-   "standing": "11th in Div II/III",
+   "standing": "13th in Div II/III",
    "games": [
     {
      "id": "401908738",
@@ -1085,12 +1078,12 @@
       "Calvin Broadcast Network"
      ],
      "state": "in",
-     "status": "14:59 - 2nd",
+     "status": "End of 4th",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "14:59",
-     "period": 2,
+     "clock": "0:00",
+     "period": 4,
      "group": "35",
      "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
      "live_feed": {
@@ -1476,31 +1469,16 @@
      "broadcasts": [
       "MIAA Digital Network"
      ],
-     "state": "in",
-     "status": "13:50 - 2nd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "13:50",
-     "period": 2,
+     "state": "post",
+     "status": "Final",
+     "pf": 38,
+     "pa": 3,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
      "group": "35",
      "live_stats": "https://almascots.com/sidearmstats/football/summary",
-     "live_feed": {
-      "type": "sidearm",
-      "url": "https://sidearmstats.com/alma/football/game.json"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 86.0
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 31,
-       "opp": 15,
-       "total": 45.8
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401908746",
@@ -1562,7 +1540,8 @@
      "period": 0,
      "group": "35",
      "live_stats": null,
-     "live_feed": null
+     "live_feed": null,
+     "odds": null
     },
     {
      "id": "401908747",
@@ -1596,11 +1575,11 @@
      }
     }
    ],
-   "played": 6,
-   "pf": 246,
-   "pa": 73,
-   "diff": 173,
-   "wins": 6,
+   "played": 7,
+   "pf": 284,
+   "pa": 76,
+   "diff": 208,
+   "wins": 7,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -1663,7 +1642,7 @@
   "wheaton": {
    "record": "7-0",
    "conf_record": null,
-   "standing": "1st in Div II/III",
+   "standing": "4th in Div II/III",
    "games": [
     {
      "id": "401907850",
@@ -2107,7 +2086,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-24T12:42:54-05:00",
+  "fetched": "2026-10-24T14:56:46-05:00",
   "teams": {
    "calvin": {
     "predictive": {
