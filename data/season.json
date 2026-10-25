@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-24T19:20:42-05:00",
+ "fetched_at": "2026-10-24T21:43:13-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -247,6 +247,13 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675075&vislive=wash",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "NEB -9.5",
+       "over_under": 49.5,
+       "home_ml": -340,
+       "away_ml": 270
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
        "pct": 12.8
@@ -2072,7 +2079,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-24T19:21:00-05:00",
+  "fetched": "2026-10-24T21:43:31-05:00",
   "teams": {
    "calvin": {
     "predictive": {
