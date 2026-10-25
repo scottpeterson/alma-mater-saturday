@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-25T03:00:38-05:00",
+ "fetched_at": "2026-10-25T10:58:55-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -248,7 +248,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "NEB -9.5",
        "over_under": 49.5,
        "home_ml": -325,
@@ -256,7 +256,7 @@
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 12.8
+       "pct": 13.0
       }
      }
     },
@@ -290,7 +290,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 41.1
+       "pct": 40.2
       }
      }
     },
@@ -719,15 +719,15 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "IU -20.5",
-       "over_under": 43.5,
+       "over_under": 42.5,
        "home_ml": -1800,
        "away_ml": 1000
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 96.9
+       "pct": 96.0
       }
      }
     },
@@ -761,7 +761,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 85.2
+       "pct": 86.7
       }
      }
     },
@@ -837,7 +837,7 @@
      "jersey": "10",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685401.png",
-     "line": "108/169, 1660 YDS, 9.8 YPA, 18 TD"
+     "line": "116/187, 1741 YDS, 9.3 YPA, 18 TD, 1 INT"
     },
     {
      "label": "Rushing",
@@ -846,7 +846,7 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146724.png",
-     "line": "87 CAR, 643 YDS, 6 TD"
+     "line": "106 CAR, 711 YDS, 6 TD"
     },
     {
      "label": "Receiving",
@@ -855,7 +855,7 @@
      "jersey": "80",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
-     "line": "39 REC, 694 YDS, 8 TD"
+     "line": "42 REC, 726 YDS, 8 TD"
     },
     {
      "label": "Tackles",
@@ -864,7 +864,7 @@
      "jersey": "46",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
-     "line": "52 tackles"
+     "line": "60 tackles"
     },
     {
      "label": "Sacks",
@@ -873,7 +873,7 @@
      "jersey": "12",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4857878.png",
-     "line": "7 sacks"
+     "line": "9 sacks"
     },
     {
      "label": "Interceptions",
@@ -882,7 +882,7 @@
      "jersey": "1",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870711.png",
-     "line": "2 INT"
+     "line": "3 INT"
     }
    ]
   },
@@ -1134,7 +1134,18 @@
       "type": "sidearm",
       "url": "https://sidearmstats.com/trine/football/game.json"
      },
-     "odds": null
+     "odds": {
+      "win_prob": {
+       "source": "Hansen Ratings",
+       "pct": 51.3
+      },
+      "projection": {
+       "source": "Hansen Ratings",
+       "mine": 38,
+       "opp": 38,
+       "total": 76.4
+      }
+     }
     },
     {
      "id": "401908743",
@@ -1512,7 +1523,18 @@
       "type": "sidearm",
       "url": "https://sidearmstats.com/hopecollege/football/game.json"
      },
-     "odds": null
+     "odds": {
+      "win_prob": {
+       "source": "Hansen Ratings",
+       "pct": 99.9
+      },
+      "projection": {
+       "source": "Hansen Ratings",
+       "mine": 51,
+       "opp": 1,
+       "total": 51.5
+      }
+     }
     },
     {
      "id": "401908743",
@@ -1887,7 +1909,18 @@
       "type": "sidearm",
       "url": "https://sidearmstats.com/wheaton/football/game.json"
      },
-     "odds": null
+     "odds": {
+      "win_prob": {
+       "source": "Hansen Ratings",
+       "pct": 93.6
+      },
+      "projection": {
+       "source": "Hansen Ratings",
+       "mine": 41,
+       "opp": 16,
+       "total": 57.0
+      }
+     }
     },
     {
      "id": "401907830",
@@ -2086,55 +2119,55 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-25T03:00:56-05:00",
+  "fetched": "2026-10-25T10:59:07-05:00",
   "teams": {
    "calvin": {
     "predictive": {
-     "Rank": 43,
-     "Prev": 49,
+     "Rank": 42,
+     "Prev": 43,
      "Conf": "MIAA",
      "Region": 4,
-     "Rating": 20.5306934341638,
-     "AdjEff": 20.0984725352907,
-     "AdjO": 38.071396984902,
-     "AdjD": 17.9729244496112,
-     "AdjHFA": 1.30897619822159,
-     "Elo": 1765.47211272178,
-     "Elo+": 1753.32761200278
+     "Rating": 20.4202731420676,
+     "AdjEff": 20.0373760024795,
+     "AdjO": 39.176582665053,
+     "AdjD": 19.1392066625734,
+     "AdjHFA": 1.40606887514518,
+     "Elo": 1771.89736547303,
+     "Elo+": 1760.33317877121
     },
     "resume": {
-     "Rank": 22,
-     "Prev": "25",
+     "Rank": 19,
+     "Prev": "22",
      "Conf": "MIAA",
      "Region": 4,
-     "MOV+": -10.0243377203247,
-     "SOR": 0.84625955448901,
-     "E+": 0,
-     "G+": 0.833333333333333,
+     "MOV+": -10.6515869776775,
+     "SOR": 0.858634567104308,
+     "E+": 0.142857142857143,
+     "G+": 1,
      "A+": 1,
      "BA": 0,
-     "EAW": 0.179143315277511,
-     "GAW": 0.748088196085269,
-     "AAW": 2.06129586449794,
-     "Wins": 6,
+     "EAW": 0.172710246378369,
+     "GAW": 0.802581917675972,
+     "AAW": 2.41123206043701,
+     "Wins": 7,
      "Losses": 0,
-     "DIII W": 6,
+     "DIII W": 7,
      "DIII L": 0,
-     "Conf W": 3,
+     "Conf W": 4,
      "Conf L": 0
     },
     "sos": {
-     "Rank": 146,
+     "Rank": 145,
      "Conf": "MIAA",
      "Region": 4,
-     "To-Date SOS": 0.343363874281388,
-     "To-Date SOS+": 0.0460588049395054,
-     "To-Date NCSOS": 0.228816246483667,
-     "SOS": 0.488835650408465,
-     "SOS+": 0.135085582090238,
-     "NCSOS": 0.228816246483667,
-     "Future SOS": 0.707043314599082,
-     "Future SOS+": 0.268625747816338,
+     "To-Date SOS": 0.330461140453875,
+     "To-Date SOS+": 0.0402500208097777,
+     "To-Date NCSOS": 0.228780505407945,
+     "SOS": 0.49055398295293,
+     "SOS+": 0.141002621239406,
+     "NCSOS": 0.228780505407945,
+     "Future SOS": 0.864103948784057,
+     "Future SOS+": 0.376092022241872,
      "Future NCSOS": "NA"
     },
     "simulation": {
@@ -2168,51 +2201,51 @@
    },
    "hope": {
     "predictive": {
-     "Rank": 15,
-     "Prev": 10,
+     "Rank": 11,
+     "Prev": 15,
      "Conf": "MIAA",
      "Region": 4,
-     "Rating": 34.5074898160771,
-     "AdjEff": 33.8281964635862,
-     "AdjO": 42.7606620105679,
-     "AdjD": 8.93246554698177,
-     "AdjHFA": 0.931067491003285,
-     "Elo": 2179.82252954877,
-     "Elo+": 2206.82930289766
+     "Rating": 37.0222646303393,
+     "AdjEff": 36.579813580314,
+     "AdjO": 44.071485853467,
+     "AdjD": 7.49167227315304,
+     "AdjHFA": 0.838324311058659,
+     "Elo": 2193.07976303569,
+     "Elo+": 2216.33419768651
     },
     "resume": {
      "Rank": 13,
-     "Prev": "12",
+     "Prev": "13",
      "Conf": "MIAA",
      "Region": 4,
-     "MOV+": -4.31081454507132,
-     "SOR": 0.738474124576418,
-     "E+": 0.5,
-     "G+": 1,
+     "MOV+": -3.4649076506142,
+     "SOR": 0.75341518491958,
+     "E+": 0.428571428571429,
+     "G+": 0.857142857142857,
      "A+": 1,
      "BA": 0,
-     "EAW": 0.337843119350426,
-     "GAW": 1.55916401606638,
-     "AAW": 3.50439233462719,
-     "Wins": 6,
+     "EAW": 0.339676391248501,
+     "GAW": 1.78006359487371,
+     "AAW": 4.19175036615444,
+     "Wins": 7,
      "Losses": 0,
-     "DIII W": 6,
+     "DIII W": 7,
      "DIII L": 0,
-     "Conf W": 3,
+     "Conf W": 4,
      "Conf L": 0
     },
     "sos": {
-     "Rank": 40,
+     "Rank": 37,
      "Conf": "MIAA",
      "Region": 4,
-     "To-Date SOS": 0.627021727396375,
-     "To-Date SOS+": 0.163592325643834,
-     "To-Date NCSOS": 0.752432796160979,
-     "SOS": 0.644420016494405,
-     "SOS+": 0.170606375052242,
-     "NCSOS": 0.752432796160979,
-     "Future SOS": 0.670517450141451,
-     "Future SOS+": 0.181127449164853,
+     "To-Date SOS": 0.650710695523924,
+     "To-Date SOS+": 0.164572751034075,
+     "To-Date NCSOS": 0.752419024570283,
+     "SOS": 0.6488927418749,
+     "SOS+": 0.173833006635613,
+     "NCSOS": 0.752419024570283,
+     "Future SOS": 0.644650850027177,
+     "Future SOS+": 0.195440269705869,
      "Future NCSOS": "NA"
     },
     "simulation": {
@@ -2246,32 +2279,32 @@
    },
    "wheaton": {
     "predictive": {
-     "Rank": 6,
-     "Prev": 7,
+     "Rank": 7,
+     "Prev": 6,
      "Conf": "CCIW",
      "Region": 5,
-     "Rating": 41.8305745513772,
-     "AdjEff": 40.5095189735655,
-     "AdjO": 45.973898600529,
+     "Rating": 41.7679738446999,
+     "AdjEff": 40.5205679714451,
+     "AdjO": 45.9849475984086,
      "AdjD": 5.46437962696347,
-     "AdjHFA": 0.832742397624218,
+     "AdjHFA": 0.827178614454676,
      "Elo": 2614.09750758999,
      "Elo+": 2522.68345619864
     },
     "resume": {
-     "Rank": 4,
-     "Prev": "3",
+     "Rank": 3,
+     "Prev": "4",
      "Conf": "CCIW",
      "Region": 5,
-     "MOV+": 3.81328100364444,
-     "SOR": 0.102873341170905,
+     "MOV+": 3.16644173594807,
+     "SOR": 0.0938070382003193,
      "E+": 0.571428571428571,
      "G+": 1,
      "A+": 1,
      "BA": 0,
-     "EAW": 1.34714967328378,
-     "GAW": 2.6122613317924,
-     "AAW": 4.46655007492785,
+     "EAW": 1.364715280671,
+     "GAW": 2.57238345101354,
+     "AAW": 4.37324372991672,
      "Wins": 7,
      "Losses": 0,
      "DIII W": 7,
@@ -2280,17 +2313,17 @@
      "Conf L": 0
     },
     "sos": {
-     "Rank": 100,
+     "Rank": 99,
      "Conf": "CCIW",
      "Region": 5,
-     "To-Date SOS": 0.622179218491154,
-     "To-Date SOS+": 0.287820852623312,
-     "To-Date NCSOS": 0.659336342880626,
-     "SOS": 0.551546415143194,
-     "SOS+": 0.221322688739788,
-     "NCSOS": 0.659336342880626,
-     "Future SOS": 0.386736540664621,
-     "Future SOS+": 0.0661603063448987,
+     "To-Date SOS": 0.622225940020132,
+     "To-Date SOS+": 0.286988956163419,
+     "To-Date NCSOS": 0.659217988669999,
+     "SOS": 0.557179526364691,
+     "SOS+": 0.222720566062008,
+     "NCSOS": 0.659217988669999,
+     "Future SOS": 0.405404561168661,
+     "Future SOS+": 0.0727609891587154,
      "Future NCSOS": "NA"
     },
     "simulation": {
@@ -2330,5 +2363,5 @@
  },
  "errors": [],
  "stale": {},
- "hansen_week": "/projections/2026/week-8/"
+ "hansen_week": "/projections/2026/week-9/"
 }
