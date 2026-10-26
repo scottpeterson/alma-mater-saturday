@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-25T10:58:55-05:00",
+ "fetched_at": "2026-10-26T13:37:44-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -248,8 +248,8 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
-       "details": "NEB -9.5",
+       "provider": "Draft Kings",
+       "details": "NEB -8.5",
        "over_under": 49.5,
        "home_ml": -325,
        "away_ml": 260
@@ -334,7 +334,7 @@
       "short": "Indiana",
       "espn_id": "84",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
-      "rank": 6
+      "rank": 4
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
@@ -719,11 +719,11 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
-       "details": "IU -20.5",
+       "provider": "Draft Kings",
+       "details": "IU -19.5",
        "over_under": 42.5,
-       "home_ml": -1800,
-       "away_ml": 1000
+       "home_ml": -1450,
+       "away_ml": 850
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -743,7 +743,7 @@
       "short": "USC",
       "espn_id": "30",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
-      "rank": 16
+      "rank": null
      },
      "venue": "Memorial Stadium (Bloomington, IN)",
      "city": "Bloomington, IN",
@@ -1224,7 +1224,7 @@
      "label": "Passing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "164/223, 2172 yds, 9.7 YPA, 33 TD, 3 INT, 201.50 rating",
+     "line": "136/186, 1807 yds, 9.7 YPA, 27 TD, 3 INT, 199.40 rating",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1233,7 +1233,7 @@
      "label": "Rushing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "53 car, 355 yds, 3 TD, 6.7 avg",
+     "line": "48 car, 337 yds, 2 TD, 7.0 avg",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1242,7 +1242,7 @@
      "label": "Receiving",
      "name": "Hunter Hogan",
      "jersey": "7",
-     "line": "48 rec, 639 yds, 10 TD, 13.31 avg",
+     "line": "40 rec, 573 yds, 8 TD, 14.33 avg",
      "position": "RB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Hogan__Hunter.jpg?width=200&quality=90"
@@ -1251,7 +1251,7 @@
      "label": "Tackles",
      "name": "Carson Schnurstein",
      "jersey": "2",
-     "line": "46.0 tackles, 1.0 TFL, 0 sacks",
+     "line": "45.0 tackles, 1.0 TFL, 0 sacks",
      "position": "LB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Schnurstein__Carson.jpg?width=200&quality=90"
@@ -1260,7 +1260,7 @@
      "label": "Sacks",
      "name": "Peter Markvluwer",
      "jersey": "95",
-     "line": "4.0 sacks, 8.5 TFL, 15.0 tackles",
+     "line": "3.0 sacks, 6.5 TFL, 13.0 tackles",
      "position": "DL",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Markvluwer__Peter.jpg?width=200&quality=90"
@@ -1269,7 +1269,7 @@
      "label": "Interceptions",
      "name": "Caden Kolanowski",
      "jersey": "15",
-     "line": "4 INT, 1 PBU, 19.0 tackles",
+     "line": "3 INT, 1 PBU, 16.0 tackles",
      "position": "DB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Kolanowski__Caden.jpg?width=200&quality=90"
@@ -2054,45 +2054,34 @@
  "polls": {
   "AP Poll": {
    "name": "AP Top 25",
-   "week": 8,
-   "date": "2026-10-18T07:00Z",
+   "week": 9,
+   "date": "2026-10-25T07:00Z",
    "ranks": {
-    "indiana": 6
+    "indiana": 4
    },
    "receiving_votes": {}
   },
   "AFCA Coaches Poll": {
    "name": "AFCA Coaches Poll",
-   "week": 8,
-   "date": "2026-10-18T07:00Z",
+   "week": 9,
+   "date": "2026-10-25T07:00Z",
    "ranks": {
-    "indiana": 6
+    "indiana": 4
    },
    "receiving_votes": {}
   },
   "FCS Coaches Poll": {
    "name": "FCS Coaches Poll",
-   "week": 8,
-   "date": "2026-10-19T07:00Z",
+   "week": 9,
+   "date": "2026-10-26T07:00Z",
    "ranks": {},
    "receiving_votes": {}
   },
   "AFCA Div II": {
    "name": "AFCA Division II Coaches Poll",
-   "week": 8,
-   "date": "2026-10-19T07:00Z",
+   "week": 9,
+   "date": "2026-10-26T07:00Z",
    "ranks": {},
-   "receiving_votes": {}
-  },
-  "AFCA Div III": {
-   "name": "AFCA Division III Coaches Poll",
-   "week": 8,
-   "date": "2026-10-19T07:00Z",
-   "ranks": {
-    "wheaton": 1,
-    "hope": 9,
-    "calvin": 23
-   },
    "receiving_votes": {}
   }
  },
@@ -2119,7 +2108,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-25T10:59:07-05:00",
+  "fetched": "2026-10-26T13:38:03-05:00",
   "teams": {
    "calvin": {
     "predictive": {
@@ -2172,31 +2161,30 @@
     },
     "simulation": {
      "Conf": "MIAA",
-     "W": 8.3063,
-     "L": 1.6937,
-     "DIII W": 8.3063,
-     "DIII L": 1.6937,
-     "ConfW": 5.3063,
-     "ConfL": 1.6937,
-     "NPI": 64.2643701010883,
-     "Rank": 38.4062,
-     "SOS": 53.0999029386613,
-     "QWB": 0.253677687239608,
-     "Pool A": 0.1668,
-     "Pool C": 0.2411,
-     "Playoff": 0.4079,
-     "Top 8%": 0.0605,
+     "W": 8.3264,
+     "L": 1.6736,
+     "DIII W": 8.3264,
+     "DIII L": 1.6736,
+     "ConfW": 5.3264,
+     "ConfL": 1.6736,
+     "NPI": 64.6560867693606,
+     "Rank": 36.3229,
+     "SOS": 53.7124333974285,
+     "QWB": 0.354112612178317,
+     "Pool A": 0.1428,
+     "Pool C": 0.2792,
+     "Playoff": 0.422,
+     "Top 8%": 0.0755,
      "Bowl": 0,
-     "R40W%": 0.372,
-     "R32W%": 0.1237,
-     "R16W%": 0.0377,
-     "R8W%": 0.0063,
-     "R4W%": 0.002,
-     "R2W%": 0.0001,
-     "Wk8_Lev": 0.397576450935941,
-     "Wk9_Lev": 0.51664150630985,
-     "Wk10_Lev": 0.540260134797621,
-     "Wk11_Lev": 0.560466259073015
+     "R40W%": 0.4038,
+     "R32W%": 0.1301,
+     "R16W%": 0.0341,
+     "R8W%": 0.007,
+     "R4W%": 0.001,
+     "R2W%": 0.0002,
+     "Wk9_Lev": 0.588557932504353,
+     "Wk10_Lev": 0.544266601510244,
+     "Wk11_Lev": 0.558800148225648
     }
    },
    "hope": {
@@ -2250,31 +2238,30 @@
     },
     "simulation": {
      "Conf": "MIAA",
-     "W": 9.5023,
-     "L": 0.4977,
-     "DIII W": 9.5023,
-     "DIII L": 0.4977,
-     "ConfW": 6.5023,
-     "ConfL": 0.4977,
-     "NPI": 73.8993959144663,
-     "Rank": 9.7571,
-     "SOS": 59.0153509342316,
-     "QWB": 1.26276029690273,
-     "Pool A": 0.6914,
-     "Pool C": 0.2445,
-     "Playoff": 0.9359,
-     "Top 8%": 0.5937,
+     "W": 9.7123,
+     "L": 0.2877,
+     "DIII W": 9.7123,
+     "DIII L": 0.2877,
+     "ConfW": 6.7123,
+     "ConfL": 0.2877,
+     "NPI": 74.5115300449289,
+     "Rank": 8.3544,
+     "SOS": 58.4494546979556,
+     "QWB": 1.15550353392992,
+     "Pool A": 0.7768,
+     "Pool C": 0.2,
+     "Playoff": 0.9768,
+     "Top 8%": 0.7352,
      "Bowl": 0,
-     "R40W%": 0.9309,
-     "R32W%": 0.6452,
-     "R16W%": 0.3414,
-     "R8W%": 0.1606,
-     "R4W%": 0.0609,
-     "R2W%": 0.0185,
-     "Wk8_Lev": 0.255753353763938,
-     "Wk9_Lev": 0.135967983991996,
-     "Wk10_Lev": 0.20934330870983,
-     "Wk11_Lev": 0.352538959293437
+     "R40W%": 0.9762,
+     "R32W%": 0.7032,
+     "R16W%": 0.3858,
+     "R8W%": 0.1875,
+     "R4W%": 0.0716,
+     "R2W%": 0.0236,
+     "Wk9_Lev": 0.226890756302521,
+     "Wk10_Lev": 0.119157678479712,
+     "Wk11_Lev": 0.249349838215279
     }
    },
    "wheaton": {
@@ -2328,31 +2315,30 @@
     },
     "simulation": {
      "Conf": "CCIW",
-     "W": 9.9252,
-     "L": 0.0748,
-     "DIII W": 9.9252,
-     "DIII L": 0.0748,
-     "ConfW": 7.9252,
-     "ConfL": 0.0748,
-     "NPI": 77.0114699989497,
-     "Rank": 3.908,
-     "SOS": 59.7551108477817,
-     "QWB": 1.61128139590421,
+     "W": 9.9222,
+     "L": 0.0778,
+     "DIII W": 9.9222,
+     "DIII L": 0.0778,
+     "ConfW": 7.9222,
+     "ConfL": 0.0778,
+     "NPI": 77.2560976772178,
+     "Rank": 3.3887,
+     "SOS": 60.0770479705719,
+     "QWB": 1.6827233328329,
      "Pool A": 0.9994,
-     "Pool C": 0.0002,
-     "Playoff": 0.9996,
-     "Top 8%": 0.9266,
-     "Bowl": 0.0001,
-     "R40W%": 0.9996,
-     "R32W%": 0.7839,
-     "R16W%": 0.5175,
-     "R8W%": 0.2834,
-     "R4W%": 0.1255,
+     "Pool C": 0.0001,
+     "Playoff": 0.9995,
+     "Top 8%": 0.9241,
+     "Bowl": 0,
+     "R40W%": 0.9994,
+     "R32W%": 0.7536,
+     "R16W%": 0.4971,
+     "R8W%": 0.2645,
+     "R4W%": 0.1223,
      "R2W%": 0.0438,
-     "Wk8_Lev": 0,
-     "Wk9_Lev": 0.0058224163027657,
-     "Wk10_Lev": 0.9996,
-     "Wk11_Lev": 0.0655737704918032
+     "Wk9_Lev": 0.00695410292072318,
+     "Wk10_Lev": 0.666366576639659,
+     "Wk11_Lev": 0.0533703022641077
     }
    }
   },
