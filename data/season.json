@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-26T13:37:44-05:00",
+ "fetched_at": "2026-10-27T12:52:57-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -249,10 +249,10 @@
      "odds": {
       "line": {
        "provider": "Draft Kings",
-       "details": "NEB -8.5",
+       "details": "NEB -7.5",
        "over_under": 49.5,
-       "home_ml": -325,
-       "away_ml": 260
+       "home_ml": -310,
+       "away_ml": 250
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -720,8 +720,8 @@
      "odds": {
       "line": {
        "provider": "Draft Kings",
-       "details": "IU -19.5",
-       "over_under": 42.5,
+       "details": "IU -20.5",
+       "over_under": 41.5,
        "home_ml": -1450,
        "away_ml": 850
       },
@@ -864,7 +864,7 @@
      "jersey": "46",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
-     "line": "60 tackles"
+     "line": "61 tackles"
     },
     {
      "label": "Sacks",
@@ -1904,10 +1904,10 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
-     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_stats": "https://athletics.augustana.edu/sidearmstats/football/summary",
      "live_feed": {
       "type": "sidearm",
-      "url": "https://sidearmstats.com/wheaton/football/game.json"
+      "url": "https://sidearmstats.com/augustana/football/game.json"
      },
      "odds": {
       "win_prob": {
@@ -1979,10 +1979,10 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
-     "live_stats": "http://www.sidearmstats.com/wheaton/football/",
+     "live_stats": "https://athletics.carthage.edu/sidearmstats/football/summary",
      "live_feed": {
       "type": "sidearm",
-      "url": "https://sidearmstats.com/wheaton/football/game.json"
+      "url": "https://sidearmstats.com/carthage/football/game.json"
      }
     }
    ],
@@ -2083,6 +2083,17 @@
    "date": "2026-10-26T07:00Z",
    "ranks": {},
    "receiving_votes": {}
+  },
+  "AFCA Div III": {
+   "name": "AFCA Division III Coaches Poll",
+   "week": 9,
+   "date": "2026-10-26T07:00Z",
+   "ranks": {
+    "wheaton": 1,
+    "hope": 9,
+    "calvin": 22
+   },
+   "receiving_votes": {}
   }
  },
  "d3football": {
@@ -2108,7 +2119,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-26T13:38:03-05:00",
+  "fetched": "2026-10-27T12:53:24-05:00",
   "teams": {
    "calvin": {
     "predictive": {
