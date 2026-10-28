@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-27T12:52:57-05:00",
+ "fetched_at": "2026-10-28T13:17:53-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -248,7 +248,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "NEB -7.5",
        "over_under": 49.5,
        "home_ml": -310,
@@ -290,7 +290,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 40.2
+       "pct": 40.1
       }
      }
     },
@@ -719,7 +719,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "IU -20.5",
        "over_under": 41.5,
        "home_ml": -1450,
@@ -761,7 +761,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 86.7
+       "pct": 86.6
       }
      }
     },
@@ -1164,7 +1164,9 @@
      },
      "venue": "Grand Rapids Christian High School",
      "city": "Grand Rapids, MI",
-     "broadcasts": [],
+     "broadcasts": [
+      "YouTube"
+     ],
      "state": "pre",
      "status": "11/7 - 1:00 PM EST",
      "pf": null,
@@ -1224,7 +1226,7 @@
      "label": "Passing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "136/186, 1807 yds, 9.7 YPA, 27 TD, 3 INT, 199.40 rating",
+     "line": "164/223, 2172 yds, 9.7 YPA, 33 TD, 3 INT, 201.50 rating",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1233,7 +1235,7 @@
      "label": "Rushing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "48 car, 337 yds, 2 TD, 7.0 avg",
+     "line": "53 car, 355 yds, 3 TD, 6.7 avg",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1242,7 +1244,7 @@
      "label": "Receiving",
      "name": "Hunter Hogan",
      "jersey": "7",
-     "line": "40 rec, 573 yds, 8 TD, 14.33 avg",
+     "line": "48 rec, 639 yds, 10 TD, 13.31 avg",
      "position": "RB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Hogan__Hunter.jpg?width=200&quality=90"
@@ -1251,7 +1253,7 @@
      "label": "Tackles",
      "name": "Carson Schnurstein",
      "jersey": "2",
-     "line": "45.0 tackles, 1.0 TFL, 0 sacks",
+     "line": "49.0 tackles, 1.0 TFL, 0 sacks",
      "position": "LB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Schnurstein__Carson.jpg?width=200&quality=90"
@@ -1260,7 +1262,7 @@
      "label": "Sacks",
      "name": "Peter Markvluwer",
      "jersey": "95",
-     "line": "3.0 sacks, 6.5 TFL, 13.0 tackles",
+     "line": "4.0 sacks, 8.5 TFL, 15.0 tackles",
      "position": "DL",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Markvluwer__Peter.jpg?width=200&quality=90"
@@ -1269,7 +1271,7 @@
      "label": "Interceptions",
      "name": "Caden Kolanowski",
      "jersey": "15",
-     "line": "3 INT, 1 PBU, 16.0 tackles",
+     "line": "4 INT, 1 PBU, 19.0 tackles",
      "position": "DB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Kolanowski__Caden.jpg?width=200&quality=90"
@@ -1552,7 +1554,9 @@
      },
      "venue": "Grand Rapids Christian High School",
      "city": "Grand Rapids, MI",
-     "broadcasts": [],
+     "broadcasts": [
+      "YouTube"
+     ],
      "state": "pre",
      "status": "11/7 - 1:00 PM EST",
      "pf": null,
@@ -1561,8 +1565,11 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
-     "live_stats": null,
-     "live_feed": null,
+     "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/calvinu/football/game.json"
+     },
      "odds": null
     },
     {
@@ -1609,7 +1616,7 @@
      "label": "Passing",
      "name": "Alex Thole",
      "jersey": "4",
-     "line": "110/152, 1411 yds, 9.3 YPA, 7 TD, 2 INT, 162.91 rating",
+     "line": "110/152, 1402 yds, 9.2 YPA, 7 TD, 2 INT, 162.41 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
@@ -1618,7 +1625,7 @@
      "label": "Rushing",
      "name": "Brody Schuiteman",
      "jersey": "20",
-     "line": "81 car, 522 yds, 14 TD, 6.4 avg",
+     "line": "81 car, 526 yds, 14 TD, 6.5 avg",
      "position": "RB",
      "year": "Freshman",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Schuiteman_Brody.jpg?width=200&quality=90"
@@ -1627,7 +1634,7 @@
      "label": "Receiving",
      "name": "Jonny Rohen-Blanton",
      "jersey": "6",
-     "line": "27 rec, 363 yds, 3 TD, 13.44 avg",
+     "line": "27 rec, 355 yds, 3 TD, 13.15 avg",
      "position": "WR",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/RohenBlanton_Jonny.jpg?width=200&quality=90"
@@ -1636,7 +1643,7 @@
      "label": "Tackles",
      "name": "Nolan Vis",
      "jersey": "5",
-     "line": "45.0 tackles, 4.5 TFL, 0.5 sacks",
+     "line": "48.0 tackles, 4.5 TFL, 0.5 sacks",
      "position": "LB",
      "year": "Sophomore",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
@@ -1938,7 +1945,9 @@
      },
      "venue": "McCully Stadium",
      "city": "Wheaton, IL",
-     "broadcasts": [],
+     "broadcasts": [
+      "CCIW Network"
+     ],
      "state": "pre",
      "status": "11/7 - 1:00 PM EST",
      "pf": null,
@@ -2119,7 +2128,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-27T12:53:24-05:00",
+  "fetched": "2026-10-28T13:18:15-05:00",
   "teams": {
    "calvin": {
     "predictive": {
