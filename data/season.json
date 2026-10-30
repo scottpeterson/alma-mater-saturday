@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-29T13:23:25-05:00",
+ "fetched_at": "2026-10-30T12:57:00-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -250,9 +250,9 @@
       "line": {
        "provider": "DraftKings",
        "details": "NEB -7.5",
-       "over_under": 49.5,
-       "home_ml": -310,
-       "away_ml": 250
+       "over_under": 50.5,
+       "home_ml": -298,
+       "away_ml": 240
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -290,7 +290,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 40.2
+       "pct": 40.3
       }
      }
     },
@@ -721,13 +721,13 @@
       "line": {
        "provider": "DraftKings",
        "details": "IU -20.5",
-       "over_under": 41.5,
+       "over_under": 40.5,
        "home_ml": -1450,
        "away_ml": 850
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 96.0
+       "pct": 95.9
       }
      }
     },
@@ -761,7 +761,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 86.6
+       "pct": 86.4
       }
      }
     },
@@ -2128,7 +2128,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-29T13:23:42-05:00",
+  "fetched": "2026-10-30T12:57:13-05:00",
   "teams": {
    "calvin": {
     "predictive": {
