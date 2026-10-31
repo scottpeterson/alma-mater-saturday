@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-31T12:11:07-05:00",
+ "fetched_at": "2026-10-31T13:54:09-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -889,7 +889,7 @@
   "calvin": {
    "record": "7-0",
    "conf_record": null,
-   "standing": "8th in Div II/III",
+   "standing": "9th in Div II/III",
    "games": [
     {
      "id": "401908738",
@@ -1122,12 +1122,12 @@
       "MIAA Digital Network"
      ],
      "state": "in",
-     "status": "13:19 - 1st",
+     "status": "0:45 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "13:19",
-     "period": 1,
+     "clock": "0:45",
+     "period": 2,
      "group": "35",
      "live_stats": "https://trinethunder.com/sidearmstats/football/summary",
      "live_feed": {
@@ -1513,12 +1513,12 @@
       "YouTube"
      ],
      "state": "in",
-     "status": "12:08 - 1st",
+     "status": "12:55 - 3rd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "12:08",
-     "period": 1,
+     "clock": "12:55",
+     "period": 3,
      "group": "35",
      "live_stats": "https://athletics.hope.edu/sidearmstats/football/summary",
      "live_feed": {
@@ -1671,7 +1671,7 @@
   "wheaton": {
    "record": "7-0",
    "conf_record": null,
-   "standing": "8th in Div II/III",
+   "standing": "9th in Div II/III",
    "games": [
     {
      "id": "401907850",
@@ -1903,13 +1903,13 @@
      "broadcasts": [
       "CCIW Network"
      ],
-     "state": "pre",
-     "status": "10/31 - 2:00 PM EDT",
+     "state": "in",
+     "status": "12:13 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "12:13",
+     "period": 2,
      "group": "35",
      "live_stats": "https://athletics.augustana.edu/sidearmstats/football/summary",
      "live_feed": {
@@ -2128,7 +2128,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-31T12:11:20-05:00",
+  "fetched": "2026-10-31T13:54:24-05:00",
   "teams": {
    "calvin": {
     "predictive": {
