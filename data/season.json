@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-31T13:54:09-05:00",
+ "fetched_at": "2026-10-31T17:00:26-05:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "4-3",
    "conf_record": null,
-   "standing": "13th in Big Ten",
+   "standing": "14th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -707,13 +707,13 @@
      "broadcasts": [
       "CBS"
      ],
-     "state": "pre",
-     "status": "10/31 - 3:30 PM EDT",
+     "state": "in",
+     "status": "7:19 - 3rd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "7:19",
+     "period": 3,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672661",
      "live_feed": null,
@@ -887,9 +887,9 @@
    ]
   },
   "calvin": {
-   "record": "7-0",
+   "record": "8-0",
    "conf_record": null,
-   "standing": "9th in Div II/III",
+   "standing": "6th in Div II/III",
    "games": [
     {
      "id": "401908738",
@@ -1121,31 +1121,16 @@
      "broadcasts": [
       "MIAA Digital Network"
      ],
-     "state": "in",
-     "status": "0:45 - 2nd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "0:45",
-     "period": 2,
+     "state": "post",
+     "status": "Final",
+     "pf": 51,
+     "pa": 20,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
      "group": "35",
      "live_stats": "https://trinethunder.com/sidearmstats/football/summary",
-     "live_feed": {
-      "type": "sidearm",
-      "url": "https://sidearmstats.com/trine/football/game.json"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 51.3
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 38,
-       "opp": 38,
-       "total": 76.4
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401908743",
@@ -1211,14 +1196,15 @@
      "live_feed": {
       "type": "sidearm",
       "url": "https://sidearmstats.com/alma/football/game.json"
-     }
+     },
+     "odds": null
     }
    ],
-   "played": 7,
-   "pf": 332,
-   "pa": 96,
-   "diff": 236,
-   "wins": 7,
+   "played": 8,
+   "pf": 383,
+   "pa": 116,
+   "diff": 267,
+   "wins": 8,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -1226,7 +1212,7 @@
      "label": "Passing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "164/223, 2172 yds, 9.7 YPA, 33 TD, 3 INT, 201.50 rating",
+     "line": "187/257, 2542 yds, 9.9 YPA, 37 TD, 3 INT, 201.02 rating",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1235,7 +1221,7 @@
      "label": "Rushing",
      "name": "Thomas Vaccaro",
      "jersey": "13",
-     "line": "53 car, 355 yds, 3 TD, 6.7 avg",
+     "line": "62 car, 369 yds, 5 TD, 6.0 avg",
      "position": "QB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Vaccaro__Thomas.jpg?width=200&quality=90"
@@ -1244,7 +1230,7 @@
      "label": "Receiving",
      "name": "Hunter Hogan",
      "jersey": "7",
-     "line": "48 rec, 639 yds, 10 TD, 13.31 avg",
+     "line": "61 rec, 822 yds, 13 TD, 13.48 avg",
      "position": "RB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Hogan__Hunter.jpg?width=200&quality=90"
@@ -1253,25 +1239,25 @@
      "label": "Tackles",
      "name": "Carson Schnurstein",
      "jersey": "2",
-     "line": "49.0 tackles, 1.0 TFL, 0 sacks",
+     "line": "58.0 tackles, 3.0 TFL, 1.0 sacks",
      "position": "LB",
      "year": "Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Schnurstein__Carson.jpg?width=200&quality=90"
     },
     {
      "label": "Sacks",
-     "name": "Peter Markvluwer",
-     "jersey": "95",
-     "line": "4.0 sacks, 8.5 TFL, 15.0 tackles",
-     "position": "DL",
-     "year": "Redshirt Junior",
-     "headshot": "https://calvinknights.com/images/2026/8/13/Markvluwer__Peter.jpg?width=200&quality=90"
+     "name": "Kaden McCullough",
+     "jersey": "30",
+     "line": "5.0 sacks, 6.0 TFL, 34.0 tackles",
+     "position": "LB",
+     "year": "Junior",
+     "headshot": "https://calvinknights.com/images/2026/8/13/McCullough__Kaden.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
      "name": "Caden Kolanowski",
      "jersey": "15",
-     "line": "4 INT, 1 PBU, 19.0 tackles",
+     "line": "5 INT, 3 PBU, 21.0 tackles",
      "position": "DB",
      "year": "Redshirt Junior",
      "headshot": "https://calvinknights.com/images/2026/8/13/Kolanowski__Caden.jpg?width=200&quality=90"
@@ -1279,7 +1265,7 @@
    ]
   },
   "hope": {
-   "record": "7-0",
+   "record": "8-0",
    "conf_record": null,
    "standing": null,
    "games": [
@@ -1512,31 +1498,16 @@
      "broadcasts": [
       "YouTube"
      ],
-     "state": "in",
-     "status": "12:55 - 3rd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "12:55",
-     "period": 3,
+     "state": "post",
+     "status": "Final",
+     "pf": 48,
+     "pa": 13,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
      "group": "35",
      "live_stats": "https://athletics.hope.edu/sidearmstats/football/summary",
-     "live_feed": {
-      "type": "sidearm",
-      "url": "https://sidearmstats.com/hopecollege/football/game.json"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 99.9
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 51,
-       "opp": 1,
-       "total": 51.5
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401908743",
@@ -1601,14 +1572,15 @@
      "live_feed": {
       "type": "sidearm",
       "url": "https://sidearmstats.com/hopecollege/football/game.json"
-     }
+     },
+     "odds": null
     }
    ],
-   "played": 7,
-   "pf": 284,
-   "pa": 76,
-   "diff": 208,
-   "wins": 7,
+   "played": 8,
+   "pf": 332,
+   "pa": 89,
+   "diff": 243,
+   "wins": 8,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -1616,7 +1588,7 @@
      "label": "Passing",
      "name": "Alex Thole",
      "jersey": "4",
-     "line": "110/152, 1402 yds, 9.2 YPA, 7 TD, 2 INT, 162.41 rating",
+     "line": "127/179, 1652 yds, 9.2 YPA, 8 TD, 2 INT, 160.99 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
@@ -1625,25 +1597,25 @@
      "label": "Rushing",
      "name": "Brody Schuiteman",
      "jersey": "20",
-     "line": "81 car, 526 yds, 14 TD, 6.5 avg",
+     "line": "90 car, 577 yds, 17 TD, 6.4 avg",
      "position": "RB",
      "year": "Freshman",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Schuiteman_Brody.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
-     "name": "Jonny Rohen-Blanton",
-     "jersey": "6",
-     "line": "27 rec, 355 yds, 3 TD, 13.15 avg",
+     "name": "Trevor Griffiths",
+     "jersey": "2",
+     "line": "19 rec, 437 yds, 2 TD, 23.00 avg",
      "position": "WR",
      "year": "Senior",
-     "headshot": "https://athletics.hope.edu/images/2026/8/25/RohenBlanton_Jonny.jpg?width=200&quality=90"
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Griffiths_Trevor.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
      "name": "Nolan Vis",
      "jersey": "5",
-     "line": "48.0 tackles, 4.5 TFL, 0.5 sacks",
+     "line": "53.0 tackles, 4.5 TFL, 0.5 sacks",
      "position": "LB",
      "year": "Sophomore",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
@@ -1652,26 +1624,26 @@
      "label": "Sacks",
      "name": "Joey Mahaney",
      "jersey": "23",
-     "line": "2.5 sacks, 4.0 TFL, 17.0 tackles",
+     "line": "3.0 sacks, 4.5 TFL, 19.0 tackles",
      "position": "LB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Mahaney_Joey.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
-     "name": "Trenten Bolhouse",
-     "jersey": "25",
-     "line": "1 INT, 1 PBU, 22.0 tackles",
+     "name": "Tyson Mann",
+     "jersey": "9",
+     "line": "1 INT, 2 PBU, 30.0 tackles",
      "position": "S",
-     "year": "Junior",
-     "headshot": "https://athletics.hope.edu/images/2026/8/25/Bollhouse_Trenton.jpg?width=200&quality=90"
+     "year": "Senior",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Mann_Tyson.jpg?width=200&quality=90"
     }
    ]
   },
   "wheaton": {
-   "record": "7-0",
+   "record": "8-0",
    "conf_record": null,
-   "standing": "9th in Div II/III",
+   "standing": "6th in Div II/III",
    "games": [
     {
      "id": "401907850",
@@ -1903,31 +1875,16 @@
      "broadcasts": [
       "CCIW Network"
      ],
-     "state": "in",
-     "status": "12:13 - 2nd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "12:13",
-     "period": 2,
+     "state": "post",
+     "status": "Final",
+     "pf": 26,
+     "pa": 13,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
      "group": "35",
      "live_stats": "https://athletics.augustana.edu/sidearmstats/football/summary",
-     "live_feed": {
-      "type": "sidearm",
-      "url": "https://sidearmstats.com/augustana/football/game.json"
-     },
-     "odds": {
-      "win_prob": {
-       "source": "Hansen Ratings",
-       "pct": 93.6
-      },
-      "projection": {
-       "source": "Hansen Ratings",
-       "mine": 41,
-       "opp": 16,
-       "total": 57.0
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401907830",
@@ -1992,14 +1949,15 @@
      "live_feed": {
       "type": "sidearm",
       "url": "https://sidearmstats.com/carthage/football/game.json"
-     }
+     },
+     "odds": null
     }
    ],
-   "played": 7,
-   "pf": 266,
-   "pa": 62,
-   "diff": 204,
-   "wins": 7,
+   "played": 8,
+   "pf": 292,
+   "pa": 75,
+   "diff": 217,
+   "wins": 8,
    "losses": 0,
    "ties": 0,
    "players": [
@@ -2007,7 +1965,7 @@
      "label": "Passing",
      "name": "Mark Forcucci",
      "jersey": "5",
-     "line": "138/215, 1776 yds, 8.3 YPA, 15 TD, 4 INT, 152.88 rating",
+     "line": "153/240, 1984 yds, 8.3 YPA, 16 TD, 5 INT, 151.02 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Forcucci_Mark.jpg?width=200&quality=90"
@@ -2016,7 +1974,7 @@
      "label": "Rushing",
      "name": "Matt Crider",
      "jersey": "32",
-     "line": "112 car, 518 yds, 9 TD, 4.6 avg",
+     "line": "117 car, 539 yds, 9 TD, 4.6 avg",
      "position": "RB",
      "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Crider_Matt.jpg?width=200&quality=90"
@@ -2025,7 +1983,7 @@
      "label": "Receiving",
      "name": "Seth Kortenhoeven",
      "jersey": "4",
-     "line": "38 rec, 592 yds, 5 TD, 15.58 avg",
+     "line": "43 rec, 656 yds, 5 TD, 15.26 avg",
      "position": "WR",
      "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Kortenhoeven_Seth.jpg?width=200&quality=90"
@@ -2034,7 +1992,7 @@
      "label": "Tackles",
      "name": "Zeke Harris",
      "jersey": "8",
-     "line": "73.0 tackles, 11.0 TFL, 2.5 sacks",
+     "line": "79.0 tackles, 11.0 TFL, 2.5 sacks",
      "position": "LB",
      "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Harris_Zeke.jpg?width=200&quality=90"
@@ -2043,7 +2001,7 @@
      "label": "Sacks",
      "name": "Rex Kroger",
      "jersey": "2",
-     "line": "3.0 sacks, 5.5 TFL, 30.0 tackles",
+     "line": "3.0 sacks, 6.0 TFL, 36.0 tackles",
      "position": "DL",
      "year": "Senior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Kroger_Rex.jpg?width=200&quality=90"
@@ -2052,7 +2010,7 @@
      "label": "Interceptions",
      "name": "Brett Dieter",
      "jersey": "5",
-     "line": "2 INT, 4 PBU, 35.0 tackles",
+     "line": "2 INT, 4 PBU, 42.0 tackles",
      "position": "DB",
      "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Dieter_Brett.jpg?width=200&quality=90"
@@ -2128,7 +2086,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-31T13:54:24-05:00",
+  "fetched": "2026-10-31T17:00:46-05:00",
   "teams": {
    "calvin": {
     "predictive": {
