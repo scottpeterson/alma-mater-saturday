@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-30T12:57:00-05:00",
+ "fetched_at": "2026-10-31T12:11:07-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -250,13 +250,13 @@
       "line": {
        "provider": "DraftKings",
        "details": "NEB -7.5",
-       "over_under": 50.5,
+       "over_under": 49.5,
        "home_ml": -298,
        "away_ml": 240
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 13.0
+       "pct": 12.9
       }
      }
     },
@@ -727,7 +727,7 @@
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 95.9
+       "pct": 96.0
       }
      }
     },
@@ -761,7 +761,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 86.4
+       "pct": 86.6
       }
      }
     },
@@ -1121,13 +1121,13 @@
      "broadcasts": [
       "MIAA Digital Network"
      ],
-     "state": "pre",
-     "status": "10/31 - 1:00 PM EDT",
+     "state": "in",
+     "status": "13:19 - 1st",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "13:19",
+     "period": 1,
      "group": "35",
      "live_stats": "https://trinethunder.com/sidearmstats/football/summary",
      "live_feed": {
@@ -1512,13 +1512,13 @@
      "broadcasts": [
       "YouTube"
      ],
-     "state": "pre",
-     "status": "10/31 - 1:00 PM EDT",
+     "state": "in",
+     "status": "12:08 - 1st",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "12:08",
+     "period": 1,
      "group": "35",
      "live_stats": "https://athletics.hope.edu/sidearmstats/football/summary",
      "live_feed": {
@@ -2128,7 +2128,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-30T12:57:13-05:00",
+  "fetched": "2026-10-31T12:11:20-05:00",
   "teams": {
    "calvin": {
     "predictive": {
