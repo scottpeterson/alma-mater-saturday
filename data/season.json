@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-01T04:57:29-06:00",
+ "fetched_at": "2026-11-01T11:52:05-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -250,8 +250,8 @@
     {
      "id": "401858516",
      "week": 10,
-     "date": "2026-11-07T05:00Z",
-     "time_tbd": true,
+     "date": "2026-11-07T20:30Z",
+     "time_tbd": false,
      "home": true,
      "neutral": false,
      "opponent": {
@@ -263,9 +263,11 @@
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
-     "broadcasts": [],
+     "broadcasts": [
+      "FS1"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "11/7 - 3:30 PM EST",
      "pf": null,
      "pa": null,
      "result": null,
@@ -275,6 +277,13 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673449",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "Draft Kings",
+       "details": "WASH -2.5",
+       "over_under": 43.5,
+       "home_ml": -122,
+       "away_ml": 102
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
        "pct": 47.6
@@ -2072,7 +2081,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-01T04:57:47-06:00",
+  "fetched": "2026-11-01T11:52:19-06:00",
   "teams": {
    "calvin": {
     "predictive": {
