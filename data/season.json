@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-31T22:45:51-05:00",
+ "fetched_at": "2026-11-01T04:57:29-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -277,7 +277,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 40.3
+       "pct": 47.6
       }
      }
     },
@@ -311,7 +311,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 48.1
+       "pct": 57.9
       }
      }
     },
@@ -387,7 +387,7 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
-     "line": "116/174, 1396 YDS, 8.0 YPA, 8 TD, 3 INT"
+     "line": "123/187, 1495 YDS, 8.0 YPA, 9 TD, 3 INT"
     },
     {
      "label": "Rushing",
@@ -396,16 +396,16 @@
      "jersey": "34",
      "year": "Freshman",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5200430.png",
-     "line": "64 CAR, 296 YDS, 1 TD"
+     "line": "68 CAR, 309 YDS, 1 TD"
     },
     {
      "label": "Receiving",
-     "name": "Dezmen Roebuck",
+     "name": "Chris Lawson",
      "position": "WR",
-     "jersey": "2",
+     "jersey": "8",
      "year": "Sophomore",
-     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5166797.png",
-     "line": "48 REC, 484 YDS, 3 TD"
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141559.png",
+     "line": "44 REC, 638 YDS, 3 TD"
     },
     {
      "label": "Tackles",
@@ -414,7 +414,7 @@
      "jersey": "7",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
-     "line": "47 tackles"
+     "line": "56 tackles"
     },
     {
      "label": "Sacks",
@@ -432,7 +432,7 @@
      "jersey": "7",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
-     "line": "2 INT"
+     "line": "3 INT"
     }
    ]
   },
@@ -741,7 +741,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 86.6
+       "pct": 79.0
       }
      }
     },
@@ -775,7 +775,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 87.4
+       "pct": 79.3
       }
      }
     },
@@ -823,7 +823,7 @@
      "jersey": "10",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685401.png",
-     "line": "116/187, 1741 YDS, 9.3 YPA, 18 TD, 1 INT"
+     "line": "124/206, 1860 YDS, 9.0 YPA, 19 TD, 2 INT"
     },
     {
      "label": "Rushing",
@@ -832,7 +832,7 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146724.png",
-     "line": "106 CAR, 711 YDS, 6 TD"
+     "line": "113 CAR, 745 YDS, 6 TD"
     },
     {
      "label": "Receiving",
@@ -841,7 +841,7 @@
      "jersey": "80",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
-     "line": "42 REC, 726 YDS, 8 TD"
+     "line": "50 REC, 875 YDS, 9 TD"
     },
     {
      "label": "Tackles",
@@ -850,7 +850,7 @@
      "jersey": "46",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
-     "line": "61 tackles"
+     "line": "67 tackles"
     },
     {
      "label": "Sacks",
@@ -859,7 +859,7 @@
      "jersey": "12",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4857878.png",
-     "line": "9 sacks"
+     "line": "10 sacks"
     },
     {
      "label": "Interceptions",
@@ -2072,7 +2072,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-31T22:46:08-05:00",
+  "fetched": "2026-11-01T04:57:47-06:00",
   "teams": {
    "calvin": {
     "predictive": {
