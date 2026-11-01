@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-10-31T20:11:51-05:00",
+ "fetched_at": "2026-10-31T22:45:51-05:00",
  "season": 2026,
  "teams": {
   "washington": {
-   "record": "4-3",
+   "record": "5-3",
    "conf_record": null,
-   "standing": "14th in Big Ten",
+   "standing": "10th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -236,29 +236,16 @@
      "broadcasts": [
       "BTN"
      ],
-     "state": "in",
-     "status": "2:53 - 2nd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "2:53",
-     "period": 2,
+     "state": "post",
+     "status": "Final",
+     "pf": 17,
+     "pa": 10,
+     "result": "W",
+     "clock": "0:00",
+     "period": 4,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675075&vislive=wash",
-     "live_feed": null,
-     "odds": {
-      "line": {
-       "provider": "DraftKings",
-       "details": "NEB -7.5",
-       "over_under": 49.5,
-       "home_ml": -298,
-       "away_ml": 240
-      },
-      "win_prob": {
-       "source": "ESPN matchup predictor",
-       "pct": 12.9
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401858516",
@@ -320,7 +307,13 @@
      "period": 0,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675074",
-     "live_feed": null
+     "live_feed": null,
+     "odds": {
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 48.1
+      }
+     }
     },
     {
      "id": "401858535",
@@ -379,11 +372,11 @@
      "live_feed": null
     }
    ],
-   "played": 7,
-   "pf": 195,
-   "pa": 159,
-   "diff": 36,
-   "wins": 4,
+   "played": 8,
+   "pf": 212,
+   "pa": 169,
+   "diff": 43,
+   "wins": 5,
    "losses": 3,
    "ties": 0,
    "players": [
@@ -446,7 +439,7 @@
   "indiana": {
    "record": "8-1",
    "conf_record": null,
-   "standing": "3rd in Big Ten",
+   "standing": "2nd in Big Ten",
    "games": [
     {
      "id": "401858425",
@@ -2079,7 +2072,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-31T20:12:03-05:00",
+  "fetched": "2026-10-31T22:46:08-05:00",
   "teams": {
    "calvin": {
     "predictive": {
