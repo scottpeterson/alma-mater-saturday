@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-31T17:00:26-05:00",
+ "fetched_at": "2026-10-31T20:11:51-05:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -236,13 +236,13 @@
      "broadcasts": [
       "BTN"
      ],
-     "state": "pre",
-     "status": "10/31 - 8:00 PM EDT",
+     "state": "in",
+     "status": "2:53 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "2:53",
+     "period": 2,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675075&vislive=wash",
      "live_feed": null,
@@ -444,7 +444,7 @@
    ]
   },
   "indiana": {
-   "record": "7-1",
+   "record": "8-1",
    "conf_record": null,
    "standing": "3rd in Big Ten",
    "games": [
@@ -707,29 +707,16 @@
      "broadcasts": [
       "CBS"
      ],
-     "state": "in",
-     "status": "7:19 - 3rd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "7:19",
-     "period": 3,
+     "state": "post",
+     "status": "Final/OT",
+     "pf": 23,
+     "pa": 16,
+     "result": "W",
+     "clock": "0:00",
+     "period": 5,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672661",
-     "live_feed": null,
-     "odds": {
-      "line": {
-       "provider": "DraftKings",
-       "details": "IU -20.5",
-       "over_under": 40.5,
-       "home_ml": -1450,
-       "away_ml": 850
-      },
-      "win_prob": {
-       "source": "ESPN matchup predictor",
-       "pct": 96.0
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401858518",
@@ -791,7 +778,13 @@
      "period": 0,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451&vislive=ind",
-     "live_feed": null
+     "live_feed": null,
+     "odds": {
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 87.4
+      }
+     }
     },
     {
      "id": "401858538",
@@ -822,11 +815,11 @@
      "live_feed": null
     }
    ],
-   "played": 8,
-   "pf": 269,
-   "pa": 96,
-   "diff": 173,
-   "wins": 7,
+   "played": 9,
+   "pf": 292,
+   "pa": 112,
+   "diff": 180,
+   "wins": 8,
    "losses": 1,
    "ties": 0,
    "players": [
@@ -889,7 +882,7 @@
   "calvin": {
    "record": "8-0",
    "conf_record": null,
-   "standing": "6th in Div II/III",
+   "standing": "7th in Div II/III",
    "games": [
     {
      "id": "401908738",
@@ -1643,7 +1636,7 @@
   "wheaton": {
    "record": "8-0",
    "conf_record": null,
-   "standing": "6th in Div II/III",
+   "standing": "7th in Div II/III",
    "games": [
     {
      "id": "401907850",
@@ -2086,7 +2079,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-10-31T17:00:46-05:00",
+  "fetched": "2026-10-31T20:12:03-05:00",
   "teams": {
    "calvin": {
     "predictive": {
