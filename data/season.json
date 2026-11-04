@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-03T13:24:49-06:00",
+ "fetched_at": "2026-11-04T13:39:41-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -281,12 +281,12 @@
        "provider": "Draft Kings",
        "details": "WASH -2.5",
        "over_under": 44.5,
-       "home_ml": -122,
-       "away_ml": 102
+       "home_ml": -135,
+       "away_ml": 114
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 47.6
+       "pct": 47.4
       }
      }
     },
@@ -322,7 +322,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 57.9
+       "pct": 57.8
       }
      }
     },
@@ -338,7 +338,7 @@
       "short": "Indiana",
       "espn_id": "84",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
-      "rank": 6
+      "rank": 4
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
@@ -366,7 +366,7 @@
       "short": "Oregon",
       "espn_id": "2483",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "rank": null
+      "rank": 23
      },
      "venue": "Autzen Stadium",
      "city": "Eugene, OR",
@@ -734,7 +734,7 @@
       "short": "USC",
       "espn_id": "30",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
-      "rank": 18
+      "rank": 20
      },
      "venue": "Memorial Stadium (Bloomington, IN)",
      "city": "Bloomington, IN",
@@ -1149,7 +1149,8 @@
      "venue": "Grand Rapids Christian High School",
      "city": "Grand Rapids, MI",
      "broadcasts": [
-      "YouTube"
+      "YouTube",
+      "Calvin Broadcast Network"
      ],
      "state": "pre",
      "status": "11/7 - 1:00 PM EST",
@@ -1173,7 +1174,7 @@
        "source": "Hansen Ratings",
        "mine": 25,
        "opp": 33,
-       "total": 58.3
+       "total": 58.2
       }
      }
     },
@@ -1193,7 +1194,9 @@
      },
      "venue": "Bahlke Field",
      "city": "Alma, MI",
-     "broadcasts": [],
+     "broadcasts": [
+      "MIAA Digital Network"
+     ],
      "state": "pre",
      "status": "11/14 - 1:00 PM EST",
      "pf": null,
@@ -1536,7 +1539,8 @@
      "venue": "Grand Rapids Christian High School",
      "city": "Grand Rapids, MI",
      "broadcasts": [
-      "YouTube"
+      "YouTube",
+      "Calvin Broadcast Network"
      ],
      "state": "pre",
      "status": "11/7 - 1:00 PM EST",
@@ -1560,7 +1564,7 @@
        "source": "Hansen Ratings",
        "mine": 33,
        "opp": 25,
-       "total": 58.3
+       "total": 58.2
       }
      }
     },
@@ -1948,7 +1952,7 @@
        "source": "Hansen Ratings",
        "mine": 58,
        "opp": 0,
-       "total": 57.9
+       "total": 57.8
       }
      }
     },
@@ -1968,7 +1972,9 @@
      },
      "venue": "Art Keller Field",
      "city": "Kenosha, WI",
-     "broadcasts": [],
+     "broadcasts": [
+      "CCIW Network"
+     ],
      "state": "pre",
      "status": "11/14 - 1:00 PM EST",
      "pf": null,
@@ -2024,7 +2030,7 @@
      "label": "Tackles",
      "name": "Zeke Harris",
      "jersey": "8",
-     "line": "79.0 tackles, 11.0 TFL, 2.5 sacks",
+     "line": "81.0 tackles, 12.0 TFL, 2.5 sacks",
      "position": "LB",
      "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Harris_Zeke.jpg?width=200&quality=90"
@@ -2042,7 +2048,7 @@
      "label": "Interceptions",
      "name": "Brett Dieter",
      "jersey": "5",
-     "line": "2 INT, 4 PBU, 42.0 tackles",
+     "line": "2 INT, 4 PBU, 43.0 tackles",
      "position": "DB",
      "year": "Junior",
      "headshot": "https://athletics.wheaton.edu/images/2026/8/21/Player_Headshots_Dieter_Brett.jpg?width=200&quality=90"
@@ -2051,6 +2057,15 @@
   }
  },
  "polls": {
+  "CFP Rankings": {
+   "name": "Playoff Committee Rankings",
+   "week": 10,
+   "date": "2026-11-03T08:00Z",
+   "ranks": {
+    "indiana": 4
+   },
+   "receiving_votes": {}
+  },
   "AP Poll": {
    "name": "AP Top 25",
    "week": 10,
@@ -2118,55 +2133,58 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-03T13:25:19-06:00",
+  "fetched": "2026-11-04T13:39:57-06:00",
   "teams": {
    "calvin": {
     "predictive": {
-     "Rank": 31,
-     "Prev": 42,
+     "Week": "Week 8",
+     "Rank": 42,
+     "Prev": "43",
      "Conf": "MIAA",
      "Region": 4,
-     "Rating": 24.9720608649963,
-     "AdjEff": 24.7954095037076,
-     "AdjO": 41.3625944988557,
-     "AdjD": 16.5671849951481,
-     "AdjHFA": 1.32461530506322,
-     "Elo": 1849.17261547027,
-     "Elo+": 1878.0403846893
+     "Rating": 20.4202731420676,
+     "AdjEff": 20.0373760024795,
+     "AdjO": 39.176582665053,
+     "AdjD": 19.1392066625734,
+     "AdjHFA": 1.40606887514518,
+     "Elo": 1771.89736547303,
+     "Elo+": 1760.33317877121
     },
     "resume": {
-     "Rank": 15,
-     "Prev": "19",
+     "Week": "Week 8",
+     "Rank": 19,
+     "Prev": "22",
      "Conf": "MIAA",
      "Region": 4,
-     "MOV+": -6.73374389820109,
-     "SOR": 0.70900384999246,
-     "E+": 0.125,
+     "MOV+": -10.6515869776775,
+     "SOR": 0.858634567104308,
+     "E+": 0.142857142857143,
      "G+": 1,
      "A+": 1,
      "BA": 0,
-     "EAW": 0.361934427679985,
-     "GAW": 1.41070102519126,
-     "AAW": 3.41520089033569,
-     "Wins": 8,
+     "EAW": 0.172710246378369,
+     "GAW": 0.802581917675972,
+     "AAW": 2.41123206043701,
+     "Wins": 7,
      "Losses": 0,
-     "DIII W": 8,
+     "DIII W": 7,
      "DIII L": 0,
-     "Conf W": 5,
+     "Conf W": 4,
      "Conf L": 0
     },
     "sos": {
-     "Rank": 148,
+     "Week": "Week 8",
+     "Rank": 145,
      "Conf": "MIAA",
      "Region": 4,
-     "To-Date SOS": 0.395349467992136,
-     "To-Date SOS+": 0.057033577602818,
-     "To-Date NCSOS": 0.228798443103034,
-     "SOS": 0.482296914225765,
-     "SOS+": 0.121215384846822,
-     "NCSOS": 0.228798443103034,
-     "Future SOS": 0.830086699160279,
-     "Future SOS+": 0.377942613822836,
+     "To-Date SOS": 0.330461140453875,
+     "To-Date SOS+": 0.0402500208097777,
+     "To-Date NCSOS": 0.228780505407945,
+     "SOS": 0.49055398295293,
+     "SOS+": 0.141002621239406,
+     "NCSOS": 0.228780505407945,
+     "Future SOS": 0.864103948784057,
+     "Future SOS+": 0.376092022241872,
      "Future NCSOS": "NA"
     },
     "simulation": {
@@ -2198,51 +2216,54 @@
    },
    "hope": {
     "predictive": {
-     "Rank": 15,
-     "Prev": 11,
+     "Week": "Week 8",
+     "Rank": 11,
+     "Prev": "15",
      "Conf": "MIAA",
      "Region": 4,
-     "Rating": 35.1579760885524,
-     "AdjEff": 34.7081447607093,
-     "AdjO": 43.7076542599873,
-     "AdjD": 8.99950949927799,
-     "AdjHFA": 0.909924447070618,
-     "Elo": 2194.18927874962,
-     "Elo+": 2216.8060431668
+     "Rating": 37.0222646303393,
+     "AdjEff": 36.579813580314,
+     "AdjO": 44.071485853467,
+     "AdjD": 7.49167227315304,
+     "AdjHFA": 0.838324311058659,
+     "Elo": 2193.07976303569,
+     "Elo+": 2216.33419768651
     },
     "resume": {
+     "Week": "Week 8",
      "Rank": 13,
      "Prev": "13",
      "Conf": "MIAA",
      "Region": 4,
-     "MOV+": -4.44573867162447,
-     "SOR": 0.708378984017585,
-     "E+": 0.25,
-     "G+": 1,
+     "MOV+": -3.4649076506142,
+     "SOR": 0.75341518491958,
+     "E+": 0.428571428571429,
+     "G+": 0.857142857142857,
      "A+": 1,
      "BA": 0,
-     "EAW": 0.390035488902622,
-     "GAW": 1.90236241943188,
-     "AAW": 4.43488206340052,
-     "Wins": 8,
+     "EAW": 0.339676391248501,
+     "GAW": 1.78006359487371,
+     "AAW": 4.19175036615444,
+     "Wins": 7,
      "Losses": 0,
-     "DIII W": 8,
+     "DIII W": 7,
      "DIII L": 0,
-     "Conf W": 5,
+     "Conf W": 4,
      "Conf L": 0
     },
     "sos": {
-     "Rank": 39,
+     "Week": "Week 8",
+     "Rank": 37,
      "Conf": "MIAA",
      "Region": 4,
-     "To-Date SOS": 0.594994574465983,
-     "To-Date SOS+": 0.129135630590161,
-     "To-Date NCSOS": 0.752425949805097,
-     "SOS": 0.650757062114217,
-     "SOS+": 0.157561963030956,
-     "NCSOS": 0.752425949805097,
-     "Future SOS": 0.87380701270715,
-     "Future SOS+": 0.271267292794137,
+     "To-Date SOS": 0.650710695523924,
+     "To-Date SOS+": 0.164572751034075,
+     "To-Date NCSOS": 0.752419024570283,
+     "SOS": 0.6488927418749,
+     "SOS+": 0.173833006635613,
+     "NCSOS": 0.752419024570283,
+     "Future SOS": 0.644650850027177,
+     "Future SOS+": 0.195440269705869,
      "Future NCSOS": "NA"
     },
     "simulation": {
@@ -2274,51 +2295,54 @@
    },
    "wheaton": {
     "predictive": {
-     "Rank": 8,
-     "Prev": 7,
+     "Week": "Week 8",
+     "Rank": 7,
+     "Prev": "6",
      "Conf": "CCIW",
      "Region": 5,
-     "Rating": 40.3413910401662,
-     "AdjEff": 39.1192979177293,
-     "AdjO": 44.105124297656,
-     "AdjD": 4.98582637992675,
-     "AdjHFA": 0.793442535269709,
-     "Elo": 2615.14486952647,
-     "Elo+": 2524.34748622326
+     "Rating": 41.7679738446999,
+     "AdjEff": 40.5205679714451,
+     "AdjO": 45.9849475984086,
+     "AdjD": 5.46437962696347,
+     "AdjHFA": 0.827178614454676,
+     "Elo": 2614.09750758999,
+     "Elo+": 2522.68345619864
     },
     "resume": {
+     "Week": "Week 8",
      "Rank": 3,
-     "Prev": "3",
+     "Prev": "4",
      "Conf": "CCIW",
      "Region": 5,
-     "MOV+": 3.76985581350153,
-     "SOR": 0.0612121986376293,
-     "E+": 0.5,
+     "MOV+": 3.16644173594807,
+     "SOR": 0.0938070382003193,
+     "E+": 0.571428571428571,
      "G+": 1,
      "A+": 1,
      "BA": 0,
-     "EAW": 1.63152827146608,
-     "GAW": 3.24094681087166,
-     "AAW": 5.41708102052469,
-     "Wins": 8,
+     "EAW": 1.364715280671,
+     "GAW": 2.57238345101354,
+     "AAW": 4.37324372991672,
+     "Wins": 7,
      "Losses": 0,
-     "DIII W": 8,
+     "DIII W": 7,
      "DIII L": 0,
-     "Conf W": 6,
+     "Conf W": 5,
      "Conf L": 0
     },
     "sos": {
-     "Rank": 100,
+     "Week": "Week 8",
+     "Rank": 99,
      "Conf": "CCIW",
      "Region": 5,
-     "To-Date SOS": 0.649846828082852,
-     "To-Date SOS+": 0.265402343751715,
-     "To-Date NCSOS": 0.65927742165029,
-     "SOS": 0.559008721415862,
-     "SOS+": 0.213581239254304,
-     "NCSOS": 0.65927742165029,
-     "Future SOS": 0.195656294747901,
-     "Future SOS+": 0.00629682126465847,
+     "To-Date SOS": 0.622225940020132,
+     "To-Date SOS+": 0.286988956163419,
+     "To-Date NCSOS": 0.659217988669999,
+     "SOS": 0.557179526364691,
+     "SOS+": 0.222720566062008,
+     "NCSOS": 0.659217988669999,
+     "Future SOS": 0.405404561168661,
+     "Future SOS+": 0.0727609891587154,
      "Future NCSOS": "NA"
     },
     "simulation": {
@@ -2349,9 +2373,9 @@
     }
    }
   },
-  "predictive_count": 244,
-  "resume_count": 244,
-  "sos_count": 244,
+  "predictive_count": 2440,
+  "resume_count": 2165,
+  "sos_count": 2440,
   "simulation_count": 244
  },
  "errors": [],
