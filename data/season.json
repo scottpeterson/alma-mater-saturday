@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-05T13:50:17-06:00",
+ "fetched_at": "2026-11-06T13:15:31-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -286,7 +286,7 @@
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 47.6
+       "pct": 47.5
       }
      }
     },
@@ -761,7 +761,7 @@
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 79.0
+       "pct": 79.2
       }
      }
     },
@@ -795,7 +795,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 79.3
+       "pct": 79.5
       }
      }
     },
@@ -1620,7 +1620,7 @@
      "label": "Passing",
      "name": "Alex Thole",
      "jersey": "4",
-     "line": "127/179, 1652 yds, 9.2 YPA, 8 TD, 2 INT, 160.99 rating",
+     "line": "110/152, 1402 yds, 9.2 YPA, 7 TD, 2 INT, 162.41 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
@@ -1629,25 +1629,25 @@
      "label": "Rushing",
      "name": "Brody Schuiteman",
      "jersey": "20",
-     "line": "90 car, 577 yds, 17 TD, 6.4 avg",
+     "line": "81 car, 526 yds, 14 TD, 6.5 avg",
      "position": "RB",
      "year": "Freshman",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Schuiteman_Brody.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
-     "name": "Trevor Griffiths",
-     "jersey": "2",
-     "line": "19 rec, 437 yds, 2 TD, 23.00 avg",
+     "name": "Jonny Rohen-Blanton",
+     "jersey": "6",
+     "line": "27 rec, 355 yds, 3 TD, 13.15 avg",
      "position": "WR",
      "year": "Senior",
-     "headshot": "https://athletics.hope.edu/images/2026/8/25/Griffiths_Trevor.jpg?width=200&quality=90"
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/RohenBlanton_Jonny.jpg?width=200&quality=90"
     },
     {
      "label": "Tackles",
      "name": "Nolan Vis",
      "jersey": "5",
-     "line": "53.0 tackles, 4.5 TFL, 0.5 sacks",
+     "line": "48.0 tackles, 4.5 TFL, 0.5 sacks",
      "position": "LB",
      "year": "Sophomore",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
@@ -1656,19 +1656,19 @@
      "label": "Sacks",
      "name": "Joey Mahaney",
      "jersey": "23",
-     "line": "3.0 sacks, 4.5 TFL, 19.0 tackles",
+     "line": "2.5 sacks, 4.0 TFL, 17.0 tackles",
      "position": "LB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Mahaney_Joey.jpg?width=200&quality=90"
     },
     {
      "label": "Interceptions",
-     "name": "Tyson Mann",
-     "jersey": "9",
-     "line": "1 INT, 2 PBU, 30.0 tackles",
+     "name": "Trenten Bolhouse",
+     "jersey": "25",
+     "line": "1 INT, 1 PBU, 22.0 tackles",
      "position": "S",
-     "year": "Senior",
-     "headshot": "https://athletics.hope.edu/images/2026/8/25/Mann_Tyson.jpg?width=200&quality=90"
+     "year": "Junior",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Bollhouse_Trenton.jpg?width=200&quality=90"
     }
    ]
   },
@@ -1835,7 +1835,7 @@
      "home": false,
      "neutral": false,
      "opponent": {
-      "name": "North Central College Cardinals",
+      "name": "North Central (IL) Cardinals",
       "short": "N Central (IL)",
       "espn_id": "3071",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/3071.png",
@@ -2140,7 +2140,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-05T13:50:34-06:00",
+  "fetched": "2026-11-06T13:15:50-06:00",
   "teams": {
    "calvin": {
     "predictive": {
