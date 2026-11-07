@@ -186,7 +186,7 @@ def game_card(school, g):
     stats_links = [f'<a href="https://www.espn.com/college-football/game/_/gameId/{esc(g["id"])}" target="_blank" rel="noopener">ESPN</a>']
     if g.get("live_stats"):
         stats_links.insert(0, f'<a href="{esc(g["live_stats"])}" target="_blank" rel="noopener">Live stats</a>')
-    return f'''<article class="game {status_class}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}" data-date="{esc(g["date"])}" data-home="{1 if g["home"] else 0}"{feed_attrs} style="--team:var(--c-{school["slug"]})">
+    return f'''<article class="game {status_class}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}" data-date="{esc(g["date"])}"{' data-tbd="1"' if g.get("time_tbd") else ""} data-home="{1 if g["home"] else 0}"{feed_attrs} style="--team:var(--c-{school["slug"]})">
 <header><img src="{esc(school["logo"])}" alt=""><div><div class="who">{esc(school["name"])} <span class="muted">{esc(school["mascot"])}</span></div><div class="what">{"vs" if g["home"] or g.get("neutral") else "at"} {rank}{esc(opp["name"])}</div></div>{opp_logo}</header>
 <div class="body">
 <div class="scoreline"><span class="score">{score}</span><span class="status">{status}</span></div>
@@ -600,7 +600,14 @@ const cards=[...document.querySelectorAll('.game[data-game]')];
 function etParts(iso){const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date(iso));const g=k=>p.find(x=>x.type===k).value;return {y:g('year'),m:g('month'),d:g('day')};}
 function etDate(iso){const t=etParts(iso);return t.y+t.m.padStart(2,'0')+t.d.padStart(2,'0');}
 function mdy(iso){const t=etParts(iso);return t.m+'/'+t.d+'/'+t.y;}
-function inWindow(c,now){const t=new Date(c.dataset.date).getTime();return c.classList.contains('live')||(t-now<30*60000&&now-t<5*3600000);}
+// A game with a feed is read until the feed calls it final. A timed game: from 30 minutes before kickoff to 8 hours
+// after, which covers delays and weather holds. A TBA game carries a placeholder time, so it is
+// read all of its scheduled day in Eastern time, through 3 a.m. the next morning.
+function inWindow(c,now){
+  if(c.classList.contains('live'))return true;
+  if(c.dataset.tbd)return mdy(new Date(now-3*3600000).toISOString())===mdy(c.dataset.date);
+  const t=new Date(c.dataset.date).getTime();return t-now<30*60000&&now-t<8*3600000;
+}
 function windowOpen(){const now=Date.now();return cards.some(c=>inWindow(c,now));}
 function escHtml(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function ordinal(n){return ['','1st','2nd','3rd','4th'][n]||(n>4?'OT'+(n>5?n-4:''):'');}

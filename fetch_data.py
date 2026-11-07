@@ -181,7 +181,10 @@ def live_feed(url):
             page = get(url, as_json=False)
         except (urllib.error.URLError, TimeoutError, UnicodeDecodeError):
             page = ""
-        short = re.search(r'window\.client_shortname\s*=\s*"([^"]+)"', page)
+        # The stat crew publishes under the folder name, which can differ from the client name
+        # (Case Western: client "casewestern", folder "case").
+        short = (re.search(r'livestats_foldername\s*=\s*"([^"]+)"', page)
+                 or re.search(r'window\.client_shortname\s*=\s*"([^"]+)"', page))
         if short:
             feed = {"type": "sidearm", "url": f"https://sidearmstats.com/{short.group(1)}/football/game.json"}
     _feed_cache[url] = feed

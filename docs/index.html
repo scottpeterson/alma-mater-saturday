@@ -134,6 +134,19 @@ h3.spaced{margin-top:1.6em}
 <dt>Stats</dt><dd><a href="https://stats.statbroadcast.com/broadcast/?id=673449" target="_blank" rel="noopener">Live stats</a> · <a href="https://www.espn.com/college-football/game/_/gameId/401858516" target="_blank" rel="noopener">ESPN</a></dd>
 <dt>Line</dt><dd>WASH -2.5, over/under 44.5, Washington -135 moneyline <span class="src">Draft Kings</span></dd><dt>Win odds</dt><dd>Washington 47.5% <span class="src">ESPN matchup predictor</span></dd>
 </dl>
+</div></article>
+<article class="game pre" data-game="401858518" data-group="80" data-date="2026-11-14T20:30Z" data-home="1" style="--team:var(--c-indiana)">
+<header><img src="assets/indiana.png" alt=""><div><div class="who">Indiana <span class="muted">Hoosiers</span></div><div class="what">vs <span class="rk">#20</span> USC Trojans</div></div><img src="https://a.espncdn.com/i/teamlogos/ncaa/500/30.png" alt=""></header>
+<div class="body">
+<div class="scoreline"><span class="score"></span><span class="status"></span></div>
+<div class="situation"></div>
+<dl>
+<dt>Kickoff</dt><dd><time datetime="2026-11-14T20:30:00+00:00" data-fmt="full">Sat Nov 14, 3:30 PM ET</time> <span class="count" data-kick="2026-11-14T20:30:00+00:00"></span></dd>
+<dt>Watch</dt><dd><span class="chip">CBS</span></dd>
+<dt>Where</dt><dd>Home · Memorial Stadium (Bloomington, IN), Bloomington, IN</dd>
+<dt>Stats</dt><dd><a href="https://stats.statbroadcast.com/broadcast/?id=672667" target="_blank" rel="noopener">Live stats</a> · <a href="https://www.espn.com/college-football/game/_/gameId/401858518" target="_blank" rel="noopener">ESPN</a></dd>
+<dt>Line</dt><dd>IU -7, over/under 50.5, Indiana -285 moneyline <span class="src">Draft Kings</span></dd><dt>Win odds</dt><dd>Indiana 79.2% <span class="src">ESPN matchup predictor</span></dd>
+</dl>
 </div></article></div>
 
 <h2 id="teams">The five</h2>
@@ -228,7 +241,7 @@ h3.spaced{margin-top:1.6em}
 <h2>More Division III numbers</h2>
 <p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/" target="_blank" rel="noopener">The D3 Stat Lab</a>. It publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
 </section>
-<footer>Built 2026-11-06 1:15 PM Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched 2026-11-06 1:15 PM Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through Tue, Oct 20, 2026, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched 2026-11-06 13:15). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
+<footer>Built 2026-11-06 5:58 PM Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched 2026-11-06 1:15 PM Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through Tue, Oct 20, 2026, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched 2026-11-06 13:15). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
 </main>
 <script>
 (function(){
@@ -280,7 +293,14 @@ const cards=[...document.querySelectorAll('.game[data-game]')];
 function etParts(iso){const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date(iso));const g=k=>p.find(x=>x.type===k).value;return {y:g('year'),m:g('month'),d:g('day')};}
 function etDate(iso){const t=etParts(iso);return t.y+t.m.padStart(2,'0')+t.d.padStart(2,'0');}
 function mdy(iso){const t=etParts(iso);return t.m+'/'+t.d+'/'+t.y;}
-function inWindow(c,now){const t=new Date(c.dataset.date).getTime();return c.classList.contains('live')||(t-now<30*60000&&now-t<5*3600000);}
+// A game with a feed is read until the feed calls it final. A timed game: from 30 minutes before kickoff to 8 hours
+// after, which covers delays and weather holds. A TBA game carries a placeholder time, so it is
+// read all of its scheduled day in Eastern time, through 3 a.m. the next morning.
+function inWindow(c,now){
+  if(c.classList.contains('live'))return true;
+  if(c.dataset.tbd)return mdy(new Date(now-3*3600000).toISOString())===mdy(c.dataset.date);
+  const t=new Date(c.dataset.date).getTime();return t-now<30*60000&&now-t<8*3600000;
+}
 function windowOpen(){const now=Date.now();return cards.some(c=>inWindow(c,now));}
 function escHtml(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function ordinal(n){return ['','1st','2nd','3rd','4th'][n]||(n>4?'OT'+(n>5?n-4:''):'');}
