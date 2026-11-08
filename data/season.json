@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-11-07T21:50:10-06:00",
+ "fetched_at": "2026-11-08T04:58:02-06:00",
  "season": 2026,
  "teams": {
   "washington": {
    "record": "5-4",
    "conf_record": null,
-   "standing": "12th in Big Ten",
+   "standing": "10th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -309,7 +309,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 58.6
+       "pct": 51.8
       }
      }
     },
@@ -343,7 +343,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 20.5
+       "pct": 20.6
       }
      }
     },
@@ -391,7 +391,7 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
-     "line": "123/187, 1495 YDS, 8.0 YPA, 9 TD, 3 INT"
+     "line": "142/220, 1667 YDS, 7.6 YPA, 11 TD, 4 INT"
     },
     {
      "label": "Rushing",
@@ -400,7 +400,7 @@
      "jersey": "34",
      "year": "Freshman",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5200430.png",
-     "line": "68 CAR, 309 YDS, 1 TD"
+     "line": "72 CAR, 318 YDS, 1 TD"
     },
     {
      "label": "Receiving",
@@ -409,7 +409,7 @@
      "jersey": "8",
      "year": "Sophomore",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141559.png",
-     "line": "44 REC, 638 YDS, 3 TD"
+     "line": "49 REC, 727 YDS, 3 TD"
     },
     {
      "label": "Tackles",
@@ -418,7 +418,7 @@
      "jersey": "7",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
-     "line": "56 tackles"
+     "line": "63 tackles"
     },
     {
      "label": "Sacks",
@@ -427,7 +427,7 @@
      "jersey": "9",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4896317.png",
-     "line": "2.5 sacks"
+     "line": "3 sacks"
     },
     {
      "label": "Interceptions",
@@ -746,7 +746,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -7",
        "over_under": 49.5,
        "home_ml": -270,
@@ -754,7 +754,7 @@
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 78.9
+       "pct": 78.2
       }
      }
     },
@@ -788,7 +788,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 79.5
+       "pct": 79.4
       }
      }
     },
@@ -2088,7 +2088,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-07T21:50:22-06:00",
+  "fetched": "2026-11-08T04:58:25-06:00",
   "teams": {
    "calvin": {
     "predictive": {
