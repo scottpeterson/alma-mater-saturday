@@ -803,7 +803,7 @@ def main():
 {site_nav("index")}
 <main>
 <div class="top"><div><h1>Alma Mater Saturday</h1>
-<p class="sub">Three brothers went to five schools. Chris went to Calvin. Scott went to Hope and Washington. Matt went to Wheaton and Indiana. This page follows all five football teams: records, rankings, ratings, kickoff times, where to watch, top players, and live scores on game days.</p>
+<p class="sub">Three brothers went to five schools. Chris went to Calvin. Scott went to Hope and Washington. Matt went to Wheaton and Indiana. For all five football teams, you get records, rankings, ratings, kickoff times, where to watch, top players, and live scores on game days.</p>
 <span class="livepill"><i></i>Games in progress</span></div><div class="controls"><div class="ctl"><span class="seglabel" id="lbl-times">Times</span><div class="seg" role="group" aria-labelledby="lbl-times"><button type="button" class="tz" data-tz="America/New_York">Eastern</button><button type="button" class="tz" data-tz="America/Chicago">Central</button><button type="button" class="tz" data-tz="local">Device</button></div></div><div class="ctl"><span class="seglabel" id="lbl-theme">Theme</span><div class="seg" role="group" aria-labelledby="lbl-theme"><button type="button" class="th" data-theme="light">Light</button><button type="button" class="th" data-theme="dark">Dark</button></div></div></div></div>
 
 <h2 id="week">This week</h2>
@@ -843,9 +843,9 @@ def main():
 
 <section class="more">
 <h2>More Division III numbers</h2>
-<p>Three of the five schools play Division III. The person behind this page also runs <a href="https://thed3statlab.com/" target="_blank" rel="noopener">The D3 Stat Lab</a>. It publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
+<p>Three of the five schools play Division III. Scott also runs <a href="https://thed3statlab.com/" target="_blank" rel="noopener">The D3 Stat Lab</a>. It publishes NPI rankings, season simulations with tournament odds, composite ratings, and conference rankings for Division III women's basketball.</p>
 </section>
-<footer>Built {esc(built)} Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched {esc(fetched)} Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through {esc(massey_through)}, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched {esc(hansen_fetched[:16].replace("T", " "))}). This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
+<footer>Built {esc(built)} Central. Schedules, scores, records, TV listings, and Division I player statistics from <a href="https://www.espn.com/college-football/" target="_blank" rel="noopener">ESPN</a>, fetched {esc(fetched)} Central. Division III player statistics from the schools' official statistics pages. Polls from ESPN (AP, AFCA Coaches, AFCA Division III) and <a href="https://d3football.com/top25/index" target="_blank" rel="noopener">D3football.com</a>. Ratings from <a href="https://masseyratings.com/cf/ratings" target="_blank" rel="noopener">Massey Ratings</a> (through {esc(massey_through)}, updated each week) and <a href="https://hansenratings.com/" target="_blank" rel="noopener">Hansen Ratings</a> (fetched {esc(hansen_fetched[:16].replace("T", " "))}).<br>This page is not affiliated with any of the schools, their conferences, or the NCAA. Logos belong to their schools.</footer>
 </main>
 <script>{JS}</script>
 </body></html>
