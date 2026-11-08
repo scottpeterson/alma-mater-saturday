@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-11-07T16:46:09-06:00",
+ "fetched_at": "2026-11-07T19:55:54-06:00",
  "season": 2026,
  "teams": {
   "washington": {
-   "record": "5-3",
+   "record": "5-4",
    "conf_record": null,
-   "standing": "11th in Big Ten",
+   "standing": "12th in Big Ten",
    "games": [
     {
      "id": "401858437",
@@ -266,29 +266,16 @@
      "broadcasts": [
       "FS1"
      ],
-     "state": "in",
-     "status": "8:45 - 3rd",
-     "pf": null,
-     "pa": null,
-     "result": null,
-     "clock": "8:45",
-     "period": 3,
+     "state": "post",
+     "status": "Final",
+     "pf": 25,
+     "pa": 28,
+     "result": "L",
+     "clock": "0:00",
+     "period": 4,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673449",
-     "live_feed": null,
-     "odds": {
-      "line": {
-       "provider": "DraftKings",
-       "details": "WASH -2.5",
-       "over_under": 46.5,
-       "home_ml": -135,
-       "away_ml": 114
-      },
-      "win_prob": {
-       "source": "ESPN matchup predictor",
-       "pct": 47.0
-      }
-     }
+     "live_feed": null
     },
     {
      "id": "401858521",
@@ -352,7 +339,13 @@
      "period": 0,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451",
-     "live_feed": null
+     "live_feed": null,
+     "odds": {
+      "win_prob": {
+       "source": "ESPN matchup predictor",
+       "pct": 20.5
+      }
+     }
     },
     {
      "id": "401858541",
@@ -383,12 +376,12 @@
      "live_feed": null
     }
    ],
-   "played": 8,
-   "pf": 212,
-   "pa": 169,
-   "diff": 43,
+   "played": 9,
+   "pf": 237,
+   "pa": 197,
+   "diff": 40,
    "wins": 5,
-   "losses": 3,
+   "losses": 4,
    "ties": 0,
    "players": [
     {
@@ -753,11 +746,11 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -7",
-       "over_under": 50.5,
-       "home_ml": -285,
-       "away_ml": 230
+       "over_under": 49.5,
+       "home_ml": -270,
+       "away_ml": 220
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -2095,7 +2088,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-07T16:46:22-06:00",
+  "fetched": "2026-11-07T19:56:18-06:00",
   "teams": {
    "calvin": {
     "predictive": {
