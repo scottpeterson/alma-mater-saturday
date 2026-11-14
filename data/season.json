@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-14T11:54:42-06:00",
+ "fetched_at": "2026-11-14T13:33:23-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -1573,13 +1573,13 @@
      "venue": "Ray and Sue Smith Stadium",
      "city": "Holland, MI",
      "broadcasts": [],
-     "state": "pre",
-     "status": "11/14 - 1:00 PM EST",
+     "state": "in",
+     "status": "1:47 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "1:47",
+     "period": 2,
      "group": "35",
      "live_stats": "https://athletics.hope.edu/sidearmstats/football/summary",
      "live_feed": {
@@ -2128,7 +2128,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-14T11:55:03-06:00",
+  "fetched": "2026-11-14T13:33:37-06:00",
   "teams": {
    "calvin": {
     "predictive": {
