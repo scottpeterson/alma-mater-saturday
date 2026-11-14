@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-13T13:31:54-06:00",
+ "fetched_at": "2026-11-14T11:54:42-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -280,7 +280,7 @@
     {
      "id": "401858521",
      "week": 11,
-     "date": "2026-11-14T21:15Z",
+     "date": "2026-11-14T22:30Z",
      "time_tbd": false,
      "home": false,
      "neutral": false,
@@ -297,7 +297,7 @@
       "BTN"
      ],
      "state": "pre",
-     "status": "11/14 - 4:15 PM EST",
+     "status": "11/14 - 5:30 PM EST",
      "pf": null,
      "pa": null,
      "result": null,
@@ -309,14 +309,14 @@
      "odds": {
       "line": {
        "provider": "Draft Kings",
-       "details": "WASH -3.5",
+       "details": "WASH -2.5",
        "over_under": 44.5,
-       "home_ml": 142,
-       "away_ml": -170
+       "home_ml": 114,
+       "away_ml": -135
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 51.6
+       "pct": 51.5
       }
      }
     },
@@ -754,8 +754,8 @@
      "odds": {
       "line": {
        "provider": "Draft Kings",
-       "details": "IU -8.5",
-       "over_under": 50.5,
+       "details": "IU -9.5",
+       "over_under": 51.5,
        "home_ml": -340,
        "away_ml": 270
       },
@@ -1612,25 +1612,25 @@
      "label": "Passing",
      "name": "Alex Thole",
      "jersey": "4",
-     "line": "130/184, 1656 yds, 9.0 YPA, 8 TD, 2 INT, 158.43 rating",
+     "line": "147/211, 1906 yds, 9.0 YPA, 9 TD, 2 INT, 157.73 rating",
      "position": "QB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Thole_Alex.jpg?width=200&quality=90"
     },
     {
      "label": "Rushing",
-     "name": "Brody Schuiteman",
-     "jersey": "20",
-     "line": "91 car, 552 yds, 15 TD, 6.1 avg",
+     "name": "AJ Martel",
+     "jersey": "8",
+     "line": "111 car, 624 yds, 9 TD, 5.6 avg",
      "position": "RB",
-     "year": "Freshman",
-     "headshot": "https://athletics.hope.edu/images/2026/8/25/Schuiteman_Brody.jpg?width=200&quality=90"
+     "year": "Junior",
+     "headshot": "https://athletics.hope.edu/images/2026/8/25/Martel_AJ.jpg?width=200&quality=90"
     },
     {
      "label": "Receiving",
      "name": "Trevor Griffiths",
      "jersey": "2",
-     "line": "22 rec, 413 yds, 2 TD, 18.77 avg",
+     "line": "27 rec, 554 yds, 3 TD, 20.52 avg",
      "position": "WR",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Griffiths_Trevor.jpg?width=200&quality=90"
@@ -1639,7 +1639,7 @@
      "label": "Tackles",
      "name": "Nolan Vis",
      "jersey": "5",
-     "line": "58.0 tackles, 4.5 TFL, 0.5 sacks",
+     "line": "63.0 tackles, 4.5 TFL, 0.5 sacks",
      "position": "LB",
      "year": "Sophomore",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
@@ -1648,7 +1648,7 @@
      "label": "Sacks",
      "name": "Joey Mahaney",
      "jersey": "23",
-     "line": "2.5 sacks, 4.0 TFL, 17.0 tackles",
+     "line": "3.0 sacks, 4.5 TFL, 19.0 tackles",
      "position": "LB",
      "year": "Senior",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Mahaney_Joey.jpg?width=200&quality=90"
@@ -1657,7 +1657,7 @@
      "label": "Interceptions",
      "name": "Nolan Vis",
      "jersey": "5",
-     "line": "1 INT, 0 PBU, 58.0 tackles",
+     "line": "1 INT, 0 PBU, 63.0 tackles",
      "position": "LB",
      "year": "Sophomore",
      "headshot": "https://athletics.hope.edu/images/2026/8/25/Vis_Nolan.jpg?width=200&quality=90"
@@ -2128,7 +2128,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-13T13:32:10-06:00",
+  "fetched": "2026-11-14T11:55:03-06:00",
   "teams": {
    "calvin": {
     "predictive": {
