@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-14T22:17:32-06:00",
+ "fetched_at": "2026-11-15T06:01:36-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -310,8 +310,8 @@
     {
      "id": "401858535",
      "week": 12,
-     "date": "2026-11-21T05:00Z",
-     "time_tbd": true,
+     "date": "2026-11-21T20:30Z",
+     "time_tbd": false,
      "home": true,
      "neutral": false,
      "opponent": {
@@ -323,9 +323,11 @@
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
-     "broadcasts": [],
+     "broadcasts": [
+      "Peacock"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "11/21 - 3:30 PM EST",
      "pf": null,
      "pa": null,
      "result": null,
@@ -335,9 +337,16 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "IU -7.5",
+       "over_under": 43.5,
+       "home_ml": 225,
+       "away_ml": -278
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 20.6
+       "pct": 21.4
       }
      }
     },
@@ -371,7 +380,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 13.3
+       "pct": 13.0
       }
      }
     }
@@ -391,7 +400,7 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
-     "line": "142/220, 1667 YDS, 7.6 YPA, 11 TD, 4 INT"
+     "line": "164/253, 1955 YDS, 7.7 YPA, 13 TD, 4 INT"
     },
     {
      "label": "Rushing",
@@ -400,7 +409,7 @@
      "jersey": "34",
      "year": "Freshman",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5200430.png",
-     "line": "72 CAR, 318 YDS, 1 TD"
+     "line": "73 CAR, 317 YDS, 1 TD"
     },
     {
      "label": "Receiving",
@@ -409,7 +418,7 @@
      "jersey": "8",
      "year": "Sophomore",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141559.png",
-     "line": "49 REC, 727 YDS, 3 TD"
+     "line": "54 REC, 851 YDS, 5 TD"
     },
     {
      "label": "Tackles",
@@ -418,7 +427,7 @@
      "jersey": "7",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
-     "line": "63 tackles"
+     "line": "73 tackles"
     },
     {
      "label": "Sacks",
@@ -748,8 +757,8 @@
     {
      "id": "401858535",
      "week": 12,
-     "date": "2026-11-21T05:00Z",
-     "time_tbd": true,
+     "date": "2026-11-21T20:30Z",
+     "time_tbd": false,
      "home": false,
      "neutral": false,
      "opponent": {
@@ -761,9 +770,11 @@
      },
      "venue": "Husky Stadium",
      "city": "Seattle, WA",
-     "broadcasts": [],
+     "broadcasts": [
+      "Peacock"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "11/21 - 3:30 PM EST",
      "pf": null,
      "pa": null,
      "result": null,
@@ -773,9 +784,16 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451&vislive=ind",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "IU -7.5",
+       "over_under": 43.5,
+       "home_ml": 225,
+       "away_ml": -278
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 79.4
+       "pct": 78.6
       }
      }
     },
@@ -809,7 +827,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 93.8
+       "pct": 94.2
       }
      }
     }
@@ -833,12 +851,12 @@
     },
     {
      "label": "Rushing",
-     "name": "Turbo Richard",
+     "name": "Lee Beebe Jr.",
      "position": "RB",
-     "jersey": "1",
-     "year": "Junior",
-     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146724.png",
-     "line": "113 CAR, 745 YDS, 6 TD"
+     "jersey": "29",
+     "year": "Senior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5091725.png",
+     "line": "150 CAR, 786 YDS, 4 TD"
     },
     {
      "label": "Receiving",
@@ -847,7 +865,7 @@
      "jersey": "80",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
-     "line": "50 REC, 875 YDS, 9 TD"
+     "line": "53 REC, 950 YDS, 10 TD"
     },
     {
      "label": "Tackles",
@@ -856,7 +874,7 @@
      "jersey": "46",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
-     "line": "67 tackles"
+     "line": "71 tackles"
     },
     {
      "label": "Sacks",
@@ -2069,7 +2087,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-14T22:17:45-06:00",
+  "fetched": "2026-11-15T06:01:48-06:00",
   "teams": {
    "calvin": {
     "predictive": {
