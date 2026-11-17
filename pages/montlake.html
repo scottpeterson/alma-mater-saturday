@@ -120,7 +120,7 @@
 
   /* Hero */
   .hero{padding:40px 0 8px}
-  .eyebrow{font-size:var(--fs-caption);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--uw-text);margin:0 0 10px}
+  .eyebrow{font-size:var(--fs-caption);font-weight:500;color:var(--uw-text);margin:0 0 10px}
   h1{
     line-height:1.15;font-size:var(--fs-h1);margin:0 0 14px;
     text-wrap:balance;color:var(--head);
@@ -141,12 +141,10 @@
   .next-card.hawk{background:var(--hawk-blue)}
   .next-card.uw{background:var(--uw-purple)}
   .next-card .pad{padding:16px 18px 18px}
-  .next-tag{display:flex;align-items:center;gap:8px;font-size:var(--fs-caption);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+  .next-tag{display:flex;align-items:center;gap:8px;font-size:var(--fs-caption);font-weight:500;margin-bottom:12px}
   .next-card.hawk .next-tag{color:#A5E871}
   .next-card.uw .next-tag{color:var(--uw-gold)}
-  .pulse{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-  @media(prefers-reduced-motion:reduce){.pulse{animation:none}}
+  .tagdot{width:8px;height:8px;border-radius:50%;background:currentColor}
   .next-match{font-weight:600;font-size:var(--fs-h2);line-height:1.2;margin-bottom:4px;color:#FFFFFF}
   .next-match .at{color:rgba(255,255,255,.8);font-weight:400}
   .next-venue{color:rgba(255,255,255,.85);font-size:var(--fs-small);margin-bottom:12px}
@@ -165,7 +163,7 @@
   .svc .dot{width:9px;height:9px;border-radius:50%;flex:none}
   .svc p{margin:0;color:var(--ink-2);font-size:var(--fs-small)}
   .svc p+p{margin-top:6px}
-  .svc .count{font-size:var(--fs-caption);font-weight:500;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-top:8px}
+  .svc .count{font-size:var(--fs-caption);font-weight:500;color:var(--ink-3);margin-top:8px}
   .callout{border:1px solid var(--callout-line);border-radius:10px;background:var(--callout-bg);padding:14px 16px;margin:14px 0 0;color:var(--ink);font-size:var(--fs-body);box-shadow:var(--shadow)}
   .callout.gold{border-color:var(--callout-gold-line);background:var(--callout-gold-bg)}
   .svc ul{margin:6px 0;padding-left:18px;color:var(--ink-2);font-size:var(--fs-small)}
@@ -194,7 +192,7 @@
   .chk input{accent-color:var(--hawk-green);width:16px;height:16px;cursor:pointer}
 
   /* Month groups & game cards */
-  .month{font-size:var(--fs-caption);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 10px;display:flex;align-items:center;gap:12px}
+  .month{font-size:var(--fs-caption);font-weight:500;color:var(--ink-3);margin:26px 0 10px;display:flex;align-items:center;gap:12px}
   .month::after{content:"";flex:1;height:1px;background:var(--line)}
   .games{display:flex;flex-direction:column;gap:10px}
   .game{border:1px solid var(--line);border-radius:13px;background:var(--paper);padding:13px 16px 14px;box-shadow:var(--shadow)}
@@ -252,10 +250,10 @@
   .sub-toggle.on{background:var(--sel-bg);border-color:var(--sel-bg);color:#FFFFFF}
   .sub-toggle:has(input:focus-visible){outline:2px solid var(--hawk-text);outline-offset:2px}
   .sub-note{font-size:var(--fs-small);color:var(--ink-3);margin-top:10px}
-  .g-status{margin-left:auto;font-size:var(--fs-caption);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .g-status{margin-left:auto;font-size:var(--fs-caption);font-weight:500;color:var(--ink-3)}
   .g-status.final{color:var(--ink-2)}
   .g-status.live{color:var(--live)}
-  .badge-wk{font-size:var(--fs-caption);font-weight:500;color:var(--ink-3);letter-spacing:.06em}
+  .badge-wk{font-size:var(--fs-caption);font-weight:500;color:var(--ink-3)}
 
   /* Marquee games: solid team color */
   .game.big.hawks{background:var(--hawk-blue);border-color:var(--hawk-blue)}
@@ -276,7 +274,7 @@
 
   .bye{
     border:1px dashed var(--line);border-radius:13px;padding:11px 16px;
-    color:var(--ink-3);font-size:var(--fs-caption);font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-3);font-size:var(--fs-caption);font-weight:500;
   }
   .empty{color:var(--ink-3);padding:30px 0;text-align:center;display:none}
 
@@ -284,6 +282,7 @@
   footer p{margin:0 0 6px;max-width:70ch}
 
   @media(max-width:640px){h1{font-size:var(--fs-h2)}}
+  @media(max-width:600px){:root{--control-h:44px}}
 
   /* service dot colors (identity only) */
   .d-foxone{background:#1E5EDB}.d-peacock{background:#E7B416}.d-paramount{background:#2B6BFF}
@@ -559,7 +558,7 @@ function nextCards(){
     }
     html += `<div class="next-card ${team==="hawks"?"hawk":"uw"}">
       <div class="pad">
-        <div class="next-tag"><span class="pulse"></span>Next ${TEAM_NAME[team]} kickoff</div>
+        <div class="next-tag"><span class="tagdot"></span>Next ${TEAM_NAME[team]} kickoff</div>
         <div class="next-match">${matchHtml(g)}</div>
         <div class="next-venue">${g.venue}</div>
         <div class="next-when">${fmtDate(g)} · <span class="t">${fmtTime(g)}</span></div>

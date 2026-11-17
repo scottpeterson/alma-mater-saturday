@@ -313,12 +313,27 @@ def team_card(school):
 </div></article>'''
 
 
+def table_row(cells, tag="td", text_cols=()):
+    """Return one table row. Column 0 is the team (left-aligned, class lead), columns in
+    `text_cols` hold text (left-aligned), and every other column is numeric (class num,
+    right-aligned, header included) so place values line up. A cell is an HTML string,
+    or a (html, extra_class) pair."""
+    out = []
+    for i, c in enumerate(cells):
+        html, extra = c if isinstance(c, tuple) else (c, "")
+        kind = "lead" if i == 0 else "txt" if i in text_cols else "num"
+        cls = " ".join(x for x in (kind, extra) if x)
+        out.append(f'<{tag} class="{cls}">{html}</{tag}>')
+    return f"<tr>{''.join(out)}</tr>"
+
+
 def ratings_table():
     polls = SEASON.get("polls", {})
     d3 = SEASON.get("d3football", {})
     hansen = SEASON.get("hansen", {}).get("teams", {})
-    head = ("<tr><th>Team</th><th>Record</th><th>Poll</th><th>Massey rating</th><th>Massey rank in division</th><th>Massey rank all divisions</th>"
-            "<th>Massey power</th><th>Massey offense</th><th>Massey defense</th><th>Massey SOS</th><th>Massey expected W-L</th><th>Points for</th><th>Points against</th><th>Margin</th></tr>")
+    text_cols = (2,)  # Poll names the poll beside the rank
+    head = table_row(["Team", "Record", "Poll", "Massey rating", "Massey rank in division", "Massey rank all divisions", "Massey power",
+                      "Massey offense", "Massey defense", "Massey SOS", "Massey expected W-L", "Points for", "Points against", "Margin"], "th", text_cols)
     rows = []
     ordered = ORDERED
     for s in ordered:
@@ -333,11 +348,16 @@ def ratings_table():
             rv = d3.get("receiving_votes", {}).get(s["slug"])
             poll = f'D3football.com #{r["rank"]}' if r else (f"D3football.com RV ({rv})" if rv else "D3football.com NR")
         div_label = "FBS" if m.get("division") == "FBS" else "D3"
-        rows.append(
-            f'<tr><td class="lead"><img src="{esc(s["logo"])}" alt=""> {esc(s["name"])}</td><td>{esc(team.get("record"))}</td><td>{esc(poll)}</td>'
-            f'<td>{fmt_num(m.get("rating"))}</td><td>#{m.get("div_rank")} of {MASSEY["division_sizes"].get(m.get("division"), "")} {div_label}</td><td>#{m.get("overall_rank")} of {MASSEY["division_sizes"].get("all")}</td>'
-            f'<td>#{m.get("pwr_rank")} ({fmt_num(m.get("pwr"))})</td><td>#{m.get("off_rank")} ({fmt_num(m.get("off"))})</td><td>#{m.get("def_rank")} ({fmt_num(m.get("def"))})</td><td>#{m.get("sos_rank")} ({fmt_num(m.get("sos"))})</td>'
-            f'<td>{fmt_num(m.get("exp_w"), 1)}-{fmt_num(m.get("exp_l"), 1)}</td><td>{team.get("pf")}</td><td>{team.get("pa")}</td><td class="{ "pos" if team.get("diff", 0) > 0 else "neg" if team.get("diff", 0) < 0 else ""}">{signed(team.get("diff", 0))}</td></tr>')
+        diff = team.get("diff", 0)
+        rows.append(table_row([
+            f'<img src="{esc(s["logo"])}" alt=""> {esc(s["name"])}', esc(team.get("record")), esc(poll),
+            fmt_num(m.get("rating")), f'#{m.get("div_rank")} of {MASSEY["division_sizes"].get(m.get("division"), "")} {div_label}',
+            f'#{m.get("overall_rank")} of {MASSEY["division_sizes"].get("all")}',
+            f'#{m.get("pwr_rank")} ({fmt_num(m.get("pwr"))})', f'#{m.get("off_rank")} ({fmt_num(m.get("off"))})',
+            f'#{m.get("def_rank")} ({fmt_num(m.get("def"))})', f'#{m.get("sos_rank")} ({fmt_num(m.get("sos"))})',
+            f'{fmt_num(m.get("exp_w"), 1)}-{fmt_num(m.get("exp_l"), 1)}', team.get("pf"), team.get("pa"),
+            (signed(diff), "pos" if diff > 0 else "neg" if diff < 0 else ""),
+        ], text_cols=text_cols))
     return f'<div class="tablewrap"><table class="ratings"><thead>{head}</thead><tbody>{"".join(rows)}</tbody></table></div>'
 
 
@@ -346,8 +366,8 @@ def hansen_table():
     teams = hansen.get("teams", {})
     if not teams:
         return ""
-    head = ("<tr><th>Team</th><th>Predictive rank</th><th>Rating</th><th>Adj. offense</th><th>Adj. defense</th><th>Elo</th><th>Résumé rank</th><th>SOS rank</th>"
-            "<th>Projected record</th><th>Projected NPI</th><th>Playoff odds</th><th>Pool A (auto bid)</th><th>Pool C (at large)</th></tr>")
+    head = table_row(["Team", "Predictive rank", "Rating", "Adj. offense", "Adj. defense", "Elo", "Résumé rank", "SOS rank",
+                      "Projected record", "Projected NPI", "Playoff odds", "Pool A (auto bid)", "Pool C (at large)"], "th")
     rows = []
     ordered = sorted(SCHOOLS, key=lambda x: (teams.get(x["slug"], {}).get("predictive") or {}).get("Rank", 9999))
     for s in ordered:
@@ -355,11 +375,12 @@ def hansen_table():
         if not h:
             continue
         p, r, sos, sim = h.get("predictive", {}), h.get("resume", {}), h.get("sos", {}), h.get("simulation", {})
-        rows.append(
-            f'<tr><td class="lead"><img src="{esc(s["logo"])}" alt=""> {esc(s["name"])}</td><td>#{p.get("Rank")} (prev #{p.get("Prev")})</td><td>{fmt_num(p.get("Rating"), 1)}</td>'
-            f'<td>{fmt_num(p.get("AdjO"), 1)}</td><td>{fmt_num(p.get("AdjD"), 1)}</td><td>{fmt_num(p.get("Elo"), 0)}</td><td>#{r.get("Rank")}</td><td>#{sos.get("Rank")}</td>'
-            f'<td>{fmt_num(sim.get("W"), 1)}-{fmt_num(sim.get("L"), 1)}</td><td>{fmt_num(sim.get("NPI"), 1)} (#{fmt_num(sim.get("Rank"), 0)})</td>'
-            f'<td>{pct(sim.get("Playoff"))}</td><td>{pct(sim.get("Pool A"))}</td><td>{pct(sim.get("Pool C"))}</td></tr>')
+        rows.append(table_row([
+            f'<img src="{esc(s["logo"])}" alt=""> {esc(s["name"])}', f'#{p.get("Rank")} (prev #{p.get("Prev")})', fmt_num(p.get("Rating"), 1),
+            fmt_num(p.get("AdjO"), 1), fmt_num(p.get("AdjD"), 1), fmt_num(p.get("Elo"), 0), f'#{r.get("Rank")}', f'#{sos.get("Rank")}',
+            f'{fmt_num(sim.get("W"), 1)}-{fmt_num(sim.get("L"), 1)}', f'{fmt_num(sim.get("NPI"), 1)} (#{fmt_num(sim.get("Rank"), 0)})',
+            pct(sim.get("Playoff")), pct(sim.get("Pool A")), pct(sim.get("Pool C")),
+        ]))
     return f'<div class="tablewrap"><table class="ratings"><thead>{head}</thead><tbody>{"".join(rows)}</tbody></table></div>'
 
 
@@ -468,6 +489,7 @@ NAV_CSS = r"""
 .sn:hover{border-color:var(--ink,#1e2229)}
 .sn:focus-visible{outline:2px solid var(--accent,var(--hawk-blue,#1f5fbf));outline-offset:2px}
 .sn[aria-current="page"]{background:var(--ink,#1e2229);color:var(--surface,var(--paper,#fff));border-color:transparent;font-weight:600}
+@media (max-width:600px){.sn{display:inline-flex;align-items:center;min-height:44px}}
 """
 
 PAGES = [("index", "Alma Mater Saturday"), ("montlake", "Montlake &amp; Lumen")]
@@ -522,9 +544,10 @@ h1{font-size:var(--fs-h1);line-height:1.1;margin:.1em 0 .1em}h2{font-size:var(--
 .top{display:flex;flex-direction:column;align-items:flex-start;gap:14px}.sub{color:var(--muted);margin:0 0 .4em;max-width:760px}
 .muted{color:var(--muted)}.small{font-size:var(--fs-small);color:var(--muted)}.pos{color:var(--pos)}.neg{color:var(--neg)}
 button{font:inherit;cursor:pointer}
-.controls{display:flex;gap:16px;align-items:flex-start}.ctl{display:flex;flex-direction:column;gap:4px}.seg{display:inline-flex;align-items:stretch;border:1px solid var(--ctl-line);border-radius:999px;overflow:hidden;background:var(--surface)}.seglabel{font-size:var(--fs-caption);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-left:2px}.tz,.th{border:0;background:transparent;color:var(--muted);padding:0 14px;height:var(--control-h);font:inherit;font-size:var(--fs-body);cursor:pointer;min-width:44px}.tz+.tz,.th+.th{border-left:1px solid var(--line)}.tz.active,.th.active{background:var(--accent);color:#fff;font-weight:600}.tz.active::before,.th.active::before{content:"\2713\00a0"}:root[data-theme="dark"] .tz.active,:root[data-theme="dark"] .th.active{color:#15181d}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tz.active,:root:not([data-theme="light"]) .th.active{color:#15181d}}@media (max-width:640px){.controls{width:100%;flex-wrap:wrap;gap:10px 16px}}.alum{margin-left:auto;align-self:flex-start;font-size:var(--fs-caption);font-weight:500;letter-spacing:.06em;text-transform:uppercase;border:1px solid currentColor;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.controls{display:flex;gap:16px;align-items:flex-start}.ctl{display:flex;flex-direction:column;gap:4px}.seg{display:inline-flex;align-items:stretch;border:1px solid var(--ctl-line);border-radius:999px;overflow:hidden;background:var(--surface)}.seglabel{font-size:var(--fs-caption);font-weight:500;color:var(--muted);padding-left:2px}.tz,.th{border:0;background:transparent;color:var(--muted);padding:0 14px;height:var(--control-h);font:inherit;font-size:var(--fs-body);cursor:pointer;min-width:44px}.tz+.tz,.th+.th{border-left:1px solid var(--line)}.tz.active,.th.active{background:var(--accent);color:#fff;font-weight:600}.tz.active::before,.th.active::before{content:"\2713\00a0"}:root[data-theme="dark"] .tz.active,:root[data-theme="dark"] .th.active{color:#15181d}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tz.active,:root:not([data-theme="light"]) .th.active{color:#15181d}}@media (max-width:640px){.controls{width:100%;flex-wrap:wrap;gap:10px 16px}}.alum{margin-left:auto;align-self:flex-start;font-size:var(--fs-caption);font-weight:500;border:1px solid currentColor;border-radius:999px;padding:2px 8px;white-space:nowrap}
 .livepill{display:none;align-items:center;gap:6px;font-size:var(--fs-small);font-weight:600;color:var(--live)}.livepill i{width:8px;height:8px;border-radius:50%;background:var(--live);animation:pulse 1.4s infinite}body.has-live .livepill{display:inline-flex}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.livepill i,.game.live .scoreline .status::before{animation:none}}
 .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .game,.team{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
 .game header,.team header{display:flex;align-items:center;gap:12px;padding:12px 14px}
@@ -545,12 +568,12 @@ dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0;font
 .rd{font-size:var(--fs-caption);color:var(--muted);white-space:nowrap}
 .meta{font-size:var(--fs-small);color:var(--muted);margin:10px 0 0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
-table{border-collapse:collapse;width:100%;font-size:var(--fs-body)}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}th{font-weight:600;font-size:var(--fs-caption);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-tbody tr:last-child td{border-bottom:0}td.lead,td:first-child,th:first-child{text-align:left}td.lead img{height:20px;width:20px;object-fit:contain;vertical-align:-4px;margin-right:4px}
+table{border-collapse:collapse;width:100%;font-size:var(--fs-body)}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{font-weight:600;font-size:var(--fs-caption);color:var(--muted)}th.num,td.num{text-align:right}
+tbody tr:last-child td{border-bottom:0}td.lead img{height:20px;width:20px;object-fit:contain;vertical-align:-4px;margin-right:4px}
 tr.w td.res{color:var(--pos);font-weight:600}tr.l td.res{color:var(--neg);font-weight:600}tr.live td.res{color:var(--live);font-weight:600}td.tv{white-space:normal;min-width:120px}table.sched th,table.sched td{text-align:left}
 .tabs{display:flex;flex-wrap:wrap;gap:var(--control-gap);margin-bottom:10px}.tab{border:1px solid var(--ctl-line);background:var(--surface);color:var(--ink);border-radius:999px;padding:0 14px;height:var(--control-h);font-size:var(--fs-body)}.tab.active{background:var(--team,var(--ink));color:var(--on-team);border-color:transparent;font-weight:600}
 .teamplayers{margin-bottom:8px}.players{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
-.player{display:flex;gap:12px;align-items:center;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)}.player .label{display:block;font-size:var(--fs-caption);text-transform:uppercase;letter-spacing:.06em;color:var(--team);font-weight:600}
+.player{display:flex;gap:12px;align-items:center;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)}.player .label{display:block;font-size:var(--fs-caption);color:var(--team);font-weight:600}
 .face{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--surface2);flex:none}.initials{display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:var(--fs-body)}
 .player>div{min-width:0}.pname{font-weight:600;line-height:1.2}.psub{font-size:var(--fs-small);color:var(--muted)}.pline{font-size:var(--fs-small);margin-top:2px}
 .chart{width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:var(--shadow)}.chart .grid{stroke:var(--line);stroke-width:1}.chart .grid.zero{stroke:var(--faint);stroke-width:1.5}.chart .lab{fill:var(--muted);font-size:12px}.chart .line{fill:none;stroke-width:2.5;stroke-linejoin:round}
@@ -561,6 +584,8 @@ tr.w td.res{color:var(--pos);font-weight:600}tr.l td.res{color:var(--neg);font-w
 footer{margin-top:28px;font-size:var(--fs-small);color:var(--muted);line-height:1.6}
 @media (max-width:640px){h1{font-size:var(--fs-h2)}.score{font-size:var(--fs-h2)}.big{font-size:var(--fs-h2)}main{padding-top:14px}}
 thead th[aria-sort]{cursor:pointer;user-select:none}thead th[aria-sort]::after{content:"";display:inline-block;width:.9em;color:var(--faint,var(--muted))}thead th[aria-sort="ascending"]::after{content:"\25B4"}thead th[aria-sort="descending"]::after{content:"\25BE"}
+thead th.num[aria-sort]::before{content:"";display:inline-block;width:.9em;color:var(--faint,var(--muted))}thead th.num[aria-sort="ascending"]::before{content:"\25B4"}thead th.num[aria-sort="descending"]::before{content:"\25BE"}thead th.num[aria-sort]::after{content:none}
+@media (max-width:600px){:root{--control-h:44px}}
 h3.spaced{margin-top:1.6em}
 """
 
