@@ -71,7 +71,8 @@ def opponent_label(game):
     if game.get("neutral"):
         prefix = "vs "
     rank = f'<span class="rk">#{game["opponent"]["rank"]}</span> ' if game["opponent"].get("rank") else ""
-    return f'{prefix}{rank}{esc(game["opponent"]["short"])}'
+    rnd = f' <span class="rd">{esc(game["round"])}</span>' if game.get("round") else ""
+    return f'{prefix}{rank}{esc(game["opponent"]["short"])}{rnd}'
 
 
 def result_text(game):
@@ -183,19 +184,25 @@ def game_card(school, g):
     rank = f'<span class="rk">#{opp["rank"]}</span> ' if opp.get("rank") else ""
     feed = g.get("live_feed") or {}
     feed_attrs = f' data-feed="{esc(feed["url"])}" data-feed-type="{esc(feed["type"])}"' if feed.get("url") else ""
-    stats_links = [f'<a href="https://www.espn.com/college-football/game/_/gameId/{esc(g["id"])}" target="_blank" rel="noopener">ESPN</a>']
+    stats_links = [] if g.get("placeholder") else [f'<a href="https://www.espn.com/college-football/game/_/gameId/{esc(g["id"])}" target="_blank" rel="noopener">ESPN</a>']
     if g.get("live_stats"):
         stats_links.insert(0, f'<a href="{esc(g["live_stats"])}" target="_blank" rel="noopener">Live stats</a>')
+    stats_row = f'<dt>Stats</dt><dd>{" · ".join(stats_links)}</dd>' if stats_links else ""
+    round_row = f'<dt>Round</dt><dd>{esc(g["round"])}</dd>' if g.get("round") else ""
+    feeder = g.get("feeder")
+    feeder_row = f'<dt>Opponent set</dt><dd>{esc(feeder["label"])}, {time_tag({"date": feeder["date"]})}</dd>' if feeder else ""
     return f'''<article class="game {status_class}" data-game="{esc(g["id"])}" data-group="{esc(g["group"])}" data-date="{esc(g["date"])}"{' data-tbd="1"' if g.get("time_tbd") else ""} data-home="{1 if g["home"] else 0}"{feed_attrs} style="--team:var(--c-{school["slug"]})">
 <header><img src="{esc(school["logo"])}" alt=""><div><div class="who">{esc(school["name"])} <span class="muted">{esc(school["mascot"])}</span></div><div class="what">{"vs" if g["home"] or g.get("neutral") else "at"} {rank}{esc(opp["name"])}</div></div>{opp_logo}</header>
 <div class="body">
 <div class="scoreline"><span class="score">{score}</span><span class="status">{status}</span></div>
 <div class="situation"></div>
 <dl>
+{round_row}
 <dt>Kickoff</dt><dd>{time_tag(g)} {countdown}</dd>
 <dt>Watch</dt><dd>{tv_chips(g)}</dd>
 <dt>Where</dt><dd>{esc(where)}{" · " + esc(venue) if venue else ""}</dd>
-<dt>Stats</dt><dd>{" · ".join(stats_links)}</dd>
+{feeder_row}
+{stats_row}
 {odds_rows(school, g)}
 </dl>
 </div></article>'''
@@ -535,6 +542,7 @@ dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0;font
 .record{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}.big{font-size:var(--fs-h1);font-weight:600;line-height:1;color:var(--team)}.standing{color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.badge{font-size:var(--fs-caption);border:1px solid var(--line);border-radius:6px;padding:2px 7px;background:var(--surface)}.badge b{color:var(--team)}a.badge{color:inherit;text-decoration:none;border-color:var(--ctl-line)}a.badge:hover{border-color:var(--team)}.sitelink{font-size:var(--fs-small);font-weight:600;border:1px solid var(--team,var(--accent));border-radius:999px;padding:3px 10px;text-decoration:none;color:var(--team,var(--accent));white-space:nowrap;margin-left:auto}.sitelink:hover{background:var(--team,var(--accent));color:var(--on-team)}.badge.rv,.badge.nr{color:var(--muted)}
 .rk{font-size:var(--fs-caption);color:var(--muted);font-weight:600}
+.rd{font-size:var(--fs-caption);color:var(--muted);white-space:nowrap}
 .meta{font-size:var(--fs-small);color:var(--muted);margin:10px 0 0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
 table{border-collapse:collapse;width:100%;font-size:var(--fs-body)}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}th{font-weight:600;font-size:var(--fs-caption);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}

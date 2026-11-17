@@ -114,6 +114,53 @@ def team_games(school):
     return games
 
 
+def merge_playoffs(school, games):
+    """Label Division III playoff games with their round, and add the games ESPN does not list yet.
+
+    data/playoffs.json is edited by hand. ESPN adds a playoff game only once both teams
+    are known, so a bye team's game is missing until the first round ends. An entry with
+    an opponent becomes a placeholder game until ESPN lists a game for that team on that
+    date. ESPN's game then replaces it, and the entry only fills in a missing network.
+    """
+    path = DATA / "playoffs.json"
+    if school["division"] == "FBS" or not path.exists():
+        return
+    plan = json.loads(path.read_text())
+    rounds = plan.get("rounds", {})
+    by_day = {g["date"][:10]: g for g in games}
+    for entry in plan.get("games", {}).get(school["slug"], []):
+        g = by_day.get(entry["date"][:10])
+        if g is None and entry.get("opponent"):
+            g = {
+                "id": f"ncaa-{school['slug']}-{entry['date'][:10]}",
+                "week": None,
+                "date": entry["date"],
+                "time_tbd": False,
+                "home": entry["home"],
+                "neutral": False,
+                "opponent": {"name": entry["opponent"], "short": entry.get("opponent_short") or entry["opponent"],
+                             "espn_id": None, "logo": None, "rank": None},
+                "venue": entry.get("venue"),
+                "city": entry.get("city"),
+                "broadcasts": [],
+                "state": "pre",
+                "status": None,
+                "pf": None, "pa": None, "result": None, "clock": None, "period": 0,
+                "group": school["espn_group"],
+                "placeholder": True,
+                "feeder": entry.get("feeder"),
+            }
+            games.append(g)
+            by_day[entry["date"][:10]] = g
+        if g is not None and not g["broadcasts"]:
+            g["broadcasts"] = list(entry.get("broadcasts") or [])
+    for g in games:
+        day = datetime.fromisoformat(g["date"].replace("Z", "+00:00")).astimezone(EASTERN).date().isoformat()
+        if day in rounds:
+            g["round"] = rounds[day]
+    games.sort(key=lambda g: g["date"])
+
+
 def team_summary(school):
     team = get(f"{ESPN}/teams/{school['espn_id']}")["team"]
     items = team.get("record", {}).get("items", [])
@@ -354,6 +401,8 @@ def apply_d3_ranks(out):
         if school["division"] == "FBS" or school["slug"] not in out["teams"]:
             continue
         for g in out["teams"][school["slug"]]["games"]:
+            if g.get("placeholder"):
+                continue
             opp = g["opponent"]
             full = _norm(opp.get("name") or opp.get("short") or "")
             short = _norm(opp.get("short") or "")
@@ -512,6 +561,8 @@ def hansen_matches(hansen_name, opponent):
 
 
 def hansen_odds(game, school, projections):
+    if game.get("placeholder"):
+        return None
     mine = school["hansen_key"]
     for (home, away), row in projections.items():
         if mine not in (home, away):
@@ -767,6 +818,7 @@ def main():
         slug = school["slug"]
         try:
             games = team_games(school)
+            merge_playoffs(school, games)
             summary = team_summary(school)
         except (urllib.error.URLError, KeyError, ValueError, TimeoutError) as exc:
             out["errors"].append(f"{school['name']} schedule: {exc}")

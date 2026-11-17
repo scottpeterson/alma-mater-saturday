@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-16T15:54:58-06:00",
+ "fetched_at": "2026-11-17T12:20:34-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -338,7 +338,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "IU -7.5",
        "over_under": 43.5,
        "home_ml": 250,
@@ -785,7 +785,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "Draft Kings",
+       "provider": "DraftKings",
        "details": "IU -7.5",
        "over_under": 43.5,
        "home_ml": 250,
@@ -1203,6 +1203,43 @@
      "group": "35",
      "live_stats": "https://almascots.com/sidearmstats/football/summary",
      "live_feed": null
+    },
+    {
+     "id": "ncaa-calvin-2026-11-28",
+     "week": null,
+     "date": "2026-11-28T17:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Winner of Texas Lutheran at Hardin-Simmons",
+      "short": "Hardin-Simmons or Texas Lutheran",
+      "espn_id": null,
+      "logo": null,
+      "rank": null
+     },
+     "venue": "Grand Rapids Christian High School",
+     "city": "Grand Rapids, MI",
+     "broadcasts": [
+      "ESPN+"
+     ],
+     "state": "pre",
+     "status": null,
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": null,
+     "period": 0,
+     "group": "35",
+     "placeholder": true,
+     "feeder": {
+      "label": "Texas Lutheran at Hardin-Simmons",
+      "date": "2026-11-21T18:00Z"
+     },
+     "round": "NCAA second round",
+     "live_stats": null,
+     "live_feed": null,
+     "odds": null
     }
    ],
    "played": 10,
@@ -1590,7 +1627,9 @@
      },
      "venue": "Ralph E. Davis Pioneer Stadium",
      "city": "Platteville, WI",
-     "broadcasts": [],
+     "broadcasts": [
+      "ESPN+"
+     ],
      "state": "pre",
      "status": "11/28 - 1:00 PM EST",
      "pf": null,
@@ -1599,6 +1638,7 @@
      "clock": "0:00",
      "period": 0,
      "group": "35",
+     "round": "NCAA second round",
      "live_stats": null,
      "live_feed": null,
      "odds": null
@@ -1973,6 +2013,46 @@
      "group": "35",
      "live_stats": "https://athletics.carthage.edu/sidearmstats/football/summary",
      "live_feed": null
+    },
+    {
+     "id": "ncaa-wheaton-2026-11-28",
+     "week": null,
+     "date": "2026-11-28T18:00Z",
+     "time_tbd": false,
+     "home": true,
+     "neutral": false,
+     "opponent": {
+      "name": "Winner of Monmouth (IL) at Heidelberg",
+      "short": "Heidelberg or Monmouth (IL)",
+      "espn_id": null,
+      "logo": null,
+      "rank": null
+     },
+     "venue": "McCully Stadium",
+     "city": "Wheaton, IL",
+     "broadcasts": [
+      "ESPN+"
+     ],
+     "state": "pre",
+     "status": null,
+     "pf": null,
+     "pa": null,
+     "result": null,
+     "clock": null,
+     "period": 0,
+     "group": "35",
+     "placeholder": true,
+     "feeder": {
+      "label": "Monmouth (IL) at Heidelberg",
+      "date": "2026-11-21T18:00Z"
+     },
+     "round": "NCAA second round",
+     "live_stats": "https://athletics.wheaton.edu/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/wheaton/football/game.json"
+     },
+     "odds": null
     }
    ],
    "played": 10,
@@ -2108,7 +2188,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-16T15:55:12-06:00",
+  "fetched": "2026-11-17T12:21:07-06:00",
   "teams": {
    "calvin": {
     "predictive": {

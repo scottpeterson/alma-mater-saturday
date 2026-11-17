@@ -1,0 +1,51 @@
+{
+ "note": "Edited by hand. fetch_data.py labels each Division III game on a round date with that round. It adds a game from 'games' only while ESPN lists no game for that team on that date.",
+ "sources": [
+  "https://www.ncaa.com/news/football/article/2026-11-15/2026-diii-football-championship-bracket-schedule-scores",
+  "https://www.flofootball.com/articles/16411333-d3-football-playoff-bracket-2026-10-things-to-know",
+  "https://athletics.wheaton.edu/sports/football/schedule",
+  "https://athletics.hope.edu/sports/football/schedule"
+ ],
+ "updated": "2026-11-17",
+ "rounds": {
+  "2026-11-21": "NCAA first round",
+  "2026-11-28": "NCAA second round",
+  "2026-12-05": "NCAA third round",
+  "2026-12-12": "NCAA quarterfinal",
+  "2026-12-19": "NCAA semifinal",
+  "2027-01-03": "Stagg Bowl"
+ },
+ "games": {
+  "calvin": [
+   {
+    "date": "2026-11-28T17:00Z",
+    "home": true,
+    "opponent": "Winner of Texas Lutheran at Hardin-Simmons",
+    "opponent_short": "Hardin-Simmons or Texas Lutheran",
+    "feeder": {"label": "Texas Lutheran at Hardin-Simmons", "date": "2026-11-21T18:00Z"},
+    "venue": "Grand Rapids Christian High School",
+    "city": "Grand Rapids, MI",
+    "broadcasts": ["ESPN+"]
+   }
+  ],
+  "hope": [
+   {
+    "date": "2026-11-28T18:00Z",
+    "home": false,
+    "broadcasts": ["ESPN+"]
+   }
+  ],
+  "wheaton": [
+   {
+    "date": "2026-11-28T18:00Z",
+    "home": true,
+    "opponent": "Winner of Monmouth (IL) at Heidelberg",
+    "opponent_short": "Heidelberg or Monmouth (IL)",
+    "feeder": {"label": "Monmouth (IL) at Heidelberg", "date": "2026-11-21T18:00Z"},
+    "venue": "McCully Stadium",
+    "city": "Wheaton, IL",
+    "broadcasts": ["ESPN+"]
+   }
+  ]
+ }
+}

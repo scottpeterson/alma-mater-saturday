@@ -134,5 +134,15 @@
     "free": true,
     "url": "https://athletics.hanover.edu/coverage",
     "note": ""
+  },
+  {
+    "name": "ESPN+",
+    "also": [],
+    "kind": "Streaming service",
+    "teams": "Calvin, Hope, and Wheaton (IL) in the NCAA Division III playoffs",
+    "access": "ESPN+ subscription, sold alone or inside the ESPN streaming plans. Watch on the ESPN app or ESPN.com.",
+    "free": false,
+    "url": "https://www.espn.com/watch/",
+    "note": "The NCAA streams Division III playoff games on ESPN+ from the first round through the quarterfinals. ESPN airs the Stagg Bowl."
   }
 ]

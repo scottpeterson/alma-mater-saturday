@@ -21,6 +21,7 @@ One page for the football teams of the five schools that three brothers attended
 | `content/platforms.json` | Every network and stream on the schedules, with access notes and local stations |
 | `fetch_data.py` | Pulls ESPN schedules, records, polls, and leaders, plus the D3football.com Top 25, Hansen Ratings, and school stats pages. Writes `data/season.json` |
 | `data/massey.json` | Massey ratings, refreshed by hand (see below) |
+| `data/playoffs.json` | NCAA Division III playoff round dates and the playoff games ESPN does not list yet, edited by hand (see below) |
 | `tools/massey_extract.js` | Browser snippet that produces the Massey JSON |
 | `build_site.py` | Renders `docs/index.html` and publishes `pages/montlake.html` as `docs/montlake/index.html`. Adds the tab bar that links the two pages |
 | `pages/montlake.html` | Montlake & Lumen: Seahawks and Huskies kickoffs and streaming services for the Grand Rapids TV market. Edited by hand (see below) |
@@ -71,6 +72,21 @@ The next scheduled workflow run rebuilds the page. To rebuild now, run
 The snippet derives each division rank from the team's position among its own
 division in the all-division table. Massey's per-division pages order teams by the same
 rating.
+
+## Division III playoffs (by hand)
+
+ESPN adds a playoff game only after both teams are known. A team with a first-round bye has no game on ESPN until the first round ends. `data/playoffs.json` covers that gap:
+
+- `rounds` maps each round's Saturday (Eastern date) to its label. Every Division III game on one of those dates shows the label on the game card and in the schedules.
+- `games` lists each team's next playoff game. An entry with an `opponent` becomes a placeholder game ("Winner of X at Y"), with a `feeder` row that names the game that decides the opponent. When ESPN lists a game for that team on that date, ESPN's game replaces the placeholder. The entry then only fills in `broadcasts` when ESPN lists no network.
+
+After each round:
+
+1. Open the NCAA bracket article for the season on NCAA.com, and the team's schedule page.
+2. For each team still playing whose next opponent is not set yet, add an entry with the date in UTC, `home`, `opponent`, `opponent_short`, `feeder`, `venue`, `city`, and `broadcasts`. NCAA.com prints kickoff times in Eastern time.
+3. Change `updated`, run `python3 fetch_data.py && python3 build_site.py`, then commit and push.
+
+D3 playoff games have no betting line. The Win odds row appears when Hansen Ratings posts its projections for the round and both teams are known.
 
 ## Live scores
 
