@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-21T13:03:21-06:00",
+ "fetched_at": "2026-11-21T14:41:56-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -326,19 +326,19 @@
      "broadcasts": [
       "Peacock"
      ],
-     "state": "pre",
-     "status": "11/21 - 3:30 PM EST",
+     "state": "in",
+     "status": "13:26 - 1st",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "13:26",
+     "period": 1,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451",
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -9.5",
        "over_under": 44.5,
        "home_ml": 280,
@@ -773,19 +773,19 @@
      "broadcasts": [
       "Peacock"
      ],
-     "state": "pre",
-     "status": "11/21 - 3:30 PM EST",
+     "state": "in",
+     "status": "13:26 - 1st",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "13:26",
+     "period": 1,
      "group": "80",
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=673451&vislive=ind",
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -9.5",
        "over_under": 44.5,
        "home_ml": 280,
@@ -2197,7 +2197,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-21T13:03:33-06:00",
+  "fetched": "2026-11-21T14:42:11-06:00",
   "teams": {
    "calvin": {
     "predictive": {
