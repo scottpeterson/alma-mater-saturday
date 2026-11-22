@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-21T22:33:37-06:00",
+ "fetched_at": "2026-11-22T06:49:36-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -340,8 +340,8 @@
     {
      "id": "401858541",
      "week": 13,
-     "date": "2026-11-28T05:00Z",
-     "time_tbd": true,
+     "date": "2026-11-29T00:30Z",
+     "time_tbd": false,
      "home": false,
      "neutral": false,
      "opponent": {
@@ -353,9 +353,11 @@
      },
      "venue": "Autzen Stadium",
      "city": "Eugene, OR",
-     "broadcasts": [],
+     "broadcasts": [
+      "NBC"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "11/28 - 7:30 PM EST",
      "pf": null,
      "pa": null,
      "result": null,
@@ -365,9 +367,16 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=675076&vislive=wash",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "ORE -12.5",
+       "over_under": 49.5,
+       "home_ml": -500,
+       "away_ml": 380
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 11.2
+       "pct": 12.6
       }
      }
     }
@@ -387,16 +396,16 @@
      "jersey": "1",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
-     "line": "164/253, 1955 YDS, 7.7 YPA, 13 TD, 4 INT"
+     "line": "188/294, 2182 YDS, 7.4 YPA, 14 TD, 5 INT"
     },
     {
      "label": "Rushing",
-     "name": "Brian Bonner Jr.",
-     "position": "RB",
-     "jersey": "34",
-     "year": "Freshman",
-     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5200430.png",
-     "line": "73 CAR, 317 YDS, 1 TD"
+     "name": "Demond Williams Jr.",
+     "position": "QB",
+     "jersey": "1",
+     "year": "Junior",
+     "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079653.png",
+     "line": "92 CAR, 361 YDS, 3 TD"
     },
     {
      "label": "Receiving",
@@ -405,7 +414,7 @@
      "jersey": "8",
      "year": "Sophomore",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141559.png",
-     "line": "54 REC, 851 YDS, 5 TD"
+     "line": "61 REC, 910 YDS, 5 TD"
     },
     {
      "label": "Tackles",
@@ -414,7 +423,7 @@
      "jersey": "7",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152504.png",
-     "line": "73 tackles"
+     "line": "78 tackles"
     },
     {
      "label": "Sacks",
@@ -774,8 +783,8 @@
     {
      "id": "401858538",
      "week": 13,
-     "date": "2026-11-28T05:00Z",
-     "time_tbd": true,
+     "date": "2026-11-29T00:00Z",
+     "time_tbd": false,
      "home": true,
      "neutral": false,
      "opponent": {
@@ -787,9 +796,11 @@
      },
      "venue": "Memorial Stadium (Bloomington, IN)",
      "city": "Bloomington, IN",
-     "broadcasts": [],
+     "broadcasts": [
+      "FS1"
+     ],
      "state": "pre",
-     "status": "TBD",
+     "status": "11/28 - 7:00 PM EST",
      "pf": null,
      "pa": null,
      "result": null,
@@ -801,7 +812,7 @@
      "odds": {
       "win_prob": {
        "source": "ESPN matchup predictor",
-       "pct": 94.2
+       "pct": 94.9
       }
      }
     }
@@ -821,7 +832,7 @@
      "jersey": "10",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685401.png",
-     "line": "124/206, 1860 YDS, 9.0 YPA, 19 TD, 2 INT"
+     "line": "131/219, 1981 YDS, 9.0 YPA, 20 TD, 2 INT"
     },
     {
      "label": "Rushing",
@@ -830,7 +841,7 @@
      "jersey": "29",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5091725.png",
-     "line": "150 CAR, 786 YDS, 4 TD"
+     "line": "165 CAR, 880 YDS, 4 TD"
     },
     {
      "label": "Receiving",
@@ -839,7 +850,7 @@
      "jersey": "80",
      "year": "Junior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
-     "line": "53 REC, 950 YDS, 10 TD"
+     "line": "59 REC, 1117 YDS, 11 TD"
     },
     {
      "label": "Tackles",
@@ -848,7 +859,7 @@
      "jersey": "46",
      "year": "Senior",
      "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4819232.png",
-     "line": "71 tackles"
+     "line": "77 tackles"
     },
     {
      "label": "Sacks",
@@ -2162,7 +2173,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-21T22:33:53-06:00",
+  "fetched": "2026-11-22T06:49:49-06:00",
   "teams": {
    "calvin": {
     "predictive": {
