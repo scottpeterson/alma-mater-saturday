@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-22T06:49:36-06:00",
+ "fetched_at": "2026-11-22T13:26:25-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -369,10 +369,10 @@
      "odds": {
       "line": {
        "provider": "DraftKings",
-       "details": "ORE -12.5",
+       "details": "ORE -13.5",
        "over_under": 49.5,
-       "home_ml": -500,
-       "away_ml": 380
+       "home_ml": -520,
+       "away_ml": 390
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -810,6 +810,13 @@
      "live_stats": "https://stats.statbroadcast.com/broadcast/?id=672668",
      "live_feed": null,
      "odds": {
+      "line": {
+       "provider": "DraftKings",
+       "details": "IU -21.5",
+       "over_under": 52.5,
+       "home_ml": -1650,
+       "away_ml": 950
+      },
       "win_prob": {
        "source": "ESPN matchup predictor",
        "pct": 94.9
@@ -1218,8 +1225,11 @@
      "period": 0,
      "group": "35",
      "round": "NCAA second round",
-     "live_stats": null,
-     "live_feed": null,
+     "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
+     "live_feed": {
+      "type": "sidearm",
+      "url": "https://sidearmstats.com/calvinu/football/game.json"
+     },
      "odds": null
     }
    ],
@@ -2097,57 +2107,27 @@
   }
  },
  "polls": {
-  "CFP Rankings": {
-   "name": "Playoff Committee Rankings",
-   "week": 12,
-   "date": "2026-11-17T08:00Z",
-   "ranks": {
-    "indiana": 8
-   },
-   "receiving_votes": {}
-  },
   "AP Poll": {
    "name": "AP Top 25",
-   "week": 12,
-   "date": "2026-11-16T08:00Z",
+   "week": 13,
+   "date": "2026-11-22T08:00Z",
    "ranks": {
-    "indiana": 6
+    "indiana": 12
    },
-   "receiving_votes": {}
+   "receiving_votes": {
+    "washington": 39.0
+   }
   },
   "AFCA Coaches Poll": {
    "name": "AFCA Coaches Poll",
-   "week": 12,
-   "date": "2026-11-15T08:00Z",
+   "week": 13,
+   "date": "2026-11-22T08:00Z",
    "ranks": {
-    "indiana": 5
+    "indiana": 12
    },
-   "receiving_votes": {}
-  },
-  "FCS Coaches Poll": {
-   "name": "FCS Coaches Poll",
-   "week": 12,
-   "date": "2026-11-16T08:00Z",
-   "ranks": {},
-   "receiving_votes": {}
-  },
-  "AFCA Div II": {
-   "name": "AFCA Division II Coaches Poll",
-   "week": 12,
-   "date": "2026-11-16T08:00Z",
-   "ranks": {},
-   "receiving_votes": {}
-  },
-  "AFCA Div III": {
-   "name": "AFCA Division III Coaches Poll",
-   "week": 12,
-   "date": "2026-11-16T08:00Z",
-   "ranks": {
-    "wheaton": 1,
-    "calvin": 11,
-    "hope": 19
-   },
-   "receiving_votes": {}
+   "receiving_votes": {
+    "washington": 68.0
+   }
   }
  },
  "d3football": {
@@ -2173,7 +2153,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-22T06:49:49-06:00",
+  "fetched": "2026-11-22T13:26:36-06:00",
   "teams": {
    "calvin": {
     "predictive": {
