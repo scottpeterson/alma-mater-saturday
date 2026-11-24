@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-23T17:45:38-06:00",
+ "fetched_at": "2026-11-24T16:17:47-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -370,7 +370,7 @@
       "line": {
        "provider": "DraftKings",
        "details": "ORE -14",
-       "over_under": 49.5,
+       "over_under": 50.5,
        "home_ml": -600,
        "away_ml": 440
       },
@@ -2194,7 +2194,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-23T17:45:49-06:00",
+  "fetched": "2026-11-24T16:17:59-06:00",
   "teams": {
    "calvin": {
     "predictive": {
