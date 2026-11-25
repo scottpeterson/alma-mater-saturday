@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-24T16:17:47-06:00",
+ "fetched_at": "2026-11-25T15:34:03-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -349,7 +349,7 @@
       "short": "Oregon",
       "espn_id": "2483",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "rank": 13
+      "rank": 12
      },
      "venue": "Autzen Stadium",
      "city": "Eugene, OR",
@@ -368,7 +368,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "ORE -14",
        "over_under": 50.5,
        "home_ml": -600,
@@ -812,7 +812,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -22.5",
        "over_under": 52.5,
        "home_ml": -2100,
@@ -2141,6 +2141,16 @@
   }
  },
  "polls": {
+  "CFP Rankings": {
+   "name": "Playoff Committee Rankings",
+   "week": 13,
+   "date": "2026-11-24T08:00Z",
+   "ranks": {
+    "indiana": 14,
+    "washington": 24
+   },
+   "receiving_votes": {}
+  },
   "AP Poll": {
    "name": "AP Top 25",
    "week": 13,
@@ -2194,7 +2204,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-24T16:17:59-06:00",
+  "fetched": "2026-11-25T15:34:17-06:00",
   "teams": {
    "calvin": {
     "predictive": {
