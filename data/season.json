@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-26T15:21:58-06:00",
+ "fetched_at": "2026-11-27T15:01:44-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -370,7 +370,7 @@
       "line": {
        "provider": "DraftKings",
        "details": "ORE -13.5",
-       "over_under": 50.5,
+       "over_under": 51.5,
        "home_ml": -625,
        "away_ml": 455
       },
@@ -448,7 +448,7 @@
   "indiana": {
    "record": "9-2",
    "conf_record": null,
-   "standing": "2nd in Big Ten",
+   "standing": "3rd in Big Ten",
    "games": [
     {
      "id": "401858425",
@@ -2201,7 +2201,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-26T15:22:11-06:00",
+  "fetched": "2026-11-27T15:02:04-06:00",
   "teams": {
    "calvin": {
     "predictive": {
