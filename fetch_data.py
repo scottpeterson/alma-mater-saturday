@@ -11,8 +11,8 @@ Sources, all public and unauthenticated:
   D3football.com         d3football.com/top25/index                  (D3football.com Top 25)
   Hansen Ratings         hansenratings.com/ratings/... and /simulation (D3 ratings, odds)
 
-You refresh Massey ratings by hand into data/massey.json (see README), because
-masseyratings.com sits behind a browser challenge.
+masseyratings.com serves a browser challenge to scripts. You refresh Massey
+ratings by hand into data/massey.json (see README).
 """
 import html
 import json
@@ -120,7 +120,7 @@ def merge_playoffs(school, games):
     data/playoffs.json is edited by hand. ESPN adds a playoff game only once both teams
     are known, so a bye team's game is missing until the first round ends. An entry with
     an opponent becomes a placeholder game until ESPN lists a game for that team on that
-    date. ESPN's game then replaces it, and the entry only fills in a missing network.
+    date. ESPN's game then replaces it. After that, the entry only supplies a missing network.
     """
     path = DATA / "playoffs.json"
     if school["division"] == "FBS" or not path.exists():
@@ -181,7 +181,7 @@ def live_stats_links(school):
     """Local game date -> live stats URL, read from the school's schedule page.
 
     Classic Sidearm pages label the link in the anchor's aria-label. The newer Sidearm
-    (Nuxt) pages carry the URL and the same label side by side in the page payload.
+    (Nuxt) pages put the URL and the same label side by side in the page payload.
     """
     page = get(school["schedule_url"], as_json=False)
     links = {}
@@ -370,7 +370,11 @@ STATE_ABBR = {"ill.": "il", "ind.": "in", "iowa": "ia", "wis.": "wi", "minn.": "
 
 
 def _norm(name):
-    """Lowercase tokens with the noise removed: punctuation, College/University, Mount vs Mt, UW- vs Wisconsin-."""
+    """Return lowercase tokens without punctuation.
+
+    It also drops College and University, and treats Mount and Mt, and UW- and
+    Wisconsin-, as the same.
+    """
     n = name.lower().replace("&", "and")
     n = re.sub(r"\((.*?)\)", lambda m: " " + STATE_ABBR.get(m.group(1).strip(), m.group(1).strip().replace(".", "")) + " ", n)
     n = n.replace("wisconsin-", "uw-").replace("wis.-", "uw-").replace("mount ", "mt ").replace("saint ", "st ")
@@ -394,7 +398,7 @@ def apply_d3_ranks(out):
         if stateless != key:
             state = next(w for w in key.split() if w in states)
             loose.append((stateless, v["rank"], state))
-    # Keys that carry a state win first, then stateless fallbacks. Longer names come before shorter.
+    # Keys that include a state win first, then stateless fallbacks. Longer names come before shorter.
     exact.sort(key=lambda kv: -len(kv[0]))
     loose.sort(key=lambda kv: -len(kv[0]))
     for school in SCHOOLS:

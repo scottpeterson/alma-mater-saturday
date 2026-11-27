@@ -1,22 +1,24 @@
 # Alma Mater Saturday
 
-One page for the football teams of the five schools that three brothers attended. Washington and Indiana play Division I FBS. Calvin, Hope, and Wheaton (IL) play Division III (D3). Live at https://www.almamatersaturday.com.
+<!-- ste-allow: ESPN, NBC -->
 
-## What the page shows
+One page for the football teams of the five schools that three brothers attended. Washington and Indiana play Division I Football Bowl Subdivision (FBS). Calvin, Hope, and Wheaton (IL) play Division III (D3). Live at https://www.almamatersaturday.com.
+
+## Page contents
 
 - This week: each team's next game. The game card shows the kickoff time, the TV network or stream, the venue, and a countdown. The Times switch at the top of the page offers Eastern, Central, or the device's time zone. The card links to the school's live stats page and the ESPN game page. While the game is on, the card shows the live score, which team has the ball, down and distance, and the last play.
 - Team cards: record, conference standing, poll positions, and Massey rank inside the division and across all divisions. Also Hansen rank (D3), points for and against, margin, last result, and next game.
 - Rankings and ratings table, a Hansen Ratings table for the D3 teams, and a
   cumulative point-margin chart.
-- Top players: season leaders in passing, rushing, receiving, tackles, sacks,
-  and interceptions.
+- Top players: the season leaders. The categories are passing, rushing, receiving,
+  tackles, sacks, and interceptions.
 - Full schedules and results, one tab per team plus a combined view.
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `schools.json` | The five schools: ESPN ids, colors, logos, stats page, Hansen name, alumni, conference members |
+| `schools.json` | The five schools, with ESPN ids, colors, logos, stats page, Hansen name, alumni, and conference members |
 | `content/brothers.json` | Who went where, home TV market, time zone |
 | `content/platforms.json` | Every network and stream on the schedules, with access notes and local stations |
 | `fetch_data.py` | Pulls ESPN schedules, records, polls, and leaders, plus the D3football.com Top 25, Hansen Ratings, and school stats pages. Writes `data/season.json` |
@@ -30,7 +32,7 @@ One page for the football teams of the five schools that three brothers attended
 
 ## Data sources
 
-- ESPN public site API: team schedules (scores, status, broadcasts, venues), team records, and standings. It also gives rankings: Associated Press (AP), American Football Coaches Association (AFCA) Coaches, College Football Playoff (CFP) when published, and AFCA Division III. It also gives season leaders for the FBS teams. ESPN covers the
+- ESPN public site API: team schedules. Each game has its score, status, broadcasts, and venue. It also gives team records and standings. It also gives rankings: Associated Press (AP), American Football Coaches Association (AFCA) Coaches, College Football Playoff (CFP) when published, and AFCA Division III. It also gives season leaders for the FBS teams. ESPN covers the
   schedules and scores of the Division III teams. It does not publish their player statistics.
 - School Sidearm statistics pages for the Division III leaders
   (`/sports/football/stats`, the Individual tables).
@@ -39,8 +41,8 @@ One page for the football teams of the five schools that three brothers attended
   "Live stats for Football vs X on <date>". `fetch_data.py` matches that date
   to the ESPN game.
 - D3football.com Top 25 at `https://d3football.com/top25/index`.
-- Hansen Ratings: predictive, résumé, schedule strength, and simulation pages
-  for the current season. Each page embeds its data as JSON.
+- Hansen Ratings: four pages for the current season. They are predictive, résumé,
+  schedule strength, and simulation. Each page embeds its data as JSON.
 - Massey Ratings: `https://masseyratings.com/cf/ratings` (all divisions).
   Massey serves a browser challenge to scripted requests, so you refresh the
   data by hand.
@@ -78,12 +80,12 @@ rating.
 ESPN adds a playoff game only after both teams are known. A team with a first-round bye has no game on ESPN until the first round ends. `data/playoffs.json` covers that gap:
 
 - `rounds` maps each round's Saturday (Eastern date) to its label. Every Division III game on one of those dates shows the label on the game card and in the schedules.
-- `games` lists each team's next playoff game. An entry with an `opponent` becomes a placeholder game ("Winner of X at Y"), with a `feeder` row that names the game that decides the opponent. When ESPN lists a game for that team on that date, ESPN's game replaces the placeholder. The entry then only fills in `broadcasts` when ESPN lists no network.
+- `games` lists each team's next playoff game. An entry with an `opponent` becomes a placeholder game ("Winner of X at Y"), with a `feeder` row that names the game that decides the opponent. When ESPN lists a game for that team on that date, ESPN's game replaces the placeholder. The entry then only supplies `broadcasts` when ESPN lists no network.
 
 After each round:
 
 1. Open the NCAA bracket article for the season on NCAA.com, and the team's schedule page.
-2. For each team still playing whose next opponent is not set yet, add an entry with the date in UTC, `home`, `opponent`, `opponent_short`, `feeder`, `venue`, `city`, and `broadcasts`. NCAA.com prints kickoff times in Eastern time.
+2. Add an entry for each team still playing whose next opponent is not set yet. Give the date in UTC, `home`, `opponent`, `opponent_short`, `feeder`, `venue`, `city`, and `broadcasts`. NCAA.com prints kickoff times in Eastern time.
 3. Change `updated`, run `python3 fetch_data.py && python3 build_site.py`, then commit and push.
 
 D3 playoff games have no betting line. The Win odds row appears when Hansen Ratings posts its projections for the round and both teams are known.
@@ -95,7 +97,7 @@ once a day otherwise (12:07 UTC).
 
 Two sources feed the game card during a game:
 
-- ESPN's scoreboard endpoint gives the score and clock for every game. For FBS games it also gives the `situation` block: possession, down and distance, field position, and the last play. ESPN publishes no `situation` for
+- ESPN's scoreboard endpoint gives the score and clock for every game. For FBS games it also gives the `situation` block, with possession, down and distance, field position, and the last play. ESPN publishes no `situation` for
   Division III games.
 - The home team's live stats feed covers the Division III games.
   `fetch_data.py` reads each school's schedule page and takes the live stats link for each game. It then derives the feed behind the link:
@@ -108,30 +110,30 @@ Two sources feed the game card during a game:
   - StatBroadcast (Washington and Indiana) has no readable feed. Those
     games show the link only, and ESPN supplies the `situation`.
 
-  Both feeds allow cross-origin requests. The page uses a feed only when the feed's game date matches the card. The page ignores the feed until the feed shows the game in progress. Once the feed marks the game complete, the page returns to ESPN. Sidearm does not report possession. The page infers possession from the team that ran the last play, and flips it after a punt, kickoff, or turnover.
+  Both feeds allow cross-origin requests. The game card uses a feed only when the feed's game date matches the card. The game card ignores the feed until the feed shows the game in progress. Once the feed marks the game complete, the game card returns to ESPN. Sidearm does not report possession. The game card infers possession from the team that ran the last play, and flips it after a punt, kickoff, or turnover.
 
-At halftime the game card shows which team gets the ball to start the second
-half. That is the team that kicked off to start the game. The page finds the opening kicking team once per game from the play list:
+At halftime the game card shows which team gets the ball to start the third
+quarter. That is the team that kicked off to start the game. The page finds the opening kicking team once per game from the play list:
 
 - ESPN's game summary (`.../summary?event=<id>`) lists every drive. The first
   kickoff's `start.team` is the kicking team.
 - Sidearm's `game.json?detail=full` adds the full `Plays` list, oldest first.
   The first `Kickoff` play's `Team` is the kicking team.
 - Presto's XML holds every play. The first `type="K"` play in quarter 1
-  carries the kicking team in `hasball`.
+  has the kicking team in `hasball`.
 
-Each game in `data/season.json` carries `live_stats` (the link) and
+Each game in `data/season.json` has `live_stats` (the link) and
 `live_feed` (`{"type": "sidearm" | "presto", "url": ...}` or null). If a
 schedule page fails to load, the games keep the previous run's values.
 
 ## Updating Montlake & Lumen (by hand)
 
-The Montlake & Lumen tab (`/montlake/`) has no fetch script. All game data lives in the
+The Montlake & Lumen tab (`/montlake/`) has no fetch script. All game data is in the
 `GAMES` list in `pages/montlake.html`. Edit that file only. `build_site.py`
 copies it to `docs/montlake/index.html`. It inserts the tab bar at the
 `<!--SITENAV-->` marker and the GoatCounter tag before `</head>`.
 
-1. Add each result as `final:"W 16-14"`. Use a hyphen, not a dash.
+1. Add each result as `final:"W 16-14"`, with a hyphen between the scores.
 2. When a time is announced, set `dt` (Pacific offset) and the `svc` and `net`
    values for that game.
 3. When a Husky game goes to NBC, Peacock, or FOX, update the matching service
@@ -144,7 +146,7 @@ Husky results and kickoff times come from
 `https://gohuskies.com/sports/football/schedule/text`. Networks come from each
 game's broadcast announcement.
 
-This page is public. Keep personal details out of it, such as a ZIP code or
+The Montlake page is public. Keep personal details out of it, such as a ZIP code or
 travel dates.
 
 The Montlake page has a light theme only, by choice. `check_page.py` therefore

@@ -1,12 +1,12 @@
-// Weekly Massey refresh. Open https://masseyratings.com/cf/ratings in Chrome,
-// run this in the console (or through Claude in Chrome), and paste the JSON
-// it prints into data/massey.json under "teams", then update "through" and
+// Weekly Massey refresh. Open https://masseyratings.com/cf/ratings in Chrome.
+// Run this in the console, or through Claude in Chrome. Paste the JSON it
+// prints into data/massey.json under "teams", then update "through" and
 // "refreshed". Division ranks come from the team's position among its own
 // division in this all-division table.
 const t = [...document.querySelectorAll('table')].sort((a, b) => b.rows.length - a.rows.length)[0];
 const rows = [...t.rows].slice(1).map(r => [...r.cells].map(c => c.innerText.trim().split('\n').map(x => x.trim())));
 // Massey tags some Division I teams "NCAA D1" instead of FBS or FCS (seen 2026-10-20).
-// List the FBS ones here; the rest of that group counts as FCS. Rows with no division
+// List the FBS ones here. The rest of that group counts as FCS. Rows with no division
 // (the "Correlation" footer) are not teams.
 const FBS_TAGGED_D1 = new Set(['Miami FL', 'USC', 'Oklahoma', 'Washington', 'Virginia', 'East Carolina', 'Coastal Car']);
 const parsed = rows.filter(r => r.length >= 12 && r[0][1]).map(r => ({
