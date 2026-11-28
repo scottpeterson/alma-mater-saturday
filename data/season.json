@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-28T08:34:37-06:00",
+ "fetched_at": "2026-11-28T08:35:03-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -1568,7 +1568,7 @@
       "logo": null,
       "rank": null
      },
-     "venue": "Grand Rapids Christian High School",
+     "venue": "Knight Stadium",
      "city": "Grand Rapids, MI",
      "broadcasts": [
       "YouTube",
@@ -2201,7 +2201,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-28T08:34:46-06:00",
+  "fetched": "2026-11-28T08:35:29-06:00",
   "teams": {
    "calvin": {
     "predictive": {

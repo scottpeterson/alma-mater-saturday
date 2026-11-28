@@ -28,6 +28,7 @@ from zoneinfo import ZoneInfo
 BASE = Path(__file__).resolve().parent
 DATA = BASE / "data"
 SCHOOLS = json.loads((BASE / "schools.json").read_text())
+HOME_VENUES = {s["espn_id"]: s["home_venue"] for s in SCHOOLS if s.get("home_venue")}
 ESPN = "https://site.api.espn.com/apis/site/v2/sports/football/college-football"
 CORE = "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/types/2"
 HANSEN = "https://hansenratings.com"
@@ -84,9 +85,11 @@ def team_games(school):
         venue = comp.get("venue", {}) or {}
         addr = venue.get("address", {}) or {}
         # ESPN keeps a stale venue for some schools. schools.json "home_venue"
-        # replaces it for home games that are not at a neutral site.
-        home_venue = school.get("home_venue")
-        if home_venue and me["homeAway"] == "home" and not comp.get("neutralSite"):
+        # replaces it for that school's home games that are not at a neutral
+        # site, on every team's schedule.
+        host = me if me["homeAway"] == "home" else opp
+        home_venue = HOME_VENUES.get(host["team"]["id"])
+        if home_venue and not comp.get("neutralSite"):
             venue = {"fullName": home_venue["name"]}
             city, _, state = home_venue["city"].partition(", ")
             addr = {"city": city, "state": state}
