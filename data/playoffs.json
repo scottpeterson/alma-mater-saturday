@@ -4,9 +4,10 @@
   "https://www.ncaa.com/news/football/article/2026-11-15/2026-diii-football-championship-bracket-schedule-scores",
   "https://www.flofootball.com/articles/16411333-d3-football-playoff-bracket-2026-10-things-to-know",
   "https://athletics.wheaton.edu/sports/football/schedule",
-  "https://athletics.hope.edu/sports/football/schedule"
+  "https://athletics.hope.edu/sports/football/schedule",
+  "https://athletics.hope.edu/news/2026/11/23/michigan-sports-radio-espn-to-broadcast-footballs-playoff-game-at-wisconsin-platteville.aspx"
  ],
- "updated": "2026-11-17",
+ "updated": "2026-11-28",
  "rounds": {
   "2026-11-21": "NCAA first round",
   "2026-11-28": "NCAA second round",
@@ -14,6 +15,14 @@
   "2026-12-12": "NCAA quarterfinal",
   "2026-12-19": "NCAA semifinal",
   "2027-01-03": "Stagg Bowl"
+ },
+ "round_broadcasts": {
+  "2026-11-21": ["ESPN+"],
+  "2026-11-28": ["ESPN+"],
+  "2026-12-05": ["ESPN+"],
+  "2026-12-12": ["ESPN+"],
+  "2026-12-19": ["ESPN+"],
+  "2027-01-03": ["ESPN"]
  },
  "games": {
   "calvin": [
@@ -24,15 +33,13 @@
     "opponent_short": "Hardin-Simmons or Texas Lutheran",
     "feeder": {"label": "Texas Lutheran at Hardin-Simmons", "date": "2026-11-21T18:00Z"},
     "venue": "Knight Stadium",
-    "city": "Grand Rapids, MI",
-    "broadcasts": ["ESPN+"]
+    "city": "Grand Rapids, MI"
    }
   ],
   "hope": [
    {
     "date": "2026-11-28T18:00Z",
-    "home": false,
-    "broadcasts": ["ESPN+"]
+    "home": false
    }
   ],
   "wheaton": [
@@ -43,8 +50,7 @@
     "opponent_short": "Heidelberg or Monmouth (IL)",
     "feeder": {"label": "Monmouth (IL) at Heidelberg", "date": "2026-11-21T18:00Z"},
     "venue": "McCully Stadium",
-    "city": "Wheaton, IL",
-    "broadcasts": ["ESPN+"]
+    "city": "Wheaton, IL"
    }
   ]
  }

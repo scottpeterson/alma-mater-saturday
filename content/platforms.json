@@ -143,6 +143,16 @@
     "access": "ESPN+ subscription, sold alone or inside the ESPN streaming plans. Watch on the ESPN app or ESPN.com.",
     "free": false,
     "url": "https://www.espn.com/watch/",
-    "note": "The NCAA streams Division III playoff games on ESPN+ from the first round through the quarterfinals. ESPN airs the Stagg Bowl."
+    "note": "The NCAA streams Division III playoff games on ESPN+ from the first round through the national semifinals. ESPN airs the Stagg Bowl."
+  },
+  {
+    "name": "ESPN",
+    "also": [],
+    "kind": "Cable network",
+    "teams": "The Division III national championship (Stagg Bowl), if Calvin, Hope, or Wheaton (IL) reaches it",
+    "access": "Pay-TV or live-TV streaming subscription that includes ESPN. Also streams on the ESPN app or ESPN.com when you sign in with that provider.",
+    "free": false,
+    "url": "https://www.espn.com/watch/",
+    "note": "ESPN airs the Stagg Bowl on January 3, 2027."
   }
 ]

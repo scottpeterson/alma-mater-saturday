@@ -80,12 +80,13 @@ rating.
 ESPN adds a playoff game only after both teams are known. A team with a first-round bye has no game on ESPN until the first round ends. `data/playoffs.json` covers that gap:
 
 - `rounds` maps each round's Saturday (Eastern date) to its label. Every Division III game on one of those dates shows the label on the game card and in the schedules.
+- `round_broadcasts` maps each round's Saturday to its network. A playoff game that has no network from ESPN or from its `games` entry gets the round's network. ESPN+ carries the first round through the semifinals, and ESPN carries the Stagg Bowl.
 - `games` lists each team's next playoff game. An entry with an `opponent` becomes a placeholder game ("Winner of X at Y"), with a `feeder` row that names the game that decides the opponent. When ESPN lists a game for that team on that date, ESPN's game replaces the placeholder. The entry then only supplies `broadcasts` when ESPN lists no network.
 
 After each round:
 
 1. Open the NCAA bracket article for the season on NCAA.com, and the team's schedule page.
-2. Add an entry for each team still playing whose next opponent is not set yet. Give the date in UTC, `home`, `opponent`, `opponent_short`, `feeder`, `venue`, `city`, and `broadcasts`. NCAA.com prints kickoff times in Eastern time.
+2. Add an entry for each team still playing whose next opponent is not set yet. Give the date in UTC, `home`, `opponent`, `opponent_short`, `feeder`, `venue`, and `city`. Add `broadcasts` only when the game's network differs from the round's network. NCAA.com prints kickoff times in Eastern time.
 3. Change `updated`, run `python3 fetch_data.py && python3 build_site.py`, then commit and push.
 
 D3 playoff games have no betting line. The Win odds row appears when Hansen Ratings posts its projections for the round and both teams are known.

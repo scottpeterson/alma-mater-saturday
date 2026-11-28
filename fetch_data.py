@@ -131,12 +131,15 @@ def merge_playoffs(school, games):
     are known, so a bye team's game is missing until the first round ends. An entry with
     an opponent becomes a placeholder game until ESPN lists a game for that team on that
     date. ESPN's game then replaces it. After that, the entry only supplies a missing network.
+    A game on a round date that still has no network gets the round's network from
+    "round_broadcasts".
     """
     path = DATA / "playoffs.json"
     if school["division"] == "FBS" or not path.exists():
         return
     plan = json.loads(path.read_text())
     rounds = plan.get("rounds", {})
+    round_broadcasts = plan.get("round_broadcasts", {})
     by_day = {g["date"][:10]: g for g in games}
     for entry in plan.get("games", {}).get(school["slug"], []):
         g = by_day.get(entry["date"][:10])
@@ -168,6 +171,8 @@ def merge_playoffs(school, games):
         day = datetime.fromisoformat(g["date"].replace("Z", "+00:00")).astimezone(EASTERN).date().isoformat()
         if day in rounds:
             g["round"] = rounds[day]
+            if not g["broadcasts"]:
+                g["broadcasts"] = list(round_broadcasts.get(day) or [])
     games.sort(key=lambda g: g["date"])
 
 
