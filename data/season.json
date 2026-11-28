@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-28T08:41:46-06:00",
+ "fetched_at": "2026-11-28T13:54:03-06:00",
  "season": 2026,
  "teams": {
   "washington": {
@@ -368,11 +368,11 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "ORE -13.5",
        "over_under": 51.5,
-       "home_ml": -625,
-       "away_ml": 455
+       "home_ml": -600,
+       "away_ml": 440
       },
       "win_prob": {
        "source": "ESPN matchup predictor",
@@ -812,7 +812,7 @@
      "live_feed": null,
      "odds": {
       "line": {
-       "provider": "DraftKings",
+       "provider": "Draft Kings",
        "details": "IU -23.5",
        "over_under": 52.5,
        "home_ml": -2400,
@@ -1217,13 +1217,13 @@
      "broadcasts": [
       "ESPN+"
      ],
-     "state": "pre",
-     "status": "11/28 - 12:00 PM EST",
+     "state": "in",
+     "status": "6:04 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "6:04",
+     "period": 2,
      "group": "35",
      "round": "NCAA second round",
      "live_stats": "https://calvinknights.com/sidearmstats/football/summary",
@@ -1633,13 +1633,13 @@
      "broadcasts": [
       "ESPN+"
      ],
-     "state": "pre",
-     "status": "11/28 - 1:00 PM EST",
+     "state": "in",
+     "status": "End of 3rd",
      "pf": null,
      "pa": null,
      "result": null,
      "clock": "0:00",
-     "period": 0,
+     "period": 3,
      "group": "35",
      "round": "NCAA second round",
      "live_stats": "https://www.ncaa.com/game/6664021",
@@ -2047,13 +2047,13 @@
      "broadcasts": [
       "ESPN+"
      ],
-     "state": "pre",
-     "status": "11/28 - 1:00 PM EST",
+     "state": "in",
+     "status": "0:17 - 2nd",
      "pf": null,
      "pa": null,
      "result": null,
-     "clock": "0:00",
-     "period": 0,
+     "clock": "0:17",
+     "period": 2,
      "group": "35",
      "round": "NCAA second round",
      "live_stats": "https://www.ncaa.com/game/6664011",
@@ -2201,7 +2201,7 @@
   "refreshed": "2026-10-21T08:55:05-05:00"
  },
  "hansen": {
-  "fetched": "2026-11-28T08:42:14-06:00",
+  "fetched": "2026-11-28T13:54:21-06:00",
   "teams": {
    "calvin": {
     "predictive": {
