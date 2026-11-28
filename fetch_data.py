@@ -83,6 +83,13 @@ def team_games(school):
         rank = opp.get("curatedRank", {}).get("current")
         venue = comp.get("venue", {}) or {}
         addr = venue.get("address", {}) or {}
+        # ESPN keeps a stale venue for some schools. schools.json "home_venue"
+        # replaces it for home games that are not at a neutral site.
+        home_venue = school.get("home_venue")
+        if home_venue and me["homeAway"] == "home" and not comp.get("neutralSite"):
+            venue = {"fullName": home_venue["name"]}
+            city, _, state = home_venue["city"].partition(", ")
+            addr = {"city": city, "state": state}
         logos = opp["team"].get("logos") or []
         games.append({
             "id": event["id"],

@@ -18,7 +18,7 @@ One page for the football teams of the five schools that three brothers attended
 
 | File | Purpose |
 |------|---------|
-| `schools.json` | The five schools, with ESPN ids, colors, logos, stats page, Hansen name, alumni, and conference members |
+| `schools.json` | The five schools, with ESPN ids, colors, logos, stats page, Hansen name, alumni, conference members, and a home venue for a school whose ESPN venue is wrong (Calvin) |
 | `content/brothers.json` | Who went where, home TV market, time zone |
 | `content/platforms.json` | Every network and stream on the schedules, with access notes and local stations |
 | `fetch_data.py` | Pulls ESPN schedules, records, polls, and leaders, plus the D3football.com Top 25, Hansen Ratings, and school stats pages. Writes `data/season.json` |
